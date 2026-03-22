@@ -20,6 +20,12 @@ def main() -> None:
     parser.add_argument("--iab-eval-batch-size", type=int, default=16, help="Per-device eval batch size for IAB.")
     parser.add_argument("--iab-learning-rate", type=float, default=2e-5, help="Learning rate for IAB training.")
     parser.add_argument(
+        "--iab-target-rows-per-label",
+        type=int,
+        default=0,
+        help="Optional cap per IAB label. Use 0 for the uncapped full dataset.",
+    )
+    parser.add_argument(
         "--skip-full-eval",
         action="store_true",
         help="Skip the final full evaluation pass and only run calibration.",
@@ -31,7 +37,14 @@ def main() -> None:
     run_step([python, "training/build_subtype_dataset.py"])
     run_step([python, "training/train_subtype.py"])
     run_step([python, "training/train_decision_phase.py"])
-    run_step([python, "training/build_iab_dataset.py"])
+    run_step(
+        [
+            python,
+            "training/build_iab_dataset.py",
+            "--target-rows-per-label",
+            str(args.iab_target_rows_per_label),
+        ]
+    )
     run_step(
         [
             python,

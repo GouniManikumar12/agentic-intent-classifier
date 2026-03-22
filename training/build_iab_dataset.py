@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -14,7 +15,6 @@ from config import IAB_HEAD_CONFIG
 from iab_taxonomy import get_iab_taxonomy, path_to_label
 
 OUTPUT_DIR = IAB_HEAD_CONFIG.data_dir
-TARGET_ROWS_PER_LABEL = 10
 
 GENERAL_TEMPLATES = (
     "what is {term}",
@@ -228,7 +228,7 @@ def apply_templates(term: str, templates: tuple[str, ...]) -> set[str]:
     return {template.format(term=term).strip() for template in templates}
 
 
-def build_category_rows(path: tuple[str, ...]) -> list[dict]:
+def build_category_rows(path: tuple[str, ...], target_rows_per_label: int | None = None) -> list[dict]:
     label = path_to_label(path)
     prompt_set: set[str] = set()
     terms = base_terms_for_path(path)
@@ -262,9 +262,12 @@ def build_category_rows(path: tuple[str, ...]) -> list[dict]:
     generated_rows = [{"text": normalize_text(text), "iab_path": label} for text in prompt_set if text.strip()]
     generated_rows = sorted(generated_rows, key=lambda row: stable_key(f'{row["iab_path"]}::{row["text"]}'))
 
+    if target_rows_per_label is None:
+        return generated_rows
+
     chosen_by_text = {row["text"]: row for row in supplemental_rows}
     remaining = [row for row in generated_rows if row["text"] not in chosen_by_text]
-    room = max(TARGET_ROWS_PER_LABEL - len(chosen_by_text), 0)
+    room = max(target_rows_per_label - len(chosen_by_text), 0)
     for row in remaining[:room]:
         chosen_by_text[row["text"]] = row
 
@@ -302,7 +305,17 @@ def assert_full_coverage(rows: list[dict], labels: list[str]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Build the full-taxonomy IAB dataset.")
+    parser.add_argument(
+        "--target-rows-per-label",
+        type=int,
+        default=0,
+        help="Optional cap per IAB label. Use 0 for uncapped full dataset.",
+    )
+    args = parser.parse_args()
+
     labels = validate_label_space()
+    target_rows_per_label = args.target_rows_per_label if args.target_rows_per_label > 0 else None
 
     train_rows: list[dict] = []
     val_rows: list[dict] = []
@@ -311,7 +324,7 @@ def main() -> None:
 
     for label in labels:
         path = tuple(label.split(" > "))
-        category_rows = build_category_rows(path)
+        category_rows = build_category_rows(path, target_rows_per_label=target_rows_per_label)
         train_split, val_split, test_split = split_rows(category_rows)
         train_rows.extend(train_split)
         val_rows.extend(val_split)
@@ -339,6 +352,7 @@ def main() -> None:
         "test_count": len(test_rows),
         "hard_cases_count": len(HARD_CASES),
         "extended_cases_count": len(EXTENDED_CASES),
+        "target_rows_per_label": target_rows_per_label,
         "sample_label_counts": dict(list(per_label_counts.items())[:10]),
     }
     print(json.dumps(summary, indent=2))

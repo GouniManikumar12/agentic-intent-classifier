@@ -20,6 +20,12 @@ def main() -> None:
     parser.add_argument("--eval-batch-size", type=int, default=16, help="Per-device eval batch size.")
     parser.add_argument("--learning-rate", type=float, default=2e-5, help="Training learning rate.")
     parser.add_argument(
+        "--target-rows-per-label",
+        type=int,
+        default=0,
+        help="Optional cap per IAB label. Use 0 for the uncapped full dataset.",
+    )
+    parser.add_argument(
         "--skip-full-eval",
         action="store_true",
         help="Skip the full evaluation suite and only run IAB-specific regression.",
@@ -27,7 +33,14 @@ def main() -> None:
     args = parser.parse_args()
 
     python = sys.executable
-    run_step([python, "training/build_iab_dataset.py"])
+    run_step(
+        [
+            python,
+            "training/build_iab_dataset.py",
+            "--target-rows-per-label",
+            str(args.target_rows_per_label),
+        ]
+    )
     run_step(
         [
             python,

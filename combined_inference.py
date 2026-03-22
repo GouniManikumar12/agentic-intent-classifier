@@ -220,6 +220,48 @@ def iab_path_labels(iab_content: dict) -> tuple[str | None, str | None, str | No
     )
 
 
+def normalize_iab_label(label: str | None) -> str:
+    return (label or "").strip().lower()
+
+
+def is_buyable_iab_path(iab_content: dict) -> bool:
+    tier1, tier2, tier3, tier4 = iab_path_labels(iab_content)
+    labels = [normalize_iab_label(label) for label in (tier1, tier2, tier3, tier4) if label]
+    if not labels:
+        return False
+
+    joined = " > ".join(labels)
+    if any(
+        term in joined
+        for term in {
+            "buying and selling",
+            "shopping",
+            "sales and promotions",
+            "coupons and discounts",
+            "laptops",
+            "desktops",
+            "smartphones",
+            "tablets and e-readers",
+            "cameras and camcorders",
+            "wearable technology",
+            "computer software and applications",
+            "software and applications",
+            "web hosting",
+            "real estate renting and leasing",
+            "hotels and motels",
+            "air travel",
+        }
+    ):
+        return True
+
+    tier1_label = labels[0]
+    tier2_label = labels[1] if len(labels) > 1 else ""
+    return (
+        tier1_label in {"automotive", "shopping", "real estate", "travel"}
+        or (tier1_label == "technology & computing" and tier2_label in {"computing", "consumer electronics"})
+    )
+
+
 def should_override_low_confidence_fallback(
     fallback: dict | None,
     intent_pred: dict,
@@ -231,7 +273,9 @@ def should_override_low_confidence_fallback(
     if fallback is None or fallback.get("reason") != "confidence_below_threshold":
         return False
     failed_components = set(fallback.get("failed_components", []))
-    if len(failed_components) != 1:
+    if not failed_components or len(failed_components) > 2:
+        return False
+    if len(failed_components) == 2 and failed_components != {"intent_type", "decision_phase"}:
         return False
     if intent_pred["label"] != "commercial":
         return False
@@ -250,10 +294,29 @@ def should_override_low_confidence_fallback(
         "contact_sales",
     }:
         return False
-    tier1, _, _, _ = iab_path_labels(iab_content)
-    if tier1 in {"Education", "Careers"}:
+    if not is_buyable_iab_path(iab_content):
         return False
-    return commercial_score >= 0.68 and iab_content.get("mapping_confidence", 0.0) >= 0.6
+    mapping_confidence = iab_content.get("mapping_confidence", 0.0)
+    subtype_threshold = subtype_pred["confidence_threshold"]
+    subtype_confidence = subtype_pred["confidence"]
+
+    if failed_components == {"intent_subtype"}:
+        return (
+            intent_pred["meets_confidence_threshold"]
+            and phase_pred["meets_confidence_threshold"]
+            and subtype_confidence >= max(0.2, subtype_threshold - 0.03)
+            and commercial_score >= 0.78
+            and mapping_confidence >= 0.8
+        )
+
+    if failed_components == {"intent_type", "decision_phase"}:
+        return (
+            subtype_pred["meets_confidence_threshold"]
+            and commercial_score >= 0.72
+            and mapping_confidence >= 0.72
+        )
+
+    return False
 
 
 def build_iab_content(
