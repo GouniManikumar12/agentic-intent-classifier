@@ -1,0 +1,24 @@
+{
+  "calibrated": true,
+  "confidence_threshold": 0.26,
+  "generated_at": "2026-03-22T06:06:23.250786+00:00",
+  "head": "decision_phase",
+  "metrics": {
+    "calibrated_accuracy": 0.6538,
+    "calibrated_expected_calibration_error": 0.4082,
+    "calibrated_negative_log_likelihood": 1.4498,
+    "mean_calibrated_confidence": 0.2726,
+    "mean_raw_confidence": 0.2418,
+    "raw_accuracy": 0.6538,
+    "raw_expected_calibration_error": 0.412,
+    "raw_negative_log_likelihood": 1.5363
+  },
+  "selection_split": "val",
+  "selection_target_precision": 0.75,
+  "temperature": 0.793607,
+  "threshold_summary": {
+    "accepted_accuracy": 0.7692,
+    "coverage": 0.5,
+    "threshold": 0.26
+  }
+}

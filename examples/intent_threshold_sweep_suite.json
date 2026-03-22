@@ -1,0 +1,52 @@
+[
+  {
+    "input": "What is CRM software?",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "Help me understand CRM basics",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "HubSpot vs Zoho for a small team",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "Which CRM should I buy for a 3-person startup?",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "Start my free trial",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "Book a table for 2 tonight",
+    "expected_outcome": "pass",
+    "category": "obvious"
+  },
+  {
+    "input": "I cannot log into my account",
+    "expected_outcome": "fallback",
+    "category": "safe"
+  },
+  {
+    "input": "go deeper",
+    "expected_outcome": "fallback",
+    "category": "safe"
+  },
+  {
+    "input": "say more about that",
+    "expected_outcome": "fallback",
+    "category": "safe"
+  },
+  {
+    "input": "what do you mean by that",
+    "expected_outcome": "fallback",
+    "category": "safe"
+  }
+]

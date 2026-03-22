@@ -1,90 +1,51 @@
-import json
+import sys
 from pathlib import Path
-from datasets import Dataset
-from sklearn.metrics import accuracy_score, f1_score
-import numpy as np
-from transformers import (
-    AutoTokenizer,
-    AutoModelForSequenceClassification,
-    TrainingArguments,
-    Trainer,
+
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, Trainer, TrainingArguments
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from config import INTENT_HEAD_CONFIG
+from training.common import (
+    compute_classification_metrics,
+    load_labeled_rows,
+    prepare_dataset,
+    write_json,
 )
 
-MODEL_NAME = "distilbert-base-uncased"
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
-MODEL_OUTPUT_DIR = BASE_DIR / "model_output"
+train_rows = load_labeled_rows(
+    INTENT_HEAD_CONFIG.split_paths["train"],
+    INTENT_HEAD_CONFIG.label_field,
+    INTENT_HEAD_CONFIG.label2id,
+)
+val_rows = load_labeled_rows(
+    INTENT_HEAD_CONFIG.split_paths["val"],
+    INTENT_HEAD_CONFIG.label_field,
+    INTENT_HEAD_CONFIG.label2id,
+)
+test_rows = load_labeled_rows(
+    INTENT_HEAD_CONFIG.split_paths["test"],
+    INTENT_HEAD_CONFIG.label_field,
+    INTENT_HEAD_CONFIG.label2id,
+)
 
-label2id = {
-    "informational": 0,
-    "commercial": 1,
-    "transactional": 2,
-    "personal_reflection": 3,
-    "ambiguous": 4,
-}
-id2label = {v: k for k, v in label2id.items()}
+tokenizer = AutoTokenizer.from_pretrained(INTENT_HEAD_CONFIG.model_name)
 
-
-def load_jsonl(path: str):
-    rows = []
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            item = json.loads(line)
-            rows.append(
-                {
-                    "text": item["text"],
-                    "label": label2id[item["intent_type"]],
-                }
-            )
-    return rows
-
-
-train_rows = load_jsonl(DATA_DIR / "train.jsonl")
-val_rows = load_jsonl(DATA_DIR / "val.jsonl")
-test_rows = load_jsonl(DATA_DIR / "test.jsonl")
-
-train_dataset = Dataset.from_list(train_rows)
-val_dataset = Dataset.from_list(val_rows)
-test_dataset = Dataset.from_list(test_rows)
-
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-
-
-def tokenize(batch):
-    return tokenizer(batch["text"], truncation=True, padding="max_length", max_length=64)
-
-
-train_dataset = train_dataset.map(tokenize, batched=True)
-val_dataset = val_dataset.map(tokenize, batched=True)
-test_dataset = test_dataset.map(tokenize, batched=True)
-
-train_dataset = train_dataset.remove_columns(["text"])
-val_dataset = val_dataset.remove_columns(["text"])
-test_dataset = test_dataset.remove_columns(["text"])
-
-train_dataset.set_format("torch")
-val_dataset.set_format("torch")
-test_dataset.set_format("torch")
+train_dataset = prepare_dataset(train_rows, tokenizer, INTENT_HEAD_CONFIG.max_length)
+val_dataset = prepare_dataset(val_rows, tokenizer, INTENT_HEAD_CONFIG.max_length)
+test_dataset = prepare_dataset(test_rows, tokenizer, INTENT_HEAD_CONFIG.max_length)
 
 model = AutoModelForSequenceClassification.from_pretrained(
-    MODEL_NAME,
-    num_labels=len(label2id),
-    id2label=id2label,
-    label2id=label2id,
+    INTENT_HEAD_CONFIG.model_name,
+    num_labels=len(INTENT_HEAD_CONFIG.labels),
+    id2label=INTENT_HEAD_CONFIG.id2label,
+    label2id=INTENT_HEAD_CONFIG.label2id,
 )
 
-
-def compute_metrics(eval_pred):
-    logits, labels = eval_pred
-    preds = np.argmax(logits, axis=-1)
-    return {
-        "accuracy": accuracy_score(labels, preds),
-        "macro_f1": f1_score(labels, preds, average="macro"),
-    }
-
-
 training_args = TrainingArguments(
-    output_dir=str(MODEL_OUTPUT_DIR),
+    output_dir=str(INTENT_HEAD_CONFIG.model_dir),
     eval_strategy="epoch",
     save_strategy="no",
     logging_strategy="epoch",
@@ -101,17 +62,27 @@ trainer = Trainer(
     args=training_args,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-    compute_metrics=compute_metrics,
+    compute_metrics=compute_classification_metrics,
 )
 
-print(
-    f"Loaded splits: train={len(train_rows)} val={len(val_rows)} test={len(test_rows)}"
-)
+print(f"Loaded splits: train={len(train_rows)} val={len(val_rows)} test={len(test_rows)}")
 trainer.train()
 val_metrics = trainer.evaluate(eval_dataset=val_dataset, metric_key_prefix="val")
 test_metrics = trainer.evaluate(eval_dataset=test_dataset, metric_key_prefix="test")
 print(val_metrics)
 print(test_metrics)
 
-model.save_pretrained(MODEL_OUTPUT_DIR)
-tokenizer.save_pretrained(MODEL_OUTPUT_DIR)
+INTENT_HEAD_CONFIG.model_dir.mkdir(parents=True, exist_ok=True)
+model.save_pretrained(INTENT_HEAD_CONFIG.model_dir)
+tokenizer.save_pretrained(INTENT_HEAD_CONFIG.model_dir)
+write_json(
+    INTENT_HEAD_CONFIG.model_dir / "train_metrics.json",
+    {
+        "head": INTENT_HEAD_CONFIG.slug,
+        "train_count": len(train_rows),
+        "val_count": len(val_rows),
+        "test_count": len(test_rows),
+        "val_metrics": val_metrics,
+        "test_metrics": test_metrics,
+    },
+)

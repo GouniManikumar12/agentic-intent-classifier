@@ -1,0 +1,1294 @@
+{
+  "applied_threshold": 0.4,
+  "recommended_threshold": 0.4,
+  "results": [
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.0
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.1
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.15
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.2
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.25
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 0,
+          "intent_share_of_threshold_fallbacks": 0.0,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 1.0,
+          "policy_safe": 1
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0104,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.3
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0667,
+        "benchmark_phase_only_fallback_rate": 0.5333,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 1,
+          "intent_share_of_threshold_fallbacks": 0.1667,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 0.8333,
+          "policy_safe": 0
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "intent_type"
+            ],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1842,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0417,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.35
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6,
+        "benchmark_intent_only_fallback_rate": 0.0667,
+        "benchmark_phase_only_fallback_rate": 0.4667,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.6,
+          "intent_only": 1,
+          "intent_share_of_threshold_fallbacks": 0.1667,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 0.8333,
+          "policy_safe": 0
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.3333,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "intent_type"
+            ],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1053,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.0625,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.4
+    },
+    {
+      "combined": {
+        "bad_allow_rate_on_safe_prompts": 0.0,
+        "benchmark_fallback_rate": 0.6667,
+        "benchmark_intent_only_fallback_rate": 0.1333,
+        "benchmark_phase_only_fallback_rate": 0.4667,
+        "fallback_responsibility": {
+          "both": 0,
+          "fallback_rate": 0.7,
+          "intent_only": 2,
+          "intent_share_of_threshold_fallbacks": 0.2857,
+          "phase_only": 5,
+          "phase_share_of_threshold_fallbacks": 0.7143,
+          "policy_safe": 0
+        },
+        "false_fallback_rate_on_obvious_prompts": 0.5,
+        "obvious_prompt_count": 6,
+        "safe_prompt_count": 4,
+        "suite_outputs": [
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "What is CRM software?",
+            "intent_confidence": 0.8488,
+            "intent_type": "informational",
+            "phase_confidence": 0.4134
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "intent_type"
+            ],
+            "fallback_applied": true,
+            "input": "Help me understand CRM basics",
+            "intent_confidence": 0.4226,
+            "intent_type": "informational",
+            "phase_confidence": 0.2602
+          },
+          {
+            "decision_phase": "consideration",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "HubSpot vs Zoho for a small team",
+            "intent_confidence": 0.6819,
+            "intent_type": "commercial",
+            "phase_confidence": 0.3331
+          },
+          {
+            "decision_phase": "decision",
+            "expected_outcome": "pass",
+            "failed_components": [],
+            "fallback_applied": false,
+            "input": "Which CRM should I buy for a 3-person startup?",
+            "intent_confidence": 0.7691,
+            "intent_type": "informational",
+            "phase_confidence": 0.2879
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Start my free trial",
+            "intent_confidence": 0.5429,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1875
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "pass",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "Book a table for 2 tonight",
+            "intent_confidence": 0.5284,
+            "intent_type": "transactional",
+            "phase_confidence": 0.1716
+          },
+          {
+            "decision_phase": "support",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "intent_type"
+            ],
+            "fallback_applied": true,
+            "input": "I cannot log into my account",
+            "intent_confidence": 0.3314,
+            "intent_type": "personal_reflection",
+            "phase_confidence": 0.275
+          },
+          {
+            "decision_phase": "action",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "go deeper",
+            "intent_confidence": 0.6527,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1638
+          },
+          {
+            "decision_phase": "research",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "say more about that",
+            "intent_confidence": 0.6538,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1674
+          },
+          {
+            "decision_phase": "awareness",
+            "expected_outcome": "fallback",
+            "failed_components": [
+              "decision_phase"
+            ],
+            "fallback_applied": true,
+            "input": "what do you mean by that",
+            "intent_confidence": 0.4595,
+            "intent_type": "ambiguous",
+            "phase_confidence": 0.1718
+          }
+        ],
+        "suite_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/intent_threshold_sweep_suite.json"
+      },
+      "head": {
+        "ambiguous_bad_allow_rate": 0.1053,
+        "ambiguous_prompt_count": 38,
+        "obvious_false_fallback_rate": 0.1042,
+        "obvious_prompt_count": 96,
+        "safe_predicate_rate": 0.2917
+      },
+      "threshold": 0.45
+    }
+  ],
+  "thresholds": [
+    0.0,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45
+  ]
+}

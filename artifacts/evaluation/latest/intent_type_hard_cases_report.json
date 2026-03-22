@@ -1,0 +1,57 @@
+{
+  "accepted_accuracy": 0.9348,
+  "accepted_coverage": 0.92,
+  "accuracy": 0.92,
+  "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_hard_cases_confusion_matrix.csv",
+  "count": 50,
+  "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/hard_cases.jsonl",
+  "fallback_rate": 0.08,
+  "head": "intent_type",
+  "macro_f1": 0.9166,
+  "per_class_metrics": {
+    "accuracy": 0.92,
+    "ambiguous": {
+      "f1-score": 0.9,
+      "precision": 0.9,
+      "recall": 0.9,
+      "support": 10.0
+    },
+    "commercial": {
+      "f1-score": 0.8888888888888888,
+      "precision": 1.0,
+      "recall": 0.8,
+      "support": 10.0
+    },
+    "informational": {
+      "f1-score": 0.9302325581395349,
+      "precision": 0.8695652173913043,
+      "recall": 1.0,
+      "support": 20.0
+    },
+    "macro avg": {
+      "f1-score": 0.733297973616211,
+      "precision": 0.7539130434782608,
+      "recall": 0.72,
+      "support": 50.0
+    },
+    "personal_reflection": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "transactional": {
+      "f1-score": 0.9473684210526315,
+      "precision": 1.0,
+      "recall": 0.9,
+      "support": 10.0
+    },
+    "weighted avg": {
+      "f1-score": 0.919344485244118,
+      "precision": 0.9278260869565217,
+      "recall": 0.92,
+      "support": 50.0
+    }
+  },
+  "suite": "hard_cases"
+}

@@ -1,0 +1,69 @@
+{
+  "accepted_accuracy": 0.9455,
+  "accepted_coverage": 0.5978,
+  "accuracy": 0.8913,
+  "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_train_confusion_matrix.csv",
+  "count": 92,
+  "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/train.jsonl",
+  "fallback_rate": 0.4022,
+  "head": "decision_phase",
+  "macro_f1": 0.8873,
+  "per_class_metrics": {
+    "accuracy": 0.8913043478260869,
+    "action": {
+      "f1-score": 0.8571428571428571,
+      "precision": 1.0,
+      "recall": 0.75,
+      "support": 8.0
+    },
+    "awareness": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 14.0
+    },
+    "consideration": {
+      "f1-score": 0.8571428571428571,
+      "precision": 0.75,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "decision": {
+      "f1-score": 0.896551724137931,
+      "precision": 0.8666666666666667,
+      "recall": 0.9285714285714286,
+      "support": 14.0
+    },
+    "macro avg": {
+      "f1-score": 0.8872624912033779,
+      "precision": 0.9095238095238096,
+      "recall": 0.8795133437990581,
+      "support": 92.0
+    },
+    "post_purchase": {
+      "f1-score": 0.88,
+      "precision": 1.0,
+      "recall": 0.7857142857142857,
+      "support": 14.0
+    },
+    "research": {
+      "f1-score": 0.72,
+      "precision": 0.75,
+      "recall": 0.6923076923076923,
+      "support": 13.0
+    },
+    "support": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 14.0
+    },
+    "weighted avg": {
+      "f1-score": 0.8907174983936603,
+      "precision": 0.903623188405797,
+      "recall": 0.8913043478260869,
+      "support": 92.0
+    }
+  },
+  "suite": "train"
+}

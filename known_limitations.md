@@ -2,7 +2,7 @@
 
 ## Model Limits
 
-- `intent_type v0.1` is still conservative and often falls below the confidence threshold on otherwise sensible prompts.
+- `intent_type v0.1` now uses a manually tuned fallback threshold, but some ambiguous prompts still clear as non-safe intent labels.
 - `decision_phase v0.1` is behaviorally useful but still weak in aggregate metrics.
 - the composed output is gated by the weaker of the two model confidences, so fallback triggers often.
 
@@ -22,6 +22,7 @@
 
 - the current policy and opportunity logic is rule-based and deliberately simple.
 - `commercial_score` is heuristic, not learned.
+- the current `intent_type` threshold is manually sweep-tuned rather than learned jointly with the system layer.
 - fallback is intentionally conservative, which is useful for demos but suppresses opportunity signals.
 
 ## Product Limits
