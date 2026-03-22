@@ -140,6 +140,13 @@ cd agentic-intent-classifier
 ../.venv/bin/python training/train_decision_phase.py
 ```
 
+Build the separate full-intent-taxonomy augmentation dataset used by `intent_type`, `intent_subtype`, and `decision_phase` training:
+
+```bash
+cd agentic-intent-classifier
+../.venv/bin/python training/build_full_intent_taxonomy_dataset.py
+```
+
 Build the IAB dataset and train `iab_content`:
 
 ```bash

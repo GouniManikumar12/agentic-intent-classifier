@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent
 ARTIFACTS_DIR = BASE_DIR / "artifacts"
 CALIBRATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "calibration"
 EVALUATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "evaluation"
+FULL_INTENT_TAXONOMY_DATA_DIR = BASE_DIR / "data" / "full_intent_taxonomy"
 
 DEFAULT_API_HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8008

@@ -7,21 +7,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from config import SUBTYPE_HEAD_CONFIG
+from config import FULL_INTENT_TAXONOMY_DATA_DIR, SUBTYPE_HEAD_CONFIG
 from training.common import (
     compute_classification_metrics,
     load_labeled_rows,
+    load_labeled_rows_from_paths,
     prepare_dataset,
     write_json,
 )
 
-train_rows = load_labeled_rows(
-    SUBTYPE_HEAD_CONFIG.split_paths["train"],
+train_rows = load_labeled_rows_from_paths(
+    [
+        SUBTYPE_HEAD_CONFIG.split_paths["train"],
+        FULL_INTENT_TAXONOMY_DATA_DIR / "train.jsonl",
+    ],
     SUBTYPE_HEAD_CONFIG.label_field,
     SUBTYPE_HEAD_CONFIG.label2id,
 )
-val_rows = load_labeled_rows(
-    SUBTYPE_HEAD_CONFIG.split_paths["val"],
+val_rows = load_labeled_rows_from_paths(
+    [
+        SUBTYPE_HEAD_CONFIG.split_paths["val"],
+        FULL_INTENT_TAXONOMY_DATA_DIR / "val.jsonl",
+    ],
     SUBTYPE_HEAD_CONFIG.label_field,
     SUBTYPE_HEAD_CONFIG.label2id,
 )

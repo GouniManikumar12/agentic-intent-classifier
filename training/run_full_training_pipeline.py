@@ -33,6 +33,7 @@ def main() -> None:
     args = parser.parse_args()
 
     python = sys.executable
+    run_step([python, "training/build_full_intent_taxonomy_dataset.py"])
     run_step([python, "training/train.py"])
     run_step([python, "training/build_subtype_dataset.py"])
     run_step([python, "training/train_subtype.py"])

@@ -22,6 +22,15 @@ def load_labeled_rows(path: Path, label_field: str, label2id: dict[str, int]) ->
     return rows
 
 
+def load_labeled_rows_from_paths(paths: list[Path], label_field: str, label2id: dict[str, int]) -> list[dict]:
+    rows = []
+    for path in paths:
+        if not path.exists():
+            continue
+        rows.extend(load_labeled_rows(path, label_field, label2id))
+    return rows
+
+
 def prepare_dataset(rows: list[dict], tokenizer, max_length: int) -> Dataset:
     dataset = Dataset.from_list(rows)
 

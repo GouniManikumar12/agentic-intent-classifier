@@ -1,0 +1,118 @@
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "thanks, that was useful"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hi there"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what do you mean"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "show me another option"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "explain help desk basics"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "help me understand help desk software"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore help desk tools for support teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a help desk platform"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare help desk tools for support teams"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which help desk platform should I buy for handle tickets"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "help me assess help desk platform options for support teams"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "discounted help desk tools worth comparing"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which help desk platform should I commit to for handle tickets"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "pay for Zendesk now"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "sign me up for Zendesk"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "export the setup guide for Zendesk"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "talk to sales about Zendesk"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book a table at a help desk platform tonight"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "how do I finish setup for Zendesk"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "my billing portal keeps failing"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "I need help with a refund for Zendesk"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "troubleshoot my help desk platform setup"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I regret switching our help desk setup"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I feel stuck deciding between Zendesk and Freshdesk"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "create a tagline for a help desk platform"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the support workflow template"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "evaluate Asana for organize projects"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best deal on project management tools for agency teams"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which Asana should I choose for organize projects"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "buy a project management tool for agency teams"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book a demo for Asana"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "download the project planning checklist"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "contact sales for Asana"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book Asana for tomorrow"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "help me set up Asana after purchase"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "I cannot access my workspace"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "why is my invoice wrong for Asana"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "help me fix a export error"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a workspace"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for Asana"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "explain analytics basics"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "help me understand analytics software"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore analytics platforms for product teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a analytics platform"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare analytics platforms for product teams"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which analytics platform should I buy for measure activation"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I regret switching our analytics setup"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I feel stuck deciding between Mixpanel and Amplitude"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "create a tagline for a analytics platform"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the analytics setup guide"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "is MacBook Air good for students"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "review the pros and cons of MacBook Air"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "cheap laptop options for pick the right laptop"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "where can I get the best price on laptops"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "help me pick between MacBook Air and Dell XPS 13"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "I am ready to decide on a laptop for students"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "purchase MacBook Air today"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "complete my order for MacBook Air"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "start my free trial for MacBook Air"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "create an account for MacBook Air"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "download the buyer guide for laptops"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "get the checklist for choosing laptops"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "request pricing from the MacBook Air sales team"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "connect me with a sales rep for MacBook Air"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "reserve a spot with MacBook Air"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "schedule my appointment for MacBook Air"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "walk me through onboarding for MacBook Air"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "configure my new laptop"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "why is my device warranty portal not working"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "I need help with my device warranty portal"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "help me fix a billing problem with MacBook Air"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "my payment for MacBook Air failed"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "the integration for MacBook Air keeps breaking"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "why is MacBook Air not syncing correctly"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "explain smartphone basics"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "help me understand smartphones"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore smartphones for travelers"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a smartphone"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare smartphones for travelers"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which smartphone should I buy for choose a new phone"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I regret switching our smartphone setup"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I feel stuck deciding between iPhone and Pixel"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "create a tagline for a smartphone"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the phone comparison sheet"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "help me assess car options for commuters"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "discounted cars worth comparing"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which car should I commit to for buy the right car"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "pay for Toyota Corolla now"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "sign me up for Toyota Corolla"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "export the setup guide for Toyota Corolla"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "talk to sales about Toyota Corolla"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book a table at a car tonight"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "how do I finish setup for Toyota Corolla"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "my reservation keeps failing"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "I need help with a refund for Toyota Corolla"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "troubleshoot my car setup"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "explain restaurant basics"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "help me understand restaurants"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore restaurants for date nights"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a restaurant"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare restaurants for date nights"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which restaurant should I buy for book a table"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "evaluate Italian restaurant for book a table"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best deal on restaurants for date nights"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "which Italian restaurant should I choose for book a table"}
+{"decision_phase": "action", "intent_subtype": "purchase", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "buy a restaurant for date nights"}
+{"decision_phase": "action", "intent_subtype": "signup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book a demo for Italian restaurant"}
+{"decision_phase": "action", "intent_subtype": "download", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "download the dining guide"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "contact sales for Italian restaurant"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "book Italian restaurant for tomorrow"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "intent_type": "transactional", "source": "synthetic_full_intent_taxonomy", "text": "help me set up Italian restaurant after purchase"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "why is my invoice wrong for Italian restaurant"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source": "synthetic_full_intent_taxonomy", "text": "help me fix a booking change"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I regret switching our restaurant setup"}
+{"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I feel stuck deciding between Italian restaurant and sushi place"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "create a tagline for a restaurant"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the dining guide"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for Italian restaurant"}

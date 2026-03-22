@@ -7,21 +7,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from config import INTENT_HEAD_CONFIG
+from config import FULL_INTENT_TAXONOMY_DATA_DIR, INTENT_HEAD_CONFIG
 from training.common import (
     compute_classification_metrics,
     load_labeled_rows,
+    load_labeled_rows_from_paths,
     prepare_dataset,
     write_json,
 )
 
-train_rows = load_labeled_rows(
-    INTENT_HEAD_CONFIG.split_paths["train"],
+train_rows = load_labeled_rows_from_paths(
+    [
+        INTENT_HEAD_CONFIG.split_paths["train"],
+        FULL_INTENT_TAXONOMY_DATA_DIR / "train.jsonl",
+    ],
     INTENT_HEAD_CONFIG.label_field,
     INTENT_HEAD_CONFIG.label2id,
 )
-val_rows = load_labeled_rows(
-    INTENT_HEAD_CONFIG.split_paths["val"],
+val_rows = load_labeled_rows_from_paths(
+    [
+        INTENT_HEAD_CONFIG.split_paths["val"],
+        FULL_INTENT_TAXONOMY_DATA_DIR / "val.jsonl",
+    ],
     INTENT_HEAD_CONFIG.label_field,
     INTENT_HEAD_CONFIG.label2id,
 )
