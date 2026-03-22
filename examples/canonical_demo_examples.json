@@ -1,0 +1,207 @@
+[
+  {
+    "input": "What is CRM software?",
+    "why_it_matters": "Pure informational awareness example.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "awareness",
+          "confidence": 0.345,
+          "commercial_score": 0.13,
+          "summary": "Classified as informational intent in the awareness phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "awareness"
+      ]
+    }
+  },
+  {
+    "input": "HubSpot vs Zoho for a small team",
+    "why_it_matters": "Commercial comparison in the middle of the buying journey.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "commercial",
+          "decision_phase": "consideration",
+          "confidence": 0.2854,
+          "commercial_score": 0.73,
+          "summary": "Classified as commercial intent in the consideration phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "consideration"
+      ]
+    }
+  },
+  {
+    "input": "Which CRM should I buy for a 3-person startup?",
+    "why_it_matters": "Decision-stage buying query that still shows conservative fallback behavior.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "decision",
+          "confidence": 0.2538,
+          "commercial_score": 0.43,
+          "summary": "Classified as informational intent in the decision phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "decision"
+      ]
+    }
+  },
+  {
+    "input": "Start my free trial",
+    "why_it_matters": "Action-stage transactional example.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "transactional",
+          "decision_phase": "action",
+          "confidence": 0.1778,
+          "commercial_score": 0.97,
+          "summary": "Classified as transactional intent in the action phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "action"
+      ]
+    }
+  },
+  {
+    "input": "I cannot log into my account",
+    "why_it_matters": "Support-like case that should fail safe and block monetization.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "personal_reflection",
+          "decision_phase": "support",
+          "confidence": 0.2429,
+          "commercial_score": 0.0,
+          "summary": "Classified as personal_reflection intent in the support phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "personal_reflection",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "policy_default"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "policy_default",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "high",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "support"
+      ]
+    }
+  }
+]

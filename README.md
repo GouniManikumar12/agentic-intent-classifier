@@ -35,8 +35,10 @@ Generated model weights are intentionally not committed. Train the models locall
 - [training/train.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train.py): `intent_type` training
 - [training/train_decision_phase.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train_decision_phase.py): `decision_phase` training
 - [examples/demo_prompt_suite.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/demo_prompt_suite.json): fixed benchmark/demo prompts with current outputs
+- [examples/canonical_demo_examples.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/canonical_demo_examples.json): five concise showcase examples for demos and partner walkthroughs
 - [examples/composed_output_examples.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/composed_output_examples.md): short walkthrough examples
 - [known_limitations.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/known_limitations.md): current gaps and caveats
+- [roadmap_issue_drafts.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/roadmap_issue_drafts.md): issue drafts for the next productization stage
 
 ## How To Run
 
