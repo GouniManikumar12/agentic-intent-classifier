@@ -1,83 +1,118 @@
-# Agentic Intent Classifier v0.6 Phase 4
+# Agentic Intent Classifier
 
-This repo now contains the v0.1 modeling baseline, the Phase 1 systemization layer, the Phase 2 subtype expansion, and a Phase 4 full-taxonomy IAB content layer.
+`agentic-intent-classifier` is a multi-head query classification stack for conversational traffic.
 
-It classifies conversational queries into:
+It currently produces:
 
 - `intent.type`
 - `intent.subtype`
 - `intent.decision_phase`
 - `iab_content`
-- `confidence`
-- `commercial_score`
-- fallback / policy / opportunity decisions
+- calibrated confidence per head
+- combined fallback / policy / opportunity decisions
 
-Phase 4 adds:
+The repo is beyond the original v0.1 baseline. It now includes:
 
-- taxonomy-backed IAB content mapping using every row from the local IAB TSV in `data/iab-content`
-- a supervised `iab_content` classifier head trained on a deterministic full-taxonomy dataset
-- classifier-first IAB routing with rule fallback when `iab_content` confidence is too low
-- stable tier objects with ids, labels, mapping mode, and mapping confidence through tier4
-- curated IAB mapping regression cases
-- schema-safe IAB output inside the combined envelope
+- shared config and label ownership
+- reusable model runtime
+- calibrated confidence and threshold gating
+- combined inference with fallback/policy logic
+- request/response validation in the demo API
+- repeatable evaluation and regression suites
+- full-TSV IAB taxonomy support through tier4
+- a separate synthetic full-intent-taxonomy augmentation dataset for non-IAB heads
 
-Generated model weights are intentionally not committed. Train the models locally before running inference or the demo API.
+Generated model weights are intentionally not committed.
 
-## What It Does
+## Current Taxonomy
 
-- predicts `intent.type` with the frozen `intent_type v0.1` classifier
-- predicts `intent.subtype` with the new Phase 2 subtype classifier
-- predicts `decision_phase` with the frozen `decision_phase v0.1` classifier
-- predicts `iab_content` with a taxonomy-backed classifier head and falls back to rules when confidence is low
-- calibrates confidence if calibration artifacts exist
-- composes both signals into a schema-aligned decision envelope
-- applies a rule-based system layer for fallback, monetization eligibility, and opportunity strength
+### `intent.type`
 
-## What It Does Not Do
+- `informational`
+- `exploratory`
+- `commercial`
+- `transactional`
+- `support`
+- `personal_reflection`
+- `creative_generation`
+- `chit_chat`
+- `ambiguous`
+- `prohibited`
 
-- it does not perform robust multi-turn context tracking
-- subtype quality is still materially weaker than `intent_type`
-- the IAB classifier now covers the full taxonomy but is still trained on synthetic taxonomy-backed prompts rather than fully human-labeled real traffic
-- combined scoring is still heuristic even though it is stronger than earlier phases
-- it does not replace policy review for sensitive or regulated categories
+### `intent.decision_phase`
+
+- `awareness`
+- `research`
+- `consideration`
+- `decision`
+- `action`
+- `post_purchase`
+- `support`
+
+### `intent.subtype`
+
+- `education`
+- `product_discovery`
+- `comparison`
+- `evaluation`
+- `deal_seeking`
+- `provider_selection`
+- `signup`
+- `purchase`
+- `booking`
+- `download`
+- `contact_sales`
+- `task_execution`
+- `onboarding_setup`
+- `troubleshooting`
+- `account_help`
+- `billing_help`
+- `follow_up`
+- `emotional_reflection`
+
+### `iab_content`
+
+- full label space is derived from every row in [data/iab-content/Content Taxonomy 3.0.tsv](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab-content/Content%20Taxonomy%203.0.tsv)
+- output supports `tier1`, `tier2`, `tier3`, and optional `tier4`
+
+## What The System Does
+
+- runs four classifier heads:
+  - `intent_type`
+  - `intent_subtype`
+  - `decision_phase`
+  - `iab_content`
+- applies calibration artifacts when present
+- computes `commercial_score`
+- applies fallback when confidence is too weak or policy-safe blocking is required
+- emits a schema-validated combined envelope
+
+## What The System Does Not Do
+
+- it is not a multi-turn memory system
+- it is not a production-optimized low-latency serving path
+- it is not yet trained on large real-traffic human-labeled intent data
+- combined decision logic is still heuristic, even though it is materially stronger than the original baseline
 
 ## Project Layout
 
-- [config.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/config.py): central labels, model paths, thresholds, and artifact locations
-- [schemas.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/schemas.py): request/response schemas and validation rules
-- [model_runtime.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/model_runtime.py): reusable model loading and calibrated inference
-- [combined_inference.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/combined_inference.py): combines both model heads into one envelope
-- [iab_taxonomy.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_taxonomy.py): parses and indexes the local IAB taxonomy TSV
-- [iab_mapping.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_mapping.py): taxonomy-driven IAB rule fallback
-- [demo_api.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/demo_api.py): local HTTP endpoint with validated requests and responses
-- [inference.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference.py): `intent_type` inference wrapper
-- [inference_subtype.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_subtype.py): `intent_subtype` inference wrapper
-- [inference_decision_phase.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_decision_phase.py): `decision_phase` inference wrapper
-- [inference_iab_content.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_iab_content.py): `iab_content` inference wrapper
-- [training/train.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train.py): `intent_type` training
-- [training/build_subtype_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_dataset.py): deterministic subtype dataset generation from existing corpora
-- [training/train_subtype.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train_subtype.py): `intent_subtype` training
-- [training/train_decision_phase.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train_decision_phase.py): `decision_phase` training
-- [training/build_iab_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_iab_dataset.py): full-TSV `iab_content` dataset generation
-- [training/train_iab_content.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train_iab_content.py): configurable `iab_content` training
-- [training/run_iab_full_pipeline.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/run_iab_full_pipeline.py): one-command IAB build/train/calibrate/eval pipeline
-- [training/run_full_training_pipeline.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/run_full_training_pipeline.py): one-command all-head build/train/calibrate/eval pipeline
-- [training/calibrate_confidence.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/calibrate_confidence.py): fits temperature scaling and confidence thresholds
-- [evaluation/run_evaluation.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_evaluation.py): writes repeatable metrics and confusion matrices
-- [evaluation/run_regression_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_regression_suite.py): executes structured known-failure checks
-- [evaluation/run_iab_mapping_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_mapping_suite.py): executes curated IAB mapping checks
-- [evaluation/sweep_iab_threshold.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/sweep_iab_threshold.py): sweeps `iab_content` classifier thresholds against curated cases
-- [examples/demo_prompt_suite.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/demo_prompt_suite.json): fixed benchmark/demo prompts with current outputs
-- [examples/known_failure_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/known_failure_cases.json): structured must-fix vs acceptable-weakness regression cases
-- [examples/iab_mapping_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json): curated IAB mapping regression cases
-- [examples/canonical_demo_examples.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/canonical_demo_examples.json): concise showcase examples for demos and partner walkthroughs
-- [examples/composed_output_examples.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/composed_output_examples.md): short walkthrough examples
+- [config.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/config.py): labels, thresholds, artifact paths, model paths
+- [model_runtime.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/model_runtime.py): shared calibrated inference runtime
+- [combined_inference.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/combined_inference.py): composed system response
+- [schemas.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/schemas.py): request/response validation
+- [demo_api.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/demo_api.py): local validated API
+- [iab_taxonomy.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_taxonomy.py): full taxonomy parser/index
+- [iab_mapping.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_mapping.py): taxonomy-backed fallback mapper
+- [training/build_full_intent_taxonomy_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_full_intent_taxonomy_dataset.py): separate synthetic intent augmentation dataset
+- [training/build_subtype_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_dataset.py): subtype dataset generation from existing corpora
+- [training/build_iab_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_iab_dataset.py): full-TSV IAB dataset generation
+- [training/run_full_training_pipeline.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/run_full_training_pipeline.py): full multi-head training/calibration/eval pipeline
+- [evaluation/run_evaluation.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_evaluation.py): repeatable benchmark runner
+- [evaluation/run_regression_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_regression_suite.py): known-failure regression runner
+- [evaluation/run_iab_mapping_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_mapping_suite.py): IAB regression runner
 - [known_limitations.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/known_limitations.md): current gaps and caveats
-- [roadmap_issue_drafts.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/roadmap_issue_drafts.md): issue drafts for the next productization stage
 
-## How To Run
-
-Create and activate the local environment if needed:
+## Setup
 
 ```bash
 python3 -m venv .venv
@@ -85,23 +120,23 @@ source .venv/bin/activate
 pip install -r agentic-intent-classifier/requirements.txt
 ```
 
-Run the combined classifier on a single query:
+## Inference
+
+Run one query locally:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python combined_inference.py "Which CRM should I buy for a 3-person startup?"
+python3 combined_inference.py "Which CRM should I buy for a 3-person startup?"
 ```
 
-If you have not trained the models yet, run the training commands below first.
-
-Run the local demo API:
+Run the demo API:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python demo_api.py
+python3 demo_api.py
 ```
 
-Then call it:
+Example request:
 
 ```bash
 curl -sS -X POST http://127.0.0.1:8008/classify \
@@ -118,136 +153,192 @@ curl -sS http://127.0.0.1:8008/version
 
 ## Training
 
-Retrain `intent_type`:
+### Full local pipeline
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/train.py
+python3 training/run_full_training_pipeline.py \
+  --iab-epochs 2 \
+  --iab-train-batch-size 16 \
+  --iab-eval-batch-size 16
 ```
 
-Build the subtype dataset and train `intent_subtype`:
+This pipeline now does:
+
+1. build separate full-intent-taxonomy augmentation data
+2. train `intent_type`
+3. build subtype corpus
+4. train `intent_subtype`
+5. train `decision_phase`
+6. build full-TSV IAB data
+7. train `iab_content`
+8. calibrate all heads
+9. run regression/evaluation unless `--skip-full-eval` is used
+
+### Build datasets individually
+
+Separate full-intent augmentation:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/build_subtype_dataset.py
-../.venv/bin/python training/train_subtype.py
+python3 training/build_full_intent_taxonomy_dataset.py
 ```
 
-Retrain `decision_phase`:
+Subtype dataset:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/train_decision_phase.py
+python3 training/build_subtype_dataset.py
 ```
 
-Build the separate full-intent-taxonomy augmentation dataset used by `intent_type`, `intent_subtype`, and `decision_phase` training:
+IAB dataset:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/build_full_intent_taxonomy_dataset.py
+python3 training/build_iab_dataset.py
 ```
 
-Build the IAB dataset and train `iab_content`:
+### Train heads individually
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/build_iab_dataset.py
-../.venv/bin/python training/train_iab_content.py
+python3 training/train.py
+python3 training/train_subtype.py
+python3 training/train_decision_phase.py
+python3 training/train_iab_content.py
 ```
 
-Run the full IAB pipeline in one command:
+### Calibration
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/run_iab_full_pipeline.py
+python3 training/calibrate_confidence.py --head all
 ```
 
-For Google Colab or another GPU host, use larger batch sizes:
+## Evaluation
+
+Full evaluation:
 
 ```bash
 cd agentic-intent-classifier
-python training/run_iab_full_pipeline.py \
-  --epochs 2 \
-  --train-batch-size 32 \
-  --eval-batch-size 32
+python3 evaluation/run_evaluation.py
 ```
 
-Run the full stack in one command:
+Known-failure regression:
 
 ```bash
 cd agentic-intent-classifier
-../.venv/bin/python training/run_full_training_pipeline.py
+python3 evaluation/run_regression_suite.py
 ```
 
-For Google Colab or another GPU host:
+IAB regression:
 
 ```bash
 cd agentic-intent-classifier
-python training/run_full_training_pipeline.py \
+python3 evaluation/run_iab_mapping_suite.py
+```
+
+Threshold sweeps:
+
+```bash
+cd agentic-intent-classifier
+python3 evaluation/sweep_intent_threshold.py
+python3 evaluation/sweep_iab_threshold.py
+```
+
+Artifacts are written to:
+
+- `artifacts/calibration/`
+- `artifacts/evaluation/latest/`
+
+## Google Colab
+
+Use Colab for the full retraining pass if local memory is limited.
+
+Clone once:
+
+```bash
+%cd /content
+!git clone https://github.com/GouniManikumar12/agentic-intent-classifier.git
+%cd /content/agentic-intent-classifier
+```
+
+If the repo is already cloned and you want the latest code, pull manually:
+
+```bash
+!git pull origin main
+```
+
+Full pipeline:
+
+```bash
+!python training/run_full_training_pipeline.py \
   --iab-epochs 2 \
   --iab-train-batch-size 32 \
   --iab-eval-batch-size 32
 ```
 
-Calibrate confidence after training:
+If full evaluation is too heavy for the current Colab runtime:
 
 ```bash
-cd agentic-intent-classifier
-../.venv/bin/python training/calibrate_confidence.py --head all
+!python training/run_full_training_pipeline.py \
+  --iab-epochs 2 \
+  --iab-train-batch-size 32 \
+  --iab-eval-batch-size 32 \
+  --skip-full-eval
 ```
 
-Run the repeatable evaluation suite:
+Then run eval separately after training:
 
 ```bash
-cd agentic-intent-classifier
-../.venv/bin/python evaluation/run_evaluation.py
+!python evaluation/run_regression_suite.py
+!python evaluation/run_iab_mapping_suite.py
+!python evaluation/run_evaluation.py
 ```
 
-Run the structured known-failure regression suite on its own:
+## Current Known Baseline Benchmarks
 
-```bash
-cd agentic-intent-classifier
-../.venv/bin/python evaluation/run_regression_suite.py
-```
+The latest saved local evaluation artifact is [artifacts/evaluation/latest/summary.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/summary.json).
 
-Run the IAB mapping regression suite:
+Latest saved baseline:
 
-```bash
-cd agentic-intent-classifier
-../.venv/bin/python evaluation/run_iab_mapping_suite.py
-```
+- `intent_type` test accuracy: `0.9000`
+- `decision_phase` test accuracy: `0.6897`
+- `intent_subtype` test accuracy: `0.6212`
+- `iab_content` test accuracy: `0.9583`
+- combined demo fallback rate: `0.5333`
+- known-failure regression: `8/9`
+- must-fix regression: `6/6`
+- IAB mapping regression: `9/9`
 
-Sweep `intent_type` fallback thresholds:
+These are last-known saved metrics, not a guarantee for any newer unretrained code or weights.
 
-```bash
-cd agentic-intent-classifier
-../.venv/bin/python evaluation/sweep_intent_threshold.py
-```
+## Latency Note
 
-Sweep `iab_content` promotion thresholds:
+`combined_inference.py` is a debugging/offline path, not a production latency path.
 
-```bash
-cd agentic-intent-classifier
-../.venv/bin/python evaluation/sweep_iab_threshold.py
-```
+Current production truth:
 
-Artifacts are written into:
-
-- `artifacts/calibration/*.json`
-- `artifacts/evaluation/latest/`
-- `artifacts/evaluation/intent_threshold_sweep.json`
-- `artifacts/evaluation/latest/iab_threshold_sweep.json`
-- `artifacts/evaluation/latest/known_failure_regression.json`
-- `artifacts/evaluation/latest/iab_mapping_regression.json`
+- per-request CLI execution is not a sub-50ms architecture
+- production serving should use a long-lived API process with preloaded models
+- if sub-50ms becomes a hard requirement, the serving path will need:
+  - persistent loaded models
+  - runtime optimization
+  - likely fewer model passes or a shared multi-head model
 
 ## Current Status
 
-Current modeling state:
+Current repo status:
 
-- `intent_type v0.1`
-- `decision_phase v0.1`
-- `intent_subtype v0.1`
-- hybrid `iab_content` classifier + rule fallback v0.1
+- full 10-class `intent.type` taxonomy is wired
+- subtype and phase heads are present
+- full-TSV IAB taxonomy is wired through tier4
+- separate full-intent augmentation dataset is in place
+- evaluation/runtime memory handling is improved for large IAB splits
 
-The current focus after this Phase 4 slice is replacing synthetic IAB supervision with real labeled prompt-to-taxonomy examples and expanding calibration quality beyond the current synthetic prompt distribution.
-# agentic-intent-classifier
+The main remaining gap is not basic infrastructure anymore. It is improving real-world robustness, especially for:
+
+- `decision_phase`
+- `intent_subtype`
+- confidence quality on borderline commercial queries
+- real-traffic supervision beyond synthetic data
