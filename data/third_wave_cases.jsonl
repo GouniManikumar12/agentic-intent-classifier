@@ -1,0 +1,20 @@
+{"text":"go deeper","intent_type":"ambiguous"}
+{"text":"say more about that","intent_type":"ambiguous"}
+{"text":"what do you mean by that","intent_type":"ambiguous"}
+{"text":"expand on that a little","intent_type":"ambiguous"}
+{"text":"why do you say that","intent_type":"ambiguous"}
+{"text":"show less expensive ones","intent_type":"ambiguous"}
+{"text":"give me cheaper choices","intent_type":"ambiguous"}
+{"text":"what costs less","intent_type":"ambiguous"}
+{"text":"which one is cheaper","intent_type":"ambiguous"}
+{"text":"more affordable ones","intent_type":"ambiguous"}
+{"text":"show cheaper CRM options","intent_type":"commercial"}
+{"text":"more affordable CRM alternatives","intent_type":"commercial"}
+{"text":"compare lower-cost CRM tools","intent_type":"commercial"}
+{"text":"which CRM is cheaper for a startup","intent_type":"commercial"}
+{"text":"what costs less HubSpot or Zoho","intent_type":"commercial"}
+{"text":"show lower-cost analytics platforms","intent_type":"commercial"}
+{"text":"compare affordable help desk software","intent_type":"commercial"}
+{"text":"cheaper alternatives to Salesforce","intent_type":"commercial"}
+{"text":"which email platform is cheaper for a small business","intent_type":"commercial"}
+{"text":"find lower-cost project management tools","intent_type":"commercial"}

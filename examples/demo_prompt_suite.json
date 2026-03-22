@@ -1,0 +1,617 @@
+[
+  {
+    "input": "What is CRM software?",
+    "expected_behavior": "Should read as informational awareness and fail safe via fallback because confidence is still low.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "awareness",
+          "confidence": 0.345,
+          "commercial_score": 0.13,
+          "summary": "Classified as informational intent in the awareness phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "awareness"
+      ]
+    }
+  },
+  {
+    "input": "Help me understand CRM basics",
+    "expected_behavior": "Should lean informational research and still fall back conservatively.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "research",
+          "confidence": 0.233,
+          "commercial_score": 0.23,
+          "summary": "Classified as informational intent in the research phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "research"
+      ]
+    }
+  },
+  {
+    "input": "Best CRM for small teams",
+    "expected_behavior": "Should behave like a commercial comparison or selection query, but v0.1 still falls back because confidence is low.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "commercial",
+          "decision_phase": "consideration",
+          "confidence": 0.197,
+          "commercial_score": 0.73,
+          "summary": "Classified as commercial intent in the consideration phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "consideration"
+      ]
+    }
+  },
+  {
+    "input": "HubSpot vs Zoho for a small team",
+    "expected_behavior": "Should read as a commercial comparison in consideration and remain conservative if confidence stays low.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "commercial",
+          "decision_phase": "consideration",
+          "confidence": 0.2854,
+          "commercial_score": 0.73,
+          "summary": "Classified as commercial intent in the consideration phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "consideration"
+      ]
+    }
+  },
+  {
+    "input": "Which CRM should I buy for a 3-person startup?",
+    "expected_behavior": "Should preserve a decision-stage buying signal even if the intent-type head still undercalls it.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "decision",
+          "confidence": 0.2538,
+          "commercial_score": 0.43,
+          "summary": "Classified as informational intent in the decision phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "decision"
+      ]
+    }
+  },
+  {
+    "input": "Start my free trial",
+    "expected_behavior": "Should read as an action-stage transactional query and fail safe because confidence is low.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "transactional",
+          "decision_phase": "action",
+          "confidence": 0.1778,
+          "commercial_score": 0.97,
+          "summary": "Classified as transactional intent in the action phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "action"
+      ]
+    }
+  },
+  {
+    "input": "Book a table for 2 tonight",
+    "expected_behavior": "Should preserve generic action-stage transactional behavior outside SaaS language.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "transactional",
+          "decision_phase": "action",
+          "confidence": 0.1656,
+          "commercial_score": 0.97,
+          "summary": "Classified as transactional intent in the action phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "action"
+      ]
+    }
+  },
+  {
+    "input": "How do I set up my new CRM?",
+    "expected_behavior": "Should preserve a post-purchase lifecycle signal and remain restricted under low confidence.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "post_purchase",
+          "confidence": 0.2076,
+          "commercial_score": 0.15,
+          "summary": "Classified as informational intent in the post_purchase phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "post_purchase"
+      ]
+    }
+  },
+  {
+    "input": "I cannot log into my account",
+    "expected_behavior": "Should fail safe on a support-like query and keep monetization blocked.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "personal_reflection",
+          "decision_phase": "support",
+          "confidence": 0.2429,
+          "commercial_score": 0.0,
+          "summary": "Classified as personal_reflection intent in the support phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "personal_reflection",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "policy_default"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "policy_default",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "high",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "support"
+      ]
+    }
+  },
+  {
+    "input": "I feel depressed and need help",
+    "expected_behavior": "Should trigger a sensitive fallback path and block monetization.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "personal_reflection",
+          "decision_phase": "support",
+          "confidence": 0.1875,
+          "commercial_score": 0.0,
+          "summary": "Classified as personal_reflection intent in the support phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "personal_reflection",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "policy_default"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "policy_default",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "high",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "support"
+      ]
+    }
+  },
+  {
+    "input": "Tell me more",
+    "expected_behavior": "Should be treated as ambiguous and fall back safely.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "ambiguous",
+          "decision_phase": "action",
+          "confidence": 0.1606,
+          "commercial_score": 0.46,
+          "summary": "Classified as ambiguous intent in the action phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "ambiguous_query"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "ambiguous_query",
+        "decision_basis": "fallback_ambiguous_intent",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "action"
+      ]
+    }
+  },
+  {
+    "input": "What about pricing",
+    "expected_behavior": "Should currently fall back because the prompt is short and context-dependent.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "awareness",
+          "confidence": 0.178,
+          "commercial_score": 0.13,
+          "summary": "Classified as informational intent in the awareness phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "awareness"
+      ]
+    }
+  },
+  {
+    "input": "Sign me up for the newsletter",
+    "expected_behavior": "Should preserve transactional intent even though the phase is still noisy and fallback remains active.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "transactional",
+          "decision_phase": "research",
+          "confidence": 0.1626,
+          "commercial_score": 0.71,
+          "summary": "Classified as transactional intent in the research phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "research"
+      ]
+    }
+  },
+  {
+    "input": "Compare AI search monetization platforms for publishers",
+    "expected_behavior": "Should behave like a commercial comparison in the middle of the buying journey and still fail safe if confidence is low.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "commercial",
+          "decision_phase": "consideration",
+          "confidence": 0.274,
+          "commercial_score": 0.73,
+          "summary": "Classified as commercial intent in the consideration phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "consideration"
+      ]
+    }
+  },
+  {
+    "input": "Why do businesses use CRM systems?",
+    "expected_behavior": "Should stay in informational awareness and remain non-monetized under low confidence.",
+    "model_output": {
+      "classification": {
+        "intent": {
+          "type": "informational",
+          "decision_phase": "awareness",
+          "confidence": 0.3167,
+          "commercial_score": 0.13,
+          "summary": "Classified as informational intent in the awareness phase."
+        }
+      },
+      "fallback": {
+        "applied": true,
+        "fallback_intent_type": "ambiguous",
+        "fallback_monetization_eligibility": "not_allowed",
+        "reason": "confidence_below_threshold"
+      }
+    },
+    "system_decision": {
+      "policy": {
+        "monetization_eligibility": "not_allowed",
+        "eligibility_reason": "confidence_below_threshold",
+        "decision_basis": "fallback_low_confidence",
+        "applied_thresholds": {
+          "commercial_score_min": 0.6,
+          "confidence_min": 0.45
+        },
+        "sensitivity": "medium",
+        "regulated_vertical": false
+      },
+      "opportunity": {
+        "type": "none",
+        "strength": "low"
+      },
+      "intent_trajectory": [
+        "awareness"
+      ]
+    }
+  }
+]

@@ -1,0 +1,7 @@
+torch
+transformers
+datasets
+evaluate
+accelerate
+scikit-learn>=1.5,<2.0
+pandas

@@ -1,0 +1,144 @@
+{"text":"What is CRM software?","intent_type":"informational"}
+{"text":"How does customer relationship management work?","intent_type":"informational"}
+{"text":"What does lead scoring mean in sales software?","intent_type":"informational"}
+{"text":"Explain the difference between a CRM and a CDP","intent_type":"informational"}
+{"text":"How do email automation workflows work?","intent_type":"informational"}
+{"text":"What is a sales pipeline?","intent_type":"informational"}
+{"text":"How does attribution modeling work in marketing?","intent_type":"informational"}
+{"text":"What is the purpose of a product analytics dashboard?","intent_type":"informational"}
+{"text":"How do I measure activation rate for a SaaS product?","intent_type":"informational"}
+{"text":"What is the difference between MQL and SQL?","intent_type":"informational"}
+{"text":"How do AI search engines choose which sources to cite?","intent_type":"informational"}
+{"text":"What does zero click search mean?","intent_type":"informational"}
+{"text":"What is intent classification in NLP?","intent_type":"informational"}
+{"text":"How does a text classifier learn labels?","intent_type":"informational"}
+{"text":"What is fine tuning in transformers?","intent_type":"informational"}
+{"text":"How does DistilBERT differ from BERT?","intent_type":"informational"}
+{"text":"What is macro F1 score?","intent_type":"informational"}
+{"text":"Why do we split data into train and test sets?","intent_type":"informational"}
+{"text":"How does softmax turn logits into probabilities?","intent_type":"informational"}
+{"text":"What is tokenization in NLP?","intent_type":"informational"}
+{"text":"Best CRM for a small remote sales team","intent_type":"commercial"}
+{"text":"Top marketing automation tools for startups","intent_type":"commercial"}
+{"text":"HubSpot vs Salesforce for B2B SaaS","intent_type":"commercial"}
+{"text":"Mailchimp alternatives for ecommerce brands","intent_type":"commercial"}
+{"text":"Best analytics platform for product teams","intent_type":"commercial"}
+{"text":"Affordable customer support software for startups","intent_type":"commercial"}
+{"text":"Intercom vs Zendesk for onboarding support","intent_type":"commercial"}
+{"text":"Best AI SEO tools for content teams","intent_type":"commercial"}
+{"text":"Compare Mixpanel and Amplitude pricing","intent_type":"commercial"}
+{"text":"Best project management software for agencies","intent_type":"commercial"}
+{"text":"Which survey tool is better for user research","intent_type":"commercial"}
+{"text":"Best lead generation software for B2B companies","intent_type":"commercial"}
+{"text":"Best intent classification model for short queries","intent_type":"commercial"}
+{"text":"Best NLP library for text classification","intent_type":"commercial"}
+{"text":"DistilBERT vs RoBERTa for intent detection","intent_type":"commercial"}
+{"text":"Best dataset labeling tool for ML teams","intent_type":"commercial"}
+{"text":"Affordable annotation platform for small ML teams","intent_type":"commercial"}
+{"text":"Best transformer model for lightweight inference","intent_type":"commercial"}
+{"text":"Hugging Face vs spaCy for intent classification","intent_type":"commercial"}
+{"text":"Top tools for evaluating text classifiers","intent_type":"commercial"}
+{"text":"Start a free trial of HubSpot","intent_type":"transactional"}
+{"text":"Book a demo for the analytics platform","intent_type":"transactional"}
+{"text":"Download the customer onboarding checklist","intent_type":"transactional"}
+{"text":"Create an account for the AI search tool","intent_type":"transactional"}
+{"text":"Install the Chrome extension for content analysis","intent_type":"transactional"}
+{"text":"Subscribe to the pro plan","intent_type":"transactional"}
+{"text":"Request pricing from the sales team","intent_type":"transactional"}
+{"text":"Sign up for the webinar on attribution","intent_type":"transactional"}
+{"text":"Buy a monthly plan for the CRM","intent_type":"transactional"}
+{"text":"Contact sales to schedule a product walkthrough","intent_type":"transactional"}
+{"text":"Download the whitepaper on zero click search","intent_type":"transactional"}
+{"text":"Join the waitlist for the new recommendation engine","intent_type":"transactional"}
+{"text":"Upload the training dataset","intent_type":"transactional"}
+{"text":"Run the model training job","intent_type":"transactional"}
+{"text":"Download the confusion matrix report","intent_type":"transactional"}
+{"text":"Save the fine tuned model","intent_type":"transactional"}
+{"text":"Export the predictions to CSV","intent_type":"transactional"}
+{"text":"Create a new labeling project","intent_type":"transactional"}
+{"text":"Annotate these support tickets","intent_type":"transactional"}
+{"text":"Deploy the classifier API","intent_type":"transactional"}
+{"text":"I am frustrated because our leads keep dropping","intent_type":"personal_reflection"}
+{"text":"I feel overwhelmed trying to pick the right software","intent_type":"personal_reflection"}
+{"text":"I regret switching our CRM last quarter","intent_type":"personal_reflection"}
+{"text":"I am worried that our traffic is disappearing","intent_type":"personal_reflection"}
+{"text":"I feel stuck and do not know how to improve conversions","intent_type":"personal_reflection"}
+{"text":"I am excited that our new onboarding flow is working","intent_type":"personal_reflection"}
+{"text":"I feel burned out managing too many marketing tools","intent_type":"personal_reflection"}
+{"text":"I am confused about what strategy we should follow","intent_type":"personal_reflection"}
+{"text":"I hate how complicated our analytics setup has become","intent_type":"personal_reflection"}
+{"text":"I am nervous about launching our pricing changes","intent_type":"personal_reflection"}
+{"text":"I feel depressed and need help","intent_type":"personal_reflection"}
+{"text":"I am disappointed that our content is not getting cited","intent_type":"personal_reflection"}
+{"text":"I am not confident this classifier is ready","intent_type":"personal_reflection"}
+{"text":"I feel like the labels are still messy","intent_type":"personal_reflection"}
+{"text":"I am worried the model is overfitting","intent_type":"personal_reflection"}
+{"text":"I am frustrated by the low confidence scores","intent_type":"personal_reflection"}
+{"text":"I feel unsure about how to label borderline cases","intent_type":"personal_reflection"}
+{"text":"I am relieved the model is finally learning something","intent_type":"personal_reflection"}
+{"text":"I am annoyed that short queries confuse the classifier","intent_type":"personal_reflection"}
+{"text":"I am worried we do not have enough data yet","intent_type":"personal_reflection"}
+{"text":"Tell me more","intent_type":"ambiguous"}
+{"text":"What about this one","intent_type":"ambiguous"}
+{"text":"Show me options","intent_type":"ambiguous"}
+{"text":"Can you help","intent_type":"ambiguous"}
+{"text":"I need something better","intent_type":"ambiguous"}
+{"text":"What do you recommend","intent_type":"ambiguous"}
+{"text":"This is not working","intent_type":"ambiguous"}
+{"text":"How should I fix it","intent_type":"ambiguous"}
+{"text":"Give me the best one","intent_type":"ambiguous"}
+{"text":"Is this good","intent_type":"ambiguous"}
+{"text":"Can you explain","intent_type":"ambiguous"}
+{"text":"What should I do next","intent_type":"ambiguous"}
+{"text":"go on","intent_type":"ambiguous"}
+{"text":"what do you mean","intent_type":"ambiguous"}
+{"text":"show me more","intent_type":"ambiguous"}
+{"text":"can you explain that","intent_type":"ambiguous"}
+{"text":"which one","intent_type":"ambiguous"}
+{"text":"why","intent_type":"ambiguous"}
+{"text":"okay and then","intent_type":"ambiguous"}
+{"text":"and then what","intent_type":"ambiguous"}
+{"text":"teach me the basics of customer relationship management","intent_type":"informational"}
+{"text":"walk me through what a CRM does","intent_type":"informational"}
+{"text":"help me learn the difference between CRM and ERP","intent_type":"informational"}
+{"text":"show me how CRM software works","intent_type":"informational"}
+{"text":"explain the basics of lead scoring","intent_type":"informational"}
+{"text":"help me understand sales pipelines","intent_type":"informational"}
+{"text":"what does a CRM actually do","intent_type":"informational"}
+{"text":"give me a beginner explanation of CRM","intent_type":"informational"}
+{"text":"how do CRMs help sales teams","intent_type":"informational"}
+{"text":"what are the main features of a CRM","intent_type":"informational"}
+{"text":"help me understand why businesses need CRM","intent_type":"informational"}
+{"text":"why do teams use CRM software","intent_type":"informational"}
+{"text":"what problems does a CRM solve","intent_type":"informational"}
+{"text":"explain the benefits of CRM for beginners","intent_type":"informational"}
+{"text":"how does CRM help with lead tracking","intent_type":"informational"}
+{"text":"what is a CRM used for in a small business","intent_type":"informational"}
+{"text":"reserve a seat for tomorrow","intent_type":"transactional"}
+{"text":"register me for the webinar","intent_type":"transactional"}
+{"text":"buy this now","intent_type":"transactional"}
+{"text":"place the order","intent_type":"transactional"}
+{"text":"start my free trial","intent_type":"transactional"}
+{"text":"subscribe me to updates","intent_type":"transactional"}
+{"text":"tell me a bit more","intent_type":"ambiguous"}
+{"text":"show me a little more","intent_type":"ambiguous"}
+{"text":"which one do you mean","intent_type":"ambiguous"}
+{"text":"why though","intent_type":"ambiguous"}
+{"text":"how so exactly","intent_type":"ambiguous"}
+{"text":"compare those","intent_type":"ambiguous"}
+{"text":"best CRM for a two person agency","intent_type":"commercial"}
+{"text":"compare Pipedrive and HubSpot for a tiny sales team","intent_type":"commercial"}
+{"text":"cheapest CRM for a local service business","intent_type":"commercial"}
+{"text":"what CRM should I use for lead tracking","intent_type":"commercial"}
+{"text":"help me pick a CRM for managing inbound leads","intent_type":"commercial"}
+{"text":"help me choose a CRM for a real estate business","intent_type":"commercial"}
+{"text":"go deeper","intent_type":"ambiguous"}
+{"text":"say more about that","intent_type":"ambiguous"}
+{"text":"expand on that a little","intent_type":"ambiguous"}
+{"text":"why do you say that","intent_type":"ambiguous"}
+{"text":"give me cheaper choices","intent_type":"ambiguous"}
+{"text":"show cheaper CRM options","intent_type":"commercial"}
+{"text":"more affordable CRM alternatives","intent_type":"commercial"}
+{"text":"compare lower-cost CRM tools","intent_type":"commercial"}
+{"text":"which CRM is cheaper for a startup","intent_type":"commercial"}
+{"text":"find lower-cost project management tools","intent_type":"commercial"}

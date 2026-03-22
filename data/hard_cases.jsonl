@@ -1,0 +1,50 @@
+{"text":"help me understand CRM basics","intent_type":"informational"}
+{"text":"explain how CRM works","intent_type":"informational"}
+{"text":"teach me the basics of customer relationship management","intent_type":"informational"}
+{"text":"walk me through what a CRM does","intent_type":"informational"}
+{"text":"help me learn the difference between CRM and ERP","intent_type":"informational"}
+{"text":"show me how CRM software works","intent_type":"informational"}
+{"text":"explain the basics of lead scoring","intent_type":"informational"}
+{"text":"help me understand sales pipelines","intent_type":"informational"}
+{"text":"what does a CRM actually do","intent_type":"informational"}
+{"text":"give me a beginner explanation of CRM","intent_type":"informational"}
+{"text":"book a table for 2 tonight","intent_type":"transactional"}
+{"text":"sign me up for the newsletter","intent_type":"transactional"}
+{"text":"reserve a seat for tomorrow","intent_type":"transactional"}
+{"text":"book an appointment for Friday","intent_type":"transactional"}
+{"text":"schedule a demo for next week","intent_type":"transactional"}
+{"text":"register me for the webinar","intent_type":"transactional"}
+{"text":"buy this now","intent_type":"transactional"}
+{"text":"place the order","intent_type":"transactional"}
+{"text":"start my free trial","intent_type":"transactional"}
+{"text":"subscribe me to updates","intent_type":"transactional"}
+{"text":"go on then","intent_type":"ambiguous"}
+{"text":"tell me a bit more","intent_type":"ambiguous"}
+{"text":"what exactly do you mean","intent_type":"ambiguous"}
+{"text":"show me a little more","intent_type":"ambiguous"}
+{"text":"which one do you mean","intent_type":"ambiguous"}
+{"text":"why though","intent_type":"ambiguous"}
+{"text":"how so exactly","intent_type":"ambiguous"}
+{"text":"can you expand on that","intent_type":"ambiguous"}
+{"text":"what about the pricing","intent_type":"ambiguous"}
+{"text":"compare those","intent_type":"ambiguous"}
+{"text":"best CRM for nonprofits","intent_type":"commercial"}
+{"text":"which CRM is better for a 3-person startup","intent_type":"commercial"}
+{"text":"compare HubSpot and Zoho for small teams","intent_type":"commercial"}
+{"text":"help me choose a CRM for a real estate business","intent_type":"commercial"}
+{"text":"what CRM should I use for lead tracking","intent_type":"commercial"}
+{"text":"best CRM for a two person agency","intent_type":"commercial"}
+{"text":"compare Pipedrive and HubSpot for a tiny sales team","intent_type":"commercial"}
+{"text":"cheapest CRM for a local service business","intent_type":"commercial"}
+{"text":"which CRM should a solo founder pick","intent_type":"commercial"}
+{"text":"help me pick a CRM for managing inbound leads","intent_type":"commercial"}
+{"text":"what is the purpose of a CRM","intent_type":"informational"}
+{"text":"explain why companies use CRM systems","intent_type":"informational"}
+{"text":"how do CRMs help sales teams","intent_type":"informational"}
+{"text":"what are the main features of a CRM","intent_type":"informational"}
+{"text":"help me understand why businesses need CRM","intent_type":"informational"}
+{"text":"why do teams use CRM software","intent_type":"informational"}
+{"text":"what problems does a CRM solve","intent_type":"informational"}
+{"text":"explain the benefits of CRM for beginners","intent_type":"informational"}
+{"text":"how does CRM help with lead tracking","intent_type":"informational"}
+{"text":"what is a CRM used for in a small business","intent_type":"informational"}

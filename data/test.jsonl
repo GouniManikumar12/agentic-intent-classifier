@@ -1,0 +1,37 @@
+{"text":"What does an ambiguous intent label mean?","intent_type":"informational"}
+{"text":"How do sequence classification models work?","intent_type":"informational"}
+{"text":"What is the role of a validation set?","intent_type":"informational"}
+{"text":"How does prompt wording affect user intent?","intent_type":"informational"}
+{"text":"What does confidence score mean in a classifier?","intent_type":"informational"}
+{"text":"Best no code tool for text labeling","intent_type":"commercial"}
+{"text":"Best sentence embedding model for search","intent_type":"commercial"}
+{"text":"Which classifier works best for small datasets","intent_type":"commercial"}
+{"text":"Best MLOps platform for startup teams","intent_type":"commercial"}
+{"text":"Compare OpenAI embeddings and Sentence Transformers","intent_type":"commercial"}
+{"text":"Create a Hugging Face model repo","intent_type":"transactional"}
+{"text":"Open the annotation dashboard","intent_type":"transactional"}
+{"text":"Send me the benchmark report","intent_type":"transactional"}
+{"text":"Approve the model deployment","intent_type":"transactional"}
+{"text":"Schedule the retraining pipeline","intent_type":"transactional"}
+{"text":"I feel optimistic now that the predictions make more sense","intent_type":"personal_reflection"}
+{"text":"I am exhausted from hand labeling so many examples","intent_type":"personal_reflection"}
+{"text":"I am concerned that transactional and ambiguous overlap","intent_type":"personal_reflection"}
+{"text":"I feel confused about where pricing questions belong","intent_type":"personal_reflection"}
+{"text":"I am happy that the obvious cases are working","intent_type":"personal_reflection"}
+{"text":"compare them","intent_type":"ambiguous"}
+{"text":"which is better","intent_type":"ambiguous"}
+{"text":"can you clarify","intent_type":"ambiguous"}
+{"text":"why is that","intent_type":"ambiguous"}
+{"text":"what happens next","intent_type":"ambiguous"}
+{"text":"help me understand CRM basics","intent_type":"informational"}
+{"text":"what is the purpose of a CRM","intent_type":"informational"}
+{"text":"book a table for 2 tonight","intent_type":"transactional"}
+{"text":"sign me up for the newsletter","intent_type":"transactional"}
+{"text":"can you expand on that","intent_type":"ambiguous"}
+{"text":"what about the pricing","intent_type":"ambiguous"}
+{"text":"which CRM is better for a 3-person startup","intent_type":"commercial"}
+{"text":"compare HubSpot and Zoho for small teams","intent_type":"commercial"}
+{"text":"what costs less","intent_type":"ambiguous"}
+{"text":"more affordable ones","intent_type":"ambiguous"}
+{"text":"what costs less HubSpot or Zoho","intent_type":"commercial"}
+{"text":"cheaper alternatives to Salesforce","intent_type":"commercial"}

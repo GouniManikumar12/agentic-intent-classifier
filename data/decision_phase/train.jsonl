@@ -1,0 +1,92 @@
+{"text":"What is CRM software?","decision_phase":"awareness"}
+{"text":"Why do businesses use CRM systems?","decision_phase":"awareness"}
+{"text":"How does lead tracking work?","decision_phase":"awareness"}
+{"text":"What is agentic advertising?","decision_phase":"awareness"}
+{"text":"What does zero click search mean?","decision_phase":"awareness"}
+{"text":"How do AI search engines make money?","decision_phase":"awareness"}
+{"text":"Why is customer retention important?","decision_phase":"awareness"}
+{"text":"What is marketing attribution?","decision_phase":"awareness"}
+{"text":"What tools can help a sales team stay organized?","decision_phase":"research"}
+{"text":"How can I improve lead management for a small business?","decision_phase":"research"}
+{"text":"What software should I look at for customer support?","decision_phase":"research"}
+{"text":"What are some CRM options for startups?","decision_phase":"consideration"}
+{"text":"Which platforms help with product analytics?","decision_phase":"research"}
+{"text":"What are good tools for email automation?","decision_phase":"research"}
+{"text":"How should I evaluate AI search monitoring tools?","decision_phase":"research"}
+{"text":"What are alternatives to spreadsheets for sales tracking?","decision_phase":"research"}
+{"text":"HubSpot vs Zoho for a small team","decision_phase":"consideration"}
+{"text":"Compare Salesforce and Pipedrive for B2B sales","decision_phase":"consideration"}
+{"text":"Is HubSpot better than Zoho for lead tracking?","decision_phase":"consideration"}
+{"text":"Which CRM has better automation for startups?","decision_phase":"consideration"}
+{"text":"Compare onboarding tools for SaaS products","decision_phase":"consideration"}
+{"text":"Amplitude vs Mixpanel for product analytics","decision_phase":"consideration"}
+{"text":"Which AI visibility tool fits a lean marketing team?","decision_phase":"consideration"}
+{"text":"Compare help desk platforms with live chat","decision_phase":"consideration"}
+{"text":"Which CRM should I buy for a 3-person startup?","decision_phase":"decision"}
+{"text":"Should I choose HubSpot or Zoho this week?","decision_phase":"decision"}
+{"text":"What is the best CRM for my budget under $100 a month?","decision_phase":"decision"}
+{"text":"Which plan should I choose for Mixpanel?","decision_phase":"decision"}
+{"text":"Which vendor is the better fit for our sales team?","decision_phase":"decision"}
+{"text":"Should we go with Intercom or Zendesk for support?","decision_phase":"decision"}
+{"text":"Is the pro plan worth it for our company size?","decision_phase":"decision"}
+{"text":"Which option gives us the best value right now?","decision_phase":"decision"}
+{"text":"Start my free trial","decision_phase":"action"}
+{"text":"Sign me up for the demo","decision_phase":"action"}
+{"text":"Book a meeting with sales","decision_phase":"action"}
+{"text":"Create my account","decision_phase":"action"}
+{"text":"Buy the annual plan now","decision_phase":"action"}
+{"text":"Download the pricing guide","decision_phase":"action"}
+{"text":"Request a quote","decision_phase":"action"}
+{"text":"Schedule implementation for next week","decision_phase":"action"}
+{"text":"How do I set up my new CRM?","decision_phase":"post_purchase"}
+{"text":"Show me how to import contacts into HubSpot","decision_phase":"post_purchase"}
+{"text":"What is the best way to onboard our team after purchase?","decision_phase":"post_purchase"}
+{"text":"How do I configure lead stages in the platform?","decision_phase":"post_purchase"}
+{"text":"How can I get more value from our subscription?","decision_phase":"post_purchase"}
+{"text":"How do I connect Salesforce to Gmail?","decision_phase":"post_purchase"}
+{"text":"Where can I find usage analytics for my account?","decision_phase":"post_purchase"}
+{"text":"How do I roll this tool out to my team?","decision_phase":"post_purchase"}
+{"text":"I cannot log into my account","decision_phase":"support"}
+{"text":"Why is my invoice wrong?","decision_phase":"support"}
+{"text":"The integration keeps failing","decision_phase":"support"}
+{"text":"How do I reset my password?","decision_phase":"support"}
+{"text":"Our dashboard is not loading","decision_phase":"support"}
+{"text":"I need help canceling my subscription","decision_phase":"support"}
+{"text":"Why was my credit card declined?","decision_phase":"support"}
+{"text":"The export button is broken","decision_phase":"support"}
+{"text":"What does CRM stand for in software?","decision_phase":"awareness"}
+{"text":"What does a customer relationship platform do?","decision_phase":"awareness"}
+{"text":"What is a sales CRM?","decision_phase":"awareness"}
+{"text":"Why do companies need CRM software?","decision_phase":"awareness"}
+{"text":"Walk me through the basics of lead management software","decision_phase":"research"}
+{"text":"Teach me how CRM platforms help small sales teams","decision_phase":"research"}
+{"text":"Help me learn how customer onboarding software works","decision_phase":"research"}
+{"text":"Show me how CRM systems are typically used by startups","decision_phase":"research"}
+{"text":"What are good CRM choices for a small sales team?","decision_phase":"consideration"}
+{"text":"Which CRM options fit a startup with a tiny budget?","decision_phase":"consideration"}
+{"text":"Show me CRM tools for a five-person company","decision_phase":"consideration"}
+{"text":"Which CRM vendors are worth considering for a startup?","decision_phase":"consideration"}
+{"text":"Which CRM should we commit to this month?","decision_phase":"decision"}
+{"text":"Is Zoho the right CRM for our budget?","decision_phase":"decision"}
+{"text":"Which one should we go with for our sales process?","decision_phase":"decision"}
+{"text":"Which CRM should I sign with today?","decision_phase":"decision"}
+{"text":"How do I configure my account after purchase?","decision_phase":"post_purchase"}
+{"text":"How do I set up user permissions in my new CRM?","decision_phase":"post_purchase"}
+{"text":"How do I connect email after I subscribe?","decision_phase":"post_purchase"}
+{"text":"Show me how to onboard teammates after signup","decision_phase":"post_purchase"}
+{"text":"I cannot access my dashboard","decision_phase":"support"}
+{"text":"Why am I getting a billing error?","decision_phase":"support"}
+{"text":"My integration setup failed and now I am stuck","decision_phase":"support"}
+{"text":"I keep getting an error when I try to export contacts","decision_phase":"support"}
+{"text":"What does CRM do for a business?","decision_phase":"awareness"}
+{"text":"What is a CRM platform?","decision_phase":"awareness"}
+{"text":"Help me understand CRM fundamentals","decision_phase":"research"}
+{"text":"Walk me through how startups use CRM tools","decision_phase":"research"}
+{"text":"What CRM options should a small startup look at?","decision_phase":"consideration"}
+{"text":"Show me CRM choices for a two-person team","decision_phase":"consideration"}
+{"text":"Which CRM should we choose for our two-person sales team?","decision_phase":"decision"}
+{"text":"Should we pick HubSpot or Zoho for our startup?","decision_phase":"decision"}
+{"text":"How do I connect my email after creating the account?","decision_phase":"post_purchase"}
+{"text":"Where do I configure our pipeline after purchase?","decision_phase":"post_purchase"}
+{"text":"I am locked out of my workspace","decision_phase":"support"}
+{"text":"Our account setup page keeps crashing","decision_phase":"support"}

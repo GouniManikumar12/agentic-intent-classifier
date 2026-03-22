@@ -1,0 +1,26 @@
+{"text":"How do sales pipelines work?","decision_phase":"awareness"}
+{"text":"What does product analytics measure?","decision_phase":"awareness"}
+{"text":"What solutions exist for onboarding new users?","decision_phase":"research"}
+{"text":"What tools can help reduce churn?","decision_phase":"research"}
+{"text":"Which CRM integrates better with Gmail?","decision_phase":"consideration"}
+{"text":"What are the pros and cons of Intercom vs Zendesk?","decision_phase":"consideration"}
+{"text":"What costs less HubSpot or Zoho?","decision_phase":"decision"}
+{"text":"Which tool should we sign with this quarter?","decision_phase":"decision"}
+{"text":"Begin checkout","decision_phase":"action"}
+{"text":"Activate my subscription","decision_phase":"action"}
+{"text":"What features should we enable first after signup?","decision_phase":"post_purchase"}
+{"text":"How do I invite teammates to the workspace?","decision_phase":"post_purchase"}
+{"text":"How do I contact support about a billing issue?","decision_phase":"support"}
+{"text":"My team members are not receiving invites","decision_phase":"support"}
+{"text":"How does a CRM work?","decision_phase":"awareness"}
+{"text":"Explain CRM basics","decision_phase":"research"}
+{"text":"Best CRM for a 3-person startup","decision_phase":"consideration"}
+{"text":"HubSpot or Zoho for my team?","decision_phase":"decision"}
+{"text":"How do I import contacts after signing up?","decision_phase":"post_purchase"}
+{"text":"My password reset link is not working","decision_phase":"support"}
+{"text":"How do CRM systems help sales teams?","decision_phase":"awareness"}
+{"text":"Show me how CRM systems help small businesses","decision_phase":"research"}
+{"text":"Which CRM tools are worth considering for a startup?","decision_phase":"consideration"}
+{"text":"Which CRM should we commit to before next month?","decision_phase":"decision"}
+{"text":"How do I invite teammates after we sign up?","decision_phase":"post_purchase"}
+{"text":"Why does the password reset email never arrive?","decision_phase":"support"}

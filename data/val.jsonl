@@ -1,0 +1,37 @@
+{"text":"How do confusion matrices help evaluate a classifier?","intent_type":"informational"}
+{"text":"What is class imbalance in machine learning?","intent_type":"informational"}
+{"text":"How does overfitting happen in small datasets?","intent_type":"informational"}
+{"text":"What is the difference between precision and recall?","intent_type":"informational"}
+{"text":"Why does more labeled data improve model performance?","intent_type":"informational"}
+{"text":"Best managed GPU service for model training","intent_type":"commercial"}
+{"text":"Best vector database for semantic search","intent_type":"commercial"}
+{"text":"Open source alternatives to Labelbox","intent_type":"commercial"}
+{"text":"Best cloud platform for deploying NLP models","intent_type":"commercial"}
+{"text":"Compare Weights and Biases and MLflow","intent_type":"commercial"}
+{"text":"Generate predictions for this file","intent_type":"transactional"}
+{"text":"Start the batch inference run","intent_type":"transactional"}
+{"text":"Submit the retraining job","intent_type":"transactional"}
+{"text":"Install the evaluation package","intent_type":"transactional"}
+{"text":"Sync the labeled examples","intent_type":"transactional"}
+{"text":"I feel better now that the baseline works","intent_type":"personal_reflection"}
+{"text":"I am second guessing our intent taxonomy","intent_type":"personal_reflection"}
+{"text":"I feel stuck on the ambiguous examples","intent_type":"personal_reflection"}
+{"text":"I am nervous about making the wrong label choices","intent_type":"personal_reflection"}
+{"text":"I am disappointed by the weak recall on edge cases","intent_type":"personal_reflection"}
+{"text":"what about pricing","intent_type":"ambiguous"}
+{"text":"say more","intent_type":"ambiguous"}
+{"text":"how so","intent_type":"ambiguous"}
+{"text":"what else","intent_type":"ambiguous"}
+{"text":"what about that","intent_type":"ambiguous"}
+{"text":"explain how CRM works","intent_type":"informational"}
+{"text":"explain why companies use CRM systems","intent_type":"informational"}
+{"text":"book an appointment for Friday","intent_type":"transactional"}
+{"text":"schedule a demo for next week","intent_type":"transactional"}
+{"text":"go on then","intent_type":"ambiguous"}
+{"text":"what exactly do you mean","intent_type":"ambiguous"}
+{"text":"best CRM for nonprofits","intent_type":"commercial"}
+{"text":"which CRM should a solo founder pick","intent_type":"commercial"}
+{"text":"show less expensive ones","intent_type":"ambiguous"}
+{"text":"what do you mean by that","intent_type":"ambiguous"}
+{"text":"show lower-cost analytics platforms","intent_type":"commercial"}
+{"text":"compare affordable help desk software","intent_type":"commercial"}

@@ -10,6 +10,8 @@ This repo contains a small, frozen baseline for classifying conversational queri
 
 It is a demoable reference implementation for the Agentic Intent Taxonomy, not a production-grade model stack.
 
+Generated model weights are intentionally not committed. Train the models locally before running inference or the demo API.
+
 ## What It Does
 
 - predicts `intent.type` with the frozen `intent_type v0.1` classifier
@@ -52,6 +54,8 @@ Run the combined classifier on a single query:
 cd agentic-intent-classifier
 ../.venv/bin/python combined_inference.py "Which CRM should I buy for a 3-person startup?"
 ```
+
+If you have not trained the models yet, run the training commands below first.
 
 Run the local demo API:
 
