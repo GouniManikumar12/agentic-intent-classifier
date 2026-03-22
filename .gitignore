@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 model_output/
 decision_phase_model_output/
+subtype_model_output/
+iab_model_output/
+*/model.safetensors
