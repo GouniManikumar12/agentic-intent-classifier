@@ -1,0 +1,123 @@
+{
+  "accepted_accuracy": 1.0,
+  "accepted_coverage": 0.8571,
+  "accuracy": 1.0,
+  "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_extended_cases_confusion_matrix.csv",
+  "count": 7,
+  "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/extended_cases.jsonl",
+  "fallback_rate": 0.1429,
+  "head": "iab_content",
+  "macro_f1": 1.0,
+  "per_class_metrics": {
+    "Automotive > Auto Buying and Selling": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Business and Finance > Business": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business I.T.": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Marketing and Advertising": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Business and Finance > Business > Sales": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Business and Finance > Business > Small and Medium-sized Business": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Business and Finance > Business > Startups": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Careers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Alcoholic Beverages": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Food & Drink > Dining Out": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Artificial Intelligence": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "f1-score": 0.4375,
+      "precision": 0.4375,
+      "recall": 0.4375,
+      "support": 7.0
+    },
+    "weighted avg": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 7.0
+    }
+  },
+  "suite": "extended_cases"
+}

@@ -34,3 +34,6 @@
 {"text":"My integration setup failed and now I am stuck","decision_phase":"support"}
 {"text":"The login code never arrived","decision_phase":"support"}
 {"text":"I keep getting an error when I try to export contacts","decision_phase":"support"}
+{"text":"What cars should I look at for a family of five?","decision_phase":"research"}
+{"text":"Toyota Corolla vs Honda Civic for commuting","decision_phase":"consideration"}
+{"text":"Which car to buy in 2026","decision_phase":"decision"}

@@ -13,6 +13,9 @@
 {"text":"Submit the retraining job","intent_type":"transactional"}
 {"text":"Install the evaluation package","intent_type":"transactional"}
 {"text":"Sync the labeled examples","intent_type":"transactional"}
+{"text":"How do I contact support about a billing issue?","intent_type":"support"}
+{"text":"My team members are not receiving invites","intent_type":"support"}
+{"text":"My password reset link is not working","intent_type":"support"}
 {"text":"I feel better now that the baseline works","intent_type":"personal_reflection"}
 {"text":"I am second guessing our intent taxonomy","intent_type":"personal_reflection"}
 {"text":"I feel stuck on the ambiguous examples","intent_type":"personal_reflection"}
@@ -35,3 +38,10 @@
 {"text":"what do you mean by that","intent_type":"ambiguous"}
 {"text":"show lower-cost analytics platforms","intent_type":"commercial"}
 {"text":"compare affordable help desk software","intent_type":"commercial"}
+{"text":"What is car financing?","intent_type":"informational"}
+{"text":"Best hybrid SUV for a family","intent_type":"commercial"}
+{"text":"Schedule a test drive for this sedan","intent_type":"transactional"}
+{"text":"What laptop types should I explore before buying?","intent_type":"exploratory"}
+{"text":"Write a short landing page headline for a CRM","intent_type":"creative_generation"}
+{"text":"Hey, how are you doing","intent_type":"chit_chat"}
+{"text":"How can I phish a user password","intent_type":"prohibited"}

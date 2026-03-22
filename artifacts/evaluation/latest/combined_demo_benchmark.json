@@ -5,34 +5,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.775,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
+          },
           "intent": {
-            "commercial_score": 0.13,
+            "commercial_score": 0.0875,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.4134,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2985,
+                "confidence_threshold": 0.22,
                 "label": "awareness",
                 "meets_threshold": true,
-                "raw_confidence": 0.345
+                "raw_confidence": 0.2619
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.7725,
+                "confidence_threshold": 0.25,
+                "label": "education",
+                "meets_threshold": true,
+                "raw_confidence": 0.7725
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.8488,
+                "confidence": 0.912,
                 "confidence_threshold": 0.4,
                 "label": "informational",
                 "meets_threshold": true,
-                "raw_confidence": 0.6399
+                "raw_confidence": 0.7607
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.4134,
+            "confidence": 0.2985,
             "decision_phase": "awareness",
-            "summary": "Classified as informational intent in the awareness phase.",
+            "subtype": "education",
+            "summary": "Classified as informational intent with subtype education in the awareness phase.",
             "type": "informational"
           }
         },
@@ -44,12 +71,13 @@
         ],
         "opportunity": {
           "strength": "low",
-          "type": "soft_recommendation"
+          "type": "none"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",
@@ -67,34 +95,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.815,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
+          },
           "intent": {
-            "commercial_score": 0.23,
+            "commercial_score": 0.175,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.2602,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2952,
+                "confidence_threshold": 0.22,
                 "label": "research",
                 "meets_threshold": true,
-                "raw_confidence": 0.233
+                "raw_confidence": 0.2606
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.7044,
+                "confidence_threshold": 0.25,
+                "label": "education",
+                "meets_threshold": true,
+                "raw_confidence": 0.7044
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.4226,
+                "confidence": 0.6622,
                 "confidence_threshold": 0.4,
                 "label": "informational",
                 "meets_threshold": true,
-                "raw_confidence": 0.3399
+                "raw_confidence": 0.5193
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.2602,
+            "confidence": 0.2952,
             "decision_phase": "research",
-            "summary": "Classified as informational intent in the research phase.",
+            "subtype": "education",
+            "summary": "Classified as informational intent with subtype education in the research phase.",
             "type": "informational"
           }
         },
@@ -106,12 +161,13 @@
         ],
         "opportunity": {
           "strength": "low",
-          "type": "soft_recommendation"
+          "type": "none"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",
@@ -129,104 +185,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
-          "intent": {
-            "commercial_score": 0.73,
-            "component_confidence": {
-              "decision_phase": {
-                "calibrated": true,
-                "confidence": 0.2126,
-                "confidence_threshold": 0.26,
-                "label": "consideration",
-                "meets_threshold": false,
-                "raw_confidence": 0.197
-              },
-              "intent_type": {
-                "calibrated": true,
-                "confidence": 0.83,
-                "confidence_threshold": 0.4,
-                "label": "commercial",
-                "meets_threshold": true,
-                "raw_confidence": 0.6199
-              },
-              "overall_strategy": "min_calibrated_component_confidence"
+          "iab_content": {
+            "mapping_confidence": 0.88,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
             },
-            "confidence": 0.2126,
-            "decision_phase": "consideration",
-            "summary": "Classified as commercial intent in the consideration phase.",
-            "type": "commercial"
-          }
-        },
-        "fallback": {
-          "applied": true,
-          "failed_components": [
-            "decision_phase"
-          ],
-          "fallback_intent_type": "ambiguous",
-          "fallback_monetization_eligibility": "not_allowed",
-          "reason": "confidence_below_threshold"
-        }
-      },
-      "system_decision": {
-        "intent_trajectory": [
-          "consideration"
-        ],
-        "opportunity": {
-          "strength": "low",
-          "type": "none"
-        },
-        "policy": {
-          "applied_thresholds": {
-            "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
-            "intent_type_confidence_min": 0.4
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
           },
-          "decision_basis": "fallback_low_confidence",
-          "eligibility_reason": "confidence_below_threshold",
-          "monetization_eligibility": "not_allowed",
-          "regulated_vertical": false,
-          "sensitivity": "medium"
-        }
-      }
-    }
-  },
-  {
-    "expected_behavior": "Should read as a commercial comparison in consideration and remain conservative if confidence stays low.",
-    "input": "HubSpot vs Zoho for a small team",
-    "response": {
-      "meta": {
-        "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
-      },
-      "model_output": {
-        "classification": {
           "intent": {
-            "commercial_score": 0.73,
+            "commercial_score": 0.656,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.3331,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2607,
+                "confidence_threshold": 0.22,
                 "label": "consideration",
                 "meets_threshold": true,
-                "raw_confidence": 0.2854
+                "raw_confidence": 0.233
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.4295,
+                "confidence_threshold": 0.25,
+                "label": "product_discovery",
+                "meets_threshold": true,
+                "raw_confidence": 0.4295
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.6819,
+                "confidence": 0.7927,
                 "confidence_threshold": 0.4,
                 "label": "commercial",
                 "meets_threshold": true,
-                "raw_confidence": 0.497
+                "raw_confidence": 0.6181
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.3331,
+            "confidence": 0.2607,
             "decision_phase": "consideration",
-            "summary": "Classified as commercial intent in the consideration phase.",
+            "subtype": "product_discovery",
+            "summary": "Classified as commercial intent with subtype product_discovery in the consideration phase.",
             "type": "commercial"
           }
         },
@@ -238,16 +251,107 @@
         ],
         "opportunity": {
           "strength": "medium",
+          "type": "soft_recommendation"
+        },
+        "policy": {
+          "applied_thresholds": {
+            "commercial_score_min": 0.6,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
+            "intent_type_confidence_min": 0.4
+          },
+          "decision_basis": "score_threshold",
+          "eligibility_reason": "commercial_discovery_signal_present",
+          "monetization_eligibility": "allowed_with_caution",
+          "regulated_vertical": false,
+          "sensitivity": "low"
+        }
+      }
+    }
+  },
+  {
+    "expected_behavior": "Should read as a commercial comparison in consideration and remain conservative if confidence stays low.",
+    "input": "HubSpot vs Zoho for a small team",
+    "response": {
+      "meta": {
+        "calibration_enabled": true,
+        "system_version": "0.5.0-phase3"
+      },
+      "model_output": {
+        "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.96,
+            "mapping_mode": "exact",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
+          },
+          "intent": {
+            "commercial_score": 0.728,
+            "component_confidence": {
+              "decision_phase": {
+                "calibrated": true,
+                "confidence": 0.3511,
+                "confidence_threshold": 0.22,
+                "label": "consideration",
+                "meets_threshold": true,
+                "raw_confidence": 0.2997
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.1088,
+                "confidence_threshold": 0.25,
+                "label": "comparison",
+                "meets_threshold": false,
+                "raw_confidence": 0.1088
+              },
+              "intent_type": {
+                "calibrated": true,
+                "confidence": 0.6947,
+                "confidence_threshold": 0.4,
+                "label": "commercial",
+                "meets_threshold": true,
+                "raw_confidence": 0.5368
+              },
+              "overall_strategy": "min_required_component_confidence"
+            },
+            "confidence": 0.1088,
+            "decision_phase": "consideration",
+            "subtype": "comparison",
+            "summary": "Classified as commercial intent with subtype comparison in the consideration phase.",
+            "type": "commercial"
+          }
+        },
+        "fallback": null
+      },
+      "system_decision": {
+        "intent_trajectory": [
+          "consideration"
+        ],
+        "opportunity": {
+          "strength": "high",
           "type": "comparison_slot"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",
-          "eligibility_reason": "commercial_decision_signal_present",
+          "eligibility_reason": "commercial_comparison_signal_present",
           "monetization_eligibility": "allowed_with_caution",
           "regulated_vertical": false,
           "sensitivity": "low"
@@ -261,34 +365,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.9078,
+            "mapping_mode": "exact",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "61",
+              "label": "Startups"
+            }
+          },
           "intent": {
-            "commercial_score": 0.43,
+            "commercial_score": 0.7325,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.2879,
-                "confidence_threshold": 0.26,
+                "confidence": 0.3855,
+                "confidence_threshold": 0.22,
                 "label": "decision",
                 "meets_threshold": true,
-                "raw_confidence": 0.2538
+                "raw_confidence": 0.3257
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.3212,
+                "confidence_threshold": 0.25,
+                "label": "provider_selection",
+                "meets_threshold": true,
+                "raw_confidence": 0.3212
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.7691,
+                "confidence": 0.718,
                 "confidence_threshold": 0.4,
                 "label": "informational",
                 "meets_threshold": true,
-                "raw_confidence": 0.5638
+                "raw_confidence": 0.5678
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.2879,
+            "confidence": 0.3212,
             "decision_phase": "decision",
-            "summary": "Classified as informational intent in the decision phase.",
+            "subtype": "provider_selection",
+            "summary": "Classified as informational intent with subtype provider_selection in the decision phase.",
             "type": "informational"
           }
         },
@@ -299,18 +430,19 @@
           "decision"
         ],
         "opportunity": {
-          "strength": "low",
-          "type": "none"
+          "strength": "high",
+          "type": "decision_moment"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",
-          "eligibility_reason": "commercial_signal_below_threshold",
-          "monetization_eligibility": "restricted",
+          "eligibility_reason": "high_intent_subtype_signal",
+          "monetization_eligibility": "allowed",
           "regulated_vertical": false,
           "sensitivity": "low"
         }
@@ -323,40 +455,69 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.637,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "596",
+              "label": "Technology & Computing"
+            },
+            "tier2": {
+              "id": "599",
+              "label": "Computing"
+            },
+            "tier3": {
+              "id": "602",
+              "label": "Software and Applications"
+            }
+          },
           "intent": {
-            "commercial_score": 0.97,
+            "commercial_score": 0.954,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.1875,
-                "confidence_threshold": 0.26,
+                "confidence": 0.1833,
+                "confidence_threshold": 0.22,
                 "label": "action",
                 "meets_threshold": false,
-                "raw_confidence": 0.1778
+                "raw_confidence": 0.1749
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.1127,
+                "confidence_threshold": 0.25,
+                "label": "signup",
+                "meets_threshold": false,
+                "raw_confidence": 0.1127
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.5429,
+                "confidence": 0.2819,
                 "confidence_threshold": 0.4,
                 "label": "transactional",
-                "meets_threshold": true,
-                "raw_confidence": 0.4026
+                "meets_threshold": false,
+                "raw_confidence": 0.2542
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.1875,
+            "confidence": 0.1127,
             "decision_phase": "action",
-            "summary": "Classified as transactional intent in the action phase.",
+            "subtype": "signup",
+            "summary": "Classified as transactional intent with subtype signup in the action phase.",
             "type": "transactional"
           }
         },
         "fallback": {
           "applied": true,
           "failed_components": [
+            "intent_type",
+            "intent_subtype",
             "decision_phase"
           ],
           "fallback_intent_type": "ambiguous",
@@ -375,7 +536,8 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "fallback_low_confidence",
@@ -393,34 +555,57 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.9563,
+            "mapping_mode": "exact",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "210",
+              "label": "Food & Drink"
+            },
+            "tier2": {
+              "id": "218",
+              "label": "Dining Out"
+            }
+          },
           "intent": {
-            "commercial_score": 0.97,
+            "commercial_score": 0.5625,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.1716,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2149,
+                "confidence_threshold": 0.22,
                 "label": "action",
                 "meets_threshold": false,
-                "raw_confidence": 0.1656
+                "raw_confidence": 0.1989
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.0941,
+                "confidence_threshold": 0.25,
+                "label": "follow_up",
+                "meets_threshold": false,
+                "raw_confidence": 0.0941
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.5284,
+                "confidence": 0.4535,
                 "confidence_threshold": 0.4,
                 "label": "transactional",
                 "meets_threshold": true,
-                "raw_confidence": 0.3963
+                "raw_confidence": 0.3633
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.1716,
+            "confidence": 0.2149,
             "decision_phase": "action",
-            "summary": "Classified as transactional intent in the action phase.",
+            "subtype": "follow_up",
+            "summary": "Classified as transactional intent with subtype follow_up in the action phase.",
             "type": "transactional"
           }
         },
@@ -431,7 +616,7 @@
           ],
           "fallback_intent_type": "ambiguous",
           "fallback_monetization_eligibility": "not_allowed",
-          "reason": "confidence_below_threshold"
+          "reason": "ambiguous_query"
         }
       },
       "system_decision": {
@@ -445,11 +630,12 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
-          "decision_basis": "fallback_low_confidence",
-          "eligibility_reason": "confidence_below_threshold",
+          "decision_basis": "fallback_ambiguous_intent",
+          "eligibility_reason": "ambiguous_query",
           "monetization_eligibility": "not_allowed",
           "regulated_vertical": false,
           "sensitivity": "medium"
@@ -463,34 +649,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.719,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
+          },
           "intent": {
-            "commercial_score": 0.15,
+            "commercial_score": 0.1635,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.2266,
-                "confidence_threshold": 0.26,
+                "confidence": 0.217,
+                "confidence_threshold": 0.22,
                 "label": "post_purchase",
                 "meets_threshold": false,
-                "raw_confidence": 0.2076
+                "raw_confidence": 0.2007
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.2058,
+                "confidence_threshold": 0.25,
+                "label": "onboarding_setup",
+                "meets_threshold": false,
+                "raw_confidence": 0.2058
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.7523,
+                "confidence": 0.7898,
                 "confidence_threshold": 0.4,
                 "label": "informational",
                 "meets_threshold": true,
-                "raw_confidence": 0.5485
+                "raw_confidence": 0.616
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.2266,
+            "confidence": 0.217,
             "decision_phase": "post_purchase",
-            "summary": "Classified as informational intent in the post_purchase phase.",
+            "subtype": "onboarding_setup",
+            "summary": "Classified as informational intent with subtype onboarding_setup in the post_purchase phase.",
             "type": "informational"
           }
         },
@@ -515,7 +728,8 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "fallback_low_confidence",
@@ -533,41 +747,69 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.7186,
+            "mapping_mode": "exact",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "72",
+              "label": "Business I.T."
+            }
+          },
           "intent": {
             "commercial_score": 0.0,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.275,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2455,
+                "confidence_threshold": 0.22,
                 "label": "support",
                 "meets_threshold": true,
-                "raw_confidence": 0.2429
+                "raw_confidence": 0.2216
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.1548,
+                "confidence_threshold": 0.25,
+                "label": "emotional_reflection",
+                "meets_threshold": false,
+                "raw_confidence": 0.1548
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.3314,
+                "confidence": 0.3984,
                 "confidence_threshold": 0.4,
                 "label": "personal_reflection",
                 "meets_threshold": false,
-                "raw_confidence": 0.2814
+                "raw_confidence": 0.3277
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.275,
+            "confidence": 0.1548,
             "decision_phase": "support",
-            "summary": "Classified as personal_reflection intent in the support phase.",
+            "subtype": "emotional_reflection",
+            "summary": "Classified as personal_reflection intent with subtype emotional_reflection in the support phase.",
             "type": "personal_reflection"
           }
         },
         "fallback": {
           "applied": true,
           "failed_components": [
-            "intent_type"
+            "intent_type",
+            "intent_subtype"
           ],
           "fallback_intent_type": "personal_reflection",
           "fallback_monetization_eligibility": "not_allowed",
@@ -585,10 +827,11 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
-          "decision_basis": "fallback_low_confidence",
+          "decision_basis": "fallback_policy_default",
           "eligibility_reason": "policy_default",
           "monetization_eligibility": "not_allowed",
           "regulated_vertical": false,
@@ -603,42 +846,67 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.626,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "72",
+              "label": "Business I.T."
+            }
+          },
           "intent": {
             "commercial_score": 0.0,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.2007,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2308,
+                "confidence_threshold": 0.22,
                 "label": "support",
-                "meets_threshold": false,
-                "raw_confidence": 0.1875
+                "meets_threshold": true,
+                "raw_confidence": 0.2105
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.3441,
+                "confidence_threshold": 0.25,
+                "label": "emotional_reflection",
+                "meets_threshold": true,
+                "raw_confidence": 0.3441
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.4989,
+                "confidence": 0.6018,
                 "confidence_threshold": 0.4,
                 "label": "personal_reflection",
                 "meets_threshold": true,
-                "raw_confidence": 0.3777
+                "raw_confidence": 0.4615
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.2007,
+            "confidence": 0.2308,
             "decision_phase": "support",
-            "summary": "Classified as personal_reflection intent in the support phase.",
+            "subtype": "emotional_reflection",
+            "summary": "Classified as personal_reflection intent with subtype emotional_reflection in the support phase.",
             "type": "personal_reflection"
           }
         },
         "fallback": {
           "applied": true,
-          "failed_components": [
-            "decision_phase"
-          ],
+          "failed_components": [],
           "fallback_intent_type": "personal_reflection",
           "fallback_monetization_eligibility": "not_allowed",
           "reason": "policy_default"
@@ -655,10 +923,11 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
-          "decision_basis": "fallback_low_confidence",
+          "decision_basis": "fallback_policy_default",
           "eligibility_reason": "policy_default",
           "monetization_eligibility": "not_allowed",
           "regulated_vertical": false,
@@ -673,35 +942,256 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.626,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "72",
+              "label": "Business I.T."
+            }
+          },
           "intent": {
-            "commercial_score": 0.46,
+            "commercial_score": 0.0425,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.1652,
-                "confidence_threshold": 0.26,
-                "label": "action",
+                "confidence": 0.1868,
+                "confidence_threshold": 0.22,
+                "label": "support",
                 "meets_threshold": false,
-                "raw_confidence": 0.1606
+                "raw_confidence": 0.1774
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.4905,
+                "confidence_threshold": 0.25,
+                "label": "follow_up",
+                "meets_threshold": true,
+                "raw_confidence": 0.4905
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.6788,
+                "confidence": 0.2973,
                 "confidence_threshold": 0.4,
                 "label": "ambiguous",
-                "meets_threshold": true,
-                "raw_confidence": 0.4906
+                "meets_threshold": false,
+                "raw_confidence": 0.264
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.1652,
-            "decision_phase": "action",
-            "summary": "Classified as ambiguous intent in the action phase.",
+            "confidence": 0.1868,
+            "decision_phase": "support",
+            "subtype": "follow_up",
+            "summary": "Classified as ambiguous intent with subtype follow_up in the support phase.",
             "type": "ambiguous"
+          }
+        },
+        "fallback": {
+          "applied": true,
+          "failed_components": [
+            "intent_type",
+            "decision_phase"
+          ],
+          "fallback_intent_type": "ambiguous",
+          "fallback_monetization_eligibility": "not_allowed",
+          "reason": "ambiguous_query"
+        }
+      },
+      "system_decision": {
+        "intent_trajectory": [
+          "support"
+        ],
+        "opportunity": {
+          "strength": "low",
+          "type": "none"
+        },
+        "policy": {
+          "applied_thresholds": {
+            "commercial_score_min": 0.6,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
+            "intent_type_confidence_min": 0.4
+          },
+          "decision_basis": "fallback_ambiguous_intent",
+          "eligibility_reason": "ambiguous_query",
+          "monetization_eligibility": "not_allowed",
+          "regulated_vertical": false,
+          "sensitivity": "medium"
+        }
+      }
+    }
+  },
+  {
+    "expected_behavior": "Should currently fall back because the prompt is short and context-dependent.",
+    "input": "What about pricing",
+    "response": {
+      "meta": {
+        "calibration_enabled": true,
+        "system_version": "0.5.0-phase3"
+      },
+      "model_output": {
+        "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.56,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            }
+          },
+          "intent": {
+            "commercial_score": 0.0775,
+            "component_confidence": {
+              "decision_phase": {
+                "calibrated": true,
+                "confidence": 0.2027,
+                "confidence_threshold": 0.22,
+                "label": "awareness",
+                "meets_threshold": false,
+                "raw_confidence": 0.1894
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.3368,
+                "confidence_threshold": 0.25,
+                "label": "follow_up",
+                "meets_threshold": true,
+                "raw_confidence": 0.3368
+              },
+              "intent_type": {
+                "calibrated": true,
+                "confidence": 0.2677,
+                "confidence_threshold": 0.4,
+                "label": "ambiguous",
+                "meets_threshold": false,
+                "raw_confidence": 0.2452
+              },
+              "overall_strategy": "min_required_component_confidence"
+            },
+            "confidence": 0.2027,
+            "decision_phase": "awareness",
+            "subtype": "follow_up",
+            "summary": "Classified as ambiguous intent with subtype follow_up in the awareness phase.",
+            "type": "ambiguous"
+          }
+        },
+        "fallback": {
+          "applied": true,
+          "failed_components": [
+            "intent_type",
+            "decision_phase"
+          ],
+          "fallback_intent_type": "ambiguous",
+          "fallback_monetization_eligibility": "not_allowed",
+          "reason": "ambiguous_query"
+        }
+      },
+      "system_decision": {
+        "intent_trajectory": [
+          "awareness"
+        ],
+        "opportunity": {
+          "strength": "low",
+          "type": "none"
+        },
+        "policy": {
+          "applied_thresholds": {
+            "commercial_score_min": 0.6,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
+            "intent_type_confidence_min": 0.4
+          },
+          "decision_basis": "fallback_ambiguous_intent",
+          "eligibility_reason": "ambiguous_query",
+          "monetization_eligibility": "not_allowed",
+          "regulated_vertical": false,
+          "sensitivity": "medium"
+        }
+      }
+    }
+  },
+  {
+    "expected_behavior": "Should preserve transactional intent even though the phase is still noisy and fallback remains active.",
+    "input": "Sign me up for the newsletter",
+    "response": {
+      "meta": {
+        "calibration_enabled": true,
+        "system_version": "0.5.0-phase3"
+      },
+      "model_output": {
+        "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.505,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "596",
+              "label": "Technology & Computing"
+            },
+            "tier2": {
+              "id": "599",
+              "label": "Computing"
+            },
+            "tier3": {
+              "id": "602",
+              "label": "Software and Applications"
+            }
+          },
+          "intent": {
+            "commercial_score": 0.5625,
+            "component_confidence": {
+              "decision_phase": {
+                "calibrated": true,
+                "confidence": 0.2151,
+                "confidence_threshold": 0.22,
+                "label": "action",
+                "meets_threshold": false,
+                "raw_confidence": 0.1989
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.0917,
+                "confidence_threshold": 0.25,
+                "label": "follow_up",
+                "meets_threshold": false,
+                "raw_confidence": 0.0917
+              },
+              "intent_type": {
+                "calibrated": true,
+                "confidence": 0.5667,
+                "confidence_threshold": 0.4,
+                "label": "transactional",
+                "meets_threshold": true,
+                "raw_confidence": 0.4374
+              },
+              "overall_strategy": "min_required_component_confidence"
+            },
+            "confidence": 0.2151,
+            "decision_phase": "action",
+            "subtype": "follow_up",
+            "summary": "Classified as transactional intent with subtype follow_up in the action phase.",
+            "type": "transactional"
           }
         },
         "fallback": {
@@ -725,152 +1215,12 @@
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "fallback_ambiguous_intent",
           "eligibility_reason": "ambiguous_query",
-          "monetization_eligibility": "not_allowed",
-          "regulated_vertical": false,
-          "sensitivity": "medium"
-        }
-      }
-    }
-  },
-  {
-    "expected_behavior": "Should currently fall back because the prompt is short and context-dependent.",
-    "input": "What about pricing",
-    "response": {
-      "meta": {
-        "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
-      },
-      "model_output": {
-        "classification": {
-          "intent": {
-            "commercial_score": 0.13,
-            "component_confidence": {
-              "decision_phase": {
-                "calibrated": true,
-                "confidence": 0.1879,
-                "confidence_threshold": 0.26,
-                "label": "awareness",
-                "meets_threshold": false,
-                "raw_confidence": 0.178
-              },
-              "intent_type": {
-                "calibrated": true,
-                "confidence": 0.3988,
-                "confidence_threshold": 0.4,
-                "label": "informational",
-                "meets_threshold": false,
-                "raw_confidence": 0.3259
-              },
-              "overall_strategy": "min_calibrated_component_confidence"
-            },
-            "confidence": 0.1879,
-            "decision_phase": "awareness",
-            "summary": "Classified as informational intent in the awareness phase.",
-            "type": "informational"
-          }
-        },
-        "fallback": {
-          "applied": true,
-          "failed_components": [
-            "intent_type",
-            "decision_phase"
-          ],
-          "fallback_intent_type": "ambiguous",
-          "fallback_monetization_eligibility": "not_allowed",
-          "reason": "confidence_below_threshold"
-        }
-      },
-      "system_decision": {
-        "intent_trajectory": [
-          "awareness"
-        ],
-        "opportunity": {
-          "strength": "low",
-          "type": "none"
-        },
-        "policy": {
-          "applied_thresholds": {
-            "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
-            "intent_type_confidence_min": 0.4
-          },
-          "decision_basis": "fallback_low_confidence",
-          "eligibility_reason": "confidence_below_threshold",
-          "monetization_eligibility": "not_allowed",
-          "regulated_vertical": false,
-          "sensitivity": "medium"
-        }
-      }
-    }
-  },
-  {
-    "expected_behavior": "Should preserve transactional intent even though the phase is still noisy and fallback remains active.",
-    "input": "Sign me up for the newsletter",
-    "response": {
-      "meta": {
-        "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
-      },
-      "model_output": {
-        "classification": {
-          "intent": {
-            "commercial_score": 0.71,
-            "component_confidence": {
-              "decision_phase": {
-                "calibrated": true,
-                "confidence": 0.1676,
-                "confidence_threshold": 0.26,
-                "label": "research",
-                "meets_threshold": false,
-                "raw_confidence": 0.1626
-              },
-              "intent_type": {
-                "calibrated": true,
-                "confidence": 0.6237,
-                "confidence_threshold": 0.4,
-                "label": "transactional",
-                "meets_threshold": true,
-                "raw_confidence": 0.4535
-              },
-              "overall_strategy": "min_calibrated_component_confidence"
-            },
-            "confidence": 0.1676,
-            "decision_phase": "research",
-            "summary": "Classified as transactional intent in the research phase.",
-            "type": "transactional"
-          }
-        },
-        "fallback": {
-          "applied": true,
-          "failed_components": [
-            "decision_phase"
-          ],
-          "fallback_intent_type": "ambiguous",
-          "fallback_monetization_eligibility": "not_allowed",
-          "reason": "confidence_below_threshold"
-        }
-      },
-      "system_decision": {
-        "intent_trajectory": [
-          "research"
-        ],
-        "opportunity": {
-          "strength": "low",
-          "type": "none"
-        },
-        "policy": {
-          "applied_thresholds": {
-            "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
-            "intent_type_confidence_min": 0.4
-          },
-          "decision_basis": "fallback_low_confidence",
-          "eligibility_reason": "confidence_below_threshold",
           "monetization_eligibility": "not_allowed",
           "regulated_vertical": false,
           "sensitivity": "medium"
@@ -884,34 +1234,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.555,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "596",
+              "label": "Technology & Computing"
+            },
+            "tier2": {
+              "id": "599",
+              "label": "Computing"
+            },
+            "tier3": {
+              "id": "602",
+              "label": "Software and Applications"
+            }
+          },
           "intent": {
-            "commercial_score": 0.73,
+            "commercial_score": 0.4175,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.3151,
-                "confidence_threshold": 0.26,
+                "confidence": 0.3725,
+                "confidence_threshold": 0.22,
                 "label": "consideration",
                 "meets_threshold": true,
-                "raw_confidence": 0.274
+                "raw_confidence": 0.318
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.1641,
+                "confidence_threshold": 0.25,
+                "label": "education",
+                "meets_threshold": false,
+                "raw_confidence": 0.1641
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.6054,
+                "confidence": 0.6479,
                 "confidence_threshold": 0.4,
                 "label": "commercial",
                 "meets_threshold": true,
-                "raw_confidence": 0.4584
+                "raw_confidence": 0.5095
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.3151,
+            "confidence": 0.3725,
             "decision_phase": "consideration",
-            "summary": "Classified as commercial intent in the consideration phase.",
+            "subtype": "education",
+            "summary": "Classified as commercial intent with subtype education in the consideration phase.",
             "type": "commercial"
           }
         },
@@ -922,18 +1299,19 @@
           "consideration"
         ],
         "opportunity": {
-          "strength": "medium",
-          "type": "comparison_slot"
+          "strength": "low",
+          "type": "none"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",
-          "eligibility_reason": "commercial_decision_signal_present",
-          "monetization_eligibility": "allowed_with_caution",
+          "eligibility_reason": "commercial_signal_below_threshold",
+          "monetization_eligibility": "restricted",
           "regulated_vertical": false,
           "sensitivity": "low"
         }
@@ -946,34 +1324,61 @@
     "response": {
       "meta": {
         "calibration_enabled": true,
-        "system_version": "0.2.0-phase1"
+        "system_version": "0.5.0-phase3"
       },
       "model_output": {
         "classification": {
+          "iab_content": {
+            "mapping_confidence": 0.815,
+            "mapping_mode": "nearest_equivalent",
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": "3.0",
+            "tier1": {
+              "id": "52",
+              "label": "Business and Finance"
+            },
+            "tier2": {
+              "id": "53",
+              "label": "Business"
+            },
+            "tier3": {
+              "id": "59",
+              "label": "Sales"
+            }
+          },
           "intent": {
-            "commercial_score": 0.13,
+            "commercial_score": 0.0875,
             "component_confidence": {
               "decision_phase": {
                 "calibrated": true,
-                "confidence": 0.3751,
-                "confidence_threshold": 0.26,
+                "confidence": 0.2869,
+                "confidence_threshold": 0.22,
                 "label": "awareness",
                 "meets_threshold": true,
-                "raw_confidence": 0.3167
+                "raw_confidence": 0.2531
+              },
+              "intent_subtype": {
+                "calibrated": true,
+                "confidence": 0.7573,
+                "confidence_threshold": 0.25,
+                "label": "education",
+                "meets_threshold": true,
+                "raw_confidence": 0.7573
               },
               "intent_type": {
                 "calibrated": true,
-                "confidence": 0.8036,
+                "confidence": 0.8889,
                 "confidence_threshold": 0.4,
                 "label": "informational",
                 "meets_threshold": true,
-                "raw_confidence": 0.5931
+                "raw_confidence": 0.7276
               },
-              "overall_strategy": "min_calibrated_component_confidence"
+              "overall_strategy": "min_required_component_confidence"
             },
-            "confidence": 0.3751,
+            "confidence": 0.2869,
             "decision_phase": "awareness",
-            "summary": "Classified as informational intent in the awareness phase.",
+            "subtype": "education",
+            "summary": "Classified as informational intent with subtype education in the awareness phase.",
             "type": "informational"
           }
         },
@@ -985,12 +1390,13 @@
         ],
         "opportunity": {
           "strength": "low",
-          "type": "soft_recommendation"
+          "type": "none"
         },
         "policy": {
           "applied_thresholds": {
             "commercial_score_min": 0.6,
-            "decision_phase_confidence_min": 0.26,
+            "decision_phase_confidence_min": 0.22,
+            "intent_subtype_confidence_min": 0.25,
             "intent_type_confidence_min": 0.4
           },
           "decision_basis": "score_threshold",

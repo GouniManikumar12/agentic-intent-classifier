@@ -1,6 +1,6 @@
 ,informational,commercial,transactional,personal_reflection,ambiguous
 informational,20,0,0,0,0
-commercial,2,8,0,0,0
+commercial,3,10,0,0,0
 transactional,0,0,9,0,1
 personal_reflection,0,0,0,0,0
 ambiguous,1,0,0,0,9

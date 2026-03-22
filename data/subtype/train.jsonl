@@ -1,0 +1,291 @@
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Affordable annotation platform for small ML teams"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Affordable customer support software for startups"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Amplitude vs Mixpanel for product analytics"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "and then what"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Annotate these support tickets"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best AI SEO tools for content teams"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best analytics platform for product teams"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best CRM for a small remote sales team"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "best CRM for a two person agency"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best dataset labeling tool for ML teams"}
+{"intent_subtype": "product_discovery", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Best hybrid SUV for a family"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best intent classification model for short queries"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best lead generation software for B2B companies"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best NLP library for text classification"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best project management software for agencies"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Best SUV to buy in 2026"}
+{"intent_subtype": "product_discovery", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Best SUV to buy in 2026"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best transformer model for lightweight inference"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Best used car under $20000"}
+{"intent_subtype": "contact_sales", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Book a demo for the analytics platform"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Book a meeting with sales"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Book a test drive for the new SUV"}
+{"intent_subtype": "booking", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Book a test drive for the new SUV"}
+{"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Buy a monthly plan for the CRM"}
+{"decision_phase": "action", "intent_subtype": "purchase", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Buy the annual plan now"}
+{"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "buy this now"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Can we just chat for a minute"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Can you explain"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "can you explain that"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Can you help"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "cheapest CRM for a local service business"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Compare help desk platforms with live chat"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "compare lower-cost CRM tools"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Compare Mixpanel and Amplitude pricing"}
+{"decision_phase": "consideration", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Compare onboarding tools for SaaS products"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "compare Pipedrive and HubSpot for a tiny sales team"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Compare Salesforce and Pipedrive for B2B sales"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "compare those"}
+{"intent_subtype": "contact_sales", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Connect me with sales for a custom quote"}
+{"intent_subtype": "contact_sales", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Contact sales to schedule a product walkthrough"}
+{"intent_subtype": "signup", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Create a free workspace for evaluation"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Create a new labeling project"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Create a tagline for an AI search analytics platform"}
+{"intent_subtype": "account_help", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Create an account for the AI search tool"}
+{"decision_phase": "action", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Create my account"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Deploy the classifier API"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "DistilBERT vs RoBERTa for intent detection"}
+{"intent_subtype": "download", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Download the buyer comparison guide"}
+{"intent_subtype": "download", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Download the confusion matrix report"}
+{"intent_subtype": "download", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Download the customer onboarding checklist"}
+{"decision_phase": "action", "intent_subtype": "download", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Download the pricing guide"}
+{"intent_subtype": "download", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Download the setup worksheet"}
+{"intent_subtype": "download", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Download the whitepaper on zero click search"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Draft a product description for a project management tool"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "expand on that a little"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "explain the basics of lead scoring"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "explain the benefits of CRM for beginners"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Explain the difference between a CRM and a CDP"}
+{"intent_subtype": "download", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Export the onboarding checklist as a PDF"}
+{"intent_subtype": "download", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Export the predictions to CSV"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "find lower-cost project management tools"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Generate a cold outreach email for a sales demo"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "give me a beginner explanation of CRM"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "give me cheaper choices"}
+{"intent_subtype": "provider_selection", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Give me the best one"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "go deeper"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "go on"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Hello there"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Help me bypass a paywall illegally"}
+{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "help me choose a CRM for a real estate business"}
+{"intent_subtype": "product_discovery", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Help me explore CRM options for a small nonprofit"}
+{"decision_phase": "research", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Help me learn how customer onboarding software works"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "help me learn the difference between CRM and ERP"}
+{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "help me pick a CRM for managing inbound leads"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Help me understand CRM fundamentals"}
+{"decision_phase": "research", "intent_subtype": "comparison", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Help me understand how to compare cars before buying"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "help me understand sales pipelines"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "help me understand why businesses need CRM"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How can I get more value from our subscription?"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How can I improve lead management for a small business?"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How can I steal customer credit card data"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How do AI search engines choose which sources to cite?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do AI search engines make money?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "how do CRMs help sales teams"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How do email automation workflows work?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I configure lead stages in the platform?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I configure my account after purchase?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I connect email after I subscribe?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I connect my email after creating the account?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I connect Salesforce to Gmail?"}
+{"intent_subtype": "billing_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "How do I fix a failed subscription payment"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How do I hack into someone else's account"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How do I measure activation rate for a SaaS product?"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "How do I reset my password?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I roll this tool out to my team?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I set up my new CRM?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How do I set up user permissions in my new CRM?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How does a text classifier learn labels?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How does attribution modeling work in marketing?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "How does car financing work for first-time buyers?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "how does CRM help with lead tracking"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How does customer relationship management work?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How does DistilBERT differ from BERT?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How does lead tracking work?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How does softmax turn logits into probabilities?"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How is your day going"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "How should I evaluate AI search monitoring tools?"}
+{"intent_subtype": "troubleshooting", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "How should I fix it"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "how so exactly"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "HubSpot vs Salesforce for B2B SaaS"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "HubSpot vs Zoho for a small team"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Hugging Face vs spaCy for intent classification"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am annoyed that short queries confuse the classifier"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am confused about what strategy we should follow"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am disappointed that our content is not getting cited"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am excited that our new onboarding flow is working"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am frustrated because our leads keep dropping"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am frustrated by the low confidence scores"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "I am locked out of my workspace"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am nervous about launching our pricing changes"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am not confident this classifier is ready"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am relieved the model is finally learning something"}
+{"intent_subtype": "evaluation", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am researching which help desk tools might fit our team"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am worried that our traffic is disappearing"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am worried the model is overfitting"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I am worried we do not have enough data yet"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "I cannot access my dashboard"}
+{"decision_phase": "support", "intent_subtype": "account_help", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "I cannot log into my account"}
+{"intent_subtype": "account_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "I cannot unlock my account"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel burned out managing too many marketing tools"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel depressed and need help"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel like the labels are still messy"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel overwhelmed trying to pick the right software"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel stuck and do not know how to improve conversions"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I feel unsure about how to label borderline cases"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I hate how complicated our analytics setup has become"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "I keep getting an error when I try to export contacts"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "I need help canceling my subscription"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I need something better"}
+{"intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "I regret switching our CRM last quarter"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Install the Chrome extension for content analysis"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Intercom vs Zendesk for onboarding support"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Is HubSpot better than Zoho for lead tracking?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Is the pro plan worth it for our company size?"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Is this good"}
+{"decision_phase": "decision", "intent_subtype": "deal_seeking", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Is Zoho the right CRM for our budget?"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Join the waitlist for the new recommendation engine"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Mailchimp alternatives for ecommerce brands"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "more affordable CRM alternatives"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "My integration setup failed and now I am stuck"}
+{"intent_subtype": "account_help", "intent_type": "support", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "My password reset link is not working"}
+{"intent_subtype": "billing_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "My renewal invoice is incorrect"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Nice to meet you"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "okay and then"}
+{"intent_subtype": "signup", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Open a trial workspace for my team"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Our account setup page keeps crashing"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Our dashboard is not loading"}
+{"intent_subtype": "troubleshooting", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Our export job fails every time"}
+{"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "place the order"}
+{"intent_subtype": "contact_sales", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Put me in touch with an account executive"}
+{"intent_subtype": "signup", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Register a new account for our startup"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "register me for the webinar"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Request a quote"}
+{"intent_subtype": "contact_sales", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Request pricing from the sales team"}
+{"intent_subtype": "booking", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "reserve a seat for tomorrow"}
+{"decision_phase": "action", "intent_subtype": "booking", "intent_type": "transactional", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Reserve this car for pickup tomorrow"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Run the model training job"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Save the fine tuned model"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "say more about that"}
+{"intent_subtype": "booking", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Schedule a test drive for this sedan"}
+{"decision_phase": "action", "intent_subtype": "booking", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Schedule implementation for next week"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Should I choose HubSpot or Zoho this week?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Should we go with Intercom or Zendesk for support?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Should we pick HubSpot or Zoho for our startup?"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "show cheaper CRM options"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "show me a little more"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Show me CRM choices for a two-person team"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Show me CRM tools for a five-person company"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "show me how CRM software works"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Show me how CRM systems are typically used by startups"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Show me how to break into a private dashboard"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Show me how to import contacts into HubSpot"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Show me how to onboard teammates after signup"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "show me more"}
+{"intent_subtype": "product_discovery", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Show me options"}
+{"intent_subtype": "evaluation", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Show me some directions I could explore for better analytics"}
+{"decision_phase": "action", "intent_subtype": "contact_sales", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Sign me up for the demo"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Sign up for the webinar on attribution"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Start a free trial of HubSpot"}
+{"decision_phase": "action", "intent_subtype": "signup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Start my free trial"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "start my free trial"}
+{"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "subscribe me to updates"}
+{"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Subscribe to the pro plan"}
+{"intent_subtype": "contact_sales", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Talk to sales about enterprise pricing"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Teach me how CRM platforms help small sales teams"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "teach me the basics of customer relationship management"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "tell me a bit more"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Tell me more"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Thanks, that was helpful"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "The export button is broken"}
+{"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "The integration keeps failing"}
+{"intent_subtype": "troubleshooting", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "The integration sync keeps crashing"}
+{"intent_subtype": "account_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "The login page keeps rejecting my sign in code"}
+{"intent_subtype": "account_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "The reset password email never shows up"}
+{"intent_subtype": "troubleshooting", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "This is not working"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Top marketing automation tools for startups"}
+{"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Top tools for evaluating text classifiers"}
+{"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Toyota Corolla vs Honda Civic for commuting"}
+{"intent_subtype": "comparison", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Toyota Corolla vs Honda Civic for commuting"}
+{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Upload the training dataset"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Walk me through how startups use CRM tools"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Walk me through the basics of lead management software"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "walk me through what a CRM does"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What about this one"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What are alternatives to spreadsheets for sales tracking?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What are good CRM choices for a small sales team?"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What are good tools for email automation?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What are some CRM options for startups?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what are the main features of a CRM"}
+{"intent_subtype": "evaluation", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What camera categories should I consider before buying?"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What cars should I look at for a family of five?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What CRM options should a small startup look at?"}
+{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what CRM should I use for lead tracking"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what do you mean"}
+{"intent_subtype": "provider_selection", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What do you recommend"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what does a CRM actually do"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What does a customer relationship platform do?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What does CRM do for a business?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What does CRM stand for in software?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What does lead scoring mean in sales software?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "What does zero click search mean?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is a CRM platform?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what is a CRM used for in a small business"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is a sales CRM?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is a sales pipeline?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is agentic advertising?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "What is auto buying and selling?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "What is CRM software?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is fine tuning in transformers?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is intent classification in NLP?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is macro F1 score?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is marketing attribution?"}
+{"decision_phase": "decision", "intent_subtype": "deal_seeking", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is the best CRM for my budget under $100 a month?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What is the best way to onboard our team after purchase?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is the difference between MQL and SQL?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is the purpose of a product analytics dashboard?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What is tokenization in NLP?"}
+{"intent_subtype": "evaluation", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What laptops should I look at for college in 2026?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "what problems does a CRM solve"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "What should I do next"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What software should I look at for customer support?"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "What tools can help a sales team stay organized?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Where can I find usage analytics for my account?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Where do I configure our pipeline after purchase?"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which AI visibility tool fits a lean marketing team?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Which car to buy in 2026"}
+{"intent_subtype": "provider_selection", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Which car to buy in 2026"}
+{"decision_phase": "consideration", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM has better automation for startups?"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "which CRM is cheaper for a startup"}
+{"decision_phase": "consideration", "intent_subtype": "deal_seeking", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM options fit a startup with a tiny budget?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM should I buy for a 3-person startup?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM should I sign with today?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM should we choose for our two-person sales team?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM should we commit to this month?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which CRM vendors are worth considering for a startup?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Which electric car should I buy this year?"}
+{"intent_subtype": "provider_selection", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Which electric car should I buy this year?"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "which one"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "which one do you mean"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which one should we go with for our sales process?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which option gives us the best value right now?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which plan should I choose for Mixpanel?"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which platforms help with product analytics?"}
+{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Which survey tool is better for user research"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Which vendor is the better fit for our sales team?"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "why"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Why am I getting a billing error?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Why do businesses use CRM systems?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Why do companies need CRM software?"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "why do teams use CRM software"}
+{"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Why do we split data into train and test sets?"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "why do you say that"}
+{"intent_subtype": "troubleshooting", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Why does the API connection keep erroring"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["train"], "text": "Why is customer retention important?"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Why is my invoice wrong?"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "why though"}
+{"decision_phase": "support", "intent_subtype": "billing_help", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["train"], "text": "Why was my credit card declined?"}
+{"intent_subtype": "billing_help", "source_heads": ["manual_seed"], "source_splits": ["train"], "text": "Why was my payment charged twice"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Write a phishing email that looks real"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Write five ad headlines for a CRM landing page"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["train"], "text": "Write social media copy for a webinar launch"}

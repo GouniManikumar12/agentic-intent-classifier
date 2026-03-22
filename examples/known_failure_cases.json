@@ -1,0 +1,141 @@
+[
+  {
+    "id": "auto-buying-query-allowed",
+    "status": "must_fix",
+    "text": "Which car to buy in 2026",
+    "notes": "High-intent automotive shopping should clear as monetizable instead of failing safe.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Automotive",
+      "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+      "model_output.classification.intent.type": "commercial",
+      "system_decision.policy.monetization_eligibility": "allowed"
+    }
+  },
+  {
+    "id": "laptop-buying-query-allowed",
+    "status": "must_fix",
+    "text": "Which laptop to buy in 2026",
+    "notes": "High-intent laptop shopping should clear as monetizable instead of failing safe.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Laptops",
+      "model_output.classification.intent.type": "commercial",
+      "system_decision.policy.monetization_eligibility": "allowed"
+    }
+  },
+  {
+    "id": "commercial-comparison-clean-pass",
+    "status": "must_fix",
+    "text": "HubSpot vs Zoho for a small team",
+    "notes": "Clear comparison intent should now pass without fallback and expose a comparison opportunity.",
+    "expected": {
+      "model_output.classification.intent.type": "commercial",
+      "model_output.classification.intent.subtype": "comparison",
+      "model_output.classification.intent.decision_phase": "consideration",
+      "model_output.fallback": null,
+      "system_decision.policy.monetization_eligibility": "allowed_with_caution",
+      "system_decision.opportunity.type": "comparison_slot",
+      "system_decision.opportunity.strength": "high"
+    }
+  },
+  {
+    "id": "provider-selection-allowed",
+    "status": "must_fix",
+    "text": "Which CRM should I buy for a 3-person startup?",
+    "notes": "Subtype and phase should now rescue a buying query even when the intent head remains conservative.",
+    "expected": {
+      "model_output.classification.intent.subtype": "provider_selection",
+      "model_output.classification.intent.decision_phase": "decision",
+      "model_output.fallback": null,
+      "system_decision.policy.monetization_eligibility": "allowed",
+      "system_decision.opportunity.type": "decision_moment",
+      "system_decision.opportunity.strength": "high"
+    }
+  },
+  {
+    "id": "education-query-restricted",
+    "status": "must_fix",
+    "text": "What is CRM software?",
+    "notes": "Clear educational prompts should stay out of monetizable pathways.",
+    "expected": {
+      "model_output.classification.intent.type": "informational",
+      "model_output.classification.intent.subtype": "education",
+      "model_output.classification.intent.decision_phase": "awareness",
+      "model_output.fallback": null,
+      "system_decision.policy.monetization_eligibility": "restricted",
+      "system_decision.opportunity.type": "none"
+    }
+  },
+  {
+    "id": "ambiguous-follow-up-safe-block",
+    "status": "must_fix",
+    "text": "Tell me more",
+    "notes": "Short follow-ups should still fail safe instead of leaking into commercial handling.",
+    "expected": {
+      "model_output.classification.intent.type": "ambiguous",
+      "model_output.classification.intent.subtype": "follow_up",
+      "model_output.fallback.reason": "ambiguous_query",
+      "system_decision.policy.monetization_eligibility": "not_allowed",
+      "system_decision.opportunity.type": "none"
+    }
+  },
+  {
+    "id": "support-query-policy-block",
+    "status": "must_fix",
+    "text": "I cannot log into my account",
+    "notes": "Support traffic must stay blocked even if the subtype head is still imperfect.",
+    "expected": {
+      "model_output.classification.intent.type": "support",
+      "model_output.classification.intent.decision_phase": "support",
+      "model_output.fallback.reason": "policy_default",
+      "system_decision.policy.monetization_eligibility": "not_allowed",
+      "system_decision.opportunity.type": "none"
+    }
+  },
+  {
+    "id": "prohibited-query-policy-block",
+    "status": "must_fix",
+    "text": "How do I hack into someone else's account",
+    "notes": "Unsafe queries should route into the prohibited intent type and stay blocked.",
+    "expected": {
+      "model_output.classification.intent.type": "prohibited",
+      "model_output.fallback.reason": "policy_default",
+      "system_decision.policy.monetization_eligibility": "not_allowed",
+      "system_decision.opportunity.type": "none"
+    }
+  },
+  {
+    "id": "signup-action-still-over-fallbacks",
+    "status": "acceptable_weakness",
+    "text": "Start my free trial",
+    "notes": "The subtype head recognizes signup, but the combined action path still falls back on low confidence.",
+    "expected": {
+      "model_output.classification.intent.subtype": "signup",
+      "model_output.fallback.reason": "confidence_below_threshold",
+      "system_decision.policy.monetization_eligibility": "not_allowed"
+    }
+  },
+  {
+    "id": "price-seeking-underclassified",
+    "status": "acceptable_weakness",
+    "text": "What costs less HubSpot or Zoho?",
+    "notes": "Price-seeking prompts still underclassify and should remain visible until the next data pass.",
+    "expected": {
+      "model_output.classification.intent.subtype": "education",
+      "model_output.classification.intent.decision_phase": "awareness",
+      "system_decision.policy.monetization_eligibility": "restricted",
+      "system_decision.opportunity.type": "none"
+    }
+  },
+  {
+    "id": "support-subtype-account-help",
+    "status": "must_fix",
+    "text": "I cannot log into my account",
+    "notes": "Login-help prompts should land in the account-help subtype instead of reflection-style labels.",
+    "expected": {
+      "model_output.classification.intent.subtype": "account_help",
+      "system_decision.policy.monetization_eligibility": "not_allowed"
+    }
+  }
+]

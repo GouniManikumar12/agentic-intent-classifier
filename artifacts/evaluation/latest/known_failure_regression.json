@@ -1,0 +1,216 @@
+{
+  "by_status": {
+    "acceptable_weakness": {
+      "failed": 1,
+      "passed": 2,
+      "total": 3
+    },
+    "must_fix": {
+      "failed": 0,
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/known_failure_cases.json",
+  "count": 9,
+  "failed": 1,
+  "passed": 8,
+  "results": [
+    {
+      "actual": {
+        "model_output.classification.iab_content.tier1.label": "Automotive",
+        "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+        "model_output.classification.intent.type": "commercial",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "expected": {
+        "model_output.classification.iab_content.tier1.label": "Automotive",
+        "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+        "model_output.classification.intent.type": "commercial",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "id": "auto-buying-query-allowed",
+      "mismatches": [],
+      "notes": "High-intent automotive shopping should clear as monetizable instead of failing safe.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Which car to buy in 2026"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "comparison",
+        "model_output.classification.intent.type": "commercial",
+        "model_output.fallback": null,
+        "system_decision.opportunity.strength": "high",
+        "system_decision.opportunity.type": "comparison_slot",
+        "system_decision.policy.monetization_eligibility": "allowed_with_caution"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "comparison",
+        "model_output.classification.intent.type": "commercial",
+        "model_output.fallback": null,
+        "system_decision.opportunity.strength": "high",
+        "system_decision.opportunity.type": "comparison_slot",
+        "system_decision.policy.monetization_eligibility": "allowed_with_caution"
+      },
+      "id": "commercial-comparison-clean-pass",
+      "mismatches": [],
+      "notes": "Clear comparison intent should now pass without fallback and expose a comparison opportunity.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "HubSpot vs Zoho for a small team"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "decision",
+        "model_output.classification.intent.subtype": "provider_selection",
+        "model_output.fallback": null,
+        "system_decision.opportunity.strength": "high",
+        "system_decision.opportunity.type": "decision_moment",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "decision",
+        "model_output.classification.intent.subtype": "provider_selection",
+        "model_output.fallback": null,
+        "system_decision.opportunity.strength": "high",
+        "system_decision.opportunity.type": "decision_moment",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "id": "provider-selection-allowed",
+      "mismatches": [],
+      "notes": "Subtype and phase should now rescue a buying query even when the intent head remains conservative.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Which CRM should I buy for a 3-person startup?"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "awareness",
+        "model_output.classification.intent.subtype": "education",
+        "model_output.classification.intent.type": "informational",
+        "model_output.fallback": null,
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "restricted"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "awareness",
+        "model_output.classification.intent.subtype": "education",
+        "model_output.classification.intent.type": "informational",
+        "model_output.fallback": null,
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "restricted"
+      },
+      "id": "education-query-restricted",
+      "mismatches": [],
+      "notes": "Clear educational prompts should stay out of monetizable pathways.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "What is CRM software?"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.subtype": "follow_up",
+        "model_output.classification.intent.type": "ambiguous",
+        "model_output.fallback.reason": "ambiguous_query",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.subtype": "follow_up",
+        "model_output.classification.intent.type": "ambiguous",
+        "model_output.fallback.reason": "ambiguous_query",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "id": "ambiguous-follow-up-safe-block",
+      "mismatches": [],
+      "notes": "Short follow-ups should still fail safe instead of leaking into commercial handling.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Tell me more"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "support",
+        "model_output.fallback.reason": "policy_default",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "support",
+        "model_output.fallback.reason": "policy_default",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "id": "support-query-policy-block",
+      "mismatches": [],
+      "notes": "Support traffic must stay blocked even if the subtype head is still imperfect.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "I cannot log into my account"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.subtype": "signup",
+        "model_output.fallback.reason": "confidence_below_threshold",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.subtype": "signup",
+        "model_output.fallback.reason": "confidence_below_threshold",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "id": "signup-action-still-over-fallbacks",
+      "mismatches": [],
+      "notes": "The subtype head recognizes signup, but the combined action path still falls back on low confidence.",
+      "pass": true,
+      "status": "acceptable_weakness",
+      "text": "Start my free trial"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "decision",
+        "model_output.classification.intent.subtype": "education",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "restricted"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "awareness",
+        "model_output.classification.intent.subtype": "education",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "restricted"
+      },
+      "id": "price-seeking-underclassified",
+      "mismatches": [
+        {
+          "actual": "decision",
+          "expected": "awareness",
+          "path": "model_output.classification.intent.decision_phase"
+        }
+      ],
+      "notes": "Price-seeking prompts still underclassify and should remain visible until the next data pass.",
+      "pass": false,
+      "status": "acceptable_weakness",
+      "text": "What costs less HubSpot or Zoho?"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.subtype": "emotional_reflection",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.subtype": "emotional_reflection",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "id": "support-subtype-still-bleeds-into-reflection",
+      "mismatches": [],
+      "notes": "The system layer blocks this correctly, but the subtype head still confuses some support phrasing with reflection.",
+      "pass": true,
+      "status": "acceptable_weakness",
+      "text": "I cannot log into my account"
+    }
+  ]
+}

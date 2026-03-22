@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from config import DECISION_PHASE_LABELS, INTENT_TYPE_LABELS, PROJECT_VERSION
+from config import DECISION_PHASE_LABELS, INTENT_TYPE_LABELS, PROJECT_VERSION, SUBTYPE_LABELS
 
 API_SCHEMA_VERSION = "2026-03-22"
 ALLOWED_MONETIZATION_ELIGIBILITY = {
@@ -15,6 +15,7 @@ ALLOWED_DECISION_BASIS = {
     "score_threshold",
     "fallback_low_confidence",
     "fallback_ambiguous_intent",
+    "fallback_policy_default",
 }
 ALLOWED_SENSITIVITY = {"low", "medium", "high"}
 ALLOWED_OPPORTUNITY_TYPES = {
@@ -26,6 +27,7 @@ ALLOWED_OPPORTUNITY_TYPES = {
 }
 ALLOWED_OPPORTUNITY_STRENGTHS = {"low", "medium", "high"}
 ALLOWED_FALLBACK_REASONS = {"ambiguous_query", "policy_default", "confidence_below_threshold"}
+ALLOWED_IAB_MAPPING_MODES = {"exact", "nearest_equivalent", "internal_extension"}
 
 
 class SchemaValidationError(Exception):
@@ -118,6 +120,36 @@ def _validate_head_confidence(payload, field: str, labels: tuple[str, ...], erro
     _expect_bool(data.get("meets_threshold"), f"{field}.meets_threshold", errors)
 
 
+def _validate_iab_level(payload, field: str, errors: list[dict]) -> None:
+    data = _expect_dict(payload, field, errors)
+    if data is None:
+        return
+    _expect_str(data.get("id"), f"{field}.id", errors, min_length=1)
+    _expect_str(data.get("label"), f"{field}.label", errors, min_length=1)
+
+
+def _validate_iab_content(payload, field: str, errors: list[dict]) -> None:
+    data = _expect_dict(payload, field, errors)
+    if data is None:
+        return
+    taxonomy = _expect_str(data.get("taxonomy"), f"{field}.taxonomy", errors, min_length=1)
+    if taxonomy is not None and taxonomy != "IAB Content Taxonomy":
+        errors.append(_detail(f"{field}.taxonomy", "must equal 'IAB Content Taxonomy'", "value_error"))
+    _expect_str(data.get("taxonomy_version"), f"{field}.taxonomy_version", errors, min_length=1)
+    _validate_iab_level(data.get("tier1"), f"{field}.tier1", errors)
+    tier2 = data.get("tier2")
+    if tier2 is not None:
+        _validate_iab_level(tier2, f"{field}.tier2", errors)
+    tier3 = data.get("tier3")
+    if tier3 is not None:
+        _validate_iab_level(tier3, f"{field}.tier3", errors)
+    tier4 = data.get("tier4")
+    if tier4 is not None:
+        _validate_iab_level(tier4, f"{field}.tier4", errors)
+    _expect_member(data.get("mapping_mode"), f"{field}.mapping_mode", ALLOWED_IAB_MAPPING_MODES, errors)
+    _expect_float(data.get("mapping_confidence"), f"{field}.mapping_confidence", errors)
+
+
 def _validate_fallback(payload, field: str, errors: list[dict]) -> None:
     if payload is None:
         return
@@ -139,7 +171,7 @@ def _validate_fallback(payload, field: str, errors: list[dict]) -> None:
             _expect_member(
                 item,
                 f"{field}.failed_components[{index}]",
-                {"intent_type", "decision_phase"},
+                {"intent_type", "intent_subtype", "decision_phase"},
                 errors,
             )
 
@@ -155,6 +187,11 @@ def _validate_policy(payload, field: str, errors: list[dict]) -> None:
     if thresholds is not None:
         _expect_float(thresholds.get("commercial_score_min"), f"{field}.applied_thresholds.commercial_score_min", errors)
         _expect_float(thresholds.get("intent_type_confidence_min"), f"{field}.applied_thresholds.intent_type_confidence_min", errors)
+        _expect_float(
+            thresholds.get("intent_subtype_confidence_min"),
+            f"{field}.applied_thresholds.intent_subtype_confidence_min",
+            errors,
+        )
         _expect_float(thresholds.get("decision_phase_confidence_min"), f"{field}.applied_thresholds.decision_phase_confidence_min", errors)
     _expect_member(data.get("sensitivity"), f"{field}.sensitivity", ALLOWED_SENSITIVITY, errors)
     _expect_bool(data.get("regulated_vertical"), f"{field}.regulated_vertical", errors)
@@ -178,9 +215,15 @@ def validate_classify_response(payload) -> dict:
     if model_output is not None:
         classification = _expect_dict(model_output.get("classification"), "model_output.classification", errors)
         if classification is not None:
+            _validate_iab_content(
+                classification.get("iab_content"),
+                "model_output.classification.iab_content",
+                errors,
+            )
             intent = _expect_dict(classification.get("intent"), "model_output.classification.intent", errors)
             if intent is not None:
                 _expect_member(intent.get("type"), "model_output.classification.intent.type", INTENT_TYPE_LABELS, errors)
+                _expect_member(intent.get("subtype"), "model_output.classification.intent.subtype", SUBTYPE_LABELS, errors)
                 _expect_member(
                     intent.get("decision_phase"),
                     "model_output.classification.intent.decision_phase",
@@ -203,6 +246,12 @@ def validate_classify_response(payload) -> dict:
                         errors,
                     )
                     _validate_head_confidence(
+                        component_confidence.get("intent_subtype"),
+                        "model_output.classification.intent.component_confidence.intent_subtype",
+                        SUBTYPE_LABELS,
+                        errors,
+                    )
+                    _validate_head_confidence(
                         component_confidence.get("decision_phase"),
                         "model_output.classification.intent.component_confidence.decision_phase",
                         DECISION_PHASE_LABELS,
@@ -211,7 +260,7 @@ def validate_classify_response(payload) -> dict:
                     _expect_member(
                         component_confidence.get("overall_strategy"),
                         "model_output.classification.intent.component_confidence.overall_strategy",
-                        {"min_calibrated_component_confidence"},
+                        {"min_required_component_confidence"},
                         errors,
                     )
         _validate_fallback(model_output.get("fallback"), "model_output.fallback", errors)

@@ -13,6 +13,9 @@
 {"text":"Send me the benchmark report","intent_type":"transactional"}
 {"text":"Approve the model deployment","intent_type":"transactional"}
 {"text":"Schedule the retraining pipeline","intent_type":"transactional"}
+{"text":"The API is returning errors","intent_type":"support"}
+{"text":"How do I recover deleted contacts?","intent_type":"support"}
+{"text":"The login code never arrived","intent_type":"support"}
 {"text":"I feel optimistic now that the predictions make more sense","intent_type":"personal_reflection"}
 {"text":"I am exhausted from hand labeling so many examples","intent_type":"personal_reflection"}
 {"text":"I am concerned that transactional and ambiguous overlap","intent_type":"personal_reflection"}
@@ -35,3 +38,10 @@
 {"text":"more affordable ones","intent_type":"ambiguous"}
 {"text":"what costs less HubSpot or Zoho","intent_type":"commercial"}
 {"text":"cheaper alternatives to Salesforce","intent_type":"commercial"}
+{"text":"How does buying a used car work?","intent_type":"informational"}
+{"text":"Which EV should I buy this year","intent_type":"commercial"}
+{"text":"Reserve a test drive for tomorrow","intent_type":"transactional"}
+{"text":"What desktop options should I explore for gaming?","intent_type":"exploratory"}
+{"text":"Write a welcome email for a free trial signup","intent_type":"creative_generation"}
+{"text":"Good morning, how are things","intent_type":"chit_chat"}
+{"text":"How do I bypass account security checks","intent_type":"prohibited"}

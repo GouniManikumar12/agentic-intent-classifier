@@ -1,15 +1,15 @@
 {
-  "accepted_accuracy": 1.0,
-  "accepted_coverage": 0.625,
-  "accuracy": 0.9167,
+  "accepted_accuracy": 0.9545,
+  "accepted_coverage": 0.8148,
+  "accuracy": 0.8519,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_final_wave_cases_confusion_matrix.csv",
-  "count": 24,
+  "count": 27,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/final_wave_cases.jsonl",
-  "fallback_rate": 0.375,
+  "fallback_rate": 0.1852,
   "head": "decision_phase",
-  "macro_f1": 0.9153,
+  "macro_f1": 0.841,
   "per_class_metrics": {
-    "accuracy": 0.9166666666666666,
+    "accuracy": 0.8518518518518519,
     "action": {
       "f1-score": 0.0,
       "precision": 0.0,
@@ -17,38 +17,38 @@
       "support": 0.0
     },
     "awareness": {
-      "f1-score": 0.8888888888888888,
+      "f1-score": 0.8,
       "precision": 0.8,
-      "recall": 1.0,
-      "support": 4.0
+      "recall": 0.8,
+      "support": 5.0
     },
     "consideration": {
-      "f1-score": 0.8888888888888888,
-      "precision": 0.8,
-      "recall": 1.0,
-      "support": 4.0
-    },
-    "decision": {
-      "f1-score": 0.8571428571428571,
-      "precision": 1.0,
-      "recall": 0.75,
-      "support": 4.0
-    },
-    "macro avg": {
-      "f1-score": 0.7845804988662131,
-      "precision": 0.7999999999999999,
-      "recall": 0.7857142857142857,
-      "support": 24.0
-    },
-    "post_purchase": {
       "f1-score": 1.0,
       "precision": 1.0,
       "recall": 1.0,
+      "support": 5.0
+    },
+    "decision": {
+      "f1-score": 0.8333333333333334,
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "support": 5.0
+    },
+    "macro avg": {
+      "f1-score": 0.7208616780045352,
+      "precision": 0.7591836734693879,
+      "recall": 0.7214285714285714,
+      "support": 27.0
+    },
+    "post_purchase": {
+      "f1-score": 0.6666666666666666,
+      "precision": 1.0,
+      "recall": 0.5,
       "support": 4.0
     },
     "research": {
-      "f1-score": 1.0,
-      "precision": 1.0,
+      "f1-score": 0.8888888888888888,
+      "precision": 0.8,
       "recall": 1.0,
       "support": 4.0
     },
@@ -59,10 +59,10 @@
       "support": 4.0
     },
     "weighted avg": {
-      "f1-score": 0.9153439153439152,
-      "precision": 0.9333333333333332,
-      "recall": 0.9166666666666666,
-      "support": 24.0
+      "f1-score": 0.8450911228689006,
+      "precision": 0.8804232804232804,
+      "recall": 0.8518518518518519,
+      "support": 27.0
     }
   },
   "suite": "final_wave_cases"

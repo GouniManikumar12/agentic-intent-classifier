@@ -1,0 +1,32 @@
+{
+  "calibrated": true,
+  "confidence_threshold": 0.25,
+  "generated_at": "2026-03-22T17:27:03.399767+00:00",
+  "head": "intent_subtype",
+  "metrics": {
+    "calibrated_accuracy": 0.6667,
+    "calibrated_expected_calibration_error": 0.2996,
+    "calibrated_negative_log_likelihood": 1.5163,
+    "mean_calibrated_confidence": 0.3894,
+    "mean_raw_confidence": 0.3894,
+    "raw_accuracy": 0.6667,
+    "raw_expected_calibration_error": 0.2996,
+    "raw_negative_log_likelihood": 1.5163
+  },
+  "minimum_threshold_floor": 0.25,
+  "optimized_temperature_candidate": 0.001,
+  "selected_threshold_before_floor": {
+    "accepted_accuracy": 0.75,
+    "coverage": 0.8485,
+    "threshold": 0.13
+  },
+  "selection_split": "val",
+  "selection_target_precision": 0.75,
+  "temperature": 1.0,
+  "temperature_scaling_applied": false,
+  "threshold_summary": {
+    "accepted_accuracy": 0.878,
+    "coverage": 0.6212,
+    "threshold": 0.25
+  }
+}

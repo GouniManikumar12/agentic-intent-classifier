@@ -1,15 +1,15 @@
 {
   "accepted_accuracy": 1.0,
-  "accepted_coverage": 0.9189,
-  "accuracy": 0.9459,
+  "accepted_coverage": 0.775,
+  "accuracy": 0.975,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_val_confusion_matrix.csv",
-  "count": 37,
+  "count": 40,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/val.jsonl",
-  "fallback_rate": 0.0811,
+  "fallback_rate": 0.225,
   "head": "intent_type",
-  "macro_f1": 0.9515,
+  "macro_f1": 0.9787,
   "per_class_metrics": {
-    "accuracy": 0.9459459459459459,
+    "accuracy": 0.975,
     "ambiguous": {
       "f1-score": 0.9411764705882353,
       "precision": 1.0,
@@ -17,22 +17,22 @@
       "support": 9.0
     },
     "commercial": {
-      "f1-score": 0.9411764705882353,
-      "precision": 1.0,
-      "recall": 0.8888888888888888,
-      "support": 9.0
+      "f1-score": 0.9523809523809523,
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "support": 10.0
     },
     "informational": {
-      "f1-score": 0.875,
-      "precision": 0.7777777777777778,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
-      "support": 7.0
+      "support": 8.0
     },
     "macro avg": {
-      "f1-score": 0.9514705882352942,
-      "precision": 0.9555555555555555,
-      "recall": 0.9555555555555555,
-      "support": 37.0
+      "f1-score": 0.9787114845938376,
+      "precision": 0.9818181818181818,
+      "recall": 0.9777777777777779,
+      "support": 40.0
     },
     "personal_reflection": {
       "f1-score": 1.0,
@@ -44,13 +44,13 @@
       "f1-score": 1.0,
       "precision": 1.0,
       "recall": 1.0,
-      "support": 7.0
+      "support": 8.0
     },
     "weighted avg": {
-      "f1-score": 0.9477344992050873,
-      "precision": 0.9579579579579579,
-      "recall": 0.9459459459459459,
-      "support": 37.0
+      "f1-score": 0.974859943977591,
+      "precision": 0.9772727272727273,
+      "recall": 0.975,
+      "support": 40.0
     }
   },
   "suite": "val"

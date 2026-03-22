@@ -18,3 +18,9 @@
 {"text":"cheaper alternatives to Salesforce","intent_type":"commercial"}
 {"text":"which email platform is cheaper for a small business","intent_type":"commercial"}
 {"text":"find lower-cost project management tools","intent_type":"commercial"}
+{"text":"best used car under $20000","intent_type":"commercial"}
+{"text":"which electric car should i buy this year","intent_type":"commercial"}
+{"text":"what laptop options should i explore for remote work","intent_type":"exploratory"}
+{"text":"generate five hooks for a product demo ad","intent_type":"creative_generation"}
+{"text":"thanks for the help","intent_type":"chit_chat"}
+{"text":"how can i steal login credentials","intent_type":"prohibited"}

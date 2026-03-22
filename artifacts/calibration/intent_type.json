@@ -1,25 +1,32 @@
 {
   "calibrated": true,
   "confidence_threshold": 0.4,
-  "generated_at": "2026-03-22T06:06:22.520034+00:00",
+  "generated_at": "2026-03-22T17:27:02.517983+00:00",
   "head": "intent_type",
   "metrics": {
-    "calibrated_accuracy": 0.9459,
-    "calibrated_expected_calibration_error": 0.3087,
-    "calibrated_negative_log_likelihood": 0.4826,
-    "mean_calibrated_confidence": 0.6413,
-    "mean_raw_confidence": 0.4814,
-    "raw_accuracy": 0.9459,
-    "raw_expected_calibration_error": 0.4645,
-    "raw_negative_log_likelihood": 0.762
+    "calibrated_accuracy": 0.975,
+    "calibrated_expected_calibration_error": 0.3585,
+    "calibrated_negative_log_likelihood": 0.5728,
+    "mean_calibrated_confidence": 0.6165,
+    "mean_raw_confidence": 0.4936,
+    "raw_accuracy": 0.975,
+    "raw_expected_calibration_error": 0.4814,
+    "raw_negative_log_likelihood": 0.7776
+  },
+  "minimum_threshold_floor": 0.4,
+  "optimized_temperature_candidate": 0.68171,
+  "selected_threshold_before_floor": {
+    "accepted_accuracy": 0.975,
+    "coverage": 1.0,
+    "threshold": 0.0
   },
   "selection_split": "val",
   "selection_target_precision": 0.8,
-  "temperature": 0.629795,
-  "threshold_selection_mode": "manual_sweep",
+  "temperature": 0.68171,
+  "temperature_scaling_applied": true,
   "threshold_summary": {
-    "accepted_accuracy": 0.9459,
-    "coverage": 1.0,
-    "threshold": 0.0
+    "accepted_accuracy": 1.0,
+    "coverage": 0.775,
+    "threshold": 0.4
   }
 }

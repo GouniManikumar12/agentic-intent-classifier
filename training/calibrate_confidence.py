@@ -85,6 +85,17 @@ def select_threshold(confidences: np.ndarray, correct: np.ndarray, target_precis
     )
 
 
+def summarize_threshold(confidences: np.ndarray, correct: np.ndarray, threshold: float) -> dict:
+    accepted = confidences >= threshold
+    coverage = float(np.mean(accepted))
+    accepted_accuracy = float(np.mean(correct[accepted])) if coverage > 0 else 0.0
+    return {
+        "threshold": round(float(threshold), 4),
+        "coverage": round(coverage, 4),
+        "accepted_accuracy": round(accepted_accuracy, 4),
+    }
+
+
 def collect_logits(head_name: str, split: str) -> tuple[np.ndarray, np.ndarray]:
     head = get_head(head_name)
     config = head.config
@@ -111,33 +122,53 @@ def calibrate_head(head_name: str, split: str, step: float) -> dict:
     raw_confidences = raw_probs.max(axis=1)
     raw_preds = raw_probs.argmax(axis=1)
     raw_correct = raw_preds == labels
+    raw_nll = float(log_loss(labels, raw_probs, labels=list(range(len(head.config.labels)))))
 
-    temperature = optimize_temperature(logits, labels)
-    calibrated_probs = torch.softmax(torch.tensor(logits / temperature, dtype=torch.float32), dim=-1).numpy()
+    optimized_temperature = optimize_temperature(logits, labels)
+    calibrated_probs = torch.softmax(torch.tensor(logits / optimized_temperature, dtype=torch.float32), dim=-1).numpy()
     calibrated_confidences = calibrated_probs.max(axis=1)
     calibrated_preds = calibrated_probs.argmax(axis=1)
     calibrated_correct = calibrated_preds == labels
+    calibrated_nll = float(log_loss(labels, calibrated_probs, labels=list(range(len(head.config.labels)))))
 
-    threshold_summary = select_threshold(
+    temperature = optimized_temperature
+    used_temperature_scaling = calibrated_nll <= raw_nll
+    if not used_temperature_scaling:
+        temperature = 1.0
+        calibrated_probs = raw_probs
+        calibrated_confidences = raw_confidences
+        calibrated_preds = raw_preds
+        calibrated_correct = raw_correct
+        calibrated_nll = raw_nll
+
+    selected_threshold_summary = select_threshold(
         calibrated_confidences,
         calibrated_correct,
         target_precision=head.config.target_accept_precision,
         step=step,
     )
+    applied_threshold = max(
+        float(selected_threshold_summary["threshold"]),
+        float(head.config.min_calibrated_confidence_threshold),
+    )
+    threshold_summary = summarize_threshold(calibrated_confidences, calibrated_correct, applied_threshold)
 
     payload = {
         "head": head_name,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "calibrated": True,
         "temperature": round(float(temperature), 6),
+        "temperature_scaling_applied": used_temperature_scaling,
+        "optimized_temperature_candidate": round(float(optimized_temperature), 6),
         "confidence_threshold": threshold_summary["threshold"],
         "selection_target_precision": head.config.target_accept_precision,
         "selection_split": split,
+        "minimum_threshold_floor": round(float(head.config.min_calibrated_confidence_threshold), 4),
         "metrics": {
             "raw_accuracy": round(float(accuracy_score(labels, raw_preds)), 4),
             "calibrated_accuracy": round(float(accuracy_score(labels, calibrated_preds)), 4),
-            "raw_negative_log_likelihood": round(float(log_loss(labels, raw_probs)), 4),
-            "calibrated_negative_log_likelihood": round(float(log_loss(labels, calibrated_probs)), 4),
+            "raw_negative_log_likelihood": round(raw_nll, 4),
+            "calibrated_negative_log_likelihood": round(calibrated_nll, 4),
             "raw_expected_calibration_error": round(float(expected_calibration_error(raw_probs, labels)), 4),
             "calibrated_expected_calibration_error": round(
                 float(expected_calibration_error(calibrated_probs, labels)),
@@ -146,6 +177,7 @@ def calibrate_head(head_name: str, split: str, step: float) -> dict:
             "mean_raw_confidence": round(float(np.mean(raw_confidences)), 4),
             "mean_calibrated_confidence": round(float(np.mean(calibrated_confidences)), 4),
         },
+        "selected_threshold_before_floor": selected_threshold_summary,
         "threshold_summary": threshold_summary,
     }
     write_json(head.config.calibration_path, payload)

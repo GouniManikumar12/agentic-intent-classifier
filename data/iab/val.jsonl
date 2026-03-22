@@ -1,0 +1,703 @@
+{"iab_path": "Attractions", "text": "attractions examples"}
+{"iab_path": "Attractions > Amusement and Theme Parks", "text": "amusement and theme parks attractions guide"}
+{"iab_path": "Attractions > Bars & Restaurants", "text": "what is attractions bars & restaurant"}
+{"iab_path": "Attractions > Casinos & Gambling", "text": "what is attractions > casinos & gambling"}
+{"iab_path": "Attractions > Historic Site and Landmark Tours", "text": "how does attractions > historic site and landmark tours work"}
+{"iab_path": "Attractions > Malls & Shopping Centers", "text": "attractions malls & shopping centers guide"}
+{"iab_path": "Attractions > Museums & Galleries", "text": "best museums & galleries attractions"}
+{"iab_path": "Attractions > Nightclubs", "text": "nightclubs overview"}
+{"iab_path": "Attractions > Outdoor Activities", "text": "outdoor activities"}
+{"iab_path": "Attractions > Parks & Nature", "text": "parks & nature attractions for beginners"}
+{"iab_path": "Attractions > Theater Venues", "text": "what is theater venues attractions"}
+{"iab_path": "Attractions > Zoos & Aquariums", "text": "learn about zoos & aquariums"}
+{"iab_path": "Automotive", "text": "automotive for beginners"}
+{"iab_path": "Automotive > Auto Body Styles", "text": "best automotive auto body styles"}
+{"iab_path": "Automotive > Auto Body Styles > Commercial Trucks", "text": "how does auto body styles commercial trucks work"}
+{"iab_path": "Automotive > Auto Body Styles > Convertible", "text": "compare convertible auto body styles options"}
+{"iab_path": "Automotive > Auto Body Styles > Coupe", "text": "automotive > auto body styles > coupe guide"}
+{"iab_path": "Automotive > Auto Body Styles > Crossover", "text": "automotive > auto body styles > crossover examples"}
+{"iab_path": "Automotive > Auto Body Styles > Hatchback", "text": "auto body styles hatchback automotive basics"}
+{"iab_path": "Automotive > Auto Body Styles > Microcar", "text": "automotive > auto body styles > microcar for beginners"}
+{"iab_path": "Automotive > Auto Body Styles > Minivan", "text": "auto body styles minivan automotive basics"}
+{"iab_path": "Automotive > Auto Body Styles > Off-Road Vehicles", "text": "top off-road vehicle"}
+{"iab_path": "Automotive > Auto Body Styles > Pickup Trucks", "text": "what is auto body styles pickup trucks automotive"}
+{"iab_path": "Automotive > Auto Body Styles > Sedan", "text": "auto body styles sedan automotive basics"}
+{"iab_path": "Automotive > Auto Body Styles > Station Wagon", "text": "compare auto body styles station wagon automotive options"}
+{"iab_path": "Automotive > Auto Body Styles > SUV", "text": "compare suv auto body styles options"}
+{"iab_path": "Automotive > Auto Body Styles > Van", "text": "best auto body styles van automotive"}
+{"iab_path": "Automotive > Auto Buying and Selling", "text": "which automotive > auto buying and selling should i buy"}
+{"iab_path": "Automotive > Auto Insurance", "text": "what is auto insurance"}
+{"iab_path": "Automotive > Auto Parts", "text": "automotive > auto parts for beginners"}
+{"iab_path": "Automotive > Auto Recalls", "text": "best automotive auto recall"}
+{"iab_path": "Automotive > Auto Rentals", "text": "automotive > auto rentals examples"}
+{"iab_path": "Automotive > Auto Repair", "text": "top auto repair"}
+{"iab_path": "Automotive > Auto Safety", "text": "automotive auto safety basics"}
+{"iab_path": "Automotive > Auto Shows", "text": "best automotive > auto shows"}
+{"iab_path": "Automotive > Auto Technology", "text": "top auto technology automotive"}
+{"iab_path": "Automotive > Auto Technology > Auto Infotainment Technologies", "text": "best auto technology auto infotainment technologies"}
+{"iab_path": "Automotive > Auto Technology > Auto Navigation Systems", "text": "auto technology auto navigation systems automotive examples"}
+{"iab_path": "Automotive > Auto Technology > Auto Safety Technologies", "text": "top auto safety technologies auto technology"}
+{"iab_path": "Automotive > Auto Type", "text": "compare automotive > auto type options"}
+{"iab_path": "Automotive > Auto Type > Budget Cars", "text": "how does auto type budget cars automotive work"}
+{"iab_path": "Automotive > Auto Type > Certified Pre-Owned Cars", "text": "certified pre-owned cars for beginners"}
+{"iab_path": "Automotive > Auto Type > Classic Cars", "text": "how does auto type classic car work"}
+{"iab_path": "Automotive > Auto Type > Concept Cars", "text": "auto type concept car buying guide"}
+{"iab_path": "Automotive > Auto Type > Driverless Cars", "text": "auto type driverless car buying guide"}
+{"iab_path": "Automotive > Auto Type > Green Vehicles", "text": "compare auto type green vehicle options"}
+{"iab_path": "Automotive > Auto Type > Luxury Cars", "text": "auto type luxury cars automotive examples"}
+{"iab_path": "Automotive > Auto Type > Performance Cars", "text": "performance cars"}
+{"iab_path": "Automotive > Car Culture", "text": "car culture automotive buying guide"}
+{"iab_path": "Automotive > Dash Cam Videos", "text": "dash cam videos automotive for beginners"}
+{"iab_path": "Automotive > Motorcycles", "text": "top automotive motorcycle"}
+{"iab_path": "Automotive > Road-Side Assistance", "text": "automotive road-side assistance examples"}
+{"iab_path": "Automotive > Scooters", "text": "top automotive scooters"}
+{"iab_path": "Books and Literature", "text": "what is books and literature"}
+{"iab_path": "Books and Literature > Art and Photography", "text": "help me understand books and literature > art and photography"}
+{"iab_path": "Books and Literature > Comics and Graphic Novels", "text": "comics and graphic novel for beginners"}
+{"iab_path": "Books and Literature > Fiction", "text": "fiction examples"}
+{"iab_path": "Books and Literature > Poetry", "text": "top books and literature poetry"}
+{"iab_path": "Business and Finance", "text": "business and finance guide"}
+{"iab_path": "Business and Finance > Business", "text": "best business business and finance"}
+{"iab_path": "Business and Finance > Business > Business Accounting & Finance", "text": "help me understand business accounting & finance"}
+{"iab_path": "Business and Finance > Business > Business Administration", "text": "best business administration business"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance", "text": "what is business business banking & finance"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Angel Investment", "text": "help me understand business and finance > business > business banking & finance > angel investment"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Bankruptcy", "text": "what is bankruptcy business banking & finance"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Business Loans", "text": "best business banking & finance business loans business and finance"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Debt Factoring & Invoice Discounting", "text": "debt factoring & invoice discounting for beginners"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Mergers and Acquisitions", "text": "help me understand business banking & finance mergers and acquisitions business and finance"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Private Equity", "text": "what is business banking & finance private equity business and finance"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Sale & Lease Back", "text": "sale & lease back business banking & finance basics"}
+{"iab_path": "Business and Finance > Business > Business Banking & Finance > Venture Capital", "text": "business banking & finance venture capital examples"}
+{"iab_path": "Business and Finance > Business > Business I.T.", "text": "business i.t. guide"}
+{"iab_path": "Business and Finance > Business > Business Operations", "text": "business operations business examples"}
+{"iab_path": "Business and Finance > Business > Business Utilities", "text": "compare business business utility options"}
+{"iab_path": "Business and Finance > Business > Consumer Issues", "text": "business consumer issue for beginners"}
+{"iab_path": "Business and Finance > Business > Consumer Issues > Recalls", "text": "recalls for beginners"}
+{"iab_path": "Business and Finance > Business > Executive Leadership & Management", "text": "what is executive leadership & management"}
+{"iab_path": "Business and Finance > Business > Government Business", "text": "government business guide"}
+{"iab_path": "Business and Finance > Business > Green Solutions", "text": "help me understand green solutions"}
+{"iab_path": "Business and Finance > Business > Human Resources", "text": "how does business human resources work"}
+{"iab_path": "Business and Finance > Business > Large Business", "text": "top business and finance > business > large business"}
+{"iab_path": "Business and Finance > Business > Logistics", "text": "business logistics business and finance examples"}
+{"iab_path": "Business and Finance > Business > Marketing and Advertising", "text": "how does business and finance > business > marketing and advertising work"}
+{"iab_path": "Business and Finance > Business > Sales", "text": "business sales business and finance examples"}
+{"iab_path": "Business and Finance > Business > Small and Medium-sized Business", "text": "compare small and medium-sized business options"}
+{"iab_path": "Business and Finance > Business > Startups", "text": "top startups business"}
+{"iab_path": "Business and Finance > Economy", "text": "learn about economy"}
+{"iab_path": "Business and Finance > Economy > Commodities", "text": "best commodities economy"}
+{"iab_path": "Business and Finance > Economy > Currencies", "text": "best economy currency"}
+{"iab_path": "Business and Finance > Economy > Financial Crisis", "text": "compare economy financial crisis business and finance options"}
+{"iab_path": "Business and Finance > Economy > Financial Reform", "text": "top financial reform"}
+{"iab_path": "Business and Finance > Economy > Financial Regulation", "text": "economy financial regulation guide"}
+{"iab_path": "Business and Finance > Economy > Gasoline Prices", "text": "business and finance > economy > gasoline prices examples"}
+{"iab_path": "Business and Finance > Economy > Housing Market", "text": "housing market basics"}
+{"iab_path": "Business and Finance > Economy > Interest Rates", "text": "economy interest rates business and finance examples"}
+{"iab_path": "Business and Finance > Economy > Job Market", "text": "what is job market economy"}
+{"iab_path": "Business and Finance > Industries", "text": "how does business and finance industries work"}
+{"iab_path": "Business and Finance > Industries > Advertising Industry", "text": "top industries advertising industry business and finance"}
+{"iab_path": "Business and Finance > Industries > Agriculture", "text": "how does industries agriculture work"}
+{"iab_path": "Business and Finance > Industries > Apparel Industry", "text": "industries apparel industry business and finance basics"}
+{"iab_path": "Business and Finance > Industries > Automotive Industry", "text": "compare business and finance > industries > automotive industry options"}
+{"iab_path": "Business and Finance > Industries > Aviation Industry", "text": "help me understand aviation industry"}
+{"iab_path": "Business and Finance > Industries > Biotech and Biomedical Industry", "text": "industries biotech and biomedical industry business and finance examples"}
+{"iab_path": "Business and Finance > Industries > Civil Engineering Industry", "text": "top business and finance > industries > civil engineering industry"}
+{"iab_path": "Business and Finance > Industries > Construction Industry", "text": "industries construction industry business and finance guide"}
+{"iab_path": "Business and Finance > Industries > Defense Industry", "text": "top industries defense industry business and finance"}
+{"iab_path": "Business and Finance > Industries > Education industry", "text": "help me understand industries education industry business and finance"}
+{"iab_path": "Business and Finance > Industries > Entertainment Industry", "text": "industries entertainment industry basics"}
+{"iab_path": "Business and Finance > Industries > Environmental Services Industry", "text": "best industries environmental services industry"}
+{"iab_path": "Business and Finance > Industries > Financial Industry", "text": "how does industries financial industry business and finance work"}
+{"iab_path": "Business and Finance > Industries > Food Industry", "text": "what is industries food industry"}
+{"iab_path": "Business and Finance > Industries > Healthcare Industry", "text": "what is healthcare industry industries"}
+{"iab_path": "Business and Finance > Industries > Hospitality Industry", "text": "top industries hospitality industry business and finance"}
+{"iab_path": "Business and Finance > Industries > Information Services Industry", "text": "compare information services industry industries options"}
+{"iab_path": "Business and Finance > Industries > Legal Services Industry", "text": "best industries legal services industry"}
+{"iab_path": "Business and Finance > Industries > Logistics and Transportation Industry", "text": "business and finance > industries > logistics and transportation industry guide"}
+{"iab_path": "Business and Finance > Industries > Management Consulting Industry", "text": "top business and finance > industries > management consulting industry"}
+{"iab_path": "Business and Finance > Industries > Manufacturing Industry", "text": "industries manufacturing industry business and finance guide"}
+{"iab_path": "Business and Finance > Industries > Mechanical and Industrial Engineering Industry", "text": "what is business and finance > industries > mechanical and industrial engineering industry"}
+{"iab_path": "Business and Finance > Industries > Media Industry", "text": "compare business and finance > industries > media industry options"}
+{"iab_path": "Business and Finance > Industries > Metals Industry", "text": "compare business and finance > industries > metals industry options"}
+{"iab_path": "Business and Finance > Industries > Non-Profit Organizations", "text": "compare industries non-profit organizations options"}
+{"iab_path": "Business and Finance > Industries > Pharmaceutical Industry", "text": "industries pharmaceutical industry examples"}
+{"iab_path": "Business and Finance > Industries > Power and Energy Industry", "text": "how does business and finance > industries > power and energy industry work"}
+{"iab_path": "Business and Finance > Industries > Publishing Industry", "text": "help me understand industries publishing industry"}
+{"iab_path": "Business and Finance > Industries > Real Estate Industry", "text": "what is real estate industry industries"}
+{"iab_path": "Business and Finance > Industries > Retail Industry", "text": "learn about retail industry"}
+{"iab_path": "Business and Finance > Industries > Technology Industry", "text": "what is technology industry"}
+{"iab_path": "Business and Finance > Industries > Telecommunications Industry", "text": "telecommunications industry for beginners"}
+{"iab_path": "Careers", "text": "help me understand careers"}
+{"iab_path": "Careers > Apprenticeships", "text": "careers apprenticeships for beginners"}
+{"iab_path": "Careers > Career Advice", "text": "compare career advice options"}
+{"iab_path": "Careers > Career Planning", "text": "careers > career planning guide"}
+{"iab_path": "Careers > Job Search", "text": "job search careers basics"}
+{"iab_path": "Careers > Job Search > Job Fairs", "text": "job fair guide"}
+{"iab_path": "Careers > Job Search > Resume Writing and Advice", "text": "help me understand job search resume writing and advice careers"}
+{"iab_path": "Careers > Remote Working", "text": "best remote working"}
+{"iab_path": "Careers > Vocational Training", "text": "vocational training examples"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Communication", "text": "compare communication before buying"}
+{"iab_path": "Crime", "text": "what is crime"}
+{"iab_path": "Disasters", "text": "top disasters"}
+{"iab_path": "Education", "text": "help me understand education"}
+{"iab_path": "Education > Adult Education", "text": "adult education guide"}
+{"iab_path": "Education > College Education", "text": "education > college education basics"}
+{"iab_path": "Education > College Education > College Planning", "text": "best college education college planning"}
+{"iab_path": "Education > College Education > Postgraduate Education", "text": "college education postgraduate education guide"}
+{"iab_path": "Education > College Education > Postgraduate Education > Professional School", "text": "best education > college education > postgraduate education > professional school"}
+{"iab_path": "Education > College Education > Undergraduate Education", "text": "what is education > college education > undergraduate education"}
+{"iab_path": "Education > Early Childhood Education", "text": "top early childhood education"}
+{"iab_path": "Education > Educational Assessment", "text": "compare education educational assessment options"}
+{"iab_path": "Education > Educational Assessment > Standardized Testing", "text": "best standardized testing"}
+{"iab_path": "Education > Homeschooling", "text": "education homeschooling basics"}
+{"iab_path": "Education > Homework and Study", "text": "education homework and study basics"}
+{"iab_path": "Education > Language Learning", "text": "help me understand education > language learning"}
+{"iab_path": "Education > Online Education", "text": "how does online education work"}
+{"iab_path": "Education > Primary Education", "text": "primary education education basics"}
+{"iab_path": "Education > Private School", "text": "best private school"}
+{"iab_path": "Education > Secondary Education", "text": "secondary education guide"}
+{"iab_path": "Education > Special Education", "text": "how does special education education work"}
+{"iab_path": "Entertainment", "text": "entertainment guide"}
+{"iab_path": "Entertainment > Movies", "text": "entertainment > movies for beginners"}
+{"iab_path": "Entertainment > Music", "text": "music overview"}
+{"iab_path": "Entertainment > Television", "text": "compare entertainment television options"}
+{"iab_path": "Events", "text": "event for beginners"}
+{"iab_path": "Events > Awards Shows", "text": "awards shows overview"}
+{"iab_path": "Events > Business Expos & Conferences", "text": "what is business expos & conferences"}
+{"iab_path": "Events > Fan Conventions", "text": "best fan convention"}
+{"iab_path": "Family and Relationships", "text": "family and relationship for beginners"}
+{"iab_path": "Family and Relationships > Bereavement", "text": "help me understand family and relationships > bereavement"}
+{"iab_path": "Family and Relationships > Dating", "text": "what is dating"}
+{"iab_path": "Family and Relationships > Divorce", "text": "divorce family and relationships guide"}
+{"iab_path": "Family and Relationships > Eldercare", "text": "family and relationships eldercare examples"}
+{"iab_path": "Family and Relationships > Marriage and Civil Unions", "text": "best family and relationships marriage and civil unions"}
+{"iab_path": "Family and Relationships > Parenting", "text": "how does family and relationships parenting work"}
+{"iab_path": "Family and Relationships > Parenting > Adoption and Fostering", "text": "parenting adoption and fostering family and relationships examples"}
+{"iab_path": "Family and Relationships > Parenting > Daycare and Pre-School", "text": "how does parenting daycare and pre-school work"}
+{"iab_path": "Family and Relationships > Parenting > Internet Safety", "text": "best internet safety"}
+{"iab_path": "Family and Relationships > Parenting > Parenting Babies and Toddlers", "text": "parenting babies and toddlers guide"}
+{"iab_path": "Family and Relationships > Parenting > Parenting Children Aged 4-11", "text": "how does family and relationships > parenting > parenting children aged 4-11 work"}
+{"iab_path": "Family and Relationships > Parenting > Parenting Teens", "text": "help me understand family and relationships > parenting > parenting teens"}
+{"iab_path": "Family and Relationships > Parenting > Special Needs Kids", "text": "special needs kids parenting guide"}
+{"iab_path": "Family and Relationships > Single Life", "text": "help me understand single life family and relationships"}
+{"iab_path": "Fine Art", "text": "learn about fine art"}
+{"iab_path": "Fine Art > Costume", "text": "compare fine art > costume options"}
+{"iab_path": "Fine Art > Dance", "text": "compare dance options"}
+{"iab_path": "Fine Art > Design", "text": "compare design options"}
+{"iab_path": "Fine Art > Digital Arts", "text": "digital arts examples"}
+{"iab_path": "Fine Art > Fine Art Photography", "text": "how does fine art photography work"}
+{"iab_path": "Fine Art > Modern Art", "text": "modern art basics"}
+{"iab_path": "Fine Art > Opera", "text": "top opera fine art"}
+{"iab_path": "Fine Art > Theater", "text": "compare fine art theater options"}
+{"iab_path": "Food & Drink", "text": "compare food & drink options"}
+{"iab_path": "Food & Drink > Alcoholic Beverages", "text": "best food & drink alcoholic beverage"}
+{"iab_path": "Food & Drink > Barbecues and Grilling", "text": "help me understand food & drink barbecues and grilling"}
+{"iab_path": "Food & Drink > Cooking", "text": "food & drink > cooking examples"}
+{"iab_path": "Food & Drink > Desserts and Baking", "text": "help me understand food & drink desserts and baking"}
+{"iab_path": "Food & Drink > Dining Out", "text": "best food & drink > dining out"}
+{"iab_path": "Food & Drink > Food Allergies", "text": "best food & drink food allergy"}
+{"iab_path": "Food & Drink > Food Movements", "text": "top food & drink food movements"}
+{"iab_path": "Food & Drink > Healthy Cooking and Eating", "text": "what is healthy cooking and eating"}
+{"iab_path": "Food & Drink > Non-Alcoholic Beverages", "text": "best non-alcoholic beverages"}
+{"iab_path": "Food & Drink > Vegan Diets", "text": "food & drink > vegan diets basics"}
+{"iab_path": "Food & Drink > Vegetarian Diets", "text": "what is food & drink > vegetarian diets"}
+{"iab_path": "Food & Drink > World Cuisines", "text": "food & drink world cuisines guide"}
+{"iab_path": "Genres", "text": "help me understand genres"}
+{"iab_path": "Genres > Nature", "text": "help me understand nature"}
+{"iab_path": "Genres > Action/Adventure", "text": "action/adventure guide"}
+{"iab_path": "Genres > Animation & Anime", "text": "genres animation & anime examples"}
+{"iab_path": "Genres > Biographies", "text": "biography for beginners"}
+{"iab_path": "Genres > Comedy", "text": "comedy basics"}
+{"iab_path": "Genres > Documentary", "text": "top documentary genres"}
+{"iab_path": "Genres > Drama", "text": "genres drama examples"}
+{"iab_path": "Genres > Factual", "text": "best factual genres"}
+{"iab_path": "Genres > Family/Children", "text": "top family/children genres"}
+{"iab_path": "Genres > Fantasy", "text": "genres fantasy basics"}
+{"iab_path": "Genres > History", "text": "learn about history"}
+{"iab_path": "Genres > Holiday", "text": "what is genres holiday"}
+{"iab_path": "Genres > Horror", "text": "horror examples"}
+{"iab_path": "Genres > Lifestyle", "text": "lifestyle guide"}
+{"iab_path": "Genres > Music Video", "text": "how does genres > music video work"}
+{"iab_path": "Genres > Musical", "text": "top genres musical"}
+{"iab_path": "Genres > Mystery", "text": "compare genres > mystery options"}
+{"iab_path": "Genres > Reality TV", "text": "learn about reality tv"}
+{"iab_path": "Genres > Romance", "text": "romance genres guide"}
+{"iab_path": "Genres > Science Fiction", "text": "genres science fiction basics"}
+{"iab_path": "Genres > Soap Opera", "text": "compare genres soap opera options"}
+{"iab_path": "Genres > Special Interest (Indie/Art House)", "text": "compare genres > special interest (indie/art house) options"}
+{"iab_path": "Genres > Sports Radio", "text": "genres sports radio guide"}
+{"iab_path": "Genres > Talk Radio", "text": "top genres > talk radio"}
+{"iab_path": "Genres > Talk Radio > Public Radio", "text": "talk radio public radio for beginners"}
+{"iab_path": "Genres > Talk Show", "text": "genres > talk show examples"}
+{"iab_path": "Genres > True Crime", "text": "true crime for beginners"}
+{"iab_path": "Genres > Western", "text": "help me understand genres > western"}
+{"iab_path": "Genres > Young Adult", "text": "young adult overview"}
+{"iab_path": "Healthy Living", "text": "how does healthy living work"}
+{"iab_path": "Healthy Living > Children's Health", "text": "healthy living children's health for beginners"}
+{"iab_path": "Healthy Living > Fitness and Exercise", "text": "learn about fitness and exercise"}
+{"iab_path": "Healthy Living > Fitness and Exercise > Participant Sports", "text": "participant sports fitness and exercise examples"}
+{"iab_path": "Healthy Living > Fitness and Exercise > Running and Jogging", "text": "fitness and exercise running and jogging basics"}
+{"iab_path": "Healthy Living > Men's Health", "text": "healthy living > men's health for beginners"}
+{"iab_path": "Healthy Living > Nutrition", "text": "compare nutrition options"}
+{"iab_path": "Healthy Living > Senior Health", "text": "best healthy living senior health"}
+{"iab_path": "Healthy Living > Weight Loss", "text": "top weight loss"}
+{"iab_path": "Healthy Living > Wellness", "text": "healthy living > wellness examples"}
+{"iab_path": "Healthy Living > Wellness > Alternative Medicine", "text": "alternative medicine wellness guide"}
+{"iab_path": "Healthy Living > Wellness > Alternative Medicine > Herbs and Supplements", "text": "best herbs and supplements"}
+{"iab_path": "Healthy Living > Wellness > Alternative Medicine > Holistic Health", "text": "how does alternative medicine holistic health work"}
+{"iab_path": "Healthy Living > Wellness > Physical Therapy", "text": "physical therapy"}
+{"iab_path": "Healthy Living > Wellness > Smoking Cessation", "text": "help me understand smoking cessation"}
+{"iab_path": "Healthy Living > Women's Health", "text": "healthy living women's health guide"}
+{"iab_path": "Hobbies & Interests", "text": "top hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Antiquing and Antiques", "text": "antiquing and antiques basics"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts", "text": "best arts and crafts hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Beadwork", "text": "what is beadwork arts and crafts"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Candle and Soap Making", "text": "arts and crafts candle and soap making guide"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Drawing and Sketching", "text": "hobbies & interests > arts and crafts > drawing and sketching basics"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Jewelry Making", "text": "arts and crafts jewelry making hobbies & interests guide"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Needlework", "text": "compare arts and crafts needlework options"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Painting", "text": "help me understand hobbies & interests > arts and crafts > painting"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Photography", "text": "how does photography work"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Scrapbooking", "text": "best arts and crafts scrapbooking hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Arts and Crafts > Woodworking", "text": "top woodworking arts and crafts"}
+{"iab_path": "Hobbies & Interests > Beekeeping", "text": "best hobbies & interests > beekeeping"}
+{"iab_path": "Hobbies & Interests > Birdwatching", "text": "hobbies & interests birdwatching examples"}
+{"iab_path": "Hobbies & Interests > Cigars", "text": "best hobbies & interests > cigars"}
+{"iab_path": "Hobbies & Interests > Collecting", "text": "best collecting hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Collecting > Comic Books", "text": "collecting comic books examples"}
+{"iab_path": "Hobbies & Interests > Collecting > Stamps and Coins", "text": "how does stamps and coins collecting work"}
+{"iab_path": "Hobbies & Interests > Content Production", "text": "content production overview"}
+{"iab_path": "Hobbies & Interests > Content Production > Audio Production", "text": "audio production content production examples"}
+{"iab_path": "Hobbies & Interests > Content Production > Freelance Writing", "text": "compare hobbies & interests > content production > freelance writing options"}
+{"iab_path": "Hobbies & Interests > Content Production > Screenwriting", "text": "compare content production screenwriting hobbies & interests options"}
+{"iab_path": "Hobbies & Interests > Content Production > Video Production", "text": "help me understand content production video production hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Games and Puzzles", "text": "help me understand games and puzzles hobbies & interests"}
+{"iab_path": "Hobbies & Interests > Games and Puzzles > Board Games and Puzzles", "text": "how does board games and puzzles work"}
+{"iab_path": "Hobbies & Interests > Games and Puzzles > Card Games", "text": "card game basics"}
+{"iab_path": "Hobbies & Interests > Games and Puzzles > Roleplaying Games", "text": "roleplaying games"}
+{"iab_path": "Hobbies & Interests > Genealogy and Ancestry", "text": "best hobbies & interests genealogy and ancestry"}
+{"iab_path": "Hobbies & Interests > Magic and Illusion", "text": "compare magic and illusion hobbies & interests options"}
+{"iab_path": "Hobbies & Interests > Model Toys", "text": "hobbies & interests > model toys basics"}
+{"iab_path": "Hobbies & Interests > Musical Instruments", "text": "best hobbies & interests musical instrument"}
+{"iab_path": "Hobbies & Interests > Paranormal Phenomena", "text": "compare paranormal phenomena hobbies & interests options"}
+{"iab_path": "Hobbies & Interests > Radio Control", "text": "compare radio control options"}
+{"iab_path": "Hobbies & Interests > Sci-fi and Fantasy", "text": "sci-fi and fantasy guide"}
+{"iab_path": "Hobbies & Interests > Workshops and Classes", "text": "best hobbies & interests > workshops and classes"}
+{"iab_path": "Holidays", "text": "holiday basics"}
+{"iab_path": "Holidays > National & Civic Holidays", "text": "best national & civic holiday"}
+{"iab_path": "Home & Garden", "text": "how does home & garden work"}
+{"iab_path": "Home & Garden > Gardening", "text": "best home & garden > gardening"}
+{"iab_path": "Home & Garden > Home Appliances", "text": "home appliances basics"}
+{"iab_path": "Home & Garden > Home Entertaining", "text": "what is home entertaining"}
+{"iab_path": "Home & Garden > Home Improvement", "text": "home improvement home & garden basics"}
+{"iab_path": "Home & Garden > Home Security", "text": "how does home & garden > home security work"}
+{"iab_path": "Home & Garden > Indoor Environmental Quality", "text": "indoor environmental quality for beginners"}
+{"iab_path": "Home & Garden > Interior Decorating", "text": "interior decorating basics"}
+{"iab_path": "Home & Garden > Landscaping", "text": "top landscaping home & garden"}
+{"iab_path": "Home & Garden > Outdoor Decorating", "text": "best outdoor decorating home & garden"}
+{"iab_path": "Home & Garden > Remodeling & Construction", "text": "home & garden remodeling & construction guide"}
+{"iab_path": "Home & Garden > Smart Home", "text": "home & garden smart home guide"}
+{"iab_path": "Law", "text": "law"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Maps & Navigation", "text": "help me understand maps & navigation"}
+{"iab_path": "Medical Health", "text": "best medical health"}
+{"iab_path": "Medical Health > Cosmetic Medical Services", "text": "compare medical health > cosmetic medical services options"}
+{"iab_path": "Medical Health > Diseases and Conditions", "text": "diseases and condition for beginners"}
+{"iab_path": "Medical Health > Diseases and Conditions > Allergies", "text": "allergies guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Blood Disorders", "text": "diseases and conditions blood disorder for beginners"}
+{"iab_path": "Medical Health > Diseases and Conditions > Bone and Joint Conditions", "text": "what is diseases and conditions bone and joint condition"}
+{"iab_path": "Medical Health > Diseases and Conditions > Brain and Nervous System Disorders", "text": "diseases and conditions brain and nervous system disorder basics"}
+{"iab_path": "Medical Health > Diseases and Conditions > Cancer", "text": "what is cancer diseases and conditions"}
+{"iab_path": "Medical Health > Diseases and Conditions > Cold and Flu", "text": "how does cold and flu diseases and conditions work"}
+{"iab_path": "Medical Health > Diseases and Conditions > Dental Health", "text": "dental health diseases and conditions for beginners"}
+{"iab_path": "Medical Health > Diseases and Conditions > Diabetes", "text": "help me understand diseases and conditions diabetes"}
+{"iab_path": "Medical Health > Diseases and Conditions > Digestive Disorders", "text": "learn about digestive disorders"}
+{"iab_path": "Medical Health > Diseases and Conditions > Ear, Nose and Throat Conditions", "text": "how does ear, nose and throat condition work"}
+{"iab_path": "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases", "text": "medical health > diseases and conditions > endocrine and metabolic diseases guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Hormonal Disorders", "text": "help me understand endocrine and metabolic diseases hormonal disorder"}
+{"iab_path": "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Menopause", "text": "how does medical health > diseases and conditions > endocrine and metabolic diseases > menopause work"}
+{"iab_path": "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Thyroid Disorders", "text": "how does thyroid disorders endocrine and metabolic diseases work"}
+{"iab_path": "Medical Health > Diseases and Conditions > Eye and Vision Conditions", "text": "compare diseases and conditions eye and vision conditions options"}
+{"iab_path": "Medical Health > Diseases and Conditions > Foot Health", "text": "diseases and conditions foot health medical health examples"}
+{"iab_path": "Medical Health > Diseases and Conditions > Heart and Cardiovascular Diseases", "text": "heart and cardiovascular diseases diseases and conditions guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Infectious Diseases", "text": "compare diseases and conditions infectious diseases medical health options"}
+{"iab_path": "Medical Health > Diseases and Conditions > Injuries", "text": "injury basics"}
+{"iab_path": "Medical Health > Diseases and Conditions > Injuries > First Aid", "text": "injuries first aid guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Lung and Respiratory Health", "text": "lung and respiratory health for beginners"}
+{"iab_path": "Medical Health > Diseases and Conditions > Mental Health", "text": "diseases and conditions mental health medical health guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Reproductive Health", "text": "medical health > diseases and conditions > reproductive health for beginners"}
+{"iab_path": "Medical Health > Diseases and Conditions > Reproductive Health > Birth Control", "text": "medical health > diseases and conditions > reproductive health > birth control guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Reproductive Health > Infertility", "text": "infertility reproductive health guide"}
+{"iab_path": "Medical Health > Diseases and Conditions > Reproductive Health > Pregnancy", "text": "how does medical health > diseases and conditions > reproductive health > pregnancy work"}
+{"iab_path": "Medical Health > Diseases and Conditions > Sexual Health", "text": "top diseases and conditions sexual health"}
+{"iab_path": "Medical Health > Diseases and Conditions > Sexual Health > Sexual Conditions", "text": "sexual conditions sexual health examples"}
+{"iab_path": "Medical Health > Diseases and Conditions > Skin and Dermatology", "text": "compare diseases and conditions skin and dermatology medical health options"}
+{"iab_path": "Medical Health > Diseases and Conditions > Sleep Disorders", "text": "help me understand diseases and conditions sleep disorders"}
+{"iab_path": "Medical Health > Diseases and Conditions > Substance Abuse", "text": "diseases and conditions substance abuse medical health for beginners"}
+{"iab_path": "Medical Health > Medical Tests", "text": "compare medical tests medical health options"}
+{"iab_path": "Medical Health > Pharmaceutical Drugs", "text": "compare pharmaceutical drug options"}
+{"iab_path": "Medical Health > Surgery", "text": "how does surgery work"}
+{"iab_path": "Medical Health > Vaccines", "text": "what is vaccines medical health"}
+{"iab_path": "Entertainment > Music > Adult Album Alternative", "text": "adult album alternative guide"}
+{"iab_path": "Entertainment > Music > Adult Contemporary Music", "text": "top music adult contemporary music"}
+{"iab_path": "Entertainment > Music > Adult Contemporary Music > Soft AC Music", "text": "how does entertainment > music > adult contemporary music > soft ac music work"}
+{"iab_path": "Entertainment > Music > Adult Contemporary Music > Urban AC Music", "text": "best urban ac music"}
+{"iab_path": "Entertainment > Music > Alternative Music", "text": "what is entertainment > music > alternative music"}
+{"iab_path": "Entertainment > Music > Blues", "text": "best blues music"}
+{"iab_path": "Entertainment > Music > Children's Music", "text": "music children's music entertainment guide"}
+{"iab_path": "Entertainment > Music > Classic Hits", "text": "music classic hits entertainment for beginners"}
+{"iab_path": "Entertainment > Music > Classical Music", "text": "music classical music entertainment guide"}
+{"iab_path": "Entertainment > Music > College Radio", "text": "how does music college radio work"}
+{"iab_path": "Entertainment > Music > Comedy (Music and Audio)", "text": "comedy (music and audio) music for beginners"}
+{"iab_path": "Entertainment > Music > Contemporary Hits/Pop/Top 40", "text": "learn about contemporary hits/pop/top 40"}
+{"iab_path": "Entertainment > Music > Country Music", "text": "entertainment > music > country music guide"}
+{"iab_path": "Entertainment > Music > Dance and Electronic Music", "text": "music dance and electronic music examples"}
+{"iab_path": "Entertainment > Music > Gospel Music", "text": "top music gospel music entertainment"}
+{"iab_path": "Entertainment > Music > Hip Hop Music", "text": "what is hip hop music music"}
+{"iab_path": "Entertainment > Music > Inspirational/New Age Music", "text": "learn about inspirational/new age music"}
+{"iab_path": "Entertainment > Music > Jazz", "text": "what is jazz music"}
+{"iab_path": "Entertainment > Music > Oldies/Adult Standards", "text": "entertainment > music > oldies/adult standards basics"}
+{"iab_path": "Entertainment > Music > R&B/Soul/Funk", "text": "music r&b/soul/funk guide"}
+{"iab_path": "Entertainment > Music > Reggae", "text": "top entertainment > music > reggae"}
+{"iab_path": "Entertainment > Music > Religious (Music and Audio)", "text": "what is music religious (music and audio) entertainment"}
+{"iab_path": "Entertainment > Music > Rock Music", "text": "best rock music music"}
+{"iab_path": "Entertainment > Music > Rock Music > Album-oriented Rock", "text": "album-oriented rock"}
+{"iab_path": "Entertainment > Music > Rock Music > Alternative Rock", "text": "rock music alternative rock basics"}
+{"iab_path": "Entertainment > Music > Rock Music > Classic Rock", "text": "classic rock basics"}
+{"iab_path": "Entertainment > Music > Rock Music > Hard Rock", "text": "best rock music hard rock entertainment"}
+{"iab_path": "Entertainment > Music > Rock Music > Soft Rock", "text": "rock music soft rock entertainment examples"}
+{"iab_path": "Entertainment > Music > Songwriters/Folk", "text": "best music songwriters/folk"}
+{"iab_path": "Entertainment > Music > Soundtracks, TV and Showtunes", "text": "music soundtracks, tv and showtune basics"}
+{"iab_path": "Entertainment > Music > World/International Music", "text": "how does music world/international music work"}
+{"iab_path": "Entertainment > Music > Urban Contemporary Music", "text": "compare music urban contemporary music entertainment options"}
+{"iab_path": "Entertainment > Music > Variety (Music and Audio)", "text": "how does entertainment > music > variety (music and audio) work"}
+{"iab_path": "Personal Celebrations & Life Events", "text": "how does personal celebrations & life events work"}
+{"iab_path": "Personal Celebrations & Life Events > Anniversary", "text": "help me understand anniversary personal celebrations & life events"}
+{"iab_path": "Personal Celebrations & Life Events > Baby Shower", "text": "how does baby shower personal celebrations & life events work"}
+{"iab_path": "Personal Celebrations & Life Events > Bachelor Party", "text": "what is bachelor party personal celebrations & life events"}
+{"iab_path": "Personal Celebrations & Life Events > Bachelorette Party", "text": "help me understand personal celebrations & life events bachelorette party"}
+{"iab_path": "Personal Celebrations & Life Events > Birth", "text": "best personal celebrations & life events > birth"}
+{"iab_path": "Personal Celebrations & Life Events > Birthday", "text": "birthday"}
+{"iab_path": "Personal Celebrations & Life Events > Funeral", "text": "learn about funeral"}
+{"iab_path": "Personal Celebrations & Life Events > Graduation", "text": "compare personal celebrations & life events > graduation options"}
+{"iab_path": "Personal Celebrations & Life Events > Prom", "text": "compare personal celebrations & life events > prom options"}
+{"iab_path": "Personal Celebrations & Life Events > Wedding", "text": "personal celebrations & life events > wedding guide"}
+{"iab_path": "Personal Finance", "text": "personal finance"}
+{"iab_path": "Personal Finance > Consumer Banking", "text": "personal finance > consumer banking basics"}
+{"iab_path": "Personal Finance > Financial Assistance", "text": "best personal finance > financial assistance"}
+{"iab_path": "Personal Finance > Financial Assistance > Government Support and Welfare", "text": "compare financial assistance government support and welfare options"}
+{"iab_path": "Personal Finance > Financial Assistance > Student Financial Aid", "text": "how does financial assistance student financial aid work"}
+{"iab_path": "Personal Finance > Financial Planning", "text": "help me understand financial planning personal finance"}
+{"iab_path": "Personal Finance > Frugal Living", "text": "what is personal finance > frugal living"}
+{"iab_path": "Personal Finance > Home Utilities", "text": "best home utilities"}
+{"iab_path": "Personal Finance > Home Utilities > Gas and Electric", "text": "personal finance > home utilities > gas and electric examples"}
+{"iab_path": "Personal Finance > Home Utilities > Internet Service Providers", "text": "home utilities internet service providers basics"}
+{"iab_path": "Personal Finance > Home Utilities > Phone Services", "text": "best personal finance > home utilities > phone services"}
+{"iab_path": "Personal Finance > Home Utilities > Water Services", "text": "top water services"}
+{"iab_path": "Personal Finance > Insurance", "text": "insurance personal finance guide"}
+{"iab_path": "Personal Finance > Insurance > Health Insurance", "text": "compare health insurance options"}
+{"iab_path": "Personal Finance > Insurance > Home Insurance", "text": "home insurance insurance examples"}
+{"iab_path": "Personal Finance > Insurance > Life Insurance", "text": "compare insurance life insurance options"}
+{"iab_path": "Personal Finance > Insurance > Motor Insurance", "text": "best motor insurance"}
+{"iab_path": "Personal Finance > Insurance > Pet Insurance", "text": "insurance pet insurance personal finance guide"}
+{"iab_path": "Personal Finance > Insurance > Travel Insurance", "text": "how does travel insurance work"}
+{"iab_path": "Personal Finance > Personal Debt", "text": "personal debt"}
+{"iab_path": "Personal Finance > Personal Debt > Credit Cards", "text": "compare credit card options"}
+{"iab_path": "Personal Finance > Personal Debt > Home Financing", "text": "personal debt home financing examples"}
+{"iab_path": "Personal Finance > Personal Debt > Personal Loans", "text": "top personal loan"}
+{"iab_path": "Personal Finance > Personal Debt > Student Loans", "text": "personal debt student loans examples"}
+{"iab_path": "Personal Finance > Personal Investing", "text": "personal finance > personal investing for beginners"}
+{"iab_path": "Personal Finance > Personal Investing > Hedge Funds", "text": "personal investing hedge funds for beginners"}
+{"iab_path": "Personal Finance > Personal Investing > Mutual Funds", "text": "what is mutual funds personal investing"}
+{"iab_path": "Personal Finance > Personal Investing > Options", "text": "best options"}
+{"iab_path": "Personal Finance > Personal Investing > Stocks and Bonds", "text": "help me understand stocks and bond"}
+{"iab_path": "Personal Finance > Personal Taxes", "text": "personal taxes personal finance guide"}
+{"iab_path": "Personal Finance > Retirement Planning", "text": "retirement planning personal finance examples"}
+{"iab_path": "Pets", "text": "how does pets work"}
+{"iab_path": "Pets > Birds", "text": "birds pets basics"}
+{"iab_path": "Pets > Cats", "text": "pets > cats examples"}
+{"iab_path": "Pets > Dogs", "text": "best dog"}
+{"iab_path": "Pets > Fish and Aquariums", "text": "top pets > fish and aquariums"}
+{"iab_path": "Pets > Large Animals", "text": "large animal basics"}
+{"iab_path": "Pets > Pet Adoptions", "text": "learn about pet adoptions"}
+{"iab_path": "Pets > Pet Supplies", "text": "best pets pet supply"}
+{"iab_path": "Pets > Reptiles", "text": "pets > reptiles examples"}
+{"iab_path": "Pets > Veterinary Medicine", "text": "best veterinary medicine pets"}
+{"iab_path": "Politics", "text": "help me understand politic"}
+{"iab_path": "Politics > Civic affairs", "text": "compare civic affairs options"}
+{"iab_path": "Politics > Elections", "text": "elections overview"}
+{"iab_path": "Politics > Political Issues & policy", "text": "how does politics > political issues & policy work"}
+{"iab_path": "Pop Culture", "text": "pop culture examples"}
+{"iab_path": "Pop Culture > Celebrity Deaths", "text": "how does celebrity deaths work"}
+{"iab_path": "Pop Culture > Celebrity Families", "text": "best celebrity families pop culture"}
+{"iab_path": "Pop Culture > Celebrity Homes", "text": "compare pop culture celebrity homes options"}
+{"iab_path": "Pop Culture > Celebrity Pregnancy", "text": "celebrity pregnancy pop culture for beginners"}
+{"iab_path": "Pop Culture > Celebrity Relationships", "text": "what is celebrity relationships pop culture"}
+{"iab_path": "Pop Culture > Celebrity Scandal", "text": "celebrity scandal overview"}
+{"iab_path": "Pop Culture > Celebrity Style", "text": "what is celebrity style pop culture"}
+{"iab_path": "Pop Culture > Humor and Satire", "text": "top humor and satire pop culture"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Productivity", "text": "productivity basics"}
+{"iab_path": "Real Estate", "text": "real estate examples"}
+{"iab_path": "Real Estate > Apartments", "text": "help me understand apartments"}
+{"iab_path": "Real Estate > Developmental Sites", "text": "best developmental sites real estate"}
+{"iab_path": "Real Estate > Hotel Properties", "text": "real estate hotel properties basics"}
+{"iab_path": "Real Estate > Houses", "text": "real estate > houses for beginners"}
+{"iab_path": "Real Estate > Industrial Property", "text": "compare industrial property real estate before buying"}
+{"iab_path": "Real Estate > Land and Farms", "text": "land and farms real estate for beginners"}
+{"iab_path": "Real Estate > Office Property", "text": "office property real estate buying guide"}
+{"iab_path": "Real Estate > Real Estate Buying and Selling", "text": "top real estate > real estate buying and selling"}
+{"iab_path": "Real Estate > Real Estate Renting and Leasing", "text": "help me understand real estate real estate renting and leasing"}
+{"iab_path": "Real Estate > Retail Property", "text": "best real estate > retail property"}
+{"iab_path": "Real Estate > Vacation Properties", "text": "compare real estate > vacation property before buying"}
+{"iab_path": "Religion & Spirituality", "text": "top religion & spirituality"}
+{"iab_path": "Religion & Spirituality > Agnosticism", "text": "religion & spirituality > agnosticism guide"}
+{"iab_path": "Religion & Spirituality > Astrology", "text": "astrology religion & spirituality examples"}
+{"iab_path": "Religion & Spirituality > Atheism", "text": "religion & spirituality atheism examples"}
+{"iab_path": "Religion & Spirituality > Buddhism", "text": "help me understand buddhism"}
+{"iab_path": "Religion & Spirituality > Christianity", "text": "christianity religion & spirituality for beginners"}
+{"iab_path": "Religion & Spirituality > Hinduism", "text": "help me understand hinduism religion & spirituality"}
+{"iab_path": "Religion & Spirituality > Islam", "text": "how does islam work"}
+{"iab_path": "Religion & Spirituality > Judaism", "text": "top religion & spirituality > judaism"}
+{"iab_path": "Religion & Spirituality > Sikhism", "text": "help me understand sikhism"}
+{"iab_path": "Religion & Spirituality > Spirituality", "text": "help me understand religion & spirituality > spirituality"}
+{"iab_path": "Science", "text": "best science"}
+{"iab_path": "Science > Biological Sciences", "text": "what is biological sciences science"}
+{"iab_path": "Science > Chemistry", "text": "what is chemistry science"}
+{"iab_path": "Science > Environment", "text": "how does environment science work"}
+{"iab_path": "Science > Genetics", "text": "science > genetics guide"}
+{"iab_path": "Science > Geography", "text": "how does science > geography work"}
+{"iab_path": "Science > Geology", "text": "top geology science"}
+{"iab_path": "Science > Physics", "text": "best science > physics"}
+{"iab_path": "Science > Space and Astronomy", "text": "space and astronomy science guide"}
+{"iab_path": "Science > Weather", "text": "compare weather science options"}
+{"iab_path": "Sensitive Topics", "text": "sensitive topic guide"}
+{"iab_path": "Sensitive Topics > Adult & Explicit Sexual Content", "text": "adult & explicit sexual content for beginners"}
+{"iab_path": "Sensitive Topics > Arms & Ammunition", "text": "arms & ammunition for beginners"}
+{"iab_path": "Sensitive Topics > Crime & Harmful Acts to Individuals, Society & Human Right Violations", "text": "best sensitive topics crime & harmful acts to individuals, society & human right violations"}
+{"iab_path": "Sensitive Topics > Death, Injury, or Military Conflict", "text": "top sensitive topics > death, injury, or military conflict"}
+{"iab_path": "Sensitive Topics > Debated Sensitive Social Issues", "text": "top debated sensitive social issue"}
+{"iab_path": "Sensitive Topics > Hate Speech and Acts of Aggression", "text": "what is sensitive topics > hate speech and acts of aggression"}
+{"iab_path": "Sensitive Topics > Illegal Drugs, Tobacco, eCigarettes, Vaping, Alcohol", "text": "sensitive topics > illegal drugs, tobacco, ecigarettes, vaping, alcohol basics"}
+{"iab_path": "Sensitive Topics > Obscenity and Profanity", "text": "help me understand sensitive topics obscenity and profanity"}
+{"iab_path": "Sensitive Topics > Online Piracy", "text": "compare online piracy options"}
+{"iab_path": "Sensitive Topics > Spam or Harmful Content", "text": "spam or harmful content sensitive topics examples"}
+{"iab_path": "Sensitive Topics > Terrorism", "text": "top terrorism sensitive topics"}
+{"iab_path": "Shopping", "text": "shopping guide"}
+{"iab_path": "Shopping > Children's Games and Toys", "text": "best shopping > children's games and toys"}
+{"iab_path": "Shopping > Coupons and Discounts", "text": "coupons and discount for beginners"}
+{"iab_path": "Shopping > Flower Shopping", "text": "learn about flower shopping"}
+{"iab_path": "Shopping > Gifts and Greetings Cards", "text": "gifts and greetings card guide"}
+{"iab_path": "Shopping > Grocery Shopping", "text": "top shopping grocery shopping"}
+{"iab_path": "Shopping > Holiday Shopping", "text": "holiday shopping"}
+{"iab_path": "Shopping > Household Supplies", "text": "household supplies"}
+{"iab_path": "Shopping > Lotteries and Scratchcards", "text": "lotteries and scratchcards"}
+{"iab_path": "Shopping > Party Supplies and Decorations", "text": "help me understand shopping party supplies and decorations"}
+{"iab_path": "Shopping > Sales and Promotions", "text": "shopping > sales and promotions basics"}
+{"iab_path": "Sports", "text": "sports"}
+{"iab_path": "Sports > American Football", "text": "compare american football options"}
+{"iab_path": "Sports > Australian Rules Football", "text": "what is sports australian rules football"}
+{"iab_path": "Sports > Auto Racing", "text": "sports > auto racing for beginners"}
+{"iab_path": "Sports > Auto Racing > Motorcycle Sports", "text": "help me understand auto racing motorcycle sports sports"}
+{"iab_path": "Sports > Badminton", "text": "compare badminton sports options"}
+{"iab_path": "Sports > Baseball", "text": "help me understand sports > baseball"}
+{"iab_path": "Sports > Basketball", "text": "what is basketball"}
+{"iab_path": "Sports > Beach Volleyball", "text": "best sports beach volleyball"}
+{"iab_path": "Sports > Bodybuilding", "text": "what is sports bodybuilding"}
+{"iab_path": "Sports > Bowling", "text": "what is sports > bowling"}
+{"iab_path": "Sports > Boxing", "text": "top boxing"}
+{"iab_path": "Sports > Cheerleading", "text": "cheerleading sports examples"}
+{"iab_path": "Sports > College Sports", "text": "college sports sports examples"}
+{"iab_path": "Sports > College Sports > College Baseball", "text": "help me understand college baseball college sports"}
+{"iab_path": "Sports > College Sports > College Basketball", "text": "college sports college basketball basics"}
+{"iab_path": "Sports > College Sports > College Football", "text": "how does sports > college sports > college football work"}
+{"iab_path": "Sports > Cricket", "text": "top sports > cricket"}
+{"iab_path": "Sports > Cycling", "text": "cycling sports basics"}
+{"iab_path": "Sports > Darts", "text": "how does dart work"}
+{"iab_path": "Sports > Disabled Sports", "text": "help me understand disabled sports sports"}
+{"iab_path": "Sports > Diving", "text": "compare diving options"}
+{"iab_path": "Sports > Equine Sports", "text": "top equine sports sports"}
+{"iab_path": "Sports > Equine Sports > Horse Racing", "text": "sports > equine sports > horse racing guide"}
+{"iab_path": "Sports > Extreme Sports", "text": "help me understand extreme sport"}
+{"iab_path": "Sports > Extreme Sports > Canoeing and Kayaking", "text": "help me understand sports > extreme sports > canoeing and kayaking"}
+{"iab_path": "Sports > Extreme Sports > Climbing", "text": "sports > extreme sports > climbing basics"}
+{"iab_path": "Sports > Extreme Sports > Paintball", "text": "sports > extreme sports > paintball examples"}
+{"iab_path": "Sports > Extreme Sports > Scuba Diving", "text": "extreme sports scuba diving sports basics"}
+{"iab_path": "Sports > Extreme Sports > Skateboarding", "text": "sports > extreme sports > skateboarding for beginners"}
+{"iab_path": "Sports > Extreme Sports > Snowboarding", "text": "extreme sports snowboarding sports basics"}
+{"iab_path": "Sports > Extreme Sports > Surfing and Bodyboarding", "text": "surfing and bodyboarding examples"}
+{"iab_path": "Sports > Extreme Sports > Waterskiing and Wakeboarding", "text": "sports > extreme sports > waterskiing and wakeboarding examples"}
+{"iab_path": "Sports > Fantasy Sports", "text": "best sports > fantasy sports"}
+{"iab_path": "Sports > Field Hockey", "text": "best field hockey"}
+{"iab_path": "Sports > Figure Skating", "text": "compare figure skating options"}
+{"iab_path": "Sports > Fishing Sports", "text": "learn about fishing sports"}
+{"iab_path": "Sports > Golf", "text": "golf sports for beginners"}
+{"iab_path": "Sports > Gymnastics", "text": "gymnastics for beginners"}
+{"iab_path": "Sports > Hunting and Shooting", "text": "best hunting and shooting"}
+{"iab_path": "Sports > Ice Hockey", "text": "sports > ice hockey guide"}
+{"iab_path": "Sports > Inline Skating", "text": "inline skating basics"}
+{"iab_path": "Sports > Lacrosse", "text": "what is lacrosse sports"}
+{"iab_path": "Sports > Martial Arts", "text": "compare martial arts options"}
+{"iab_path": "Sports > Olympic Sports", "text": "sports olympic sport basics"}
+{"iab_path": "Sports > Olympic Sports > Summer Olympic Sports", "text": "compare olympic sports summer olympic sports options"}
+{"iab_path": "Sports > Olympic Sports > Winter Olympic Sports", "text": "compare winter olympic sports options"}
+{"iab_path": "Sports > Poker and Professional Gambling", "text": "sports > poker and professional gambling basics"}
+{"iab_path": "Sports > Rodeo", "text": "rodeo sports examples"}
+{"iab_path": "Sports > Rowing", "text": "compare rowing options"}
+{"iab_path": "Sports > Rugby", "text": "how does rugby sports work"}
+{"iab_path": "Sports > Rugby > Rugby League", "text": "help me understand rugby league"}
+{"iab_path": "Sports > Rugby > Rugby Union", "text": "best rugby rugby union sports"}
+{"iab_path": "Sports > Sailing", "text": "sailing for beginners"}
+{"iab_path": "Sports > Skiing", "text": "compare skiing options"}
+{"iab_path": "Sports > Snooker/Pool/Billiards", "text": "sports snooker/pool/billiards examples"}
+{"iab_path": "Sports > Soccer", "text": "soccer overview"}
+{"iab_path": "Sports > Softball", "text": "top sports > softball"}
+{"iab_path": "Sports > Sports Equipment", "text": "what is sports equipment sports"}
+{"iab_path": "Sports > Squash", "text": "help me understand squash sports"}
+{"iab_path": "Sports > Swimming", "text": "swimming examples"}
+{"iab_path": "Sports > Table Tennis", "text": "table tennis sports guide"}
+{"iab_path": "Sports > Tennis", "text": "best sports > tennis"}
+{"iab_path": "Sports > Track and Field", "text": "compare sports > track and field options"}
+{"iab_path": "Sports > Volleyball", "text": "compare sports > volleyball options"}
+{"iab_path": "Sports > Walking", "text": "compare sports > walking options"}
+{"iab_path": "Sports > Water Polo", "text": "what is water polo"}
+{"iab_path": "Sports > Weightlifting", "text": "sports weightlifting for beginners"}
+{"iab_path": "Sports > Wrestling", "text": "what is wrestling"}
+{"iab_path": "Style & Fashion", "text": "compare style & fashion options"}
+{"iab_path": "Style & Fashion > Beauty", "text": "best style & fashion beauty"}
+{"iab_path": "Style & Fashion > Beauty > Hair Care", "text": "best hair care"}
+{"iab_path": "Style & Fashion > Beauty > Makeup and Accessories", "text": "beauty makeup and accessories style & fashion guide"}
+{"iab_path": "Style & Fashion > Beauty > Nail Care", "text": "how does beauty nail care style & fashion work"}
+{"iab_path": "Style & Fashion > Beauty > Natural and Organic Beauty", "text": "compare beauty natural and organic beauty options"}
+{"iab_path": "Style & Fashion > Beauty > Perfume and Fragrance", "text": "top perfume and fragrance beauty"}
+{"iab_path": "Style & Fashion > Beauty > Skin Care", "text": "compare skin care options"}
+{"iab_path": "Style & Fashion > Body Art", "text": "style & fashion > body art examples"}
+{"iab_path": "Style & Fashion > Children's Clothing", "text": "style & fashion children's clothing for beginners"}
+{"iab_path": "Style & Fashion > Designer Clothing", "text": "best style & fashion designer clothing"}
+{"iab_path": "Style & Fashion > Fashion Trends", "text": "compare style & fashion > fashion trends options"}
+{"iab_path": "Style & Fashion > High Fashion", "text": "how does style & fashion high fashion work"}
+{"iab_path": "Style & Fashion > Men's Fashion", "text": "style & fashion > men's fashion guide"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Accessories", "text": "what is men's fashion men's accessories"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Accessories > Men's Jewelry and Watches", "text": "men's accessories men's jewelry and watches guide"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing", "text": "men's fashion men's clothing for beginners"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Business Wear", "text": "style & fashion > men's fashion > men's clothing > men's business wear basics"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Casual Wear", "text": "men's casual wear"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Formal Wear", "text": "men's clothing men's formal wear basics"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Outerwear", "text": "top men's clothing men's outerwear style & fashion"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Sportswear", "text": "men's clothing men's sportswear style & fashion for beginners"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Clothing > Men's Underwear and Sleepwear", "text": "men's clothing men's underwear and sleepwear guide"}
+{"iab_path": "Style & Fashion > Men's Fashion > Men's Shoes and Footwear", "text": "help me understand men's shoes and footwear"}
+{"iab_path": "Style & Fashion > Personal Care", "text": "personal care style & fashion guide"}
+{"iab_path": "Style & Fashion > Personal Care > Bath and Shower", "text": "what is bath and shower"}
+{"iab_path": "Style & Fashion > Personal Care > Deodorant and Antiperspirant", "text": "deodorant and antiperspirant"}
+{"iab_path": "Style & Fashion > Personal Care > Oral care", "text": "top oral care"}
+{"iab_path": "Style & Fashion > Personal Care > Shaving", "text": "best personal care shaving style & fashion"}
+{"iab_path": "Style & Fashion > Street Style", "text": "learn about street style"}
+{"iab_path": "Style & Fashion > Women's Fashion", "text": "women's fashion guide"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Accessories", "text": "style & fashion > women's fashion > women's accessories for beginners"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Accessories > Women's Glasses", "text": "best women's accessories women's glasses style & fashion"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Accessories > Women's Handbags and Wallets", "text": "compare women's accessories women's handbags and wallet options"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Accessories > Women's Hats and Scarves", "text": "what is women's accessories women's hats and scarve"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Accessories > Women's Jewelry and Watches", "text": "top women's jewelry and watches"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing", "text": "women's fashion women's clothing style & fashion for beginners"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Business Wear", "text": "style & fashion > women's fashion > women's clothing > women's business wear guide"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Casual Wear", "text": "how does style & fashion > women's fashion > women's clothing > women's casual wear work"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Formal Wear", "text": "help me understand women's formal wear"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Intimates and Sleepwear", "text": "women's intimates and sleepwear basics"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Outerwear", "text": "help me understand women's clothing women's outerwear"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Clothing > Women's Sportswear", "text": "women's clothing women's sportswear style & fashion guide"}
+{"iab_path": "Style & Fashion > Women's Fashion > Women's Shoes and Footwear", "text": "what is style & fashion > women's fashion > women's shoes and footwear"}
+{"iab_path": "Technology & Computing", "text": "help me understand technology & computing"}
+{"iab_path": "Technology & Computing > Artificial Intelligence", "text": "artificial intelligence overview"}
+{"iab_path": "Technology & Computing > Augmented Reality", "text": "top technology & computing augmented reality"}
+{"iab_path": "Technology & Computing > Computing", "text": "technology & computing computing examples"}
+{"iab_path": "Technology & Computing > Computing > Computer Networking", "text": "what is computing computer networking"}
+{"iab_path": "Technology & Computing > Computing > Computer Peripherals", "text": "top computing computer peripherals"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications", "text": "computer software and applications for beginners"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > 3-D Graphics", "text": "best 3-d graphic to buy this year"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Antivirus Software", "text": "best antivirus software to buy this year"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Browsers", "text": "technology & computing > computing > computer software and applications > browsers basics"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Computer Animation", "text": "computer software and applications computer animation for beginners"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Databases", "text": "database guide"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Desktop Publishing", "text": "which computer software and applications desktop publishing technology & computing should i buy"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Digital Audio", "text": "how does technology & computing > computing > computer software and applications > digital audio work"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Graphics Software", "text": "computer software and applications graphics software for beginners"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Operating Systems", "text": "how does operating systems work"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Photo Editing Software", "text": "help me understand computer software and applications photo editing software technology & computing"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Shareware and Freeware", "text": "top shareware and freeware to buy"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Video Software", "text": "computer software and applications video software guide"}
+{"iab_path": "Technology & Computing > Computing > Computer Software and Applications > Web Conferencing", "text": "help me understand computer software and applications web conferencing"}
+{"iab_path": "Technology & Computing > Computing > Data Storage and Warehousing", "text": "computing data storage and warehousing examples"}
+{"iab_path": "Technology & Computing > Computing > Desktops", "text": "compare computing desktops options"}
+{"iab_path": "Technology & Computing > Computing > Information and Network Security", "text": "what is technology & computing > computing > information and network security"}
+{"iab_path": "Technology & Computing > Computing > Internet", "text": "best technology & computing > computing > internet"}
+{"iab_path": "Technology & Computing > Computing > Internet > Cloud Computing", "text": "cloud computing internet examples"}
+{"iab_path": "Technology & Computing > Computing > Internet > Email", "text": "email"}
+{"iab_path": "Technology & Computing > Computing > Internet > Internet for Beginners", "text": "help me understand internet for beginner"}
+{"iab_path": "Technology & Computing > Computing > Internet > Internet of Things", "text": "internet internet of things technology & computing for beginners"}
+{"iab_path": "Technology & Computing > Computing > Internet > IT and Internet Support", "text": "how does technology & computing > computing > internet > it and internet support work"}
+{"iab_path": "Technology & Computing > Computing > Internet > Search", "text": "how does internet search work"}
+{"iab_path": "Technology & Computing > Computing > Internet > Social Networking", "text": "compare social networking internet options"}
+{"iab_path": "Technology & Computing > Computing > Internet > Web Design and HTML", "text": "technology & computing > computing > internet > web design and html examples"}
+{"iab_path": "Technology & Computing > Computing > Internet > Web Development", "text": "best web development internet"}
+{"iab_path": "Technology & Computing > Computing > Internet > Web Hosting", "text": "web hosting guide"}
+{"iab_path": "Technology & Computing > Computing > Laptops", "text": "labtops for beginners"}
+{"iab_path": "Technology & Computing > Computing > Programming Languages", "text": "programming language basics"}
+{"iab_path": "Technology & Computing > Consumer Electronics", "text": "technology & computing consumer electronic examples"}
+{"iab_path": "Technology & Computing > Consumer Electronics > Cameras and Camcorders", "text": "top cameras and camcorder to buy"}
+{"iab_path": "Technology & Computing > Consumer Electronics > Home Entertainment Systems", "text": "how does home entertainment systems consumer electronics work"}
+{"iab_path": "Technology & Computing > Consumer Electronics > Smartphones", "text": "smartphones consumer electronics examples"}
+{"iab_path": "Technology & Computing > Consumer Electronics > Tablets and E-readers", "text": "compare consumer electronics tablets and e-reader before buying"}
+{"iab_path": "Technology & Computing > Consumer Electronics > Wearable Technology", "text": "which consumer electronics wearable technology technology & computing should i buy"}
+{"iab_path": "Technology & Computing > Robotics", "text": "how does robotic work"}
+{"iab_path": "Technology & Computing > Virtual Reality", "text": "virtual reality technology & computing basics"}
+{"iab_path": "Travel", "text": "how does travel work"}
+{"iab_path": "Travel > Travel Accessories", "text": "travel travel accessory basics"}
+{"iab_path": "Travel > Travel Locations", "text": "travel travel location guide"}
+{"iab_path": "Travel > Travel Locations > Africa Travel", "text": "travel > travel locations > africa travel basics"}
+{"iab_path": "Travel > Travel Locations > Asia Travel", "text": "help me understand travel locations asia travel travel"}
+{"iab_path": "Travel > Travel Locations > Australia and Oceania Travel", "text": "help me understand travel > travel locations > australia and oceania travel"}
+{"iab_path": "Travel > Travel Locations > Europe Travel", "text": "compare travel locations europe travel options"}
+{"iab_path": "Travel > Travel Locations > North America Travel", "text": "travel locations north america travel travel examples"}
+{"iab_path": "Travel > Travel Locations > Polar Travel", "text": "top travel locations polar travel"}
+{"iab_path": "Travel > Travel Locations > South America Travel", "text": "how does south america travel work"}
+{"iab_path": "Travel > Travel Preparation and Advice", "text": "travel travel preparation and advice examples"}
+{"iab_path": "Travel > Travel Type", "text": "what is travel > travel type"}
+{"iab_path": "Travel > Travel Type > Adventure Travel", "text": "learn about adventure travel"}
+{"iab_path": "Travel > Travel Type > Air Travel", "text": "best air travel travel type"}
+{"iab_path": "Travel > Travel Type > Beach Travel", "text": "beach travel basics"}
+{"iab_path": "Travel > Travel Type > Bed & Breakfasts", "text": "help me understand bed & breakfast"}
+{"iab_path": "Travel > Travel Type > Budget Travel", "text": "compare budget travel options"}
+{"iab_path": "Travel > Travel Type > Business Travel", "text": "business travel guide"}
+{"iab_path": "Travel > Travel Type > Camping", "text": "help me understand travel type camping"}
+{"iab_path": "Travel > Travel Type > Cruises", "text": "what is travel > travel type > cruises"}
+{"iab_path": "Travel > Travel Type > Day Trips", "text": "day trips travel type guide"}
+{"iab_path": "Travel > Travel Type > Family Travel", "text": "what is family travel"}
+{"iab_path": "Travel > Travel Type > Honeymoons and Getaways", "text": "learn about honeymoons and getaways"}
+{"iab_path": "Travel > Travel Type > Hotels and Motels", "text": "hotels and motels guide"}
+{"iab_path": "Travel > Travel Type > Rail Travel", "text": "best travel type rail travel"}
+{"iab_path": "Travel > Travel Type > Road Trips", "text": "road trips travel type guide"}
+{"iab_path": "Travel > Travel Type > Spas", "text": "travel > travel type > spas for beginners"}
+{"iab_path": "Video Gaming", "text": "video gaming examples"}
+{"iab_path": "Video Gaming > Console Games", "text": "top console game"}
+{"iab_path": "Video Gaming > eSports", "text": "compare esports video gaming options"}
+{"iab_path": "Video Gaming > Mobile Games", "text": "help me understand mobile games"}
+{"iab_path": "Video Gaming > PC Games", "text": "video gaming pc games basics"}
+{"iab_path": "Video Gaming > Video Game Genres", "text": "help me understand video game genres video gaming"}
+{"iab_path": "Video Gaming > Video Game Genres > Action Video Games", "text": "how does video game genres action video game work"}
+{"iab_path": "Video Gaming > Video Game Genres > Action-Adventure Video Games", "text": "action-adventure video games examples"}
+{"iab_path": "Video Gaming > Video Game Genres > Adult Video Games", "text": "video gaming > video game genres > adult video games for beginners"}
+{"iab_path": "Video Gaming > Video Game Genres > Adventure Video Games", "text": "how does adventure video game work"}
+{"iab_path": "Video Gaming > Video Game Genres > Casino and Gambling Video Games", "text": "video game genres casino and gambling video games video gaming examples"}
+{"iab_path": "Video Gaming > Video Game Genres > Casual Games", "text": "what is casual games"}
+{"iab_path": "Video Gaming > Video Game Genres > Educational Video Games", "text": "best educational video games video game genres"}
+{"iab_path": "Video Gaming > Video Game Genres > Exercise and Fitness Video Games", "text": "compare video game genres exercise and fitness video games options"}
+{"iab_path": "Video Gaming > Video Game Genres > Family Video Games", "text": "family video games overview"}
+{"iab_path": "Video Gaming > Video Game Genres > Horror Video Games", "text": "top horror video games video game genres"}
+{"iab_path": "Video Gaming > Video Game Genres > MMOs", "text": "mmos video game genres for beginners"}
+{"iab_path": "Video Gaming > Video Game Genres > Music and Party Video Games", "text": "video game genres music and party video games guide"}
+{"iab_path": "Video Gaming > Video Game Genres > Puzzle Video Games", "text": "how does video game genres puzzle video game work"}
+{"iab_path": "Video Gaming > Video Game Genres > Racing Video Games", "text": "video game genres racing video game guide"}
+{"iab_path": "Video Gaming > Video Game Genres > Role-Playing Video Games", "text": "what is role-playing video game"}
+{"iab_path": "Video Gaming > Video Game Genres > Simulation Video Games", "text": "help me understand simulation video games"}
+{"iab_path": "Video Gaming > Video Game Genres > Sports Video Games", "text": "video gaming > video game genres > sports video games examples"}
+{"iab_path": "Video Gaming > Video Game Genres > Strategy Video Games", "text": "video game genres strategy video game examples"}
+{"iab_path": "War and Conflicts", "text": "top war and conflict"}

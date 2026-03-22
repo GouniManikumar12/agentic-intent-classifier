@@ -24,3 +24,6 @@
 {"text":"Which CRM should we commit to before next month?","decision_phase":"decision"}
 {"text":"How do I invite teammates after we sign up?","decision_phase":"post_purchase"}
 {"text":"Why does the password reset email never arrive?","decision_phase":"support"}
+{"text":"What is car financing?","decision_phase":"awareness"}
+{"text":"Best hybrid SUV for a family","decision_phase":"consideration"}
+{"text":"Schedule a test drive for this sedan","decision_phase":"action"}

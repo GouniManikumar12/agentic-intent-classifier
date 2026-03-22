@@ -24,3 +24,6 @@
 {"text":"HubSpot or Pipedrive for our team right now?","decision_phase":"decision"}
 {"text":"How do I set up user permissions after we subscribe?","decision_phase":"post_purchase"}
 {"text":"The login form keeps rejecting my credentials","decision_phase":"support"}
+{"text":"How does buying a used car work?","decision_phase":"research"}
+{"text":"Which EV should I buy this year","decision_phase":"decision"}
+{"text":"Reserve a test drive for tomorrow","decision_phase":"action"}

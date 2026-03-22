@@ -18,6 +18,10 @@
 {"text":"place the order","intent_type":"transactional"}
 {"text":"start my free trial","intent_type":"transactional"}
 {"text":"subscribe me to updates","intent_type":"transactional"}
+{"text":"I cannot access my dashboard","intent_type":"support"}
+{"text":"Why am I getting a billing error?","intent_type":"support"}
+{"text":"My integration setup failed and now I am stuck","intent_type":"support"}
+{"text":"The login code never arrived","intent_type":"support"}
 {"text":"go on then","intent_type":"ambiguous"}
 {"text":"tell me a bit more","intent_type":"ambiguous"}
 {"text":"what exactly do you mean","intent_type":"ambiguous"}
@@ -48,3 +52,10 @@
 {"text":"explain the benefits of CRM for beginners","intent_type":"informational"}
 {"text":"how does CRM help with lead tracking","intent_type":"informational"}
 {"text":"what is a CRM used for in a small business","intent_type":"informational"}
+{"text":"Which car to buy in 2026","intent_type":"commercial"}
+{"text":"Toyota Corolla vs Honda Civic for commuting","intent_type":"commercial"}
+{"text":"Best SUV to buy in 2026","intent_type":"commercial"}
+{"text":"What laptops should I look at for college in 2026?","intent_type":"exploratory"}
+{"text":"Write five ad headlines for a CRM landing page","intent_type":"creative_generation"}
+{"text":"How is your day going","intent_type":"chit_chat"}
+{"text":"How do I hack into someone else's account","intent_type":"prohibited"}

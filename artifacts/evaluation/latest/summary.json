@@ -3,24 +3,427 @@
     "demo_benchmark": {
       "benchmark_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/demo_prompt_suite.json",
       "count": 15,
-      "fallback_rate": 0.6,
+      "fallback_rate": 0.5333,
       "output_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/combined_demo_benchmark.json"
+    },
+    "iab_mapping_regression": {
+      "by_status": {
+        "must_fix": {
+          "failed": 0,
+          "passed": 9,
+          "total": 9
+        }
+      },
+      "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json",
+      "count": 9,
+      "failed": 0,
+      "passed": 9,
+      "results": [
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Automotive",
+            "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Automotive",
+            "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling"
+          },
+          "id": "car-buying-maps-to-automotive-buying",
+          "mismatches": [],
+          "notes": "Vehicle shopping queries should map into the automotive buying branch, not business sales.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Which car to buy in 2026"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Sales"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Sales"
+          },
+          "id": "crm-awareness-maps-to-sales",
+          "mismatches": [],
+          "notes": "CRM education should resolve to the closest business/sales path, not generic software.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "What is CRM software?"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Sales"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Sales"
+          },
+          "id": "crm-comparison-maps-to-sales",
+          "mismatches": [],
+          "notes": "Direct CRM vendor comparison should map cleanly into the sales domain.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "HubSpot vs Zoho for a small team"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Marketing and Advertising"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Marketing and Advertising"
+          },
+          "id": "marketing-tools-map-to-marketing",
+          "mismatches": [],
+          "notes": "Marketing tool discovery should map to the marketing and advertising branch.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Best AI SEO tools for content teams"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+            "model_output.classification.iab_content.tier2.label": "Artificial Intelligence"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+            "model_output.classification.iab_content.tier2.label": "Artificial Intelligence"
+          },
+          "id": "ml-explanation-maps-to-ai",
+          "mismatches": [],
+          "notes": "ML and NLP educational prompts should land in the AI branch.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "What is intent classification in NLP?"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Business I.T."
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Business and Finance",
+            "model_output.classification.iab_content.tier2.label": "Business",
+            "model_output.classification.iab_content.tier3.label": "Business I.T."
+          },
+          "id": "support-credential-help-maps-to-business-it",
+          "mismatches": [],
+          "notes": "Credential and account help should map to business IT rather than generic business.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "How do I reset my password?"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Food & Drink",
+            "model_output.classification.iab_content.tier2.label": "Dining Out"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Food & Drink",
+            "model_output.classification.iab_content.tier2.label": "Dining Out"
+          },
+          "id": "restaurant-booking-maps-to-dining-out",
+          "mismatches": [],
+          "notes": "Generic dining requests should not inherit the repo's business default.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Book a table for 2 tonight"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+            "model_output.classification.iab_content.tier2.label": "Computing",
+            "model_output.classification.iab_content.tier3.label": "Software and Applications"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+            "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+            "model_output.classification.iab_content.tier2.label": "Computing",
+            "model_output.classification.iab_content.tier3.label": "Software and Applications"
+          },
+          "id": "trial-signup-maps-to-software",
+          "mismatches": [],
+          "notes": "Software action queries should map to the software/application branch.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Start my free trial"
+        },
+        {
+          "actual": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Food & Drink",
+            "model_output.classification.iab_content.tier2.label": "Alcoholic Beverages"
+          },
+          "expected": {
+            "model_output.classification.iab_content.mapping_mode": "exact",
+            "model_output.classification.iab_content.tier1.label": "Food & Drink",
+            "model_output.classification.iab_content.tier2.label": "Alcoholic Beverages"
+          },
+          "id": "vodka-query-maps-to-alcoholic-beverages",
+          "mismatches": [],
+          "notes": "Food and beverage prompts should not fall through to the business default.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "what is best vodka drink should i try"
+        }
+      ]
+    },
+    "known_failure_regression": {
+      "by_status": {
+        "acceptable_weakness": {
+          "failed": 1,
+          "passed": 2,
+          "total": 3
+        },
+        "must_fix": {
+          "failed": 0,
+          "passed": 6,
+          "total": 6
+        }
+      },
+      "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/known_failure_cases.json",
+      "count": 9,
+      "failed": 1,
+      "passed": 8,
+      "results": [
+        {
+          "actual": {
+            "model_output.classification.iab_content.tier1.label": "Automotive",
+            "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+            "model_output.classification.intent.type": "commercial",
+            "system_decision.policy.monetization_eligibility": "allowed"
+          },
+          "expected": {
+            "model_output.classification.iab_content.tier1.label": "Automotive",
+            "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+            "model_output.classification.intent.type": "commercial",
+            "system_decision.policy.monetization_eligibility": "allowed"
+          },
+          "id": "auto-buying-query-allowed",
+          "mismatches": [],
+          "notes": "High-intent automotive shopping should clear as monetizable instead of failing safe.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Which car to buy in 2026"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.decision_phase": "consideration",
+            "model_output.classification.intent.subtype": "comparison",
+            "model_output.classification.intent.type": "commercial",
+            "model_output.fallback": null,
+            "system_decision.opportunity.strength": "high",
+            "system_decision.opportunity.type": "comparison_slot",
+            "system_decision.policy.monetization_eligibility": "allowed_with_caution"
+          },
+          "expected": {
+            "model_output.classification.intent.decision_phase": "consideration",
+            "model_output.classification.intent.subtype": "comparison",
+            "model_output.classification.intent.type": "commercial",
+            "model_output.fallback": null,
+            "system_decision.opportunity.strength": "high",
+            "system_decision.opportunity.type": "comparison_slot",
+            "system_decision.policy.monetization_eligibility": "allowed_with_caution"
+          },
+          "id": "commercial-comparison-clean-pass",
+          "mismatches": [],
+          "notes": "Clear comparison intent should now pass without fallback and expose a comparison opportunity.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "HubSpot vs Zoho for a small team"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.decision_phase": "decision",
+            "model_output.classification.intent.subtype": "provider_selection",
+            "model_output.fallback": null,
+            "system_decision.opportunity.strength": "high",
+            "system_decision.opportunity.type": "decision_moment",
+            "system_decision.policy.monetization_eligibility": "allowed"
+          },
+          "expected": {
+            "model_output.classification.intent.decision_phase": "decision",
+            "model_output.classification.intent.subtype": "provider_selection",
+            "model_output.fallback": null,
+            "system_decision.opportunity.strength": "high",
+            "system_decision.opportunity.type": "decision_moment",
+            "system_decision.policy.monetization_eligibility": "allowed"
+          },
+          "id": "provider-selection-allowed",
+          "mismatches": [],
+          "notes": "Subtype and phase should now rescue a buying query even when the intent head remains conservative.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Which CRM should I buy for a 3-person startup?"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.decision_phase": "awareness",
+            "model_output.classification.intent.subtype": "education",
+            "model_output.classification.intent.type": "informational",
+            "model_output.fallback": null,
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "restricted"
+          },
+          "expected": {
+            "model_output.classification.intent.decision_phase": "awareness",
+            "model_output.classification.intent.subtype": "education",
+            "model_output.classification.intent.type": "informational",
+            "model_output.fallback": null,
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "restricted"
+          },
+          "id": "education-query-restricted",
+          "mismatches": [],
+          "notes": "Clear educational prompts should stay out of monetizable pathways.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "What is CRM software?"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.subtype": "follow_up",
+            "model_output.classification.intent.type": "ambiguous",
+            "model_output.fallback.reason": "ambiguous_query",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "expected": {
+            "model_output.classification.intent.subtype": "follow_up",
+            "model_output.classification.intent.type": "ambiguous",
+            "model_output.fallback.reason": "ambiguous_query",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "id": "ambiguous-follow-up-safe-block",
+          "mismatches": [],
+          "notes": "Short follow-ups should still fail safe instead of leaking into commercial handling.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "Tell me more"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.decision_phase": "support",
+            "model_output.fallback.reason": "policy_default",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "expected": {
+            "model_output.classification.intent.decision_phase": "support",
+            "model_output.fallback.reason": "policy_default",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "id": "support-query-policy-block",
+          "mismatches": [],
+          "notes": "Support traffic must stay blocked even if the subtype head is still imperfect.",
+          "pass": true,
+          "status": "must_fix",
+          "text": "I cannot log into my account"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.subtype": "signup",
+            "model_output.fallback.reason": "confidence_below_threshold",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "expected": {
+            "model_output.classification.intent.subtype": "signup",
+            "model_output.fallback.reason": "confidence_below_threshold",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "id": "signup-action-still-over-fallbacks",
+          "mismatches": [],
+          "notes": "The subtype head recognizes signup, but the combined action path still falls back on low confidence.",
+          "pass": true,
+          "status": "acceptable_weakness",
+          "text": "Start my free trial"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.decision_phase": "decision",
+            "model_output.classification.intent.subtype": "education",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "restricted"
+          },
+          "expected": {
+            "model_output.classification.intent.decision_phase": "awareness",
+            "model_output.classification.intent.subtype": "education",
+            "system_decision.opportunity.type": "none",
+            "system_decision.policy.monetization_eligibility": "restricted"
+          },
+          "id": "price-seeking-underclassified",
+          "mismatches": [
+            {
+              "actual": "decision",
+              "expected": "awareness",
+              "path": "model_output.classification.intent.decision_phase"
+            }
+          ],
+          "notes": "Price-seeking prompts still underclassify and should remain visible until the next data pass.",
+          "pass": false,
+          "status": "acceptable_weakness",
+          "text": "What costs less HubSpot or Zoho?"
+        },
+        {
+          "actual": {
+            "model_output.classification.intent.subtype": "emotional_reflection",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "expected": {
+            "model_output.classification.intent.subtype": "emotional_reflection",
+            "system_decision.policy.monetization_eligibility": "not_allowed"
+          },
+          "id": "support-subtype-still-bleeds-into-reflection",
+          "mismatches": [],
+          "notes": "The system layer blocks this correctly, but the subtype head still confuses some support phrasing with reflection.",
+          "pass": true,
+          "status": "acceptable_weakness",
+          "text": "I cannot log into my account"
+        }
+      ]
     }
   },
   "heads": {
     "decision_phase": {
       "final_wave_cases": {
-        "accepted_accuracy": 1.0,
-        "accepted_coverage": 0.625,
-        "accuracy": 0.9167,
+        "accepted_accuracy": 0.9545,
+        "accepted_coverage": 0.8148,
+        "accuracy": 0.8519,
         "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_final_wave_cases_confusion_matrix.csv",
-        "count": 24,
+        "count": 27,
         "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/final_wave_cases.jsonl",
-        "fallback_rate": 0.375,
+        "fallback_rate": 0.1852,
         "head": "decision_phase",
-        "macro_f1": 0.9153,
+        "macro_f1": 0.841,
         "per_class_metrics": {
-          "accuracy": 0.9166666666666666,
+          "accuracy": 0.8518518518518519,
           "action": {
             "f1-score": 0.0,
             "precision": 0.0,
@@ -28,38 +431,38 @@
             "support": 0.0
           },
           "awareness": {
-            "f1-score": 0.8888888888888888,
+            "f1-score": 0.8,
             "precision": 0.8,
-            "recall": 1.0,
-            "support": 4.0
+            "recall": 0.8,
+            "support": 5.0
           },
           "consideration": {
-            "f1-score": 0.8888888888888888,
-            "precision": 0.8,
-            "recall": 1.0,
-            "support": 4.0
-          },
-          "decision": {
-            "f1-score": 0.8571428571428571,
-            "precision": 1.0,
-            "recall": 0.75,
-            "support": 4.0
-          },
-          "macro avg": {
-            "f1-score": 0.7845804988662131,
-            "precision": 0.7999999999999999,
-            "recall": 0.7857142857142857,
-            "support": 24.0
-          },
-          "post_purchase": {
             "f1-score": 1.0,
             "precision": 1.0,
             "recall": 1.0,
+            "support": 5.0
+          },
+          "decision": {
+            "f1-score": 0.8333333333333334,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "support": 5.0
+          },
+          "macro avg": {
+            "f1-score": 0.7208616780045352,
+            "precision": 0.7591836734693879,
+            "recall": 0.7214285714285714,
+            "support": 27.0
+          },
+          "post_purchase": {
+            "f1-score": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
             "support": 4.0
           },
           "research": {
-            "f1-score": 1.0,
-            "precision": 1.0,
+            "f1-score": 0.8888888888888888,
+            "precision": 0.8,
             "recall": 1.0,
             "support": 4.0
           },
@@ -70,26 +473,26 @@
             "support": 4.0
           },
           "weighted avg": {
-            "f1-score": 0.9153439153439152,
-            "precision": 0.9333333333333332,
-            "recall": 0.9166666666666666,
-            "support": 24.0
+            "f1-score": 0.8450911228689006,
+            "precision": 0.8804232804232804,
+            "recall": 0.8518518518518519,
+            "support": 27.0
           }
         },
         "suite": "final_wave_cases"
       },
       "hard_cases": {
-        "accepted_accuracy": 0.9583,
-        "accepted_coverage": 0.6667,
-        "accuracy": 0.9167,
+        "accepted_accuracy": 0.9,
+        "accepted_coverage": 0.7692,
+        "accuracy": 0.8462,
         "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_hard_cases_confusion_matrix.csv",
-        "count": 36,
+        "count": 39,
         "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/hard_cases.jsonl",
-        "fallback_rate": 0.3333,
+        "fallback_rate": 0.2308,
         "head": "decision_phase",
-        "macro_f1": 0.9132,
+        "macro_f1": 0.8461,
         "per_class_metrics": {
-          "accuracy": 0.9166666666666666,
+          "accuracy": 0.8461538461538461,
           "action": {
             "f1-score": 0.0,
             "precision": 0.0,
@@ -97,28 +500,28 @@
             "support": 0.0
           },
           "awareness": {
-            "f1-score": 1.0,
-            "precision": 1.0,
+            "f1-score": 0.9230769230769231,
+            "precision": 0.8571428571428571,
             "recall": 1.0,
             "support": 6.0
           },
           "consideration": {
-            "f1-score": 0.9230769230769231,
-            "precision": 0.8571428571428571,
-            "recall": 1.0,
-            "support": 6.0
+            "f1-score": 0.8,
+            "precision": 0.75,
+            "recall": 0.8571428571428571,
+            "support": 7.0
           },
           "decision": {
-            "f1-score": 0.9230769230769231,
-            "precision": 0.8571428571428571,
+            "f1-score": 0.875,
+            "precision": 0.7777777777777778,
             "recall": 1.0,
-            "support": 6.0
+            "support": 7.0
           },
           "macro avg": {
-            "f1-score": 0.7827838827838828,
-            "precision": 0.7925170068027211,
-            "recall": 0.7857142857142857,
-            "support": 36.0
+            "f1-score": 0.7251998001998002,
+            "precision": 0.7454648526077098,
+            "recall": 0.7244897959183673,
+            "support": 39.0
           },
           "post_purchase": {
             "f1-score": 0.8,
@@ -127,229 +530,1523 @@
             "support": 6.0
           },
           "research": {
-            "f1-score": 0.8333333333333334,
+            "f1-score": 0.7692307692307693,
             "precision": 0.8333333333333334,
+            "recall": 0.7142857142857143,
+            "support": 7.0
+          },
+          "support": {
+            "f1-score": 0.9090909090909091,
+            "precision": 1.0,
             "recall": 0.8333333333333334,
             "support": 6.0
           },
-          "support": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 6.0
-          },
           "weighted avg": {
-            "f1-score": 0.9132478632478632,
-            "precision": 0.9246031746031745,
-            "recall": 0.9166666666666666,
-            "support": 36.0
+            "f1-score": 0.8436569840415995,
+            "precision": 0.8633496133496132,
+            "recall": 0.8461538461538461,
+            "support": 39.0
           }
         },
         "suite": "hard_cases"
       },
       "test": {
-        "accepted_accuracy": 0.8,
-        "accepted_coverage": 0.3846,
-        "accuracy": 0.5769,
+        "accepted_accuracy": 0.7,
+        "accepted_coverage": 0.6897,
+        "accuracy": 0.6897,
         "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_test_confusion_matrix.csv",
-        "count": 26,
+        "count": 29,
         "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/test.jsonl",
-        "fallback_rate": 0.6154,
+        "fallback_rate": 0.3103,
         "head": "decision_phase",
-        "macro_f1": 0.5179,
+        "macro_f1": 0.6944,
         "per_class_metrics": {
-          "accuracy": 0.5769230769230769,
+          "accuracy": 0.6896551724137931,
           "action": {
-            "f1-score": 0.0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "support": 2.0
+            "f1-score": 0.8,
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "support": 3.0
           },
           "awareness": {
-            "f1-score": 1.0,
-            "precision": 1.0,
+            "f1-score": 0.75,
+            "precision": 0.6,
             "recall": 1.0,
             "support": 3.0
           },
           "consideration": {
-            "f1-score": 0.625,
-            "precision": 0.45454545454545453,
-            "recall": 1.0,
+            "f1-score": 0.5454545454545454,
+            "precision": 0.5,
+            "recall": 0.6,
             "support": 5.0
           },
           "decision": {
-            "f1-score": 0.2857142857142857,
-            "precision": 0.3333333333333333,
-            "recall": 0.25,
-            "support": 4.0
-          },
-          "macro avg": {
-            "f1-score": 0.5178571428571427,
-            "precision": 0.5411255411255411,
-            "recall": 0.5357142857142857,
-            "support": 26.0
-          },
-          "post_purchase": {
-            "f1-score": 0.5714285714285714,
-            "precision": 0.6666666666666666,
-            "recall": 0.5,
-            "support": 4.0
-          },
-          "research": {
-            "f1-score": 0.5714285714285714,
-            "precision": 0.6666666666666666,
-            "recall": 0.5,
-            "support": 4.0
-          },
-          "support": {
-            "f1-score": 0.5714285714285714,
-            "precision": 0.6666666666666666,
-            "recall": 0.5,
-            "support": 4.0
-          },
-          "weighted avg": {
-            "f1-score": 0.5432692307692306,
-            "precision": 0.5617715617715617,
-            "recall": 0.5769230769230769,
-            "support": 26.0
-          }
-        },
-        "suite": "test"
-      },
-      "train": {
-        "accepted_accuracy": 0.9455,
-        "accepted_coverage": 0.5978,
-        "accuracy": 0.8913,
-        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_train_confusion_matrix.csv",
-        "count": 92,
-        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/train.jsonl",
-        "fallback_rate": 0.4022,
-        "head": "decision_phase",
-        "macro_f1": 0.8873,
-        "per_class_metrics": {
-          "accuracy": 0.8913043478260869,
-          "action": {
-            "f1-score": 0.8571428571428571,
-            "precision": 1.0,
-            "recall": 0.75,
-            "support": 8.0
-          },
-          "awareness": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 14.0
-          },
-          "consideration": {
-            "f1-score": 0.8571428571428571,
-            "precision": 0.75,
-            "recall": 1.0,
-            "support": 15.0
-          },
-          "decision": {
-            "f1-score": 0.896551724137931,
-            "precision": 0.8666666666666667,
-            "recall": 0.9285714285714286,
-            "support": 14.0
-          },
-          "macro avg": {
-            "f1-score": 0.8872624912033779,
-            "precision": 0.9095238095238096,
-            "recall": 0.8795133437990581,
-            "support": 92.0
-          },
-          "post_purchase": {
-            "f1-score": 0.88,
-            "precision": 1.0,
-            "recall": 0.7857142857142857,
-            "support": 14.0
-          },
-          "research": {
-            "f1-score": 0.72,
-            "precision": 0.75,
-            "recall": 0.6923076923076923,
-            "support": 13.0
-          },
-          "support": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 14.0
-          },
-          "weighted avg": {
-            "f1-score": 0.8907174983936603,
-            "precision": 0.903623188405797,
-            "recall": 0.8913043478260869,
-            "support": 92.0
-          }
-        },
-        "suite": "train"
-      },
-      "val": {
-        "accepted_accuracy": 0.7692,
-        "accepted_coverage": 0.5,
-        "accuracy": 0.6538,
-        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_val_confusion_matrix.csv",
-        "count": 26,
-        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/val.jsonl",
-        "fallback_rate": 0.5,
-        "head": "decision_phase",
-        "macro_f1": 0.5883,
-        "per_class_metrics": {
-          "accuracy": 0.6538461538461539,
-          "action": {
-            "f1-score": 0.0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "support": 2.0
-          },
-          "awareness": {
             "f1-score": 0.7272727272727273,
-            "precision": 0.5714285714285714,
-            "recall": 1.0,
-            "support": 4.0
-          },
-          "consideration": {
-            "f1-score": 0.5454545454545454,
-            "precision": 0.42857142857142855,
-            "recall": 0.75,
-            "support": 4.0
-          },
-          "decision": {
-            "f1-score": 0.8571428571428571,
-            "precision": 1.0,
-            "recall": 0.75,
-            "support": 4.0
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "support": 5.0
           },
           "macro avg": {
-            "f1-score": 0.5882807668521954,
-            "precision": 0.630952380952381,
-            "recall": 0.6071428571428571,
-            "support": 26.0
+            "f1-score": 0.6944032158317873,
+            "precision": 0.7476190476190476,
+            "recall": 0.6952380952380953,
+            "support": 29.0
           },
           "post_purchase": {
-            "f1-score": 0.75,
-            "precision": 0.75,
-            "recall": 0.75,
+            "f1-score": 0.5714285714285714,
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
             "support": 4.0
           },
           "research": {
+            "f1-score": 0.8,
+            "precision": 0.8,
+            "recall": 0.8,
+            "support": 5.0
+          },
+          "support": {
             "f1-score": 0.6666666666666666,
             "precision": 1.0,
             "recall": 0.5,
             "support": 4.0
           },
+          "weighted avg": {
+            "f1-score": 0.6884833557247351,
+            "precision": 0.7344827586206897,
+            "recall": 0.6896551724137931,
+            "support": 29.0
+          }
+        },
+        "suite": "test"
+      },
+      "train": {
+        "accepted_accuracy": 0.9615,
+        "accepted_coverage": 0.7647,
+        "accuracy": 0.8922,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_train_confusion_matrix.csv",
+        "count": 102,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/train.jsonl",
+        "fallback_rate": 0.2353,
+        "head": "decision_phase",
+        "macro_f1": 0.8875,
+        "per_class_metrics": {
+          "accuracy": 0.8921568627450981,
+          "action": {
+            "f1-score": 0.8888888888888888,
+            "precision": 1.0,
+            "recall": 0.8,
+            "support": 10.0
+          },
+          "awareness": {
+            "f1-score": 0.9411764705882353,
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "support": 16.0
+          },
+          "consideration": {
+            "f1-score": 0.8947368421052632,
+            "precision": 0.8095238095238095,
+            "recall": 1.0,
+            "support": 17.0
+          },
+          "decision": {
+            "f1-score": 0.8888888888888888,
+            "precision": 0.8,
+            "recall": 1.0,
+            "support": 16.0
+          },
+          "macro avg": {
+            "f1-score": 0.8875059521691313,
+            "precision": 0.9153576582148011,
+            "recall": 0.8802721088435375,
+            "support": 102.0
+          },
+          "post_purchase": {
+            "f1-score": 0.8,
+            "precision": 0.9090909090909091,
+            "recall": 0.7142857142857143,
+            "support": 14.0
+          },
+          "research": {
+            "f1-score": 0.9655172413793104,
+            "precision": 1.0,
+            "recall": 0.9333333333333333,
+            "support": 15.0
+          },
           "support": {
+            "f1-score": 0.8333333333333334,
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "support": 14.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8895086886634184,
+            "precision": 0.9069745069745071,
+            "recall": 0.8921568627450981,
+            "support": 102.0
+          }
+        },
+        "suite": "train"
+      },
+      "val": {
+        "accepted_accuracy": 0.75,
+        "accepted_coverage": 0.6897,
+        "accuracy": 0.6552,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_val_confusion_matrix.csv",
+        "count": 29,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/val.jsonl",
+        "fallback_rate": 0.3103,
+        "head": "decision_phase",
+        "macro_f1": 0.6189,
+        "per_class_metrics": {
+          "accuracy": 0.6551724137931034,
+          "action": {
+            "f1-score": 0.5,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "support": 3.0
+          },
+          "awareness": {
+            "f1-score": 0.7272727272727273,
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "support": 5.0
+          },
+          "consideration": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "support": 5.0
+          },
+          "decision": {
+            "f1-score": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 4.0
+          },
+          "macro avg": {
+            "f1-score": 0.6188620902906617,
+            "precision": 0.7387755102040817,
+            "recall": 0.6333333333333334,
+            "support": 29.0
+          },
+          "post_purchase": {
             "f1-score": 0.5714285714285714,
             "precision": 0.6666666666666666,
             "recall": 0.5,
             "support": 4.0
           },
+          "research": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.6,
+            "recall": 0.75,
+            "support": 4.0
+          },
+          "support": {
+            "f1-score": 0.4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "support": 4.0
+          },
           "weighted avg": {
-            "f1-score": 0.6335331335331336,
-            "precision": 0.6794871794871795,
-            "recall": 0.6538461538461539,
+            "f1-score": 0.6283475145544111,
+            "precision": 0.7215106732348111,
+            "recall": 0.6551724137931034,
+            "support": 29.0
+          }
+        },
+        "suite": "val"
+      }
+    },
+    "iab_content": {
+      "extended_cases": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.8571,
+        "accuracy": 1.0,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_extended_cases_confusion_matrix.csv",
+        "count": 7,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/extended_cases.jsonl",
+        "fallback_rate": 0.1429,
+        "head": "iab_content",
+        "macro_f1": 1.0,
+        "per_class_metrics": {
+          "Automotive > Auto Buying and Selling": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Business and Finance > Business > Business I.T.": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Business and Finance > Business > Marketing and Advertising": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business > Sales": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business > Small and Medium-sized Business": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business > Startups": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Careers": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Education": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Food & Drink > Alcoholic Beverages": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Food & Drink > Dining Out": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Real Estate": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Technology & Computing > Artificial Intelligence": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Technology & Computing > Computing > Computer Software and Applications": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Technology & Computing > Computing > Internet": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Travel": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "f1-score": 0.4375,
+            "precision": 0.4375,
+            "recall": 0.4375,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 7.0
+          }
+        },
+        "suite": "extended_cases"
+      },
+      "hard_cases": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.5714,
+        "accuracy": 0.8571,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_hard_cases_confusion_matrix.csv",
+        "count": 7,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/hard_cases.jsonl",
+        "fallback_rate": 0.4286,
+        "head": "iab_content",
+        "macro_f1": 0.8095,
+        "per_class_metrics": {
+          "Automotive > Auto Buying and Selling": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Business and Finance > Business > Business I.T.": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business > Marketing and Advertising": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Business and Finance > Business > Sales": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "Business and Finance > Business > Small and Medium-sized Business": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Business and Finance > Business > Startups": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Careers": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Education": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Food & Drink > Alcoholic Beverages": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Food & Drink > Dining Out": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Real Estate": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Technology & Computing > Artificial Intelligence": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Technology & Computing > Computing > Computer Software and Applications": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.5,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "Technology & Computing > Computing > Internet": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "Travel": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.8571428571428571,
+          "macro avg": {
+            "f1-score": 0.35416666666666663,
+            "precision": 0.34375,
+            "recall": 0.375,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8095238095238094,
+            "precision": 0.7857142857142857,
+            "recall": 0.8571428571428571,
+            "support": 7.0
+          }
+        },
+        "suite": "hard_cases"
+      },
+      "test": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.8646,
+        "accuracy": 0.9583,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_test_confusion_matrix.csv",
+        "count": 96,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/test.jsonl",
+        "fallback_rate": 0.1354,
+        "head": "iab_content",
+        "macro_f1": 0.9588,
+        "per_class_metrics": {
+          "Automotive > Auto Buying and Selling": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business": {
+            "f1-score": 0.9230769230769231,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Business I.T.": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Marketing and Advertising": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Sales": {
+            "f1-score": 0.9090909090909091,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Small and Medium-sized Business": {
+            "f1-score": 0.9090909090909091,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Startups": {
+            "f1-score": 0.9090909090909091,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "support": 6.0
+          },
+          "Careers": {
+            "f1-score": 0.8333333333333334,
+            "precision": 0.8333333333333334,
+            "recall": 0.8333333333333334,
+            "support": 6.0
+          },
+          "Education": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Food & Drink > Alcoholic Beverages": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Food & Drink > Dining Out": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Real Estate": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Artificial Intelligence": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Computing > Computer Software and Applications": {
+            "f1-score": 0.8571428571428571,
+            "precision": 0.75,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Computing > Internet": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Travel": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "accuracy": 0.9583333333333334,
+          "macro avg": {
+            "f1-score": 0.9588016150516151,
+            "precision": 0.965029761904762,
+            "recall": 0.9583333333333334,
+            "support": 96.0
+          },
+          "weighted avg": {
+            "f1-score": 0.9588016150516149,
+            "precision": 0.9650297619047619,
+            "recall": 0.9583333333333334,
+            "support": 96.0
+          }
+        },
+        "suite": "test"
+      },
+      "train": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.9401,
+        "accuracy": 0.9905,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_train_confusion_matrix.csv",
+        "count": 634,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/train.jsonl",
+        "fallback_rate": 0.0599,
+        "head": "iab_content",
+        "macro_f1": 0.9905,
+        "per_class_metrics": {
+          "Automotive > Auto Buying and Selling": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Business and Finance > Business": {
+            "f1-score": 0.9876543209876543,
+            "precision": 0.975609756097561,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Business and Finance > Business > Business I.T.": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Business and Finance > Business > Marketing and Advertising": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Business and Finance > Business > Sales": {
+            "f1-score": 0.9315068493150684,
+            "precision": 1.0,
+            "recall": 0.8717948717948718,
+            "support": 39.0
+          },
+          "Business and Finance > Business > Small and Medium-sized Business": {
+            "f1-score": 0.9873417721518988,
+            "precision": 1.0,
+            "recall": 0.975,
+            "support": 40.0
+          },
+          "Business and Finance > Business > Startups": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Careers": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Education": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Food & Drink > Alcoholic Beverages": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 39.0
+          },
+          "Food & Drink > Dining Out": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 39.0
+          },
+          "Real Estate": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Technology & Computing > Artificial Intelligence": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 39.0
+          },
+          "Technology & Computing > Computing > Computer Software and Applications": {
+            "f1-score": 0.9411764705882353,
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "Technology & Computing > Computing > Internet": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 38.0
+          },
+          "Travel": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 40.0
+          },
+          "accuracy": 0.9905362776025236,
+          "macro avg": {
+            "f1-score": 0.9904799633151786,
+            "precision": 0.9915311653116532,
+            "recall": 0.9904246794871795,
+            "support": 634.0
+          },
+          "weighted avg": {
+            "f1-score": 0.9904979016914813,
+            "precision": 0.9914510186111324,
+            "recall": 0.9905362776025236,
+            "support": 634.0
+          }
+        },
+        "suite": "train"
+      },
+      "val": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.9062,
+        "accuracy": 0.9896,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_val_confusion_matrix.csv",
+        "count": 96,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/val.jsonl",
+        "fallback_rate": 0.0938,
+        "head": "iab_content",
+        "macro_f1": 0.9895,
+        "per_class_metrics": {
+          "Automotive > Auto Buying and Selling": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Business I.T.": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Marketing and Advertising": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Sales": {
+            "f1-score": 0.9090909090909091,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Small and Medium-sized Business": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Business and Finance > Business > Startups": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Careers": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Education": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Food & Drink > Alcoholic Beverages": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Food & Drink > Dining Out": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Real Estate": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Artificial Intelligence": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Computing > Computer Software and Applications": {
+            "f1-score": 0.9230769230769231,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Technology & Computing > Computing > Internet": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "Travel": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "accuracy": 0.9895833333333334,
+          "macro avg": {
+            "f1-score": 0.9895104895104896,
+            "precision": 0.9910714285714286,
+            "recall": 0.9895833333333334,
+            "support": 96.0
+          },
+          "weighted avg": {
+            "f1-score": 0.9895104895104895,
+            "precision": 0.9910714285714285,
+            "recall": 0.9895833333333334,
+            "support": 96.0
+          }
+        },
+        "suite": "val"
+      }
+    },
+    "intent_subtype": {
+      "extended_cases": {
+        "accepted_accuracy": 0.75,
+        "accepted_coverage": 0.5714,
+        "accuracy": 0.6122,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_extended_cases_confusion_matrix.csv",
+        "count": 49,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/extended_cases.jsonl",
+        "fallback_rate": 0.4286,
+        "head": "intent_subtype",
+        "macro_f1": 0.4507,
+        "per_class_metrics": {
+          "account_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 4.0
+          },
+          "accuracy": 0.6122448979591837,
+          "billing_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "booking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "comparison": {
+            "f1-score": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2.0
+          },
+          "contact_sales": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "deal_seeking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 9.0
+          },
+          "download": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "education": {
+            "f1-score": 0.6206896551724138,
+            "precision": 0.45,
+            "recall": 1.0,
+            "support": 9.0
+          },
+          "emotional_reflection": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "evaluation": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "follow_up": {
+            "f1-score": 0.9473684210526315,
+            "precision": 1.0,
+            "recall": 0.9,
+            "support": 10.0
+          },
+          "macro avg": {
+            "f1-score": 0.25041400086772136,
+            "precision": 0.25648148148148153,
+            "recall": 0.26666666666666666,
+            "support": 49.0
+          },
+          "onboarding_setup": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 4.0
+          },
+          "product_discovery": {
+            "f1-score": 0.36363636363636365,
+            "precision": 0.3333333333333333,
+            "recall": 0.4,
+            "support": 5.0
+          },
+          "provider_selection": {
+            "f1-score": 0.9090909090909091,
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "support": 5.0
+          },
+          "purchase": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "signup": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "task_execution": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "troubleshooting": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "weighted avg": {
+            "f1-score": 0.5460583837560763,
+            "precision": 0.5282312925170068,
+            "recall": 0.6122448979591837,
+            "support": 49.0
+          }
+        },
+        "suite": "extended_cases"
+      },
+      "hard_cases": {
+        "accepted_accuracy": 0.9107,
+        "accepted_coverage": 0.6222,
+        "accuracy": 0.7222,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_hard_cases_confusion_matrix.csv",
+        "count": 90,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/hard_cases.jsonl",
+        "fallback_rate": 0.3778,
+        "head": "intent_subtype",
+        "macro_f1": 0.4175,
+        "per_class_metrics": {
+          "account_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.7222222222222222,
+          "billing_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "booking": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "support": 3.0
+          },
+          "comparison": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 3.0
+          },
+          "contact_sales": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "deal_seeking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 3.0
+          },
+          "download": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "education": {
+            "f1-score": 0.8888888888888888,
+            "precision": 0.8,
+            "recall": 1.0,
+            "support": 32.0
+          },
+          "emotional_reflection": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "evaluation": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 6.0
+          },
+          "follow_up": {
+            "f1-score": 0.8333333333333334,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "support": 10.0
+          },
+          "macro avg": {
+            "f1-score": 0.39435024851691514,
+            "precision": 0.41591710758377426,
+            "recall": 0.40476190476190477,
+            "support": 90.0
+          },
+          "onboarding_setup": {
+            "f1-score": 0.7272727272727273,
+            "precision": 1.0,
+            "recall": 0.5714285714285714,
+            "support": 7.0
+          },
+          "product_discovery": {
+            "f1-score": 0.625,
+            "precision": 0.5555555555555556,
+            "recall": 0.7142857142857143,
+            "support": 7.0
+          },
+          "provider_selection": {
+            "f1-score": 0.8571428571428571,
+            "precision": 0.75,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "purchase": {
+            "f1-score": 0.5,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "support": 3.0
+          },
+          "signup": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2.0
+          },
+          "task_execution": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "troubleshooting": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 3.0
+          },
+          "weighted avg": {
+            "f1-score": 0.6654060445727112,
+            "precision": 0.6459082892416227,
+            "recall": 0.7222222222222222,
+            "support": 90.0
+          }
+        },
+        "suite": "hard_cases"
+      },
+      "test": {
+        "accepted_accuracy": 0.7692,
+        "accepted_coverage": 0.5909,
+        "accuracy": 0.6212,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_test_confusion_matrix.csv",
+        "count": 66,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/test.jsonl",
+        "fallback_rate": 0.4091,
+        "head": "intent_subtype",
+        "macro_f1": 0.4287,
+        "per_class_metrics": {
+          "account_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.6212121212121212,
+          "billing_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "booking": {
+            "f1-score": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 4.0
+          },
+          "comparison": {
+            "f1-score": 0.4,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "support": 3.0
+          },
+          "contact_sales": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "deal_seeking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "download": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "education": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.5,
+            "recall": 1.0,
+            "support": 14.0
+          },
+          "emotional_reflection": {
+            "f1-score": 0.9090909090909091,
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "support": 5.0
+          },
+          "evaluation": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "follow_up": {
+            "f1-score": 0.8,
+            "precision": 0.7272727272727273,
+            "recall": 0.8888888888888888,
+            "support": 9.0
+          },
+          "macro avg": {
+            "f1-score": 0.38107263107263106,
+            "precision": 0.4228114478114478,
+            "recall": 0.38059964726631396,
+            "support": 66.0
+          },
+          "onboarding_setup": {
+            "f1-score": 0.5714285714285714,
+            "precision": 1.0,
+            "recall": 0.4,
+            "support": 5.0
+          },
+          "product_discovery": {
+            "f1-score": 0.5454545454545454,
+            "precision": 0.75,
+            "recall": 0.42857142857142855,
+            "support": 7.0
+          },
+          "provider_selection": {
+            "f1-score": 0.8,
+            "precision": 0.8,
+            "recall": 0.8,
+            "support": 5.0
+          },
+          "purchase": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1.0
+          },
+          "signup": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "task_execution": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 5.0
+          },
+          "troubleshooting": {
+            "f1-score": 0.5,
+            "precision": 0.5,
+            "recall": 0.5,
+            "support": 2.0
+          },
+          "weighted avg": {
+            "f1-score": 0.5700118063754427,
+            "precision": 0.597910927456382,
+            "recall": 0.6212121212121212,
+            "support": 66.0
+          }
+        },
+        "suite": "test"
+      },
+      "train": {
+        "accepted_accuracy": 0.9272,
+        "accepted_coverage": 0.5593,
+        "accuracy": 0.7556,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_train_confusion_matrix.csv",
+        "count": 270,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/train.jsonl",
+        "fallback_rate": 0.4407,
+        "head": "intent_subtype",
+        "macro_f1": 0.593,
+        "per_class_metrics": {
+          "account_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 9.0
+          },
+          "accuracy": 0.7555555555555555,
+          "billing_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 6.0
+          },
+          "booking": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6.0
+          },
+          "comparison": {
+            "f1-score": 0.9166666666666666,
+            "precision": 1.0,
+            "recall": 0.8461538461538461,
+            "support": 13.0
+          },
+          "contact_sales": {
+            "f1-score": 0.6153846153846154,
+            "precision": 1.0,
+            "recall": 0.4444444444444444,
+            "support": 9.0
+          },
+          "deal_seeking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 11.0
+          },
+          "download": {
+            "f1-score": 0.8888888888888888,
+            "precision": 0.8,
+            "recall": 1.0,
+            "support": 8.0
+          },
+          "education": {
+            "f1-score": 0.8648648648648649,
+            "precision": 0.7619047619047619,
+            "recall": 1.0,
+            "support": 64.0
+          },
+          "emotional_reflection": {
+            "f1-score": 0.7692307692307693,
+            "precision": 0.625,
+            "recall": 1.0,
+            "support": 20.0
+          },
+          "evaluation": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 8.0
+          },
+          "follow_up": {
+            "f1-score": 0.8125,
+            "precision": 0.6842105263157895,
+            "recall": 1.0,
             "support": 26.0
+          },
+          "macro avg": {
+            "f1-score": 0.5929502730222213,
+            "precision": 0.6500443058852902,
+            "recall": 0.606507304423971,
+            "support": 270.0
+          },
+          "onboarding_setup": {
+            "f1-score": 0.7096774193548387,
+            "precision": 0.7333333333333333,
+            "recall": 0.6875,
+            "support": 16.0
+          },
+          "product_discovery": {
+            "f1-score": 0.7450980392156863,
+            "precision": 0.6551724137931034,
+            "recall": 0.8636363636363636,
+            "support": 22.0
+          },
+          "provider_selection": {
+            "f1-score": 0.9142857142857143,
+            "precision": 0.9411764705882353,
+            "recall": 0.8888888888888888,
+            "support": 18.0
+          },
+          "purchase": {
+            "f1-score": 0.2857142857142857,
+            "precision": 1.0,
+            "recall": 0.16666666666666666,
+            "support": 6.0
+          },
+          "signup": {
+            "f1-score": 0.7619047619047619,
+            "precision": 0.6666666666666666,
+            "recall": 0.8888888888888888,
+            "support": 9.0
+          },
+          "task_execution": {
+            "f1-score": 0.8333333333333334,
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "support": 7.0
+          },
+          "troubleshooting": {
+            "f1-score": 0.5555555555555556,
+            "precision": 0.8333333333333334,
+            "recall": 0.4166666666666667,
+            "support": 12.0
+          },
+          "weighted avg": {
+            "f1-score": 0.6951954557525926,
+            "precision": 0.6871840050129079,
+            "recall": 0.7555555555555555,
+            "support": 270.0
+          }
+        },
+        "suite": "train"
+      },
+      "val": {
+        "accepted_accuracy": 0.878,
+        "accepted_coverage": 0.6212,
+        "accuracy": 0.6667,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_val_confusion_matrix.csv",
+        "count": 66,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/val.jsonl",
+        "fallback_rate": 0.3788,
+        "head": "intent_subtype",
+        "macro_f1": 0.3584,
+        "per_class_metrics": {
+          "account_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 3.0
+          },
+          "accuracy": 0.6666666666666666,
+          "billing_help": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "booking": {
+            "f1-score": 0.6666666666666666,
+            "precision": 0.5,
+            "recall": 1.0,
+            "support": 2.0
+          },
+          "comparison": {
+            "f1-score": 0.5,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "support": 3.0
+          },
+          "contact_sales": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1.0
+          },
+          "deal_seeking": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "download": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "education": {
+            "f1-score": 0.6818181818181818,
+            "precision": 0.5172413793103449,
+            "recall": 1.0,
+            "support": 15.0
+          },
+          "emotional_reflection": {
+            "f1-score": 0.8333333333333334,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "support": 5.0
+          },
+          "evaluation": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "follow_up": {
+            "f1-score": 0.9473684210526315,
+            "precision": 0.9,
+            "recall": 1.0,
+            "support": 9.0
+          },
+          "macro avg": {
+            "f1-score": 0.33852623984202934,
+            "precision": 0.35452928297755887,
+            "recall": 0.3712962962962963,
+            "support": 66.0
+          },
+          "onboarding_setup": {
+            "f1-score": 0.75,
+            "precision": 1.0,
+            "recall": 0.6,
+            "support": 5.0
+          },
+          "product_discovery": {
+            "f1-score": 0.8571428571428571,
+            "precision": 1.0,
+            "recall": 0.75,
+            "support": 8.0
+          },
+          "provider_selection": {
+            "f1-score": 0.8571428571428571,
+            "precision": 0.75,
+            "recall": 1.0,
+            "support": 3.0
+          },
+          "purchase": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2.0
+          },
+          "signup": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "task_execution": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 5.0
+          },
+          "troubleshooting": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "weighted avg": {
+            "f1-score": 0.5898812112926944,
+            "precision": 0.5860613524406628,
+            "recall": 0.6666666666666666,
+            "support": 66.0
           }
         },
         "suite": "val"
@@ -357,17 +2054,17 @@
     },
     "intent_type": {
       "hard_cases": {
-        "accepted_accuracy": 0.9348,
-        "accepted_coverage": 0.92,
-        "accuracy": 0.92,
+        "accepted_accuracy": 0.95,
+        "accepted_coverage": 0.7547,
+        "accuracy": 0.9057,
         "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_hard_cases_confusion_matrix.csv",
-        "count": 50,
+        "count": 53,
         "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/hard_cases.jsonl",
-        "fallback_rate": 0.08,
+        "fallback_rate": 0.2453,
         "head": "intent_type",
-        "macro_f1": 0.9166,
+        "macro_f1": 0.9065,
         "per_class_metrics": {
-          "accuracy": 0.92,
+          "accuracy": 0.9056603773584906,
           "ambiguous": {
             "f1-score": 0.9,
             "precision": 0.9,
@@ -375,22 +2072,22 @@
             "support": 10.0
           },
           "commercial": {
-            "f1-score": 0.8888888888888888,
+            "f1-score": 0.8695652173913043,
             "precision": 1.0,
-            "recall": 0.8,
-            "support": 10.0
+            "recall": 0.7692307692307693,
+            "support": 13.0
           },
           "informational": {
-            "f1-score": 0.9302325581395349,
-            "precision": 0.8695652173913043,
+            "f1-score": 0.9090909090909091,
+            "precision": 0.8333333333333334,
             "recall": 1.0,
             "support": 20.0
           },
           "macro avg": {
-            "f1-score": 0.733297973616211,
-            "precision": 0.7539130434782608,
-            "recall": 0.72,
-            "support": 50.0
+            "f1-score": 0.7252049095069689,
+            "precision": 0.7466666666666667,
+            "recall": 0.7138461538461538,
+            "support": 53.0
           },
           "personal_reflection": {
             "f1-score": 0.0,
@@ -405,88 +2102,31 @@
             "support": 10.0
           },
           "weighted avg": {
-            "f1-score": 0.919344485244118,
-            "precision": 0.9278260869565217,
-            "recall": 0.92,
-            "support": 50.0
+            "f1-score": 0.9049028343100275,
+            "precision": 0.918238993710692,
+            "recall": 0.9056603773584906,
+            "support": 53.0
           }
         },
         "suite": "hard_cases"
       },
       "test": {
-        "accepted_accuracy": 0.9167,
-        "accepted_coverage": 0.973,
-        "accuracy": 0.8919,
+        "accepted_accuracy": 0.9091,
+        "accepted_coverage": 0.825,
+        "accuracy": 0.9,
         "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_test_confusion_matrix.csv",
-        "count": 37,
+        "count": 40,
         "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/test.jsonl",
-        "fallback_rate": 0.027,
+        "fallback_rate": 0.175,
         "head": "intent_type",
-        "macro_f1": 0.9025,
+        "macro_f1": 0.9084,
         "per_class_metrics": {
-          "accuracy": 0.8918918918918919,
+          "accuracy": 0.9,
           "ambiguous": {
             "f1-score": 0.8,
             "precision": 1.0,
             "recall": 0.6666666666666666,
             "support": 9.0
-          },
-          "commercial": {
-            "f1-score": 0.8888888888888888,
-            "precision": 0.8888888888888888,
-            "recall": 0.8888888888888888,
-            "support": 9.0
-          },
-          "informational": {
-            "f1-score": 0.8235294117647058,
-            "precision": 0.7,
-            "recall": 1.0,
-            "support": 7.0
-          },
-          "macro avg": {
-            "f1-score": 0.9024836601307189,
-            "precision": 0.9177777777777777,
-            "recall": 0.9111111111111111,
-            "support": 37.0
-          },
-          "personal_reflection": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 5.0
-          },
-          "transactional": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 7.0
-          },
-          "weighted avg": {
-            "f1-score": 0.8909379968203499,
-            "precision": 0.9162162162162162,
-            "recall": 0.8918918918918919,
-            "support": 37.0
-          }
-        },
-        "suite": "test"
-      },
-      "third_wave_cases": {
-        "accepted_accuracy": 0.8889,
-        "accepted_coverage": 0.9,
-        "accuracy": 0.85,
-        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_third_wave_cases_confusion_matrix.csv",
-        "count": 20,
-        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/third_wave_cases.jsonl",
-        "fallback_rate": 0.1,
-        "head": "intent_type",
-        "macro_f1": 0.5963,
-        "per_class_metrics": {
-          "accuracy": 0.85,
-          "ambiguous": {
-            "f1-score": 0.8888888888888888,
-            "precision": 1.0,
-            "recall": 0.8,
-            "support": 10.0
           },
           "commercial": {
             "f1-score": 0.9,
@@ -495,130 +2135,16 @@
             "support": 10.0
           },
           "informational": {
-            "f1-score": 0.0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "support": 0.0
+            "f1-score": 0.8421052631578947,
+            "precision": 0.7272727272727273,
+            "recall": 1.0,
+            "support": 8.0
           },
           "macro avg": {
-            "f1-score": 0.35777777777777775,
-            "precision": 0.38,
-            "recall": 0.34,
-            "support": 20.0
-          },
-          "personal_reflection": {
-            "f1-score": 0.0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "support": 0.0
-          },
-          "transactional": {
-            "f1-score": 0.0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "support": 0.0
-          },
-          "weighted avg": {
-            "f1-score": 0.8944444444444445,
-            "precision": 0.95,
-            "recall": 0.85,
-            "support": 20.0
-          }
-        },
-        "suite": "third_wave_cases"
-      },
-      "train": {
-        "accepted_accuracy": 0.9858,
-        "accepted_coverage": 0.9792,
-        "accuracy": 0.9861,
-        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_train_confusion_matrix.csv",
-        "count": 144,
-        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/train.jsonl",
-        "fallback_rate": 0.0208,
-        "head": "intent_type",
-        "macro_f1": 0.9869,
-        "per_class_metrics": {
-          "accuracy": 0.9861111111111112,
-          "ambiguous": {
-            "f1-score": 0.9841269841269841,
-            "precision": 0.96875,
-            "recall": 1.0,
-            "support": 31.0
-          },
-          "commercial": {
-            "f1-score": 0.9836065573770492,
-            "precision": 1.0,
-            "recall": 0.967741935483871,
-            "support": 31.0
-          },
-          "informational": {
-            "f1-score": 0.9863013698630136,
-            "precision": 0.972972972972973,
-            "recall": 1.0,
-            "support": 36.0
-          },
-          "macro avg": {
-            "f1-score": 0.9868854136459584,
-            "precision": 0.9883445945945946,
-            "recall": 0.9858560794044665,
-            "support": 144.0
-          },
-          "personal_reflection": {
-            "f1-score": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "support": 20.0
-          },
-          "transactional": {
-            "f1-score": 0.9803921568627451,
-            "precision": 1.0,
-            "recall": 0.9615384615384616,
-            "support": 26.0
-          },
-          "weighted avg": {
-            "f1-score": 0.9860887859730896,
-            "precision": 0.9865158126876877,
-            "recall": 0.9861111111111112,
-            "support": 144.0
-          }
-        },
-        "suite": "train"
-      },
-      "val": {
-        "accepted_accuracy": 1.0,
-        "accepted_coverage": 0.9189,
-        "accuracy": 0.9459,
-        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_val_confusion_matrix.csv",
-        "count": 37,
-        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/val.jsonl",
-        "fallback_rate": 0.0811,
-        "head": "intent_type",
-        "macro_f1": 0.9515,
-        "per_class_metrics": {
-          "accuracy": 0.9459459459459459,
-          "ambiguous": {
-            "f1-score": 0.9411764705882353,
-            "precision": 1.0,
-            "recall": 0.8888888888888888,
-            "support": 9.0
-          },
-          "commercial": {
-            "f1-score": 0.9411764705882353,
-            "precision": 1.0,
-            "recall": 0.8888888888888888,
-            "support": 9.0
-          },
-          "informational": {
-            "f1-score": 0.875,
-            "precision": 0.7777777777777778,
-            "recall": 1.0,
-            "support": 7.0
-          },
-          "macro avg": {
-            "f1-score": 0.9514705882352942,
-            "precision": 0.9555555555555555,
-            "recall": 0.9555555555555555,
-            "support": 37.0
+            "f1-score": 0.908421052631579,
+            "precision": 0.9254545454545454,
+            "recall": 0.9133333333333333,
+            "support": 40.0
           },
           "personal_reflection": {
             "f1-score": 1.0,
@@ -630,13 +2156,184 @@
             "f1-score": 1.0,
             "precision": 1.0,
             "recall": 1.0,
-            "support": 7.0
+            "support": 8.0
           },
           "weighted avg": {
-            "f1-score": 0.9477344992050873,
-            "precision": 0.9579579579579579,
-            "recall": 0.9459459459459459,
-            "support": 37.0
+            "f1-score": 0.898421052631579,
+            "precision": 0.9204545454545455,
+            "recall": 0.9,
+            "support": 40.0
+          }
+        },
+        "suite": "test"
+      },
+      "third_wave_cases": {
+        "accepted_accuracy": 0.7857,
+        "accepted_coverage": 0.6364,
+        "accuracy": 0.8182,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_third_wave_cases_confusion_matrix.csv",
+        "count": 22,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/third_wave_cases.jsonl",
+        "fallback_rate": 0.3636,
+        "head": "intent_type",
+        "macro_f1": 0.5678,
+        "per_class_metrics": {
+          "accuracy": 0.8181818181818182,
+          "ambiguous": {
+            "f1-score": 0.8235294117647058,
+            "precision": 1.0,
+            "recall": 0.7,
+            "support": 10.0
+          },
+          "commercial": {
+            "f1-score": 0.88,
+            "precision": 0.8461538461538461,
+            "recall": 0.9166666666666666,
+            "support": 12.0
+          },
+          "informational": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "macro avg": {
+            "f1-score": 0.3407058823529412,
+            "precision": 0.36923076923076925,
+            "recall": 0.32333333333333336,
+            "support": 22.0
+          },
+          "personal_reflection": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "transactional": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 0.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8543315508021391,
+            "precision": 0.916083916083916,
+            "recall": 0.8181818181818182,
+            "support": 22.0
+          }
+        },
+        "suite": "third_wave_cases"
+      },
+      "train": {
+        "accepted_accuracy": 0.9748,
+        "accepted_coverage": 0.7778,
+        "accuracy": 0.9542,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_train_confusion_matrix.csv",
+        "count": 153,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/train.jsonl",
+        "fallback_rate": 0.2222,
+        "head": "intent_type",
+        "macro_f1": 0.9552,
+        "per_class_metrics": {
+          "accuracy": 0.954248366013072,
+          "ambiguous": {
+            "f1-score": 0.9508196721311475,
+            "precision": 0.9666666666666667,
+            "recall": 0.9354838709677419,
+            "support": 31.0
+          },
+          "commercial": {
+            "f1-score": 0.9411764705882353,
+            "precision": 1.0,
+            "recall": 0.8888888888888888,
+            "support": 36.0
+          },
+          "informational": {
+            "f1-score": 0.95,
+            "precision": 0.9047619047619048,
+            "recall": 1.0,
+            "support": 38.0
+          },
+          "macro avg": {
+            "f1-score": 0.9552390553837034,
+            "precision": 0.956103896103896,
+            "recall": 0.957731694828469,
+            "support": 153.0
+          },
+          "personal_reflection": {
+            "f1-score": 0.9523809523809523,
+            "precision": 0.9090909090909091,
+            "recall": 1.0,
+            "support": 20.0
+          },
+          "transactional": {
+            "f1-score": 0.9818181818181818,
+            "precision": 1.0,
+            "recall": 0.9642857142857143,
+            "support": 28.0
+          },
+          "weighted avg": {
+            "f1-score": 0.9542241236324848,
+            "precision": 0.9577087400616813,
+            "recall": 0.954248366013072,
+            "support": 153.0
+          }
+        },
+        "suite": "train"
+      },
+      "val": {
+        "accepted_accuracy": 1.0,
+        "accepted_coverage": 0.775,
+        "accuracy": 0.975,
+        "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_val_confusion_matrix.csv",
+        "count": 40,
+        "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/val.jsonl",
+        "fallback_rate": 0.225,
+        "head": "intent_type",
+        "macro_f1": 0.9787,
+        "per_class_metrics": {
+          "accuracy": 0.975,
+          "ambiguous": {
+            "f1-score": 0.9411764705882353,
+            "precision": 1.0,
+            "recall": 0.8888888888888888,
+            "support": 9.0
+          },
+          "commercial": {
+            "f1-score": 0.9523809523809523,
+            "precision": 0.9090909090909091,
+            "recall": 1.0,
+            "support": 10.0
+          },
+          "informational": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 8.0
+          },
+          "macro avg": {
+            "f1-score": 0.9787114845938376,
+            "precision": 0.9818181818181818,
+            "recall": 0.9777777777777779,
+            "support": 40.0
+          },
+          "personal_reflection": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 5.0
+          },
+          "transactional": {
+            "f1-score": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 8.0
+          },
+          "weighted avg": {
+            "f1-score": 0.974859943977591,
+            "precision": 0.9772727272727273,
+            "recall": 0.975,
+            "support": 40.0
           }
         },
         "suite": "val"

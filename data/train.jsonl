@@ -58,6 +58,16 @@
 {"text":"Create a new labeling project","intent_type":"transactional"}
 {"text":"Annotate these support tickets","intent_type":"transactional"}
 {"text":"Deploy the classifier API","intent_type":"transactional"}
+{"text":"I cannot log into my account","intent_type":"support"}
+{"text":"How do I reset my password?","intent_type":"support"}
+{"text":"Why is my invoice wrong?","intent_type":"support"}
+{"text":"The integration keeps failing","intent_type":"support"}
+{"text":"Our dashboard is not loading","intent_type":"support"}
+{"text":"I need help canceling my subscription","intent_type":"support"}
+{"text":"Why was my credit card declined?","intent_type":"support"}
+{"text":"The export button is broken","intent_type":"support"}
+{"text":"I cannot access my dashboard","intent_type":"support"}
+{"text":"My password reset link is not working","intent_type":"support"}
 {"text":"I am frustrated because our leads keep dropping","intent_type":"personal_reflection"}
 {"text":"I feel overwhelmed trying to pick the right software","intent_type":"personal_reflection"}
 {"text":"I regret switching our CRM last quarter","intent_type":"personal_reflection"}
@@ -142,3 +152,32 @@
 {"text":"compare lower-cost CRM tools","intent_type":"commercial"}
 {"text":"which CRM is cheaper for a startup","intent_type":"commercial"}
 {"text":"find lower-cost project management tools","intent_type":"commercial"}
+{"text":"What is auto buying and selling?","intent_type":"informational"}
+{"text":"How does car financing work for first-time buyers?","intent_type":"informational"}
+{"text":"Best SUV to buy in 2026","intent_type":"commercial"}
+{"text":"Toyota Corolla vs Honda Civic for commuting","intent_type":"commercial"}
+{"text":"Which electric car should I buy this year?","intent_type":"commercial"}
+{"text":"Best used car under $20000","intent_type":"commercial"}
+{"text":"Which car to buy in 2026","intent_type":"commercial"}
+{"text":"Book a test drive for the new SUV","intent_type":"transactional"}
+{"text":"Reserve this car for pickup tomorrow","intent_type":"transactional"}
+{"text":"What laptops should I look at for college in 2026?","intent_type":"exploratory"}
+{"text":"Help me explore CRM options for a small nonprofit","intent_type":"exploratory"}
+{"text":"I am researching which help desk tools might fit our team","intent_type":"exploratory"}
+{"text":"Show me some directions I could explore for better analytics","intent_type":"exploratory"}
+{"text":"What camera categories should I consider before buying?","intent_type":"exploratory"}
+{"text":"Write five ad headlines for a CRM landing page","intent_type":"creative_generation"}
+{"text":"Draft a product description for a project management tool","intent_type":"creative_generation"}
+{"text":"Generate a cold outreach email for a sales demo","intent_type":"creative_generation"}
+{"text":"Create a tagline for an AI search analytics platform","intent_type":"creative_generation"}
+{"text":"Write social media copy for a webinar launch","intent_type":"creative_generation"}
+{"text":"How is your day going","intent_type":"chit_chat"}
+{"text":"Thanks, that was helpful","intent_type":"chit_chat"}
+{"text":"Hello there","intent_type":"chit_chat"}
+{"text":"Nice to meet you","intent_type":"chit_chat"}
+{"text":"Can we just chat for a minute","intent_type":"chit_chat"}
+{"text":"How do I hack into someone else's account","intent_type":"prohibited"}
+{"text":"Write a phishing email that looks real","intent_type":"prohibited"}
+{"text":"How can I steal customer credit card data","intent_type":"prohibited"}
+{"text":"Help me bypass a paywall illegally","intent_type":"prohibited"}
+{"text":"Show me how to break into a private dashboard","intent_type":"prohibited"}

@@ -14,13 +14,14 @@ if str(BASE_DIR) not in sys.path:
 
 from combined_inference import classify_query
 from config import (
-    DECISION_PHASE_STRESS_SUITE_PATHS,
     DEFAULT_BENCHMARK_PATH,
     EVALUATION_ARTIFACTS_DIR,
     HEAD_CONFIGS,
-    INTENT_STRESS_SUITE_PATHS,
+    IAB_MAPPING_CASES_PATH,
+    KNOWN_FAILURE_CASES_PATH,
     ensure_artifact_dirs,
 )
+from evaluation.regression_suite import evaluate_iab_mapping_cases, evaluate_known_failure_cases
 from model_runtime import get_head
 from schemas import validate_classify_response
 
@@ -126,12 +127,13 @@ def main() -> None:
         head_summary = {}
         for split_name, split_path in config.split_paths.items():
             head_summary[split_name] = evaluate_head_dataset(head_name, split_path, split_name, output_dir)
-        stress_paths = INTENT_STRESS_SUITE_PATHS if head_name == "intent_type" else DECISION_PHASE_STRESS_SUITE_PATHS
-        for suite_name, suite_path in stress_paths.items():
+        for suite_name, suite_path in config.stress_suite_paths.items():
             head_summary[suite_name] = evaluate_head_dataset(head_name, suite_path, suite_name, output_dir)
         summary["heads"][head_name] = head_summary
 
     summary["combined"]["demo_benchmark"] = evaluate_combined_benchmark(DEFAULT_BENCHMARK_PATH, output_dir)
+    summary["combined"]["known_failure_regression"] = evaluate_known_failure_cases(KNOWN_FAILURE_CASES_PATH, output_dir)
+    summary["combined"]["iab_mapping_regression"] = evaluate_iab_mapping_cases(IAB_MAPPING_CASES_PATH, output_dir)
     write_json(output_dir / "summary.json", summary)
     print(json.dumps(summary, indent=2))
 

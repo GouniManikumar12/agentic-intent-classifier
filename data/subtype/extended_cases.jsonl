@@ -1,0 +1,53 @@
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Best SUV to buy in 2026"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Help me understand CRM fundamentals"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "How do CRM systems help sales teams?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "How do I connect my email after creating the account?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "How do I invite teammates after we sign up?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "How do I set up user permissions after we subscribe?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "HubSpot or Pipedrive for our team right now?"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "I am locked out of my workspace"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Our account setup page keeps crashing"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Should we pick HubSpot or Zoho for our startup?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Show me CRM choices for a two-person team"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Show me how CRM systems help small businesses"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Teach me the basics of CRM for a small team"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "The login form keeps rejecting my credentials"}
+{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Walk me through how startups use CRM tools"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What CRM options should a small startup look at?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What are the best CRM candidates for a growing startup?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What does CRM do for a business?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What is CRM software used for in a small business?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What is a CRM platform?"}
+{"decision_phase": "awareness", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "What is auto buying and selling?"}
+{"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Where do I configure our pipeline after purchase?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Which CRM should we choose for our two-person sales team?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Which CRM should we commit to before next month?"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Which CRM tools are worth considering for a startup?"}
+{"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Which electric car should I buy this year?"}
+{"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["extended_cases"], "text": "Why does the password reset email never arrive?"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "best used car under $20000"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "cheaper alternatives to Salesforce"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "compare affordable help desk software"}
+{"intent_subtype": "comparison", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "compare lower-cost CRM tools"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "expand on that a little"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "find lower-cost project management tools"}
+{"intent_subtype": "task_execution", "intent_type": "creative_generation", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "generate five hooks for a product demo ad"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "give me cheaper choices"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "go deeper"}
+{"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "how can i steal login credentials"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "more affordable CRM alternatives"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "more affordable ones"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "say more about that"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "show cheaper CRM options"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "show less expensive ones"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "show lower-cost analytics platforms"}
+{"intent_subtype": "follow_up", "intent_type": "chit_chat", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "thanks for the help"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "what costs less"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "what costs less HubSpot or Zoho"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "what do you mean by that"}
+{"intent_subtype": "product_discovery", "intent_type": "exploratory", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "what laptop options should i explore for remote work"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "which CRM is cheaper for a startup"}
+{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "which electric car should i buy this year"}
+{"intent_subtype": "deal_seeking", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "which email platform is cheaper for a small business"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "which one is cheaper"}
+{"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["extended_cases"], "text": "why do you say that"}
