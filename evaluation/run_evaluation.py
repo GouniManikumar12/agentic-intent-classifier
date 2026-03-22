@@ -135,7 +135,41 @@ def main() -> None:
     summary["combined"]["known_failure_regression"] = evaluate_known_failure_cases(KNOWN_FAILURE_CASES_PATH, output_dir)
     summary["combined"]["iab_mapping_regression"] = evaluate_iab_mapping_cases(IAB_MAPPING_CASES_PATH, output_dir)
     write_json(output_dir / "summary.json", summary)
-    print(json.dumps(summary, indent=2))
+    compact_summary = {
+        "heads": {
+            head_name: {
+                "test": {
+                    key: head_summary["test"][key]
+                    for key in (
+                        "count",
+                        "accuracy",
+                        "macro_f1",
+                        "accepted_accuracy",
+                        "accepted_coverage",
+                        "fallback_rate",
+                    )
+                }
+            }
+            for head_name, head_summary in summary["heads"].items()
+        },
+        "combined": {
+            "demo_benchmark": summary["combined"]["demo_benchmark"],
+            "known_failure_regression": {
+                "count": summary["combined"]["known_failure_regression"]["count"],
+                "passed": summary["combined"]["known_failure_regression"]["passed"],
+                "failed": summary["combined"]["known_failure_regression"]["failed"],
+                "by_status": summary["combined"]["known_failure_regression"]["by_status"],
+            },
+            "iab_mapping_regression": {
+                "count": summary["combined"]["iab_mapping_regression"]["count"],
+                "passed": summary["combined"]["iab_mapping_regression"]["passed"],
+                "failed": summary["combined"]["iab_mapping_regression"]["failed"],
+                "by_status": summary["combined"]["iab_mapping_regression"]["by_status"],
+            },
+        },
+        "summary_path": str(output_dir / "summary.json"),
+    }
+    print(json.dumps(compact_summary, indent=2))
 
 
 if __name__ == "__main__":

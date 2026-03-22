@@ -30,6 +30,7 @@ class SequenceClassifierHead:
         self._tokenizer = None
         self._model = None
         self._calibration = None
+        self._predict_batch_size = 32
 
     @property
     def tokenizer(self):
@@ -94,27 +95,30 @@ class SequenceClassifierHead:
         if not texts:
             return []
 
-        raw_probs, calibrated_probs = self._predict_probs(texts)
         effective_threshold = (
             self.calibration.confidence_threshold
             if confidence_threshold is None
             else min(max(float(confidence_threshold), 0.0), 1.0)
         )
         predictions: list[dict] = []
-        for raw_row, calibrated_row in zip(raw_probs, calibrated_probs):
-            pred_id = int(torch.argmax(calibrated_row).item())
-            confidence = float(calibrated_row[pred_id].item())
-            raw_confidence = float(raw_row[pred_id].item())
-            predictions.append(
-                {
-                    "label": self.model.config.id2label[pred_id],
-                    "confidence": round_score(confidence),
-                    "raw_confidence": round_score(raw_confidence),
-                    "confidence_threshold": round_score(effective_threshold),
-                    "calibrated": self.calibration.calibrated,
-                    "meets_confidence_threshold": confidence >= effective_threshold,
-                }
-            )
+
+        for start in range(0, len(texts), self._predict_batch_size):
+            batch_texts = texts[start : start + self._predict_batch_size]
+            raw_probs, calibrated_probs = self._predict_probs(batch_texts)
+            for raw_row, calibrated_row in zip(raw_probs, calibrated_probs):
+                pred_id = int(torch.argmax(calibrated_row).item())
+                confidence = float(calibrated_row[pred_id].item())
+                raw_confidence = float(raw_row[pred_id].item())
+                predictions.append(
+                    {
+                        "label": self.model.config.id2label[pred_id],
+                        "confidence": round_score(confidence),
+                        "raw_confidence": round_score(raw_confidence),
+                        "confidence_threshold": round_score(effective_threshold),
+                        "calibrated": self.calibration.calibrated,
+                        "meets_confidence_threshold": confidence >= effective_threshold,
+                    }
+                )
         return predictions
 
     def predict(self, text: str, confidence_threshold: float | None = None) -> dict:
