@@ -1,0 +1,277 @@
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "What is help desk platform?"}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Explain help desk platform."}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "How does Zendesk work?"}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "What does Zendesk do?"}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Teach me the basics of help desk platform."}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Help me understand what problem project management tool solves for a remote operations team."}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "What should a beginner know about project management platforms?"}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Before I compare anything, what is a project management tool?"}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "What is project management tool used for in practice?"}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Give me an overview of how project management platforms help with track work across projects."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "I am not shopping yet; I just need to understand what hosting platform is."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Before I evaluate vendors, explain the role of hosting platform for a startup launch team."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "I keep hearing about Vercel; what is it actually for?"}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "I only want the fundamentals of hosting providers right now."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty_benchmark", "text": "Clarify what people mean by hosting platform without recommending a tool."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Best help desk platform for a support team."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "What are the top help desk tools for handle tickets faster?"}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Show me the best help desk tools."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "What help desk tools are worth considering?"}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Give me options for a help desk platform."}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "I need a shortlist of project management platforms for a remote operations team."}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "What are strong options if I need a project management tool for track work across projects?"}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Which project management platforms should I look at first?"}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "What tools are worth exploring before I compare finalists?"}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Point me to promising project management platforms for a remote operations team."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "I want to discover strong options before I narrow down to a few vendors."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Help me build a shortlist of hosting providers without picking one yet."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "What products belong on the first pass for ship a website reliably?"}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "I am early in vendor discovery and need good starting options."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty_benchmark", "text": "Map the space for hosting providers before we decide what to compare."}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Zendesk vs Freshdesk."}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Compare Zendesk and Freshdesk."}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Which is better, Zendesk or Freshdesk?"}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Give me a comparison of Zendesk vs Freshdesk."}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "How does Zendesk compare with Freshdesk?"}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Compare Asana and ClickUp for track work across projects."}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "What are the tradeoffs between Asana and ClickUp for a remote operations team?"}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "I need a side-by-side of Asana and ClickUp."}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "How do Asana and ClickUp stack up on price and features?"}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Walk me through a fair comparison of Asana vs ClickUp."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "I have already researched the market; now compare the two finalists."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Help me weigh Vercel against Netlify without making the final pick for me."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "I want the comparison layer, not just a list of tools."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "Break down the tradeoffs between Vercel and Netlify for our use case."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty_benchmark", "text": "I am comparing finalists and need a structured side-by-side view."}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Is Zendesk good for a support team?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Would Zendesk be a good fit for handle tickets faster?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "How good is Zendesk?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Is Zendesk worth considering?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Can Zendesk handle handle tickets faster?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Evaluate whether Asana fits a remote operations team."}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "I need to assess if Asana is strong enough for track work across projects."}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "What are the pros and cons of Asana for our use case?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Does Asana look like a fit before I move to a final choice?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "How well would Asana perform for a remote operations team?"}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "I am not asking for a shortlist or a direct comparison; I want an evaluation of Vercel."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Pressure-test whether Vercel actually fits our workflow."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Assess Vercel on its own merits before I commit to a final pick."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "I want a fit evaluation for Vercel, not a vendor comparison."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty_benchmark", "text": "Tell me whether Vercel seems viable for ship a website reliably before I decide."}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Best help desk platform under $150 per month."}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Cheap help desk tools for a support team."}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "What is the most affordable help desk platform?"}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Show me lower-cost help desk tools."}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "What help desk tools fit a budget of $150 per month?"}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "I need a project management tool for a remote operations team but want to stay under $250 per month."}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "What are the cheapest solid options for track work across projects?"}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Compare affordable project management platforms that still work well."}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Help me find a budget-friendly alternative to Asana."}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Which options cost less without being terrible?"}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Price is the main filter now; I need good options that stay under $80 per month."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "I want to optimize for value and keep costs down while choosing a hosting platform."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "I am narrowing the shortlist based on affordability first."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Find the best-value route here rather than the premium option."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty_benchmark", "text": "Budget is the deciding factor, so surface the strongest low-cost options."}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Which should I choose, Zendesk or Freshdesk?"}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "What is the best option for me right now?"}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Which help desk platform should I go with?"}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Help me choose the right help desk platform."}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "What do you recommend between Zendesk and Freshdesk?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "I need to make the call between Asana and ClickUp."}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Which option should a remote operations team commit to this week?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Help me pick the final vendor for track work across projects."}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "We have a shortlist; which one should we choose?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "If you had to choose one for a remote operations team, what would it be?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Asana or ClickUp for a remote operations team right now?"}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "I am done comparing and need the final recommendation now."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "We have enough information; tell us which provider to commit to."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "I need the final pick, not another comparison round."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "Choose the best fit for a startup launch team between the finalists."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty_benchmark", "text": "We are at decision time; which vendor should win?"}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Start my free trial."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Create my account for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Sign me up for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Open a new account for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Register me for a trial of Zendesk."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Help me create a workspace for Asana."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "I want to activate a trial for Asana today."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Set up a new account so our team can try Asana."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Get me signed up for Asana now."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Open a starter account for a remote operations team."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Subscribe me to product updates from Asana."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "I am ready to get access now and need the account creation step."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "We decided to try it, so point me to the signup flow."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "I want to start using Vercel immediately and need the trial path."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "This is an access request, not a support issue; help me register."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty_benchmark", "text": "Move me into the trial/signup step for Vercel."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Buy Zendesk now."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Purchase the annual plan for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Take me to checkout for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "I want to pay for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Subscribe to the pro plan today."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Help me complete the purchase for Asana."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "I am ready to place the order for Asana."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Charge me for the annual plan now."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "I want to move from trial to paid today."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Where do I finish payment for Asana?"}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "The decision is made; I need the paid conversion step now."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "I am not asking for a trial anymore, I want to purchase immediately."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "Point me straight to the paid checkout flow."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "We are ready to buy and need to complete billing today."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty_benchmark", "text": "This is the purchase step, not a vendor-evaluation question."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Book a product demo with Zendesk."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Schedule a product demo."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Reserve a meeting with Zendesk."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Set up a call for next week."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Book time with the team."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "I want to schedule a live walkthrough with Asana."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Find time for a implementation call with sales next week."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Reserve a slot for a product demo."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Can you help me book a meeting about Asana?"}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Put a calendar hold in place for the implementation call."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "We want the live session itself, not a generic sales contact form."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Help me lock in a scheduled demo rather than just talking to sales."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "This needs a booked slot on the calendar, not just a quote request."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "I want to reserve meeting time for the next step."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty_benchmark", "text": "Schedule the actual session so we can move forward."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Download the help desk setup guide."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Send me the help desk setup guide."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Export the help desk setup guide."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Give me the download link for the help desk setup guide."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Open the file download for the help desk setup guide."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "I need the downloadable project tool buying checklist right now."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Where can I get the PDF version of the project tool buying checklist?"}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Help me export the project tool buying checklist as a file."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "I want the guide itself, not a summary of it."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Let me download the asset for offline review."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "I am asking for the file delivery step, not more information about the content."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Please route me to the actual downloadable asset."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "I need the guide as a file I can keep, not a recommendation."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "This is a download request, not a buying-decision question."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty_benchmark", "text": "Give me the direct asset retrieval path."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Talk to sales about Zendesk."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Contact sales for pricing."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Put me in touch with an account executive."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "I need a sales conversation for Zendesk."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Connect me with the sales team."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "I need to talk to sales about enterprise pricing for Asana."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Have a rep contact me about a custom quote."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Route me to the sales team for a package discussion."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "I want a pricing conversation with sales, not a product demo."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Connect me with someone on the sales side for Asana."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "I want a rep to reach out, but I am not trying to schedule the call myself right now."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "This is a sales-contact request rather than a booking flow."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Have the account team get in touch about our requirements."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "We need a commercial conversation with sales, not self-serve checkout."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty_benchmark", "text": "Point me to the sales contact path for a custom deal."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Help me export open tickets."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Run the next step to export open tickets."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Create the report I need in Zendesk."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Show me how to complete the task in Zendesk."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "I want to execute a task right now."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Open the annotation dashboard."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Walk me through the exact steps to create a project status report."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "I am already in the product and need help completing a task."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Tell me how to do the action itself inside Asana."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "I need execution help for create a project status report, not onboarding advice."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Help me finish the workflow to create a project status report."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Send me the benchmark report for Asana."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "This is a discrete in-product action request, not a setup flow."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "I know the tool already; I just need help executing deploy a new site build."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Guide me through the one task I am trying to complete now."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "I am not setting up the whole system, just doing a specific action."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Focus on the immediate workflow step rather than implementation planning."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty_benchmark", "text": "Schedule the retraining pipeline rather than booking a meeting."}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "How do I configure queues and invite agents in Zendesk?"}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "Help me set up Zendesk for a support team."}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "What should I configure first after signup?"}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "Show me how to onboard our team in Zendesk."}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "How do I get started after we bought Zendesk?"}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "What should we do first after buying Zendesk?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "We already subscribed; how should we set up Asana for a remote operations team?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "I need rollout guidance after purchase for Asana."}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "What is the best onboarding sequence after we start using Asana?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "Help me implement Asana, not just do one task."}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "We are past signup and need setup guidance for adoption."}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "How do I set goals for our first month using Asana?"}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "This is a post-purchase setup question rather than a one-off task request."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "Help us implement and configure Vercel across the team."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "We are already customers; now we need onboarding and rollout help."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "I want setup guidance for the system as a whole, not a single workflow."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty_benchmark", "text": "What should happen first, second, and third after we activate Vercel?"}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Zendesk keeps failing."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Why is Zendesk broken?"}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "The integration is not working."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "I am getting an error in Zendesk."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Help me fix a broken workflow."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Why does Asana keep crashing when I try to work?"}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "I need help fixing a problem in the product right now."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "The workflow breaks every time I try to create a project status report."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Can you troubleshoot why Asana is failing?"}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "I am stuck because the system is not working correctly."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "This is an issue-resolution request, not a billing or account-access question."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Something in the product is malfunctioning and I need troubleshooting help."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "I need the cause of the failure diagnosed, not onboarding advice."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "Help me debug the broken behavior inside Vercel."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty_benchmark", "text": "The system is failing during use and I need it fixed."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I cannot log into my agent account."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "How do I reset my password?"}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "My sign-in code is not working."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I am locked out of my account."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "The password reset email never arrives."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "Help me regain access to my workspace login."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I need support with login and access, not signup."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "My credentials keep getting rejected."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I cannot get back into the account I already have."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "Can you help me unlock my existing account?"}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "This is an access-recovery issue for an existing account, not a new-account request."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I already have an account and need help getting back in."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "Treat this as login support rather than a registration flow."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "I need account-access help for a live customer account."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty_benchmark", "text": "This is a credentials problem, not a trial-signup question."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "My invoice is wrong."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "Why was I charged twice?"}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "My payment failed."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "How do I fix a billing issue?"}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "The invoice total looks incorrect."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "I need help with a billing problem on my existing plan."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "Why did the renewal charge fail for Asana?"}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "Help me resolve an incorrect payment issue."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "Our invoice and subscription charges do not match."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "I need billing support for the account we already pay for."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "This is a billing-support issue rather than a purchasing decision."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "I already bought the product and need help with charges."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "Treat this as an account billing problem, not a checkout flow."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "I need a live-customer invoice issue resolved."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty_benchmark", "text": "This is post-purchase billing support, not a new-sale question."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Tell me more."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Can you explain that?"}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Go on."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "What do you mean?"}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Show me more."}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Can you expand on that a little?"}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Why do you say that?"}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Which one do you mean?"}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Say more about that."}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Okay and then what?"}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "I am following up on what you just said rather than starting a fresh request."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "This depends on prior context, so explain the previous answer a bit more."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Continue the last thread rather than giving me a new recommendation."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "I am only asking for clarification on the prior response."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty_benchmark", "text": "Give me a little more detail on the last point."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I feel overwhelmed by this decision."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I am frustrated with the whole process."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I am anxious about picking the wrong tool."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "This is stressing me out."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I feel stuck and discouraged."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I keep second-guessing myself and it is making me uneasy."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I am worried we will choose badly and regret it."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "This whole thing makes me feel burned out."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I feel nervous about making the wrong call here."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I am emotionally drained by trying to figure this out."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I do not need another recommendation right now; I need help processing how stuck I feel."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "This is more about how I feel than about the product options."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I want support with the frustration this decision is causing me."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "I am reflecting on my stress around this choice, not asking for a commercial answer."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty_benchmark", "text": "Help me with the feeling of being overwhelmed rather than the task itself."}

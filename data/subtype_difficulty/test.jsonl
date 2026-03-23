@@ -1,0 +1,164 @@
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Teach me the basics of CRM."}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Teach me the basics of analytics platform."}
+{"difficulty": "easy", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Teach me the basics of SEO platform."}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Give me an overview of how CRM tools help with manage leads better."}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Give me an overview of how analytics tools help with measure activation."}
+{"difficulty": "medium", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Give me an overview of how SEO tools help with grow organic traffic."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Clarify what people mean by CRM without recommending a tool."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Clarify what people mean by analytics platform without recommending a tool."}
+{"difficulty": "hard", "intent_subtype": "education", "source": "subtype_difficulty", "text": "Clarify what people mean by SEO platform without recommending a tool."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Give me options for a CRM."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Give me options for a analytics platform."}
+{"difficulty": "easy", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Give me options for a SEO platform."}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Point me to promising CRM tools for a 3-person startup."}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Point me to promising analytics tools for a product team."}
+{"difficulty": "medium", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Point me to promising SEO tools for a content team."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Map the space for CRM tools before we decide what to compare."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Map the space for analytics tools before we decide what to compare."}
+{"difficulty": "hard", "intent_subtype": "product_discovery", "source": "subtype_difficulty", "text": "Map the space for SEO tools before we decide what to compare."}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "How does HubSpot compare with Zoho?"}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "How does Mixpanel compare with Amplitude?"}
+{"difficulty": "easy", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "How does Ahrefs compare with Semrush?"}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "Walk me through a fair comparison of HubSpot vs Zoho."}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "Walk me through a fair comparison of Mixpanel vs Amplitude."}
+{"difficulty": "medium", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "Walk me through a fair comparison of Ahrefs vs Semrush."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "I am comparing finalists and need a structured side-by-side view."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "I am comparing finalists and need a structured side-by-side view."}
+{"difficulty": "hard", "intent_subtype": "comparison", "source": "subtype_difficulty", "text": "I am comparing finalists and need a structured side-by-side view."}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Can HubSpot handle manage leads better?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Can Mixpanel handle measure activation?"}
+{"difficulty": "easy", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Can Ahrefs handle grow organic traffic?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "How well would HubSpot perform for a 3-person startup?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "How well would Mixpanel perform for a product team?"}
+{"difficulty": "medium", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "How well would Ahrefs perform for a content team?"}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Tell me whether HubSpot seems viable for manage leads better before I decide."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Tell me whether Mixpanel seems viable for measure activation before I decide."}
+{"difficulty": "hard", "intent_subtype": "evaluation", "source": "subtype_difficulty", "text": "Tell me whether Ahrefs seems viable for grow organic traffic before I decide."}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "What CRM tools fit a budget of $100 per month?"}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "What analytics tools fit a budget of $300 per month?"}
+{"difficulty": "easy", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "What SEO tools fit a budget of $200 per month?"}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Which options cost less without being terrible?"}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Which options cost less without being terrible?"}
+{"difficulty": "medium", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Which options cost less without being terrible?"}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Budget is the deciding factor, so surface the strongest low-cost options."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Budget is the deciding factor, so surface the strongest low-cost options."}
+{"difficulty": "hard", "intent_subtype": "deal_seeking", "source": "subtype_difficulty", "text": "Budget is the deciding factor, so surface the strongest low-cost options."}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "What do you recommend between HubSpot and Zoho?"}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "What do you recommend between Mixpanel and Amplitude?"}
+{"difficulty": "easy", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "What do you recommend between Ahrefs and Semrush?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "If you had to choose one for a 3-person startup, what would it be?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "We have a shortlist; which one should we choose?"}
+{"difficulty": "medium", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "Help me pick the final vendor for grow organic traffic."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "We have enough information; tell us which provider to commit to."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "We have enough information; tell us which provider to commit to."}
+{"difficulty": "hard", "intent_subtype": "provider_selection", "source": "subtype_difficulty", "text": "We have enough information; tell us which provider to commit to."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Register me for a trial of HubSpot."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Register me for a trial of Mixpanel."}
+{"difficulty": "easy", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Register me for a trial of Ahrefs."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Open a starter account for a 3-person startup."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Get me signed up for Mixpanel now."}
+{"difficulty": "medium", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "Set up a new account so our team can try Ahrefs."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "We decided to try it, so point me to the signup flow."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "We decided to try it, so point me to the signup flow."}
+{"difficulty": "hard", "intent_subtype": "signup", "source": "subtype_difficulty", "text": "We decided to try it, so point me to the signup flow."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Subscribe to the pro plan today."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Subscribe to the pro plan today."}
+{"difficulty": "easy", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Subscribe to the pro plan today."}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Where do I finish payment for HubSpot?"}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Where do I finish payment for Mixpanel?"}
+{"difficulty": "medium", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "Where do I finish payment for Ahrefs?"}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "This is the purchase step, not a vendor-evaluation question."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "This is the purchase step, not a vendor-evaluation question."}
+{"difficulty": "hard", "intent_subtype": "purchase", "source": "subtype_difficulty", "text": "This is the purchase step, not a vendor-evaluation question."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Book time with the team."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Book time with the team."}
+{"difficulty": "easy", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Book time with the team."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Put a calendar hold in place for the demo."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Put a calendar hold in place for the strategy call."}
+{"difficulty": "medium", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Put a calendar hold in place for the sales consultation."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Schedule the actual session so we can move forward."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Schedule the actual session so we can move forward."}
+{"difficulty": "hard", "intent_subtype": "booking", "source": "subtype_difficulty", "text": "Schedule the actual session so we can move forward."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Open the file download for the CRM buyer guide."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Open the file download for the analytics implementation checklist."}
+{"difficulty": "easy", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Open the file download for the SEO tool comparison worksheet."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Let me download the asset for offline review."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Let me download the asset for offline review."}
+{"difficulty": "medium", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Let me download the asset for offline review."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Give me the direct asset retrieval path."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Give me the direct asset retrieval path."}
+{"difficulty": "hard", "intent_subtype": "download", "source": "subtype_difficulty", "text": "Give me the direct asset retrieval path."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with the sales team."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with the sales team."}
+{"difficulty": "easy", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with the sales team."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with someone on the sales side for HubSpot."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with someone on the sales side for Mixpanel."}
+{"difficulty": "medium", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Connect me with someone on the sales side for Ahrefs."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Point me to the sales contact path for a custom deal."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Point me to the sales contact path for a custom deal."}
+{"difficulty": "hard", "intent_subtype": "contact_sales", "source": "subtype_difficulty", "text": "Point me to the sales contact path for a custom deal."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "I want to execute a task right now."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Show me how to complete the task in Mixpanel."}
+{"difficulty": "easy", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Create the report I need in Ahrefs."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "I am already in the product and need help completing a task."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Walk me through the exact steps to generate a retention report."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Send me the benchmark report for Mixpanel."}
+{"difficulty": "medium", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Help me finish the workflow to export keyword rankings."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "I am not setting up the whole system, just doing a specific action."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "Guide me through the one task I am trying to complete now."}
+{"difficulty": "hard", "intent_subtype": "task_execution", "source": "subtype_difficulty", "text": "I know the tool already; I just need help executing export keyword rankings."}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "How do I get started after we bought HubSpot?"}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "Show me how to onboard our team in Mixpanel."}
+{"difficulty": "easy", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "What should I configure first after signup?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "I need rollout guidance after purchase for HubSpot."}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "We already subscribed; how should we set up Mixpanel for a product team?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "How do I set goals for our first month using Mixpanel?"}
+{"difficulty": "medium", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "We are past signup and need setup guidance for adoption."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "I want setup guidance for the system as a whole, not a single workflow."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "I want setup guidance for the system as a whole, not a single workflow."}
+{"difficulty": "hard", "intent_subtype": "onboarding_setup", "source": "subtype_difficulty", "text": "I want setup guidance for the system as a whole, not a single workflow."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "Help me fix a broken workflow."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "Help me fix a broken workflow."}
+{"difficulty": "easy", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "Help me fix a broken workflow."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "I am stuck because the system is not working correctly."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "I am stuck because the system is not working correctly."}
+{"difficulty": "medium", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "I am stuck because the system is not working correctly."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "The system is failing during use and I need it fixed."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "The system is failing during use and I need it fixed."}
+{"difficulty": "hard", "intent_subtype": "troubleshooting", "source": "subtype_difficulty", "text": "The system is failing during use and I need it fixed."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "The password reset email never arrives."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "The password reset email never arrives."}
+{"difficulty": "easy", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "The password reset email never arrives."}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "Can you help me unlock my existing account?"}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "Can you help me unlock my existing account?"}
+{"difficulty": "medium", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "Can you help me unlock my existing account?"}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "This is a credentials problem, not a trial-signup question."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "This is a credentials problem, not a trial-signup question."}
+{"difficulty": "hard", "intent_subtype": "account_help", "source": "subtype_difficulty", "text": "This is a credentials problem, not a trial-signup question."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "The invoice total looks incorrect."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "The invoice total looks incorrect."}
+{"difficulty": "easy", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "The invoice total looks incorrect."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "I need billing support for the account we already pay for."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "I need billing support for the account we already pay for."}
+{"difficulty": "medium", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "I need billing support for the account we already pay for."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "This is post-purchase billing support, not a new-sale question."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "This is post-purchase billing support, not a new-sale question."}
+{"difficulty": "hard", "intent_subtype": "billing_help", "source": "subtype_difficulty", "text": "This is post-purchase billing support, not a new-sale question."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Show me more."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Show me more."}
+{"difficulty": "easy", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Show me more."}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Okay and then what?"}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Okay and then what?"}
+{"difficulty": "medium", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Okay and then what?"}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Give me a little more detail on the last point."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Give me a little more detail on the last point."}
+{"difficulty": "hard", "intent_subtype": "follow_up", "source": "subtype_difficulty", "text": "Give me a little more detail on the last point."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I feel stuck and discouraged."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I feel stuck and discouraged."}
+{"difficulty": "easy", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I feel stuck and discouraged."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I am emotionally drained by trying to figure this out."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I am emotionally drained by trying to figure this out."}
+{"difficulty": "medium", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "I am emotionally drained by trying to figure this out."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "Help me with the feeling of being overwhelmed rather than the task itself."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "Help me with the feeling of being overwhelmed rather than the task itself."}
+{"difficulty": "hard", "intent_subtype": "emotional_reflection", "source": "subtype_difficulty", "text": "Help me with the feeling of being overwhelmed rather than the task itself."}

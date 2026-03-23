@@ -1,26 +1,44 @@
 {
-  "accepted_accuracy": 0.7857,
-  "accepted_coverage": 0.6364,
-  "accuracy": 0.8182,
+  "accepted_accuracy": 0.8846,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.8846,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_third_wave_cases_confusion_matrix.csv",
-  "count": 22,
+  "count": 26,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/third_wave_cases.jsonl",
-  "fallback_rate": 0.3636,
+  "fallback_rate": 0.0,
   "head": "intent_type",
-  "macro_f1": 0.5678,
+  "macro_f1": 0.8294,
   "per_class_metrics": {
-    "accuracy": 0.8181818181818182,
+    "accuracy": 0.8846153846153846,
     "ambiguous": {
-      "f1-score": 0.8235294117647058,
+      "f1-score": 0.8888888888888888,
       "precision": 1.0,
-      "recall": 0.7,
+      "recall": 0.8,
       "support": 10.0
     },
+    "chit_chat": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
     "commercial": {
-      "f1-score": 0.88,
-      "precision": 0.8461538461538461,
+      "f1-score": 0.9166666666666666,
+      "precision": 0.9166666666666666,
       "recall": 0.9166666666666666,
       "support": 12.0
+    },
+    "creative_generation": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "exploratory": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
     },
     "informational": {
       "f1-score": 0.0,
@@ -29,12 +47,24 @@
       "support": 0.0
     },
     "macro avg": {
-      "f1-score": 0.3407058823529412,
-      "precision": 0.36923076923076925,
-      "recall": 0.32333333333333336,
-      "support": 22.0
+      "f1-score": 0.5805555555555555,
+      "precision": 0.5916666666666666,
+      "recall": 0.5716666666666667,
+      "support": 26.0
     },
     "personal_reflection": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "prohibited": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1.0
+    },
+    "support": {
       "f1-score": 0.0,
       "precision": 0.0,
       "recall": 0.0,
@@ -47,10 +77,10 @@
       "support": 0.0
     },
     "weighted avg": {
-      "f1-score": 0.8543315508021391,
-      "precision": 0.916083916083916,
-      "recall": 0.8181818181818182,
-      "support": 22.0
+      "f1-score": 0.9188034188034189,
+      "precision": 0.9615384615384616,
+      "recall": 0.8846153846153846,
+      "support": 26.0
     }
   },
   "suite": "third_wave_cases"

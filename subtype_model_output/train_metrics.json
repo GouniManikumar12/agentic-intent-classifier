@@ -1,24 +1,24 @@
 {
   "head": "intent_subtype",
-  "test_count": 66,
+  "test_count": 70,
   "test_metrics": {
     "epoch": 4.0,
-    "test_accuracy": 0.6212121212121212,
-    "test_loss": 1.598063588142395,
-    "test_macro_f1": 0.4287067099567099,
-    "test_runtime": 0.8146,
-    "test_samples_per_second": 81.018,
-    "test_steps_per_second": 20.868
+    "test_accuracy": 0.9,
+    "test_loss": 0.4332869350910187,
+    "test_macro_f1": 0.86298226627174,
+    "test_runtime": 0.85,
+    "test_samples_per_second": 82.357,
+    "test_steps_per_second": 21.178
   },
-  "train_count": 270,
-  "val_count": 66,
+  "train_count": 1316,
+  "val_count": 378,
   "val_metrics": {
     "epoch": 4.0,
-    "val_accuracy": 0.6666666666666666,
-    "val_loss": 1.5162512063980103,
-    "val_macro_f1": 0.358439548068031,
-    "val_runtime": 0.8851,
-    "val_samples_per_second": 74.566,
-    "val_steps_per_second": 19.206
+    "val_accuracy": 0.91005291005291,
+    "val_loss": 0.37157773971557617,
+    "val_macro_f1": 0.9074176484178318,
+    "val_runtime": 4.5013,
+    "val_samples_per_second": 83.976,
+    "val_steps_per_second": 21.105
   }
 }

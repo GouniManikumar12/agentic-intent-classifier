@@ -19,6 +19,24 @@ from training.common import (
 )
 
 
+def load_iab_rows(split_name: str) -> list[dict]:
+    rows = load_labeled_rows(
+        IAB_HEAD_CONFIG.split_paths[split_name],
+        IAB_HEAD_CONFIG.label_field,
+        IAB_HEAD_CONFIG.label2id,
+    )
+    extra_path = BASE_DIR / "data" / "iab_difficulty" / f"{split_name}.jsonl"
+    if extra_path.exists():
+        rows.extend(
+            load_labeled_rows(
+                extra_path,
+                IAB_HEAD_CONFIG.label_field,
+                IAB_HEAD_CONFIG.label2id,
+            )
+        )
+    return rows
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Train the full-taxonomy IAB content classifier.")
     parser.add_argument("--epochs", type=float, default=2.0, help="Number of training epochs.")
@@ -27,16 +45,8 @@ def main() -> None:
     parser.add_argument("--learning-rate", type=float, default=2e-5, help="Optimizer learning rate.")
     args = parser.parse_args()
 
-    train_rows = load_labeled_rows(
-        IAB_HEAD_CONFIG.split_paths["train"],
-        IAB_HEAD_CONFIG.label_field,
-        IAB_HEAD_CONFIG.label2id,
-    )
-    val_rows = load_labeled_rows(
-        IAB_HEAD_CONFIG.split_paths["val"],
-        IAB_HEAD_CONFIG.label_field,
-        IAB_HEAD_CONFIG.label2id,
-    )
+    train_rows = load_iab_rows("train")
+    val_rows = load_iab_rows("val")
     test_rows = load_labeled_rows(
         IAB_HEAD_CONFIG.split_paths["test"],
         IAB_HEAD_CONFIG.label_field,

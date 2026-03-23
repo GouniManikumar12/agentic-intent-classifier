@@ -51,13 +51,13 @@ def evaluate_head_dataset(head_name: str, dataset_path: Path, suite_name: str, o
     confusion_path = output_dir / f"{head_name}_{suite_name}_confusion_matrix.csv"
     confusion_df.to_csv(confusion_path)
 
-    accepted_count = sum(accepted)
+    accepted_total_count = sum(accepted)
     accepted_accuracy = (
         accuracy_score(
             [truth for truth, keep in zip(y_true, accepted) if keep],
             [pred for pred, keep in zip(y_pred, accepted) if keep],
         )
-        if accepted_count
+        if accepted_total_count
         else 0.0
     )
 
@@ -68,6 +68,31 @@ def evaluate_head_dataset(head_name: str, dataset_path: Path, suite_name: str, o
         output_dict=True,
         zero_division=0,
     )
+    difficulty_breakdown = None
+    if rows and all("difficulty" in row for row in rows):
+        difficulty_breakdown = {}
+        for difficulty in sorted({row["difficulty"] for row in rows}):
+            indices = [idx for idx, row in enumerate(rows) if row["difficulty"] == difficulty]
+            difficulty_true = [y_true[idx] for idx in indices]
+            difficulty_pred = [y_pred[idx] for idx in indices]
+            difficulty_accepted = [accepted[idx] for idx in indices]
+            difficulty_accepted_count = sum(difficulty_accepted)
+            difficulty_accepted_accuracy = (
+                accuracy_score(
+                    [truth for truth, keep in zip(difficulty_true, difficulty_accepted) if keep],
+                    [pred for pred, keep in zip(difficulty_pred, difficulty_accepted) if keep],
+                )
+                if difficulty_accepted_count
+                else 0.0
+            )
+            difficulty_breakdown[difficulty] = {
+                "count": len(indices),
+                "accuracy": round(float(accuracy_score(difficulty_true, difficulty_pred)), 4),
+                "macro_f1": round(float(f1_score(difficulty_true, difficulty_pred, average="macro")), 4),
+                "accepted_coverage": round(float(difficulty_accepted_count / len(indices)), 4),
+                "accepted_accuracy": round(float(difficulty_accepted_accuracy), 4),
+                "fallback_rate": round(float(1 - (difficulty_accepted_count / len(indices))), 4),
+            }
     summary = {
         "head": head_name,
         "suite": suite_name,
@@ -75,12 +100,14 @@ def evaluate_head_dataset(head_name: str, dataset_path: Path, suite_name: str, o
         "count": len(rows),
         "accuracy": round(float(accuracy_score(y_true, y_pred)), 4),
         "macro_f1": round(float(f1_score(y_true, y_pred, average="macro")), 4),
-        "accepted_coverage": round(float(accepted_count / len(rows)), 4),
+        "accepted_coverage": round(float(accepted_total_count / len(rows)), 4),
         "accepted_accuracy": round(float(accepted_accuracy), 4),
-        "fallback_rate": round(float(1 - (accepted_count / len(rows))), 4),
+        "fallback_rate": round(float(1 - (accepted_total_count / len(rows))), 4),
         "per_class_metrics": report,
         "confusion_matrix_path": str(confusion_path),
     }
+    if difficulty_breakdown is not None:
+        summary["difficulty_breakdown"] = difficulty_breakdown
     write_json(output_dir / f"{head_name}_{suite_name}_report.json", summary)
     return summary
 

@@ -1,0 +1,111 @@
+{"difficulty": "easy", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "What is cars?"}
+{"difficulty": "easy", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Explain cars in simple terms."}
+{"difficulty": "easy", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "How does car work?"}
+{"difficulty": "easy", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "What does Toyota Corolla do?"}
+{"difficulty": "easy", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Give me the basics of cars."}
+{"difficulty": "medium", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Can you break down how cars works for daily commuting?"}
+{"difficulty": "medium", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Help me understand what problem Toyota Corolla solves."}
+{"difficulty": "medium", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "What should a beginner know about cars?"}
+{"difficulty": "medium", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Before I compare options, what is a car exactly?"}
+{"difficulty": "medium", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "What does a car actually help with?"}
+{"difficulty": "hard", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Before I decide anything, what is the role of cars in daily commuting?"}
+{"difficulty": "hard", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "I keep hearing about Toyota Corolla; what does it actually do?"}
+{"difficulty": "hard", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "What category does Toyota Corolla belong to?"}
+{"difficulty": "hard", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "Can you clarify what people mean by cars in practice?"}
+{"difficulty": "hard", "intent_type": "informational", "source": "synthetic_intent_type_difficulty", "text": "I am not shopping yet, just tell me what cars is."}
+{"difficulty": "easy", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What cars should I explore for daily commuting?"}
+{"difficulty": "easy", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "Show me cars to consider for choose the right car."}
+{"difficulty": "easy", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "Help me explore options before picking a car."}
+{"difficulty": "easy", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "Where should I start with cars?"}
+{"difficulty": "easy", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What kinds of cars are worth looking into?"}
+{"difficulty": "medium", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "I am researching cars for daily commuting; where should I start?"}
+{"difficulty": "medium", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "Give me a shortlist of cars worth exploring."}
+{"difficulty": "medium", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What options should be on my radar before choosing a car?"}
+{"difficulty": "medium", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "I am early in the process and want to explore cars."}
+{"difficulty": "medium", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What directions should I investigate for choose the right car?"}
+{"difficulty": "hard", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "I am not ready to buy yet, but what paths should I explore for choose the right car?"}
+{"difficulty": "hard", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What categories of cars are worth researching before I narrow down?"}
+{"difficulty": "hard", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "I need a landscape view of cars, not a recommendation yet."}
+{"difficulty": "hard", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "How would you scope the market for cars in daily commuting?"}
+{"difficulty": "hard", "intent_type": "exploratory", "source": "synthetic_intent_type_difficulty", "text": "What should I research first if I am only beginning to look at cars?"}
+{"difficulty": "easy", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Best car for daily commuting."}
+{"difficulty": "easy", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Toyota Corolla vs Honda Civic."}
+{"difficulty": "easy", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Which car should I buy for choose the right car?"}
+{"difficulty": "easy", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Top cars for daily commuting."}
+{"difficulty": "easy", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "What is the best car this year?"}
+{"difficulty": "medium", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Compare Toyota Corolla and Honda Civic for choose the right car."}
+{"difficulty": "medium", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "I need the best car option for daily commuting."}
+{"difficulty": "medium", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Which car is worth paying for right now?"}
+{"difficulty": "medium", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "Help me evaluate the best cars for choose the right car."}
+{"difficulty": "medium", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "What should I choose if I want a strong car for daily commuting?"}
+{"difficulty": "hard", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "I am leaning toward buying soon; which car looks strongest for daily commuting?"}
+{"difficulty": "hard", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "If price is not the only factor, which Toyota Corolla/Honda Civic style option should I favor?"}
+{"difficulty": "hard", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "What would you recommend if I need to commit to a car soon?"}
+{"difficulty": "hard", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "I have done some research, now which car should make the shortlist?"}
+{"difficulty": "hard", "intent_type": "commercial", "source": "synthetic_intent_type_difficulty", "text": "What seems like the best-fit car if I need to make a purchase decision soon?"}
+{"difficulty": "easy", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Start a free trial of Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Book a demo with Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Create an account for Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Download the car buying worksheet."}
+{"difficulty": "easy", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Buy Toyota Corolla now."}
+{"difficulty": "medium", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Get me signed up for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "I want to purchase Toyota Corolla today."}
+{"difficulty": "medium", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Reserve my spot with Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Send me the download for the car buying worksheet."}
+{"difficulty": "medium", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Take me to checkout for Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "I am ready to move forward now, where do I start the purchase for Toyota Corolla?"}
+{"difficulty": "hard", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Help me complete the signup flow for Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "I want to act on this now and get access to Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "Can you help me finish the order for Toyota Corolla?"}
+{"difficulty": "hard", "intent_type": "transactional", "source": "synthetic_intent_type_difficulty", "text": "I have decided, now let me complete the next step for Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "I cannot log into my reservation."}
+{"difficulty": "easy", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "My order is not working."}
+{"difficulty": "easy", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "Why is my dashboard failing?"}
+{"difficulty": "medium", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "Can you help me fix a test drive booking?"}
+{"difficulty": "medium", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "I am stuck because my reservation keeps breaking."}
+{"difficulty": "medium", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "My invoice looks wrong for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "I need support with my reservation."}
+{"difficulty": "medium", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "Why is Toyota Corolla not syncing correctly?"}
+{"difficulty": "hard", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "I am not evaluating tools, I just need help fixing my reservation."}
+{"difficulty": "hard", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "Please help me resolve a live problem with MacBook Air."}
+{"difficulty": "hard", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "I cannot continue because my order is broken."}
+{"difficulty": "hard", "intent_type": "support", "source": "synthetic_intent_type_difficulty", "text": "This is a support issue: my warranty claim needs to be fixed."}
+{"difficulty": "easy", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I feel overwhelmed choosing between cars."}
+{"difficulty": "easy", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am frustrated by our cars results."}
+{"difficulty": "easy", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I regret switching to Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I feel stuck deciding on a car."}
+{"difficulty": "easy", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am worried we picked the wrong car."}
+{"difficulty": "medium", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am stressed about choosing between Toyota Corolla and Honda Civic."}
+{"difficulty": "medium", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I feel like I am making the wrong decision on cars."}
+{"difficulty": "medium", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am anxious about this whole cars choice."}
+{"difficulty": "medium", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I do not know if I trust my judgment on cars."}
+{"difficulty": "medium", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am second-guessing our choice of Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I feel emotionally stuck over the choice between MacBook Air and Dell XPS 13."}
+{"difficulty": "hard", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am carrying a lot of doubt about our laptops decision."}
+{"difficulty": "hard", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I need space to reflect because this laptop choice is stressing me out."}
+{"difficulty": "hard", "intent_type": "personal_reflection", "source": "synthetic_intent_type_difficulty", "text": "I am processing whether switching to MacBook Air was a mistake."}
+{"difficulty": "easy", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Write five ad headlines for Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Draft a launch email for Toyota Corolla."}
+{"difficulty": "easy", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Generate social copy for the car buying worksheet."}
+{"difficulty": "easy", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Create a tagline for a car."}
+{"difficulty": "easy", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Write product copy for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Give me landing page copy for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Write three meta descriptions for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Generate ad copy for a car aimed at daily commuting."}
+{"difficulty": "medium", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Draft a short sales email about Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Create LinkedIn post copy for the car buying worksheet."}
+{"difficulty": "hard", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "I do not want advice on what to buy; I want you to generate marketing copy for Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Write me creative, not recommendations, for a car."}
+{"difficulty": "hard", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Help me draft campaign assets for Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Generate messaging for a launch around Toyota Corolla."}
+{"difficulty": "hard", "intent_type": "creative_generation", "source": "synthetic_intent_type_difficulty", "text": "Create copy variations for promoting the car buying worksheet."}
+{"difficulty": "easy", "intent_type": "chit_chat", "source": "synthetic_intent_type_difficulty", "text": "Thanks for the help."}
+{"difficulty": "medium", "intent_type": "chit_chat", "source": "synthetic_intent_type_difficulty", "text": "Good afternoon, how are things?"}
+{"difficulty": "hard", "intent_type": "chit_chat", "source": "synthetic_intent_type_difficulty", "text": "No request yet, just being friendly."}
+{"difficulty": "easy", "intent_type": "ambiguous", "source": "synthetic_intent_type_difficulty", "text": "What else?"}
+{"difficulty": "medium", "intent_type": "ambiguous", "source": "synthetic_intent_type_difficulty", "text": "Show me another option."}
+{"difficulty": "hard", "intent_type": "ambiguous", "source": "synthetic_intent_type_difficulty", "text": "What about that option?"}
+{"difficulty": "easy", "intent_type": "prohibited", "source": "synthetic_intent_type_difficulty", "text": "How do I hack into a reservation?"}
+{"difficulty": "easy", "intent_type": "prohibited", "source": "synthetic_intent_type_difficulty", "text": "Write a phishing email for Toyota Corolla."}
+{"difficulty": "medium", "intent_type": "prohibited", "source": "synthetic_intent_type_difficulty", "text": "Show me how to exfiltrate private customer records."}
+{"difficulty": "hard", "intent_type": "prohibited", "source": "synthetic_intent_type_difficulty", "text": "I need steps for unauthorized access to a locked account."}

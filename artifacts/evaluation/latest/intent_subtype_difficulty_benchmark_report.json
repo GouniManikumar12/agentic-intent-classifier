@@ -1,0 +1,161 @@
+{
+  "accepted_accuracy": 0.9386,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.9386,
+  "confusion_matrix_path": "artifacts/evaluation/latest/intent_subtype_difficulty_benchmark_confusion_matrix.csv",
+  "count": 277,
+  "dataset_path": "data/subtype_benchmark.jsonl",
+  "difficulty_breakdown": {
+    "easy": {
+      "accepted_accuracy": 0.9565,
+      "accepted_coverage": 1.0,
+      "accuracy": 0.9565,
+      "count": 92,
+      "fallback_rate": 0.0,
+      "macro_f1": 0.9579
+    },
+    "hard": {
+      "accepted_accuracy": 0.8901,
+      "accepted_coverage": 1.0,
+      "accuracy": 0.8901,
+      "count": 91,
+      "fallback_rate": 0.0,
+      "macro_f1": 0.8913
+    },
+    "medium": {
+      "accepted_accuracy": 0.9681,
+      "accepted_coverage": 1.0,
+      "accuracy": 0.9681,
+      "count": 94,
+      "fallback_rate": 0.0,
+      "macro_f1": 0.9671
+    }
+  },
+  "fallback_rate": 0.0,
+  "head": "intent_subtype",
+  "macro_f1": 0.9401,
+  "per_class_metrics": {
+    "account_help": {
+      "f1-score": 0.8888888888888888,
+      "precision": 1.0,
+      "recall": 0.8,
+      "support": 15.0
+    },
+    "accuracy": 0.9386281588447654,
+    "billing_help": {
+      "f1-score": 0.967741935483871,
+      "precision": 0.9375,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "booking": {
+      "f1-score": 0.9285714285714286,
+      "precision": 1.0,
+      "recall": 0.8666666666666667,
+      "support": 15.0
+    },
+    "comparison": {
+      "f1-score": 0.896551724137931,
+      "precision": 0.9285714285714286,
+      "recall": 0.8666666666666667,
+      "support": 15.0
+    },
+    "contact_sales": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "deal_seeking": {
+      "f1-score": 0.9333333333333333,
+      "precision": 0.9333333333333333,
+      "recall": 0.9333333333333333,
+      "support": 15.0
+    },
+    "download": {
+      "f1-score": 0.9655172413793104,
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "support": 15.0
+    },
+    "education": {
+      "f1-score": 0.9090909090909091,
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "emotional_reflection": {
+      "f1-score": 0.967741935483871,
+      "precision": 0.9375,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "evaluation": {
+      "f1-score": 0.9655172413793104,
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "support": 15.0
+    },
+    "follow_up": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 15.0
+    },
+    "macro avg": {
+      "f1-score": 0.9401067100194944,
+      "precision": 0.9476910208527856,
+      "recall": 0.9383215323166303,
+      "support": 277.0
+    },
+    "onboarding_setup": {
+      "f1-score": 0.9411764705882353,
+      "precision": 0.9411764705882353,
+      "recall": 0.9411764705882353,
+      "support": 17.0
+    },
+    "product_discovery": {
+      "f1-score": 0.9285714285714286,
+      "precision": 1.0,
+      "recall": 0.8666666666666667,
+      "support": 15.0
+    },
+    "provider_selection": {
+      "f1-score": 0.9375,
+      "precision": 0.9375,
+      "recall": 0.9375,
+      "support": 16.0
+    },
+    "purchase": {
+      "f1-score": 0.9655172413793104,
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "support": 15.0
+    },
+    "signup": {
+      "f1-score": 0.8888888888888888,
+      "precision": 0.8,
+      "recall": 1.0,
+      "support": 16.0
+    },
+    "task_execution": {
+      "f1-score": 0.8717948717948718,
+      "precision": 0.8095238095238095,
+      "recall": 0.9444444444444444,
+      "support": 18.0
+    },
+    "troubleshooting": {
+      "f1-score": 0.9655172413793104,
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "support": 15.0
+    },
+    "weighted avg": {
+      "f1-score": 0.9391802821325396,
+      "precision": 0.9455776173285199,
+      "recall": 0.9386281588447654,
+      "support": 277.0
+    }
+  },
+  "suite": "difficulty_benchmark"
+}

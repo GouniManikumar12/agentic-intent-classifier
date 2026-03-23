@@ -1,56 +1,86 @@
 {
-  "accepted_accuracy": 0.9748,
-  "accepted_coverage": 0.7778,
-  "accuracy": 0.9542,
+  "accepted_accuracy": 1.0,
+  "accepted_coverage": 1.0,
+  "accuracy": 1.0,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_train_confusion_matrix.csv",
-  "count": 153,
+  "count": 183,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/train.jsonl",
-  "fallback_rate": 0.2222,
+  "fallback_rate": 0.0,
   "head": "intent_type",
-  "macro_f1": 0.9552,
+  "macro_f1": 1.0,
   "per_class_metrics": {
-    "accuracy": 0.954248366013072,
+    "accuracy": 1.0,
     "ambiguous": {
-      "f1-score": 0.9508196721311475,
-      "precision": 0.9666666666666667,
-      "recall": 0.9354838709677419,
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 31.0
     },
-    "commercial": {
-      "f1-score": 0.9411764705882353,
+    "chit_chat": {
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.8888888888888888,
+      "recall": 1.0,
+      "support": 5.0
+    },
+    "commercial": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 36.0
     },
+    "creative_generation": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 5.0
+    },
+    "exploratory": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 5.0
+    },
     "informational": {
-      "f1-score": 0.95,
-      "precision": 0.9047619047619048,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 38.0
     },
     "macro avg": {
-      "f1-score": 0.9552390553837034,
-      "precision": 0.956103896103896,
-      "recall": 0.957731694828469,
-      "support": 153.0
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 183.0
     },
     "personal_reflection": {
-      "f1-score": 0.9523809523809523,
-      "precision": 0.9090909090909091,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 20.0
     },
-    "transactional": {
-      "f1-score": 0.9818181818181818,
+    "prohibited": {
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.9642857142857143,
+      "recall": 1.0,
+      "support": 5.0
+    },
+    "support": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 10.0
+    },
+    "transactional": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 28.0
     },
     "weighted avg": {
-      "f1-score": 0.9542241236324848,
-      "precision": 0.9577087400616813,
-      "recall": 0.954248366013072,
-      "support": 153.0
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 183.0
     }
   },
   "suite": "train"

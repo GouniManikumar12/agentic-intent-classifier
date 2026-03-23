@@ -1,21 +1,21 @@
 {
-  "accepted_accuracy": 0.7692,
-  "accepted_coverage": 0.5909,
-  "accuracy": 0.6212,
-  "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_subtype_test_confusion_matrix.csv",
-  "count": 66,
-  "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/subtype/test.jsonl",
-  "fallback_rate": 0.4091,
+  "accepted_accuracy": 0.9,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.9,
+  "confusion_matrix_path": "artifacts/evaluation/latest/intent_subtype_test_confusion_matrix.csv",
+  "count": 70,
+  "dataset_path": "data/subtype/test.jsonl",
+  "fallback_rate": 0.0,
   "head": "intent_subtype",
-  "macro_f1": 0.4287,
+  "macro_f1": 0.863,
   "per_class_metrics": {
     "account_help": {
-      "f1-score": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 2.0
     },
-    "accuracy": 0.6212121212121212,
+    "accuracy": 0.9,
     "billing_help": {
       "f1-score": 0.0,
       "precision": 0.0,
@@ -23,15 +23,15 @@
       "support": 0.0
     },
     "booking": {
-      "f1-score": 0.6666666666666666,
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.5,
-      "support": 4.0
+      "recall": 1.0,
+      "support": 3.0
     },
     "comparison": {
-      "f1-score": 0.4,
-      "precision": 0.5,
-      "recall": 0.3333333333333333,
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 3.0
     },
     "contact_sales": {
@@ -41,9 +41,9 @@
       "support": 0.0
     },
     "deal_seeking": {
-      "f1-score": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
+      "f1-score": 0.6666666666666666,
+      "precision": 0.5,
+      "recall": 1.0,
       "support": 2.0
     },
     "download": {
@@ -53,70 +53,70 @@
       "support": 0.0
     },
     "education": {
-      "f1-score": 0.6666666666666666,
-      "precision": 0.5,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 14.0
     },
     "emotional_reflection": {
-      "f1-score": 0.9090909090909091,
-      "precision": 0.8333333333333334,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 5.0
     },
     "evaluation": {
-      "f1-score": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
+      "f1-score": 0.4,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
       "support": 2.0
     },
     "follow_up": {
-      "f1-score": 0.8,
-      "precision": 0.7272727272727273,
-      "recall": 0.8888888888888888,
-      "support": 9.0
+      "f1-score": 0.8421052631578947,
+      "precision": 1.0,
+      "recall": 0.7272727272727273,
+      "support": 11.0
     },
     "macro avg": {
-      "f1-score": 0.38107263107263106,
-      "precision": 0.4228114478114478,
-      "recall": 0.38059964726631396,
-      "support": 66.0
+      "f1-score": 0.6712084293224644,
+      "precision": 0.6671296296296296,
+      "recall": 0.6908670033670034,
+      "support": 70.0
     },
     "onboarding_setup": {
-      "f1-score": 0.5714285714285714,
-      "precision": 1.0,
-      "recall": 0.4,
-      "support": 5.0
+      "f1-score": 0.8888888888888888,
+      "precision": 0.8,
+      "recall": 1.0,
+      "support": 4.0
     },
     "product_discovery": {
-      "f1-score": 0.5454545454545454,
-      "precision": 0.75,
-      "recall": 0.42857142857142855,
-      "support": 7.0
+      "f1-score": 0.875,
+      "precision": 0.875,
+      "recall": 0.875,
+      "support": 8.0
     },
     "provider_selection": {
-      "f1-score": 0.8,
-      "precision": 0.8,
-      "recall": 0.8,
-      "support": 5.0
+      "f1-score": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "support": 6.0
     },
     "purchase": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 1.0
-    },
-    "signup": {
       "f1-score": 0.0,
       "precision": 0.0,
       "recall": 0.0,
       "support": 0.0
     },
+    "signup": {
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2.0
+    },
     "task_execution": {
-      "f1-score": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "support": 5.0
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6.0
     },
     "troubleshooting": {
       "f1-score": 0.5,
@@ -125,10 +125,10 @@
       "support": 2.0
     },
     "weighted avg": {
-      "f1-score": 0.5700118063754427,
-      "precision": 0.597910927456382,
-      "recall": 0.6212121212121212,
-      "support": 66.0
+      "f1-score": 0.9058084605453025,
+      "precision": 0.9266666666666667,
+      "recall": 0.9,
+      "support": 70.0
     }
   },
   "suite": "test"

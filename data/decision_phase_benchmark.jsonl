@@ -1,0 +1,105 @@
+{"decision_phase": "awareness", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What is help desk software?"}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Explain help desk software."}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "How does help desk platform work?"}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What does Zendesk do?"}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Give me the basics of help desk software."}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Help me understand what problem Toyota Corolla solves."}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What should a beginner know about cars?"}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Before I look at options, what is a car?"}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What is the purpose of cars in daily commuting?"}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What does a car actually help with?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am not shopping yet, I just want to understand what hosting platforms is."}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Before I evaluate anything, what role does hosting platforms play in a startup launch?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I keep hearing about Vercel; what is it actually for?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Can you clarify what people mean by hosting platforms in practice?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I only need an overview of hosting platforms right now."}
+{"decision_phase": "research", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What help desk tools should I explore for a support team?"}
+{"decision_phase": "research", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Show me options to consider for handle tickets faster."}
+{"decision_phase": "research", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What tools should I look at for a support team?"}
+{"decision_phase": "research", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Help me research help desk tools."}
+{"decision_phase": "research", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Where should I start with help desk tools?"}
+{"decision_phase": "research", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I am early in the process and want to explore cars."}
+{"decision_phase": "research", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Give me a shortlist of cars worth researching."}
+{"decision_phase": "research", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What directions should I investigate for choose the right car?"}
+{"decision_phase": "research", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What categories should I look at before narrowing down?"}
+{"decision_phase": "research", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What are some promising cars for daily commuting?"}
+{"decision_phase": "research", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am not ready to compare vendors yet, just help me scope the market."}
+{"decision_phase": "research", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "What should I research first if I am only beginning to look at hosting providers?"}
+{"decision_phase": "research", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I need a landscape view before I make a shortlist."}
+{"decision_phase": "research", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "What are the main options in this space before I decide anything?"}
+{"decision_phase": "research", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Help me map the market for hosting providers without recommending one yet."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Best help desk platform for a support team."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Zendesk vs Freshdesk."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Compare help desk tools for handle tickets faster."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Which help desk platform looks best for a support team?"}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What are some help desk tools worth considering?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Compare Toyota Corolla and Honda Civic for choose the right car."}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What are the pros and cons of Toyota Corolla?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Help me evaluate the best cars for daily commuting."}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Which car seems worth considering right now?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I am comparing options for choose the right car; what should be on the shortlist?"}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am past basic research and now weighing tradeoffs between Vercel and Netlify."}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I want to compare serious options before committing to one."}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Help me think through the tradeoffs in the current shortlist."}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "What looks strongest if I am narrowing down to a few options?"}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I have done research, now help me compare the finalists."}
+{"decision_phase": "decision", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Which help desk platform should I choose?"}
+{"decision_phase": "decision", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Should I pick Zendesk or Freshdesk?"}
+{"decision_phase": "decision", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Which option should I commit to?"}
+{"decision_phase": "decision", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What is the best fit for me right now?"}
+{"decision_phase": "decision", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Which plan should I choose today?"}
+{"decision_phase": "decision", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I am ready to decide between Toyota Corolla and Honda Civic."}
+{"decision_phase": "decision", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Help me pick the final option for choose the right car."}
+{"decision_phase": "decision", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Which car should I commit to this week?"}
+{"decision_phase": "decision", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I need to make the call now; which option fits best?"}
+{"decision_phase": "decision", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What should I choose if I need to decide today?"}
+{"decision_phase": "decision", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I have a shortlist and need to commit to one vendor now."}
+{"decision_phase": "decision", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am at the point of commitment and need a final recommendation."}
+{"decision_phase": "decision", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Which option should we sign off on before next week?"}
+{"decision_phase": "decision", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I have enough information; tell me which one to go with."}
+{"decision_phase": "decision", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I need the final pick, not another round of comparison."}
+{"decision_phase": "action", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Start my free trial."}
+{"decision_phase": "action", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Book a demo with Zendesk."}
+{"decision_phase": "action", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Create my account."}
+{"decision_phase": "action", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Buy Zendesk now."}
+{"decision_phase": "action", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Download the help desk buyer guide."}
+{"decision_phase": "action", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Take me to checkout for Toyota Corolla."}
+{"decision_phase": "action", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Get me signed up for Toyota Corolla."}
+{"decision_phase": "action", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Reserve my spot with Toyota Corolla."}
+{"decision_phase": "action", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I want to purchase Toyota Corolla today."}
+{"decision_phase": "action", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Send me the download link for the car buying worksheet."}
+{"decision_phase": "action", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am ready to move forward now, where do I start the purchase?"}
+{"decision_phase": "action", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Help me complete the signup flow for Vercel."}
+{"decision_phase": "action", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I want to act on this immediately and get access now."}
+{"decision_phase": "action", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Can you help me finish the order for Vercel?"}
+{"decision_phase": "action", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I have decided, now let me complete the next step."}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "How do I set up my new help desk platform?"}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Show me how to import contacts into Zendesk."}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "How do I onboard my team after purchase?"}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "What should I enable first after signup?"}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "How do I configure my account now that I signed up?"}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "We already subscribed; how do we get value quickly?"}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What is the best way to roll this out after purchase?"}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Help me configure Toyota Corolla now that we bought it."}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "How do I invite teammates after signing up?"}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "What should I do first after we activate the plan?"}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "We already made the purchase, now I need guidance on rollout and setup."}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "This is not a buying decision anymore; I need post-purchase onboarding help."}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I need adoption guidance now that the contract is signed."}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "What is the right onboarding sequence after we commit to Vercel?"}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "We are past checkout and need implementation help."}
+{"decision_phase": "support", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "I cannot log into my billing portal."}
+{"decision_phase": "support", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "How do I reset my password?"}
+{"decision_phase": "support", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "My invoice is wrong."}
+{"decision_phase": "support", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "The integration keeps failing."}
+{"decision_phase": "support", "difficulty": "easy", "source": "decision_phase_benchmark", "text": "Our dashboard is not loading."}
+{"decision_phase": "support", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Can you help me fix a test drive booking?"}
+{"decision_phase": "support", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I am stuck because my reservation keeps breaking."}
+{"decision_phase": "support", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "My password reset link is not working."}
+{"decision_phase": "support", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "I need support with my reservation."}
+{"decision_phase": "support", "difficulty": "medium", "source": "decision_phase_benchmark", "text": "Why is Toyota Corolla not syncing correctly?"}
+{"decision_phase": "support", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I am not evaluating anything, I just need this issue fixed."}
+{"decision_phase": "support", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "This is a live support problem, not a buying question."}
+{"decision_phase": "support", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "Please help me resolve a problem with my existing account."}
+{"decision_phase": "support", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I cannot continue because something is broken in my setup."}
+{"decision_phase": "support", "difficulty": "hard", "source": "decision_phase_benchmark", "text": "I need troubleshooting help, not recommendations."}

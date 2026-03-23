@@ -137,5 +137,66 @@
       "model_output.classification.intent.subtype": "account_help",
       "system_decision.policy.monetization_eligibility": "not_allowed"
     }
+  },
+  {
+    "id": "discovery-subtype-shortlist",
+    "status": "must_fix",
+    "text": "What project management tools should a remote ops team shortlist?",
+    "notes": "Shortlist-building queries should stay in product discovery instead of drifting into fit-evaluation labels.",
+    "expected": {
+      "model_output.classification.intent.subtype": "product_discovery",
+      "model_output.classification.intent.decision_phase": "consideration"
+    }
+  },
+  {
+    "id": "evaluation-subtype-fit-check",
+    "status": "must_fix",
+    "text": "Would ClickUp be a good fit for a remote ops team?",
+    "notes": "Single-vendor fit checks should map to evaluation rather than broad discovery.",
+    "expected": {
+      "model_output.classification.intent.subtype": "evaluation",
+      "model_output.classification.intent.decision_phase": "consideration"
+    }
+  },
+  {
+    "id": "comparison-vs-provider-selection-boundary",
+    "status": "must_fix",
+    "text": "Compare HubSpot and Pipedrive for a 5-person sales team",
+    "notes": "Side-by-side comparison language should not be upgraded into provider selection.",
+    "expected": {
+      "model_output.classification.intent.subtype": "comparison",
+      "model_output.classification.intent.decision_phase": "consideration",
+      "system_decision.opportunity.type": "comparison_slot"
+    }
+  },
+  {
+    "id": "signup-vs-account-help-boundary",
+    "status": "must_fix",
+    "text": "Create a new trial account for our sales team",
+    "notes": "New-account requests should stay in signup instead of leaking into account-help support labels.",
+    "expected": {
+      "model_output.classification.intent.subtype": "signup",
+      "model_output.classification.intent.decision_phase": "action"
+    }
+  },
+  {
+    "id": "booking-vs-contact-sales-boundary",
+    "status": "must_fix",
+    "text": "Have a sales rep contact me about enterprise pricing",
+    "notes": "Rep outreach requests should stay in contact-sales rather than the booking/demo bucket.",
+    "expected": {
+      "model_output.classification.intent.subtype": "contact_sales",
+      "model_output.classification.intent.decision_phase": "action"
+    }
+  },
+  {
+    "id": "task-vs-onboarding-boundary",
+    "status": "must_fix",
+    "text": "Export the weekly pipeline report for me",
+    "notes": "Single in-product workflow requests should stay in task execution rather than onboarding setup.",
+    "expected": {
+      "model_output.classification.intent.subtype": "task_execution",
+      "model_output.classification.intent.decision_phase": "action"
+    }
   }
 ]

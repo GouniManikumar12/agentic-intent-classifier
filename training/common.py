@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import torch
 from datasets import Dataset
 from sklearn.metrics import accuracy_score, f1_score
 
@@ -41,6 +42,29 @@ def prepare_dataset(rows: list[dict], tokenizer, max_length: int) -> Dataset:
     dataset = dataset.remove_columns(["text"])
     dataset.set_format("torch")
     return dataset
+
+
+def build_balanced_class_weights(rows: list[dict], num_labels: int) -> torch.Tensor:
+    counts = np.zeros(num_labels, dtype=np.float32)
+    for row in rows:
+        counts[row["label"]] += 1.0
+
+    nonzero = counts > 0
+    if not np.any(nonzero):
+        return torch.ones(num_labels, dtype=torch.float32)
+
+    total = float(counts.sum())
+    active_labels = float(np.count_nonzero(nonzero))
+    weights = np.ones(num_labels, dtype=np.float32)
+    weights[nonzero] = total / (active_labels * counts[nonzero])
+    return torch.tensor(weights, dtype=torch.float32)
+
+
+def build_label_weight_tensor(labels: tuple[str, ...], weight_map: dict[str, float]) -> torch.Tensor:
+    return torch.tensor(
+        [float(weight_map.get(label, 1.0)) for label in labels],
+        dtype=torch.float32,
+    )
 
 
 def compute_classification_metrics(eval_pred):

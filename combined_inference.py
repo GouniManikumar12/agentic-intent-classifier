@@ -14,7 +14,7 @@ from config import (
     SUBTYPE_FAMILY_MAP,
     SUBTYPE_SCORE_WEIGHTS,
 )
-from inference import predict as predict_intent_type
+from inference_intent_type import predict as predict_intent_type
 from inference_decision_phase import predict as predict_decision_phase
 from inference_iab_content import predict as predict_iab_content
 from inference_subtype import predict as predict_intent_subtype

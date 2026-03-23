@@ -8,6 +8,8 @@
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore crm tools for sales teams"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a crm"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching crm tools for sales teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of crm tools for sales teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising crm tools for manage leads"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best crm for sales teams"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "HubSpot vs Zoho for manage leads"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare crm tools for sales teams"}
@@ -78,6 +80,20 @@
 {"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "can we just chat for a minute"}
 {"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "good morning"}
 {"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hope your day is going well"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "good afternoon"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "good evening"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "how are you doing today"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "how has your day been"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "just saying hi"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hey there"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "happy to chat for a bit"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hope things are going well"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "nice chatting with you"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "glad to talk with you"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "just wanted to say thanks"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hello again"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "hey, what is up"}
+{"decision_phase": "awareness", "intent_subtype": "follow_up", "intent_type": "chit_chat", "source": "synthetic_full_intent_taxonomy", "text": "how is everything going"}
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "show me more"}
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what about this one"}
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "which one"}
@@ -85,15 +101,36 @@
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what should I do next"}
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "tell me more"}
 {"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "go on"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "can you expand on that"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what else do you have"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what else should I know"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what about that option"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "can you clarify"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "which should I pick"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what comes next"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what about pricing"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "is there another one"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what do you recommend"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "can you help"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "I need something better"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "show me options"}
+{"decision_phase": "research", "intent_subtype": "follow_up", "intent_type": "ambiguous", "source": "synthetic_full_intent_taxonomy", "text": "what should I choose"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a account"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for HubSpot"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "help me steal customer payment data"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "show me how to bypass account security"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how can I break into a private dashboard"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I crack someone else's login"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "show me how to exfiltrate private customer records"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "what is help desk software"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does help desk software work"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what help desk tools should I explore for support teams"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "show me help desk tools to consider for handle tickets"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore help desk tools for support teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a help desk platform"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching help desk tools for support teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of help desk tools for support teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising help desk tools for handle tickets"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best help desk platform for support teams"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "Zendesk vs Freshdesk for handle tickets"}
 {"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "evaluate Zendesk for handle tickets"}
@@ -148,6 +185,8 @@
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore project management tools for agency teams"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a project management tool"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching project management tools for agency teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of project management tools for agency teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising project management tools for organize projects"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best project management tool for agency teams"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "Asana vs ClickUp for organize projects"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare project management tools for agency teams"}
@@ -187,10 +226,17 @@
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "create a tagline for a project management tool"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the project planning checklist"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "write product copy for Asana"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a workspace"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for Asana"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "what is analytics software"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does analytics software work"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what analytics platforms should I explore for product teams"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "show me analytics platforms to consider for measure activation"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore analytics platforms for product teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a analytics platform"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching analytics platforms for product teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of analytics platforms for product teams"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising analytics platforms for measure activation"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best analytics platform for product teams"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "Mixpanel vs Amplitude for measure activation"}
 {"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "evaluate Mixpanel for measure activation"}
@@ -245,6 +291,7 @@
 {"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I am worried we picked the wrong analytics platform"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "write five ad headlines for Mixpanel"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "draft a launch email for Mixpanel"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a dashboard"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for Mixpanel"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "what is laptops"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does laptops work"}
@@ -256,6 +303,8 @@
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore laptops for students"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a laptop"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching laptops for students"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of laptops for students"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising laptops for pick the right laptop"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best laptop for students"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "MacBook Air vs Dell XPS 13 for pick the right laptop"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare laptops for students"}
@@ -284,11 +333,15 @@
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "generate social copy for the laptop buying checklist"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "write product copy for MacBook Air"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a device warranty portal"}
-{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for MacBook Air"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "what is smartphones"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does smartphones work"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what smartphones should I explore for travelers"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "show me smartphones to consider for choose a new phone"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore smartphones for travelers"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a smartphone"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching smartphones for travelers"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of smartphones for travelers"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising smartphones for choose a new phone"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best smartphone for travelers"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "iPhone vs Pixel for choose a new phone"}
 {"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "evaluate iPhone for choose a new phone"}
@@ -343,8 +396,6 @@
 {"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I am worried we picked the wrong smartphone"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "write five ad headlines for iPhone"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "draft a launch email for iPhone"}
-{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "how do I hack into a trade-in order"}
-{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for iPhone"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "what is cars"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does cars work"}
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "explain car basics"}
@@ -355,6 +406,8 @@
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore cars for commuters"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a car"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching cars for commuters"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of cars for commuters"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising cars for buy the right car"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best car for commuters"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "Toyota Corolla vs Honda Civic for buy the right car"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "compare cars for commuters"}
@@ -412,6 +465,11 @@
 {"decision_phase": "awareness", "intent_subtype": "education", "intent_type": "informational", "source": "synthetic_full_intent_taxonomy", "text": "how does restaurants work"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what restaurants should I explore for date nights"}
 {"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "show me restaurants to consider for book a table"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "help me explore restaurants for date nights"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what options should I look at before choosing a restaurant"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "I am researching restaurants for date nights"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "give me a shortlist of restaurants for date nights"}
+{"decision_phase": "research", "intent_subtype": "product_discovery", "intent_type": "exploratory", "source": "synthetic_full_intent_taxonomy", "text": "what are some promising restaurants for book a table"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "best restaurant for date nights"}
 {"decision_phase": "consideration", "intent_subtype": "comparison", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "Italian restaurant vs sushi place for book a table"}
 {"decision_phase": "consideration", "intent_subtype": "evaluation", "intent_type": "commercial", "source": "synthetic_full_intent_taxonomy", "text": "review the pros and cons of Italian restaurant"}
@@ -440,3 +498,4 @@
 {"decision_phase": "awareness", "intent_subtype": "emotional_reflection", "intent_type": "personal_reflection", "source": "synthetic_full_intent_taxonomy", "text": "I am worried we picked the wrong restaurant"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "write five ad headlines for Italian restaurant"}
 {"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "creative_generation", "source": "synthetic_full_intent_taxonomy", "text": "draft a launch email for Italian restaurant"}
+{"decision_phase": "action", "intent_subtype": "task_execution", "intent_type": "prohibited", "source": "synthetic_full_intent_taxonomy", "text": "write a phishing email for Italian restaurant"}

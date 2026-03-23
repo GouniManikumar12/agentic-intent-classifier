@@ -21,6 +21,8 @@ The repo is beyond the original v0.1 baseline. It now includes:
 - repeatable evaluation and regression suites
 - full-TSV IAB taxonomy support through tier4
 - a separate synthetic full-intent-taxonomy augmentation dataset for non-IAB heads
+- a dedicated intent-type difficulty dataset and held-out benchmark with `easy`, `medium`, and `hard` cases
+- a dedicated decision-phase difficulty dataset and held-out benchmark with `easy`, `medium`, and `hard` cases
 
 Generated model weights are intentionally not committed.
 
@@ -99,11 +101,15 @@ Generated model weights are intentionally not committed.
 - [config.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/config.py): labels, thresholds, artifact paths, model paths
 - [model_runtime.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/model_runtime.py): shared calibrated inference runtime
 - [combined_inference.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/combined_inference.py): composed system response
+- [inference_intent_type.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_intent_type.py): direct `intent_type` inference entrypoint
 - [schemas.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/schemas.py): request/response validation
 - [demo_api.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/demo_api.py): local validated API
 - [iab_taxonomy.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_taxonomy.py): full taxonomy parser/index
 - [iab_mapping.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_mapping.py): taxonomy-backed fallback mapper
 - [training/build_full_intent_taxonomy_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_full_intent_taxonomy_dataset.py): separate synthetic intent augmentation dataset
+- [training/build_intent_type_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_intent_type_difficulty_dataset.py): extra `intent_type` augmentation plus held-out difficulty benchmark
+- [training/build_decision_phase_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_decision_phase_difficulty_dataset.py): extra `decision_phase` augmentation plus held-out difficulty benchmark
+- [training/build_subtype_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_difficulty_dataset.py): extra `intent_subtype` augmentation plus held-out difficulty benchmark
 - [training/build_subtype_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_dataset.py): subtype dataset generation from existing corpora
 - [training/build_iab_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_iab_dataset.py): full-TSV IAB dataset generation
 - [training/run_full_training_pipeline.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/run_full_training_pipeline.py): full multi-head training/calibration/eval pipeline
@@ -127,6 +133,13 @@ Run one query locally:
 ```bash
 cd agentic-intent-classifier
 python3 combined_inference.py "Which CRM should I buy for a 3-person startup?"
+```
+
+Run only the `intent_type` head:
+
+```bash
+cd agentic-intent-classifier
+python3 inference_intent_type.py "best shoes under 100"
 ```
 
 Run the demo API:
@@ -166,14 +179,17 @@ python3 training/run_full_training_pipeline.py \
 This pipeline now does:
 
 1. build separate full-intent-taxonomy augmentation data
-2. train `intent_type`
-3. build subtype corpus
-4. train `intent_subtype`
-5. train `decision_phase`
-6. build full-TSV IAB data
-7. train `iab_content`
-8. calibrate all heads
-9. run regression/evaluation unless `--skip-full-eval` is used
+2. build separate `intent_type` difficulty augmentation + benchmark
+3. train `intent_type`
+4. build subtype corpus
+5. build separate `intent_subtype` difficulty augmentation + benchmark
+6. train `intent_subtype`
+7. build separate `decision_phase` difficulty augmentation + benchmark
+8. train `decision_phase`
+9. build full-TSV IAB data
+10. train `iab_content`
+11. calibrate all heads
+12. run regression/evaluation unless `--skip-full-eval` is used
 
 ### Build datasets individually
 
@@ -182,6 +198,27 @@ Separate full-intent augmentation:
 ```bash
 cd agentic-intent-classifier
 python3 training/build_full_intent_taxonomy_dataset.py
+```
+
+Intent-type difficulty augmentation and benchmark:
+
+```bash
+cd agentic-intent-classifier
+python3 training/build_intent_type_difficulty_dataset.py
+```
+
+Decision-phase difficulty augmentation and benchmark:
+
+```bash
+cd agentic-intent-classifier
+python3 training/build_decision_phase_difficulty_dataset.py
+```
+
+Subtype difficulty augmentation and benchmark:
+
+```bash
+cd agentic-intent-classifier
+python3 training/build_subtype_difficulty_dataset.py
 ```
 
 Subtype dataset:
@@ -332,6 +369,7 @@ Current repo status:
 
 - full 10-class `intent.type` taxonomy is wired
 - subtype and phase heads are present
+- difficulty benchmarks are wired for `intent_type`, `intent_subtype`, and `decision_phase`
 - full-TSV IAB taxonomy is wired through tier4
 - separate full-intent augmentation dataset is in place
 - evaluation/runtime memory handling is improved for large IAB splits

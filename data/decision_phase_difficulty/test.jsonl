@@ -1,0 +1,39 @@
+{"decision_phase": "awareness", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Explain analytics software."}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "What does HubSpot do?"}
+{"decision_phase": "awareness", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Give me the basics of laptops."}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "What should a beginner know about analytics platforms?"}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "What is the purpose of crm software in a small sales team?"}
+{"decision_phase": "awareness", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "What does a laptop actually help with?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "Before I evaluate anything, what role does analytics software play in a product team?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "Can you clarify what people mean by crm software in practice?"}
+{"decision_phase": "awareness", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "I only need an overview of laptops right now."}
+{"decision_phase": "research", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Show me options to consider for measure activation."}
+{"decision_phase": "research", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Help me research CRM tools."}
+{"decision_phase": "research", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Where should I start with laptops?"}
+{"decision_phase": "research", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Give me a shortlist of analytics platforms worth researching."}
+{"decision_phase": "research", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "What categories should I look at before narrowing down?"}
+{"decision_phase": "research", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "I need a landscape view before I make a shortlist."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Mixpanel vs Amplitude."}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Which CRM looks best for a small sales team?"}
+{"decision_phase": "consideration", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "What are some laptops worth considering?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "What are the pros and cons of Mixpanel?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Which CRM seems worth considering right now?"}
+{"decision_phase": "consideration", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "I am comparing options for choose the right laptop; what should be on the shortlist?"}
+{"decision_phase": "consideration", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "Help me think through the tradeoffs in the current shortlist."}
+{"decision_phase": "decision", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Should I pick Mixpanel or Amplitude?"}
+{"decision_phase": "decision", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Help me pick the final option for measure activation."}
+{"decision_phase": "decision", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "I need to make the call now; which option fits best?"}
+{"decision_phase": "decision", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "I need the final pick, not another round of comparison."}
+{"decision_phase": "action", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Create my account."}
+{"decision_phase": "action", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Download the analytics setup guide."}
+{"decision_phase": "action", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Get me signed up for Mixpanel."}
+{"decision_phase": "action", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "I want to purchase HubSpot today."}
+{"decision_phase": "action", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Send me the download link for the laptop buying checklist."}
+{"decision_phase": "action", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "I want to act on this immediately and get access now."}
+{"decision_phase": "post_purchase", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "Show me how to import contacts into Mixpanel."}
+{"decision_phase": "post_purchase", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "Help me configure MacBook Air now that we bought it."}
+{"decision_phase": "post_purchase", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "What is the right onboarding sequence after we commit to Mixpanel?"}
+{"decision_phase": "support", "difficulty": "easy", "source": "synthetic_decision_phase_difficulty", "text": "My invoice is wrong."}
+{"decision_phase": "support", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "I am stuck because my dashboard keeps breaking."}
+{"decision_phase": "support", "difficulty": "medium", "source": "synthetic_decision_phase_difficulty", "text": "I need support with my order."}
+{"decision_phase": "support", "difficulty": "hard", "source": "synthetic_decision_phase_difficulty", "text": "I need troubleshooting help, not recommendations."}

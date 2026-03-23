@@ -11,6 +11,14 @@ ARTIFACTS_DIR = BASE_DIR / "artifacts"
 CALIBRATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "calibration"
 EVALUATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "evaluation"
 FULL_INTENT_TAXONOMY_DATA_DIR = BASE_DIR / "data" / "full_intent_taxonomy"
+INTENT_TYPE_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "intent_type_difficulty"
+INTENT_TYPE_BENCHMARK_PATH = BASE_DIR / "data" / "intent_type_benchmark.jsonl"
+DECISION_PHASE_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "decision_phase_difficulty"
+DECISION_PHASE_BENCHMARK_PATH = BASE_DIR / "data" / "decision_phase_benchmark.jsonl"
+SUBTYPE_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "subtype_difficulty"
+SUBTYPE_BENCHMARK_PATH = BASE_DIR / "data" / "subtype_benchmark.jsonl"
+IAB_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "iab_difficulty"
+IAB_BENCHMARK_PATH = BASE_DIR / "data" / "iab_benchmark.jsonl"
 
 DEFAULT_API_HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8008
@@ -155,6 +163,7 @@ INTENT_HEAD_CONFIG = HeadConfig(
     stress_suite_paths={
         "hard_cases": BASE_DIR / "data" / "hard_cases.jsonl",
         "third_wave_cases": BASE_DIR / "data" / "third_wave_cases.jsonl",
+        "difficulty_benchmark": INTENT_TYPE_BENCHMARK_PATH,
     },
 )
 
@@ -173,6 +182,7 @@ DECISION_PHASE_HEAD_CONFIG = HeadConfig(
     stress_suite_paths={
         "hard_cases": BASE_DIR / "data" / "decision_phase" / "hard_cases.jsonl",
         "final_wave_cases": BASE_DIR / "data" / "decision_phase" / "final_wave_cases.jsonl",
+        "difficulty_benchmark": DECISION_PHASE_BENCHMARK_PATH,
     },
 )
 
@@ -191,6 +201,7 @@ SUBTYPE_HEAD_CONFIG = HeadConfig(
     stress_suite_paths={
         "hard_cases": BASE_DIR / "data" / "subtype" / "hard_cases.jsonl",
         "extended_cases": BASE_DIR / "data" / "subtype" / "extended_cases.jsonl",
+        "difficulty_benchmark": SUBTYPE_BENCHMARK_PATH,
     },
 )
 
@@ -209,6 +220,7 @@ IAB_HEAD_CONFIG = HeadConfig(
     stress_suite_paths={
         "hard_cases": BASE_DIR / "data" / "iab" / "hard_cases.jsonl",
         "extended_cases": BASE_DIR / "data" / "iab" / "extended_cases.jsonl",
+        "difficulty_benchmark": IAB_BENCHMARK_PATH,
     },
 )
 
@@ -235,6 +247,19 @@ INTENT_SCORE_WEIGHTS = {
     "prohibited": 0.0,
 }
 
+INTENT_TYPE_TRAINING_WEIGHTS = {
+    "informational": 1.0,
+    "exploratory": 1.0,
+    "commercial": 1.7,
+    "transactional": 1.9,
+    "support": 1.6,
+    "personal_reflection": 0.85,
+    "creative_generation": 0.75,
+    "chit_chat": 0.7,
+    "ambiguous": 1.1,
+    "prohibited": 2.2,
+}
+
 PHASE_SCORE_WEIGHTS = {
     "awareness": 0.1,
     "research": 0.35,
@@ -243,6 +268,37 @@ PHASE_SCORE_WEIGHTS = {
     "action": 1.0,
     "post_purchase": 0.15,
     "support": 0.0,
+}
+
+DECISION_PHASE_TRAINING_WEIGHTS = {
+    "awareness": 0.9,
+    "research": 1.0,
+    "consideration": 1.35,
+    "decision": 1.8,
+    "action": 1.55,
+    "post_purchase": 1.15,
+    "support": 1.5,
+}
+
+SUBTYPE_TRAINING_WEIGHTS = {
+    "education": 0.95,
+    "product_discovery": 1.55,
+    "comparison": 1.65,
+    "evaluation": 1.1,
+    "deal_seeking": 1.7,
+    "provider_selection": 1.75,
+    "signup": 1.6,
+    "purchase": 1.9,
+    "booking": 1.45,
+    "download": 1.1,
+    "contact_sales": 1.55,
+    "task_execution": 1.0,
+    "onboarding_setup": 1.05,
+    "troubleshooting": 1.4,
+    "account_help": 1.55,
+    "billing_help": 1.6,
+    "follow_up": 0.9,
+    "emotional_reflection": 0.85,
 }
 
 SUBTYPE_SCORE_WEIGHTS = {

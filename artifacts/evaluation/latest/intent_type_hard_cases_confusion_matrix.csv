@@ -1,6 +1,11 @@
-,informational,commercial,transactional,personal_reflection,ambiguous
-informational,20,0,0,0,0
-commercial,3,10,0,0,0
-transactional,0,0,9,0,1
-personal_reflection,0,0,0,0,0
-ambiguous,1,0,0,0,9
+,informational,exploratory,commercial,transactional,support,personal_reflection,creative_generation,chit_chat,ambiguous,prohibited
+informational,20,0,0,0,0,0,0,0,0,0
+exploratory,0,1,0,0,0,0,0,0,0,0
+commercial,0,0,13,0,0,0,0,0,0,0
+transactional,0,0,0,10,0,0,0,0,0,0
+support,0,0,0,0,4,0,0,0,0,0
+personal_reflection,0,0,0,0,0,0,0,0,0,0
+creative_generation,0,0,0,0,0,0,1,0,0,0
+chit_chat,0,0,0,0,0,0,0,1,0,0
+ambiguous,0,0,0,0,0,0,0,0,10,0
+prohibited,0,0,0,0,0,0,0,0,0,1

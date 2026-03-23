@@ -34,9 +34,12 @@ def main() -> None:
 
     python = sys.executable
     run_step([python, "training/build_full_intent_taxonomy_dataset.py"])
+    run_step([python, "training/build_intent_type_difficulty_dataset.py"])
     run_step([python, "training/train.py"])
     run_step([python, "training/build_subtype_dataset.py"])
+    run_step([python, "training/build_subtype_difficulty_dataset.py"])
     run_step([python, "training/train_subtype.py"])
+    run_step([python, "training/build_decision_phase_difficulty_dataset.py"])
     run_step([python, "training/train_decision_phase.py"])
     run_step(
         [
@@ -46,6 +49,7 @@ def main() -> None:
             str(args.iab_target_rows_per_label),
         ]
     )
+    run_step([python, "training/build_iab_difficulty_dataset.py"])
     run_step(
         [
             python,

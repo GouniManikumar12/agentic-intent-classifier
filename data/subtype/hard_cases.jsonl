@@ -1,8 +1,8 @@
 {"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Best CRM for a 3-person startup"}
 {"intent_subtype": "product_discovery", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "Best SUV to buy in 2026"}
-{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Explain CRM basics"}
-{"decision_phase": "research", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Help me learn how customer onboarding software works"}
-{"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Help me understand how CRM tools work for startups"}
+{"decision_phase": "research", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Explain CRM basics"}
+{"decision_phase": "research", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Help me learn how customer onboarding software works"}
+{"decision_phase": "research", "intent_subtype": "education", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Help me understand how CRM tools work for startups"}
 {"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "How do I configure my account after purchase?"}
 {"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "How do I connect email after I subscribe?"}
 {"intent_subtype": "follow_up", "intent_type": "prohibited", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "How do I hack into someone else's account"}
@@ -17,7 +17,7 @@
 {"decision_phase": "support", "intent_subtype": "troubleshooting", "intent_type": "support", "source_heads": ["decision_phase", "intent_type"], "source_splits": ["hard_cases"], "text": "My integration setup failed and now I am stuck"}
 {"decision_phase": "support", "intent_subtype": "account_help", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "My password reset link is not working"}
 {"decision_phase": "decision", "intent_subtype": "provider_selection", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Should I choose HubSpot or Pipedrive for our team?"}
-{"decision_phase": "consideration", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Show me CRM tools for a five-person company"}
+{"decision_phase": "consideration", "intent_subtype": "product_discovery", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Show me CRM tools for a five-person company"}
 {"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Show me how CRM systems are typically used by startups"}
 {"decision_phase": "post_purchase", "intent_subtype": "onboarding_setup", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Show me how to onboard teammates after signup"}
 {"decision_phase": "research", "intent_subtype": "evaluation", "source_heads": ["decision_phase"], "source_splits": ["hard_cases"], "text": "Teach me how CRM platforms help small sales teams"}
@@ -58,9 +58,9 @@
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "explain why companies use CRM systems"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "give me a beginner explanation of CRM"}
 {"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "go on then"}
-{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me choose a CRM for a real estate business"}
+{"intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me choose a CRM for a real estate business"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me learn the difference between CRM and ERP"}
-{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me pick a CRM for managing inbound leads"}
+{"intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me pick a CRM for managing inbound leads"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me understand CRM basics"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me understand sales pipelines"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "help me understand why businesses need CRM"}
@@ -70,10 +70,10 @@
 {"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "place the order"}
 {"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "register me for the webinar"}
 {"intent_subtype": "booking", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "reserve a seat for tomorrow"}
-{"intent_subtype": "contact_sales", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "schedule a demo for next week"}
+{"intent_subtype": "booking", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "schedule a demo for next week"}
 {"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "show me a little more"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "show me how CRM software works"}
-{"intent_subtype": "task_execution", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "sign me up for the newsletter"}
+{"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "sign me up for the newsletter"}
 {"intent_subtype": "signup", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "start my free trial"}
 {"intent_subtype": "purchase", "intent_type": "transactional", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "subscribe me to updates"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "teach me the basics of customer relationship management"}
@@ -87,8 +87,8 @@
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "what is a CRM used for in a small business"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "what is the purpose of a CRM"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "what problems does a CRM solve"}
-{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "which CRM is better for a 3-person startup"}
-{"intent_subtype": "evaluation", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "which CRM should a solo founder pick"}
+{"intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "which CRM is better for a 3-person startup"}
+{"intent_subtype": "provider_selection", "intent_type": "commercial", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "which CRM should a solo founder pick"}
 {"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "which one do you mean"}
 {"intent_subtype": "education", "intent_type": "informational", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "why do teams use CRM software"}
 {"intent_subtype": "follow_up", "intent_type": "ambiguous", "source_heads": ["intent_type"], "source_splits": ["hard_cases"], "text": "why though"}
