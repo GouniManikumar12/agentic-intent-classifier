@@ -18,6 +18,7 @@ from inference_intent_type import predict as predict_intent_type
 from inference_decision_phase import predict as predict_decision_phase
 from inference_iab_content import predict as predict_iab_content
 from inference_subtype import predict as predict_intent_subtype
+from iab_hierarchy import predict_iab_content_hierarchical
 from iab_mapping import map_iab_content
 from iab_taxonomy import get_iab_taxonomy
 from schemas import validate_classify_response
@@ -25,6 +26,20 @@ from schemas import validate_classify_response
 
 def round_score(value: float) -> float:
     return round(float(value), 4)
+
+
+def iab_content_path(content: dict) -> tuple[str, ...]:
+    path = []
+    for tier in ("tier1", "tier2", "tier3", "tier4"):
+        if tier in content:
+            path.append(content[tier]["label"])
+    return tuple(path)
+
+
+def same_path_prefix(left: tuple[str, ...], right: tuple[str, ...], depth: int) -> bool:
+    if len(left) < depth or len(right) < depth:
+        return False
+    return left[:depth] == right[:depth]
 
 
 def subtype_family(subtype: str) -> str:
@@ -326,6 +341,21 @@ def build_iab_content(
     decision_phase: str,
     confidence_threshold: float | None = None,
 ) -> tuple[dict, dict | None]:
+    mapped_content = map_iab_content(text, intent_type, subtype, decision_phase)
+    hierarchical_pred = predict_iab_content_hierarchical(text)
+    if hierarchical_pred is not None:
+        hierarchical_content = hierarchical_pred["content"]
+        hierarchical_path = iab_content_path(hierarchical_content)
+        mapped_path = iab_content_path(mapped_content)
+        if mapped_content["mapping_mode"] == "exact" and mapped_path != hierarchical_path:
+            return mapped_content, hierarchical_pred
+        if (
+            mapped_content["mapping_confidence"] >= 0.95
+            and not same_path_prefix(mapped_path, hierarchical_path, depth=min(2, len(mapped_path), len(hierarchical_path)))
+        ):
+            return mapped_content, hierarchical_pred
+        return hierarchical_content, hierarchical_pred
+
     try:
         iab_pred = predict_iab_content(text, confidence_threshold=confidence_threshold)
     except OSError:
@@ -333,16 +363,22 @@ def build_iab_content(
 
     if iab_pred is not None and iab_pred["meets_confidence_threshold"]:
         taxonomy = get_iab_taxonomy()
-        return (
-            taxonomy.build_content_object_from_label(
-                iab_pred["label"],
-                mapping_mode="exact",
-                mapping_confidence=iab_pred["confidence"],
-            ),
-            iab_pred,
+        model_content = taxonomy.build_content_object_from_label(
+            iab_pred["label"],
+            mapping_mode="exact",
+            mapping_confidence=iab_pred["confidence"],
         )
+        model_path = tuple(iab_pred["label"].split(" > "))
+        mapped_path = iab_content_path(mapped_content)
 
-    return map_iab_content(text, intent_type, subtype, decision_phase), iab_pred
+        if mapped_content["mapping_mode"] == "exact" and mapped_path != model_path:
+            return mapped_content, iab_pred
+        if mapped_content["mapping_confidence"] >= 0.95 and not same_path_prefix(mapped_path, model_path, depth=2):
+            return mapped_content, iab_pred
+
+        return model_content, iab_pred
+
+    return mapped_content, iab_pred
 
 
 def classify_query(text: str, threshold_overrides: dict[str, float] | None = None) -> dict:

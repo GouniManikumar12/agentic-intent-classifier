@@ -1,0 +1,268 @@
+{
+  "iab_tier1": {
+    "test": {
+      "count": 2937,
+      "hard_negative_count": 684,
+      "label_count": 36,
+      "max_rows_per_label": 284,
+      "min_rows_per_label": 3,
+      "parent_safe_count": 129,
+      "rows_by_evidence_strength": {
+        "moderate": 1648,
+        "strong": 1099,
+        "unspecified": 61,
+        "weak": 129
+      },
+      "rows_by_prompt_family": {
+        "action": 26,
+        "alias": 1017,
+        "contrastive": 684,
+        "discovery": 710,
+        "unspecified": 61,
+        "vague": 439
+      }
+    },
+    "train": {
+      "count": 10628,
+      "hard_negative_count": 2017,
+      "label_count": 36,
+      "max_rows_per_label": 961,
+      "min_rows_per_label": 14,
+      "parent_safe_count": 247,
+      "rows_by_evidence_strength": {
+        "moderate": 4956,
+        "strong": 5171,
+        "unspecified": 254,
+        "weak": 247
+      },
+      "rows_by_prompt_family": {
+        "action": 193,
+        "alias": 4211,
+        "contrastive": 2017,
+        "discovery": 2841,
+        "unspecified": 254,
+        "vague": 1112
+      }
+    },
+    "val": {
+      "count": 2935,
+      "hard_negative_count": 650,
+      "label_count": 36,
+      "max_rows_per_label": 278,
+      "min_rows_per_label": 3,
+      "parent_safe_count": 135,
+      "rows_by_evidence_strength": {
+        "moderate": 1612,
+        "strong": 1126,
+        "unspecified": 62,
+        "weak": 135
+      },
+      "rows_by_prompt_family": {
+        "action": 57,
+        "alias": 1035,
+        "contrastive": 650,
+        "discovery": 676,
+        "unspecified": 62,
+        "vague": 455
+      }
+    }
+  },
+  "iab_tier2": {
+    "test": {
+      "count": 2910,
+      "hard_negative_count": 609,
+      "label_count": 322,
+      "max_rows_per_label": 110,
+      "min_rows_per_label": 6,
+      "parent_safe_count": 190,
+      "rows_by_evidence_strength": {
+        "moderate": 1657,
+        "strong": 1001,
+        "unspecified": 62,
+        "weak": 190
+      },
+      "rows_by_prompt_family": {
+        "action": 23,
+        "alias": 1018,
+        "contrastive": 609,
+        "discovery": 689,
+        "unspecified": 62,
+        "vague": 509
+      }
+    },
+    "train": {
+      "count": 11375,
+      "hard_negative_count": 1705,
+      "label_count": 322,
+      "max_rows_per_label": 405,
+      "min_rows_per_label": 24,
+      "parent_safe_count": 675,
+      "rows_by_evidence_strength": {
+        "moderate": 5735,
+        "strong": 4711,
+        "unspecified": 254,
+        "weak": 675
+      },
+      "rows_by_prompt_family": {
+        "action": 187,
+        "alias": 4670,
+        "contrastive": 1705,
+        "discovery": 2986,
+        "unspecified": 254,
+        "vague": 1573
+      }
+    },
+    "val": {
+      "count": 2925,
+      "hard_negative_count": 597,
+      "label_count": 322,
+      "max_rows_per_label": 110,
+      "min_rows_per_label": 6,
+      "parent_safe_count": 199,
+      "rows_by_evidence_strength": {
+        "moderate": 1649,
+        "strong": 1015,
+        "unspecified": 62,
+        "weak": 199
+      },
+      "rows_by_prompt_family": {
+        "action": 51,
+        "alias": 1030,
+        "contrastive": 597,
+        "discovery": 663,
+        "unspecified": 62,
+        "vague": 522
+      }
+    }
+  },
+  "iab_tier3": {
+    "test": {
+      "count": 1012,
+      "hard_negative_count": 216,
+      "label_count": 275,
+      "max_rows_per_label": 45,
+      "min_rows_per_label": 3,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 643,
+        "strong": 319,
+        "unspecified": 50
+      },
+      "rows_by_prompt_family": {
+        "action": 8,
+        "alias": 328,
+        "contrastive": 216,
+        "discovery": 254,
+        "unspecified": 50,
+        "vague": 156
+      }
+    },
+    "train": {
+      "count": 4033,
+      "hard_negative_count": 551,
+      "label_count": 275,
+      "max_rows_per_label": 175,
+      "min_rows_per_label": 12,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 2247,
+        "strong": 1582,
+        "unspecified": 204
+      },
+      "rows_by_prompt_family": {
+        "action": 97,
+        "alias": 1679,
+        "contrastive": 551,
+        "discovery": 973,
+        "unspecified": 204,
+        "vague": 529
+      }
+    },
+    "val": {
+      "count": 1014,
+      "hard_negative_count": 191,
+      "label_count": 275,
+      "max_rows_per_label": 47,
+      "min_rows_per_label": 3,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 629,
+        "strong": 335,
+        "unspecified": 50
+      },
+      "rows_by_prompt_family": {
+        "action": 26,
+        "alias": 329,
+        "contrastive": 191,
+        "discovery": 253,
+        "unspecified": 50,
+        "vague": 165
+      }
+    }
+  },
+  "iab_tier4": {
+    "test": {
+      "count": 152,
+      "hard_negative_count": 35,
+      "label_count": 70,
+      "max_rows_per_label": 8,
+      "min_rows_per_label": 2,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 99,
+        "strong": 41,
+        "unspecified": 12
+      },
+      "rows_by_prompt_family": {
+        "action": 2,
+        "alias": 51,
+        "contrastive": 35,
+        "discovery": 29,
+        "unspecified": 12,
+        "vague": 23
+      }
+    },
+    "train": {
+      "count": 608,
+      "hard_negative_count": 53,
+      "label_count": 70,
+      "max_rows_per_label": 32,
+      "min_rows_per_label": 8,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 294,
+        "strong": 266,
+        "unspecified": 48
+      },
+      "rows_by_prompt_family": {
+        "action": 29,
+        "alias": 262,
+        "contrastive": 53,
+        "discovery": 158,
+        "unspecified": 48,
+        "vague": 58
+      }
+    },
+    "val": {
+      "count": 152,
+      "hard_negative_count": 27,
+      "label_count": 70,
+      "max_rows_per_label": 8,
+      "min_rows_per_label": 2,
+      "parent_safe_count": 0,
+      "rows_by_evidence_strength": {
+        "moderate": 92,
+        "strong": 48,
+        "unspecified": 12
+      },
+      "rows_by_prompt_family": {
+        "action": 7,
+        "alias": 46,
+        "contrastive": 27,
+        "discovery": 37,
+        "unspecified": 12,
+        "vague": 23
+      }
+    }
+  }
+}

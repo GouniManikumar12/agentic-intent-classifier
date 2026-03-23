@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent
 ARTIFACTS_DIR = BASE_DIR / "artifacts"
 CALIBRATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "calibration"
 EVALUATION_ARTIFACTS_DIR = ARTIFACTS_DIR / "evaluation"
+IAB_ARTIFACTS_DIR = ARTIFACTS_DIR / "iab"
 FULL_INTENT_TAXONOMY_DATA_DIR = BASE_DIR / "data" / "full_intent_taxonomy"
 INTENT_TYPE_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "intent_type_difficulty"
 INTENT_TYPE_BENCHMARK_PATH = BASE_DIR / "data" / "intent_type_benchmark.jsonl"
@@ -19,6 +20,9 @@ SUBTYPE_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "subtype_difficulty"
 SUBTYPE_BENCHMARK_PATH = BASE_DIR / "data" / "subtype_benchmark.jsonl"
 IAB_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "iab_difficulty"
 IAB_BENCHMARK_PATH = BASE_DIR / "data" / "iab_benchmark.jsonl"
+IAB_CROSS_VERTICAL_BENCHMARK_PATH = BASE_DIR / "data" / "iab_cross_vertical_benchmark.jsonl"
+IAB_HIERARCHY_DATA_DIR = BASE_DIR / "data" / "iab_hierarchy"
+IAB_HIERARCHY_MODEL_DIR = BASE_DIR / "iab_hierarchy_model_output"
 
 DEFAULT_API_HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8008
@@ -26,7 +30,11 @@ DEFAULT_BENCHMARK_PATH = BASE_DIR / "examples" / "demo_prompt_suite.json"
 KNOWN_FAILURE_CASES_PATH = BASE_DIR / "examples" / "known_failure_cases.json"
 IAB_TAXONOMY_VERSION = "3.0"
 IAB_TAXONOMY_PATH = BASE_DIR / "data" / "iab-content" / "Content Taxonomy 3.0.tsv"
+IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
+IAB_DATASET_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "dataset_summary.json"
+IAB_HIERARCHY_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "hierarchy_dataset_summary.json"
 IAB_MAPPING_CASES_PATH = BASE_DIR / "examples" / "iab_mapping_cases.json"
+IAB_CROSS_VERTICAL_MAPPING_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_mapping_cases.json"
 
 INTENT_TYPE_LABELS = (
     "informational",
@@ -104,6 +112,30 @@ def _build_iab_labels(path: Path) -> tuple[str, ...]:
 
 
 IAB_LABELS = _build_iab_labels(IAB_TAXONOMY_PATH)
+
+
+def _build_iab_level_labels(path: Path, level: int) -> tuple[str, ...]:
+    labels: list[str] = []
+    seen: set[str] = set()
+    for row in _load_iab_taxonomy_rows(path):
+        parts = [
+            row.get(key, "").strip()
+            for key in ("Tier 1", "Tier 2", "Tier 3", "Tier 4")
+            if row.get(key, "").strip()
+        ]
+        if len(parts) < level:
+            continue
+        label = " > ".join(parts[:level])
+        if label not in seen:
+            labels.append(label)
+            seen.add(label)
+    return tuple(labels)
+
+
+IAB_TIER1_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 1)
+IAB_TIER2_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 2)
+IAB_TIER3_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 3)
+IAB_TIER4_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 4)
 
 
 def build_label_maps(labels: tuple[str, ...]) -> tuple[dict[str, int], dict[int, str]]:
@@ -221,8 +253,76 @@ IAB_HEAD_CONFIG = HeadConfig(
         "hard_cases": BASE_DIR / "data" / "iab" / "hard_cases.jsonl",
         "extended_cases": BASE_DIR / "data" / "iab" / "extended_cases.jsonl",
         "difficulty_benchmark": IAB_BENCHMARK_PATH,
+        "cross_vertical_benchmark": IAB_CROSS_VERTICAL_BENCHMARK_PATH,
     },
 )
+
+IAB_TIER1_HEAD_CONFIG = HeadConfig(
+    slug="iab_tier1",
+    task_name="content.iab.tier1",
+    model_name="distilbert-base-uncased",
+    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier1",
+    data_dir=IAB_HIERARCHY_DATA_DIR / "tier1",
+    label_field="iab_tier1_path",
+    labels=IAB_TIER1_LABELS,
+    max_length=96,
+    default_confidence_threshold=0.5,
+    target_accept_precision=0.8,
+    min_calibrated_confidence_threshold=0.45,
+    stress_suite_paths={},
+)
+
+IAB_TIER2_HEAD_CONFIG = HeadConfig(
+    slug="iab_tier2",
+    task_name="content.iab.tier2",
+    model_name="distilbert-base-uncased",
+    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier2",
+    data_dir=IAB_HIERARCHY_DATA_DIR / "tier2",
+    label_field="iab_tier2_path",
+    labels=IAB_TIER2_LABELS,
+    max_length=112,
+    default_confidence_threshold=0.46,
+    target_accept_precision=0.78,
+    min_calibrated_confidence_threshold=0.4,
+    stress_suite_paths={},
+)
+
+IAB_TIER3_HEAD_CONFIG = HeadConfig(
+    slug="iab_tier3",
+    task_name="content.iab.tier3",
+    model_name="distilbert-base-uncased",
+    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier3",
+    data_dir=IAB_HIERARCHY_DATA_DIR / "tier3",
+    label_field="iab_tier3_path",
+    labels=IAB_TIER3_LABELS,
+    max_length=128,
+    default_confidence_threshold=0.42,
+    target_accept_precision=0.76,
+    min_calibrated_confidence_threshold=0.38,
+    stress_suite_paths={},
+)
+
+IAB_TIER4_HEAD_CONFIG = HeadConfig(
+    slug="iab_tier4",
+    task_name="content.iab.tier4",
+    model_name="distilbert-base-uncased",
+    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier4",
+    data_dir=IAB_HIERARCHY_DATA_DIR / "tier4",
+    label_field="iab_tier4_path",
+    labels=IAB_TIER4_LABELS,
+    max_length=144,
+    default_confidence_threshold=0.4,
+    target_accept_precision=0.74,
+    min_calibrated_confidence_threshold=0.36,
+    stress_suite_paths={},
+)
+
+IAB_HIERARCHY_HEAD_CONFIGS = {
+    1: IAB_TIER1_HEAD_CONFIG,
+    2: IAB_TIER2_HEAD_CONFIG,
+    3: IAB_TIER3_HEAD_CONFIG,
+    4: IAB_TIER4_HEAD_CONFIG,
+}
 
 HEAD_CONFIGS = {
     INTENT_HEAD_CONFIG.slug: INTENT_HEAD_CONFIG,

@@ -121,8 +121,91 @@ class SequenceClassifierHead:
                 )
         return predictions
 
+    def predict_candidate_batch(
+        self,
+        texts: list[str],
+        candidate_labels: list[list[str]],
+        confidence_threshold: float | None = None,
+    ) -> list[dict]:
+        if not texts:
+            return []
+        if len(texts) != len(candidate_labels):
+            raise ValueError("texts and candidate_labels must have the same length")
+
+        effective_threshold = (
+            self.calibration.confidence_threshold
+            if confidence_threshold is None
+            else min(max(float(confidence_threshold), 0.0), 1.0)
+        )
+        predictions: list[dict] = []
+
+        for start in range(0, len(texts), self._predict_batch_size):
+            batch_texts = texts[start : start + self._predict_batch_size]
+            batch_candidates = candidate_labels[start : start + self._predict_batch_size]
+            raw_probs, calibrated_probs = self._predict_probs(batch_texts)
+            for raw_row, calibrated_row, labels in zip(raw_probs, calibrated_probs, batch_candidates):
+                label_ids = [self.config.label2id[label] for label in labels if label in self.config.label2id]
+                if not label_ids:
+                    predictions.append(
+                        {
+                            "label": None,
+                            "confidence": 0.0,
+                            "raw_confidence": 0.0,
+                            "candidate_mass": 0.0,
+                            "confidence_threshold": round_score(effective_threshold),
+                            "calibrated": self.calibration.calibrated,
+                            "meets_confidence_threshold": False,
+                        }
+                    )
+                    continue
+
+                calibrated_slice = calibrated_row[label_ids]
+                raw_slice = raw_row[label_ids]
+                calibrated_mass = float(calibrated_slice.sum().item())
+                raw_mass = float(raw_slice.sum().item())
+                if calibrated_mass <= 0:
+                    predictions.append(
+                        {
+                            "label": labels[0],
+                            "confidence": 0.0,
+                            "raw_confidence": 0.0,
+                            "candidate_mass": 0.0,
+                            "confidence_threshold": round_score(effective_threshold),
+                            "calibrated": self.calibration.calibrated,
+                            "meets_confidence_threshold": False,
+                        }
+                    )
+                    continue
+
+                normalized_calibrated = calibrated_slice / calibrated_mass
+                normalized_raw = raw_slice / max(raw_mass, 1e-9)
+                pred_offset = int(torch.argmax(normalized_calibrated).item())
+                pred_id = label_ids[pred_offset]
+                confidence = float(normalized_calibrated[pred_offset].item())
+                raw_confidence = float(normalized_raw[pred_offset].item())
+                predictions.append(
+                    {
+                        "label": self.model.config.id2label[pred_id],
+                        "confidence": round_score(confidence),
+                        "raw_confidence": round_score(raw_confidence),
+                        "candidate_mass": round_score(calibrated_mass),
+                        "confidence_threshold": round_score(effective_threshold),
+                        "calibrated": self.calibration.calibrated,
+                        "meets_confidence_threshold": confidence >= effective_threshold,
+                    }
+                )
+        return predictions
+
     def predict(self, text: str, confidence_threshold: float | None = None) -> dict:
         return self.predict_batch([text], confidence_threshold=confidence_threshold)[0]
+
+    def predict_candidates(
+        self,
+        text: str,
+        candidate_labels: list[str],
+        confidence_threshold: float | None = None,
+    ) -> dict:
+        return self.predict_candidate_batch([text], [candidate_labels], confidence_threshold=confidence_threshold)[0]
 
 
 @lru_cache(maxsize=None)

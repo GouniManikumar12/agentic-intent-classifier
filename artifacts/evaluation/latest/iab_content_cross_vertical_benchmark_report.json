@@ -1,0 +1,4337 @@
+{
+  "accepted_accuracy": 0.7273,
+  "accepted_coverage": 0.2444,
+  "accuracy": 0.3778,
+  "confusion_matrix_path": "artifacts/evaluation/latest/iab_content_cross_vertical_benchmark_confusion_matrix.csv",
+  "count": 90,
+  "dataset_path": "data/iab_cross_vertical_benchmark.jsonl",
+  "difficulty_breakdown": {
+    "easy": {
+      "accepted_accuracy": 0.625,
+      "accepted_coverage": 0.2667,
+      "accuracy": 0.3,
+      "count": 30,
+      "fallback_rate": 0.7333,
+      "macro_f1": 0.1825
+    },
+    "hard": {
+      "accepted_accuracy": 0.8333,
+      "accepted_coverage": 0.2,
+      "accuracy": 0.3,
+      "count": 30,
+      "fallback_rate": 0.8,
+      "macro_f1": 0.1724
+    },
+    "medium": {
+      "accepted_accuracy": 0.75,
+      "accepted_coverage": 0.2667,
+      "accuracy": 0.5333,
+      "count": 30,
+      "fallback_rate": 0.7333,
+      "macro_f1": 0.4074
+    }
+  },
+  "fallback_rate": 0.7556,
+  "head": "iab_content",
+  "macro_f1": 0.2124,
+  "per_class_metrics": {
+    "Attractions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Amusement and Theme Parks": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Bars & Restaurants": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Casinos & Gambling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Historic Site and Landmark Tours": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Malls & Shopping Centers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Museums & Galleries": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Nightclubs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Outdoor Activities": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Parks & Nature": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Theater Venues": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Attractions > Zoos & Aquariums": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Commercial Trucks": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Convertible": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Coupe": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Crossover": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Hatchback": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Microcar": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Minivan": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Off-Road Vehicles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Pickup Trucks": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > SUV": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Sedan": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Station Wagon": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Body Styles > Van": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Buying and Selling": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Automotive > Auto Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Parts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Recalls": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Rentals": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Repair": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Safety": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Shows": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Technology": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Technology > Auto Infotainment Technologies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Technology > Auto Navigation Systems": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Technology > Auto Safety Technologies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Budget Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Certified Pre-Owned Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Classic Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Concept Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Driverless Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Green Vehicles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Luxury Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Auto Type > Performance Cars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Car Culture": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Dash Cam Videos": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Motorcycles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Road-Side Assistance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Automotive > Scooters": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Books and Literature": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Books and Literature > Art and Photography": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Books and Literature > Comics and Graphic Novels": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Books and Literature > Fiction": {
+      "f1-score": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Books and Literature > Poetry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Accounting & Finance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Administration": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Angel Investment": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Bankruptcy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Business Loans": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Debt Factoring & Invoice Discounting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Mergers and Acquisitions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Private Equity": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Sale & Lease Back": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Banking & Finance > Venture Capital": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business I.T.": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Business and Finance > Business > Business Operations": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Business Utilities": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Consumer Issues": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Consumer Issues > Recalls": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Executive Leadership & Management": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Government Business": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Green Solutions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Human Resources": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Large Business": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Logistics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Marketing and Advertising": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Business and Finance > Business > Sales": {
+      "f1-score": 0.2222222222222222,
+      "precision": 0.16666666666666666,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Business and Finance > Business > Small and Medium-sized Business": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Business > Startups": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Commodities": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Currencies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Financial Crisis": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Financial Reform": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Financial Regulation": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Gasoline Prices": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Housing Market": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Interest Rates": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Economy > Job Market": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Advertising Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Agriculture": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Apparel Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Automotive Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Aviation Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Biotech and Biomedical Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Civil Engineering Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Construction Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Defense Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Education industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Entertainment Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Environmental Services Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Financial Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Food Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Healthcare Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Hospitality Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Information Services Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Legal Services Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Logistics and Transportation Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Management Consulting Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Manufacturing Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Mechanical and Industrial Engineering Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Media Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Metals Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Non-Profit Organizations": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Pharmaceutical Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Power and Energy Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Publishing Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Real Estate Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Retail Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Technology Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Business and Finance > Industries > Telecommunications Industry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Apprenticeships": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Career Advice": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Career Planning": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Job Search": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Careers > Job Search > Job Fairs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Job Search > Resume Writing and Advice": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Remote Working": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Careers > Vocational Training": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Crime": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Disasters": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Adult Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > College Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > College Education > College Planning": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > College Education > Postgraduate Education": {
+      "f1-score": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Education > College Education > Postgraduate Education > Professional School": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > College Education > Undergraduate Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Early Childhood Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Educational Assessment": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Educational Assessment > Standardized Testing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Homeschooling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Homework and Study": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Language Learning": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Online Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Education > Primary Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Private School": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Secondary Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Education > Special Education": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Movies": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Entertainment > Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Adult Album Alternative": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Adult Contemporary Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Adult Contemporary Music > Soft AC Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Adult Contemporary Music > Urban AC Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Alternative Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Blues": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Children's Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Classic Hits": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Classical Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > College Radio": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Comedy (Music and Audio)": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Contemporary Hits/Pop/Top 40": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Country Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Dance and Electronic Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Gospel Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Hip Hop Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Inspirational/New Age Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Jazz": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Oldies/Adult Standards": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > R&B/Soul/Funk": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Reggae": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Religious (Music and Audio)": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music > Album-oriented Rock": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music > Alternative Rock": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music > Classic Rock": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music > Hard Rock": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Rock Music > Soft Rock": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Songwriters/Folk": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Soundtracks, TV and Showtunes": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Urban Contemporary Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > Variety (Music and Audio)": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Music > World/International Music": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Entertainment > Television": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Events": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Events > Awards Shows": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Events > Business Expos & Conferences": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Events > Fan Conventions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Bereavement": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Dating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Divorce": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Eldercare": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Marriage and Civil Unions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Family and Relationships > Parenting > Adoption and Fostering": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Daycare and Pre-School": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Internet Safety": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Parenting Babies and Toddlers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Parenting Children Aged 4-11": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Parenting Teens": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Parenting > Special Needs Kids": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Family and Relationships > Single Life": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Costume": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Dance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Design": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Digital Arts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Fine Art Photography": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Modern Art": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Opera": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Fine Art > Theater": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Alcoholic Beverages": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Food & Drink > Barbecues and Grilling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Cooking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Desserts and Baking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Dining Out": {
+      "f1-score": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Food & Drink > Food Allergies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Food Movements": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Healthy Cooking and Eating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Non-Alcoholic Beverages": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Vegan Diets": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > Vegetarian Diets": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Food & Drink > World Cuisines": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Action/Adventure": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Animation & Anime": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Biographies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Comedy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Documentary": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Drama": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Factual": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Family/Children": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Fantasy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > History": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Holiday": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Horror": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Lifestyle": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Music Video": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Musical": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Mystery": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Nature": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Reality TV": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Romance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Science Fiction": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Soap Opera": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Special Interest (Indie/Art House)": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Sports Radio": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Talk Radio": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Talk Radio > Public Radio": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Talk Show": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > True Crime": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Western": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Genres > Young Adult": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Children's Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Fitness and Exercise": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Fitness and Exercise > Participant Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Fitness and Exercise > Running and Jogging": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Healthy Living > Men's Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Nutrition": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Senior Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Weight Loss": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness > Alternative Medicine": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness > Alternative Medicine > Herbs and Supplements": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness > Alternative Medicine > Holistic Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness > Physical Therapy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Wellness > Smoking Cessation": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Healthy Living > Women's Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Antiquing and Antiques": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Beadwork": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Candle and Soap Making": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Drawing and Sketching": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Jewelry Making": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Needlework": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Painting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Photography": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Scrapbooking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Arts and Crafts > Woodworking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Beekeeping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Birdwatching": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Cigars": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Collecting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Collecting > Comic Books": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Collecting > Stamps and Coins": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Content Production": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Content Production > Audio Production": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Content Production > Freelance Writing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Content Production > Screenwriting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Content Production > Video Production": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Games and Puzzles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Games and Puzzles > Board Games and Puzzles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Games and Puzzles > Card Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Games and Puzzles > Roleplaying Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Genealogy and Ancestry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Magic and Illusion": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Model Toys": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Musical Instruments": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Paranormal Phenomena": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Radio Control": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Sci-fi and Fantasy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Hobbies & Interests > Workshops and Classes": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Holidays": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Holidays > National & Civic Holidays": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Gardening": {
+      "f1-score": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Home & Garden > Home Appliances": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Home Entertaining": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Home Improvement": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Home & Garden > Home Security": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Indoor Environmental Quality": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Interior Decorating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Landscaping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Outdoor Decorating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Remodeling & Construction": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Home & Garden > Smart Home": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Law": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Medical Health > Cosmetic Medical Services": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Allergies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Blood Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Bone and Joint Conditions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Brain and Nervous System Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Cancer": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Cold and Flu": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Dental Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Diabetes": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Digestive Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Ear, Nose and Throat Conditions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Hormonal Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Menopause": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Endocrine and Metabolic Diseases > Thyroid Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Eye and Vision Conditions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Foot Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Heart and Cardiovascular Diseases": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Infectious Diseases": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Injuries": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Injuries > First Aid": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Lung and Respiratory Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Mental Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Reproductive Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Reproductive Health > Birth Control": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Reproductive Health > Infertility": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Reproductive Health > Pregnancy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Sexual Health": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Sexual Health > Sexual Conditions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Skin and Dermatology": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Sleep Disorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Diseases and Conditions > Substance Abuse": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Medical Tests": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Pharmaceutical Drugs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Surgery": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Medical Health > Vaccines": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Anniversary": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Baby Shower": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Bachelor Party": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Bachelorette Party": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Birth": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Birthday": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Funeral": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Graduation": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Prom": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Celebrations & Life Events > Wedding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Consumer Banking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Financial Assistance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Financial Assistance > Government Support and Welfare": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Financial Assistance > Student Financial Aid": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Financial Planning": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Personal Finance > Frugal Living": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Home Utilities": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Home Utilities > Gas and Electric": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Home Utilities > Internet Service Providers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Home Utilities > Phone Services": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Home Utilities > Water Services": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Health Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Home Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Life Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Motor Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Pet Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Insurance > Travel Insurance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Debt": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Debt > Credit Cards": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Debt > Home Financing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Debt > Personal Loans": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Debt > Student Loans": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Investing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Investing > Hedge Funds": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Investing > Mutual Funds": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Investing > Options": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Investing > Stocks and Bonds": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Personal Taxes": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Personal Finance > Retirement Planning": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Birds": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Cats": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Dogs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Fish and Aquariums": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Large Animals": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Pet Adoptions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Pet Supplies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Reptiles": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pets > Veterinary Medicine": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Politics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Politics > Civic affairs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Politics > Elections": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Politics > Political Issues & policy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Deaths": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Families": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Homes": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Pregnancy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Relationships": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Scandal": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Celebrity Style": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Pop Culture > Humor and Satire": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Apartments": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Developmental Sites": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Hotel Properties": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Houses": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Industrial Property": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Land and Farms": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Office Property": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Real Estate Buying and Selling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Real Estate Renting and Leasing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Real Estate > Retail Property": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Real Estate > Vacation Properties": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Agnosticism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Astrology": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Atheism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Buddhism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Christianity": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Hinduism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Islam": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Judaism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Sikhism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Religion & Spirituality > Spirituality": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Biological Sciences": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Chemistry": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Environment": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Genetics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Geography": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Geology": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Physics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Space and Astronomy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Science > Weather": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Adult & Explicit Sexual Content": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Arms & Ammunition": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Crime & Harmful Acts to Individuals, Society & Human Right Violations": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Death, Injury, or Military Conflict": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Debated Sensitive Social Issues": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Hate Speech and Acts of Aggression": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Illegal Drugs, Tobacco, eCigarettes, Vaping, Alcohol": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Obscenity and Profanity": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Online Piracy": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Spam or Harmful Content": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sensitive Topics > Terrorism": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Children's Games and Toys": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Coupons and Discounts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Flower Shopping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Gifts and Greetings Cards": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Grocery Shopping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Holiday Shopping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Household Supplies": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Lotteries and Scratchcards": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Party Supplies and Decorations": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Shopping > Sales and Promotions": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > American Football": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Australian Rules Football": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Auto Racing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Auto Racing > Motorcycle Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Badminton": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Baseball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Basketball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Beach Volleyball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Bodybuilding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Bowling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Boxing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Cheerleading": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > College Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > College Sports > College Baseball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > College Sports > College Basketball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > College Sports > College Football": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Cricket": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Cycling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Darts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Disabled Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Diving": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Equine Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Equine Sports > Horse Racing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Canoeing and Kayaking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Climbing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Paintball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Scuba Diving": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Skateboarding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Snowboarding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Surfing and Bodyboarding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Extreme Sports > Waterskiing and Wakeboarding": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Fantasy Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Field Hockey": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Figure Skating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Fishing Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Golf": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Gymnastics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Hunting and Shooting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Ice Hockey": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Inline Skating": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Lacrosse": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Martial Arts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Olympic Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Olympic Sports > Summer Olympic Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Olympic Sports > Winter Olympic Sports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Poker and Professional Gambling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Rodeo": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Rowing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Rugby": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Rugby > Rugby League": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Rugby > Rugby Union": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Sailing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Skiing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Snooker/Pool/Billiards": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Soccer": {
+      "f1-score": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Sports > Softball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Sports Equipment": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Squash": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Swimming": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Table Tennis": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Tennis": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Track and Field": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Volleyball": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Walking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Water Polo": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Weightlifting": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Sports > Wrestling": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Style & Fashion > Beauty": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Hair Care": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Makeup and Accessories": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Nail Care": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Natural and Organic Beauty": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Perfume and Fragrance": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Beauty > Skin Care": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Body Art": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Children's Clothing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Designer Clothing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Fashion Trends": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > High Fashion": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Accessories": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Accessories > Men's Jewelry and Watches": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Business Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Casual Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Formal Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Outerwear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Sportswear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Clothing > Men's Underwear and Sleepwear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Men's Fashion > Men's Shoes and Footwear": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Style & Fashion > Personal Care": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Personal Care > Bath and Shower": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Personal Care > Deodorant and Antiperspirant": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Personal Care > Oral care": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Personal Care > Shaving": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Street Style": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Accessories": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Accessories > Women's Glasses": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Accessories > Women's Handbags and Wallets": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Accessories > Women's Hats and Scarves": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Accessories > Women's Jewelry and Watches": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Business Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Casual Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Formal Wear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Intimates and Sleepwear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Outerwear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Clothing > Women's Sportswear": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Style & Fashion > Women's Fashion > Women's Shoes and Footwear": {
+      "f1-score": 0.5714285714285714,
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Technology & Computing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Artificial Intelligence": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 3.0
+    },
+    "Technology & Computing > Augmented Reality": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Networking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Peripherals": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications": {
+      "f1-score": 0.25,
+      "precision": 0.2,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > 3-D Graphics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Antivirus Software": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Browsers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Communication": {
+      "f1-score": 0.46153846153846156,
+      "precision": 0.3,
+      "recall": 1.0,
+      "support": 3.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Computer Animation": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Databases": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Desktop Publishing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Digital Audio": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Graphics Software": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Maps & Navigation": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Operating Systems": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Photo Editing Software": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Productivity": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Shareware and Freeware": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Video Software": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Computer Software and Applications > Web Conferencing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Data Storage and Warehousing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Desktops": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Technology & Computing > Computing > Information and Network Security": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Cloud Computing": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Email": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > IT and Internet Support": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Internet for Beginners": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Internet of Things": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Search": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Social Networking": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Web Design and HTML": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Web Development": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Computing > Internet > Web Hosting": {
+      "f1-score": 0.5454545454545454,
+      "precision": 0.375,
+      "recall": 1.0,
+      "support": 3.0
+    },
+    "Technology & Computing > Computing > Laptops": {
+      "f1-score": 0.8,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Technology & Computing > Computing > Programming Languages": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Consumer Electronics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Consumer Electronics > Cameras and Camcorders": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Consumer Electronics > Home Entertainment Systems": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Consumer Electronics > Smartphones": {
+      "f1-score": 0.75,
+      "precision": 0.6,
+      "recall": 1.0,
+      "support": 3.0
+    },
+    "Technology & Computing > Consumer Electronics > Tablets and E-readers": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Consumer Electronics > Wearable Technology": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Robotics": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Technology & Computing > Virtual Reality": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Accessories": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > Africa Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > Asia Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > Australia and Oceania Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > Europe Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > North America Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > Polar Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Locations > South America Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Preparation and Advice": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Adventure Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Air Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Beach Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Bed & Breakfasts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Budget Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Business Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Camping": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Cruises": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Day Trips": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Family Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Honeymoons and Getaways": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Hotels and Motels": {
+      "f1-score": 0.4,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "support": 3.0
+    },
+    "Travel > Travel Type > Rail Travel": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Road Trips": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Travel > Travel Type > Spas": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Console Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Mobile Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > PC Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Action Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Action-Adventure Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Adult Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Adventure Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Casino and Gambling Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Casual Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Educational Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Exercise and Fitness Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Family Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Horror Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > MMOs": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Music and Party Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Puzzle Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Racing Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Role-Playing Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Simulation Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Sports Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > Video Game Genres > Strategy Video Games": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "Video Gaming > eSports": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "War and Conflicts": {
+      "f1-score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0.0
+    },
+    "accuracy": 0.37777777777777777,
+    "macro avg": {
+      "f1-score": 0.016311963680384733,
+      "precision": 0.020353247984826933,
+      "recall": 0.016121384542437174,
+      "support": 90.0
+    },
+    "weighted avg": {
+      "f1-score": 0.38224368224368227,
+      "precision": 0.4769444444444444,
+      "recall": 0.37777777777777777,
+      "support": 90.0
+    }
+  },
+  "suite": "cross_vertical_benchmark",
+  "tier_metrics": {
+    "average_prediction_depth": 2.9667,
+    "error_buckets": {
+      "exact_match": 34,
+      "right_parent_wrong_deep_leaf": 14,
+      "right_tier1_wrong_tier2": 15,
+      "wrong_tier1": 27
+    },
+    "exact_path_accuracy": 0.3778,
+    "parent_safe_accuracy": 0.3778,
+    "tier1_accuracy": 0.7,
+    "tier2_accuracy": 0.5,
+    "tier3_accuracy": 0.5714,
+    "tier4_accuracy": 1.0
+  },
+  "view_metrics": {
+    "combined_path": {
+      "average_prediction_depth": 2.4667,
+      "error_buckets": {
+        "exact_match": 84,
+        "right_parent_wrong_deep_leaf": 6
+      },
+      "exact_path_accuracy": 0.9333,
+      "fallback_rate": 0.1333,
+      "parent_safe_accuracy": 0.9333,
+      "tier1_accuracy": 1.0,
+      "tier2_accuracy": 1.0,
+      "tier3_accuracy": 0.8571,
+      "tier4_accuracy": 0.5
+    },
+    "disagreements": {
+      "flat_vs_combined": 56,
+      "flat_vs_mapper": 57,
+      "mapper_vs_combined": 1
+    },
+    "flat_head": {
+      "accepted_coverage": 0.2444,
+      "average_prediction_depth": 2.9667,
+      "error_buckets": {
+        "exact_match": 30,
+        "right_parent_wrong_deep_leaf": 18,
+        "right_tier1_wrong_tier2": 15,
+        "wrong_tier1": 27
+      },
+      "exact_path_accuracy": 0.3333,
+      "parent_safe_accuracy": 0.3333,
+      "tier1_accuracy": 0.7,
+      "tier2_accuracy": 0.5,
+      "tier3_accuracy": 0.4524,
+      "tier4_accuracy": 0.5
+    },
+    "mapper_only": {
+      "average_prediction_depth": 2.4444,
+      "error_buckets": {
+        "exact_match": 83,
+        "parent_safe_stop": 1,
+        "right_parent_wrong_deep_leaf": 6
+      },
+      "exact_path_accuracy": 0.9222,
+      "parent_safe_accuracy": 0.9333,
+      "tier1_accuracy": 1.0,
+      "tier2_accuracy": 1.0,
+      "tier3_accuracy": 0.8333,
+      "tier4_accuracy": 0.3333
+    }
+  }
+}

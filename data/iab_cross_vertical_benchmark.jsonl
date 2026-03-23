@@ -1,0 +1,90 @@
+{"difficulty": "easy", "iab_path": "Automotive > Auto Buying and Selling", "source": "iab_cross_vertical_benchmark", "text": "Which car should I buy for commuting?"}
+{"difficulty": "medium", "iab_path": "Automotive > Auto Buying and Selling", "source": "iab_cross_vertical_benchmark", "text": "Best used SUV for a family of four"}
+{"difficulty": "hard", "iab_path": "Automotive > Auto Buying and Selling", "source": "iab_cross_vertical_benchmark", "text": "I need a shortlist of practical cars before making a purchase this month"}
+{"difficulty": "easy", "iab_path": "Business and Finance > Business > Sales", "source": "iab_cross_vertical_benchmark", "text": "What is CRM software?"}
+{"difficulty": "medium", "iab_path": "Business and Finance > Business > Sales", "source": "iab_cross_vertical_benchmark", "text": "HubSpot vs Zoho for a small team"}
+{"difficulty": "hard", "iab_path": "Business and Finance > Business > Sales", "source": "iab_cross_vertical_benchmark", "text": "Need software to manage leads and pipeline for a startup sales team"}
+{"difficulty": "easy", "iab_path": "Business and Finance > Business > Marketing and Advertising", "source": "iab_cross_vertical_benchmark", "text": "Best SEO tools for content teams"}
+{"difficulty": "medium", "iab_path": "Business and Finance > Business > Marketing and Advertising", "source": "iab_cross_vertical_benchmark", "text": "How should I compare ad attribution platforms?"}
+{"difficulty": "hard", "iab_path": "Business and Finance > Business > Marketing and Advertising", "source": "iab_cross_vertical_benchmark", "text": "Need software to measure channel performance across paid and organic campaigns"}
+{"difficulty": "easy", "iab_path": "Business and Finance > Business > Business I.T.", "source": "iab_cross_vertical_benchmark", "text": "How do I reset my work password?"}
+{"difficulty": "medium", "iab_path": "Business and Finance > Business > Business I.T.", "source": "iab_cross_vertical_benchmark", "text": "My employees keep getting locked out of their accounts"}
+{"difficulty": "hard", "iab_path": "Business and Finance > Business > Business I.T.", "source": "iab_cross_vertical_benchmark", "text": "Need identity and access software for login, permissions, and account security"}
+{"difficulty": "easy", "iab_path": "Food & Drink > Dining Out", "source": "iab_cross_vertical_benchmark", "text": "Book a table for six tonight"}
+{"difficulty": "medium", "iab_path": "Food & Drink > Dining Out", "source": "iab_cross_vertical_benchmark", "text": "Good restaurants for a client dinner downtown"}
+{"difficulty": "hard", "iab_path": "Food & Drink > Dining Out", "source": "iab_cross_vertical_benchmark", "text": "Need a place to eat tonight where I can make a reservation online"}
+{"difficulty": "easy", "iab_path": "Food & Drink > Alcoholic Beverages", "source": "iab_cross_vertical_benchmark", "text": "Which whiskey cocktail should I order?"}
+{"difficulty": "medium", "iab_path": "Food & Drink > Alcoholic Beverages", "source": "iab_cross_vertical_benchmark", "text": "Best vodka drinks for beginners"}
+{"difficulty": "hard", "iab_path": "Food & Drink > Alcoholic Beverages", "source": "iab_cross_vertical_benchmark", "text": "Want a spirit-forward drink recommendation, not a restaurant suggestion"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Artificial Intelligence", "source": "iab_cross_vertical_benchmark", "text": "What is intent classification in NLP?"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Artificial Intelligence", "source": "iab_cross_vertical_benchmark", "text": "How do large language models handle text classification?"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Artificial Intelligence", "source": "iab_cross_vertical_benchmark", "text": "Need the machine learning concept behind language understanding, not software to buy"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Computing > Computer Software and Applications", "source": "iab_cross_vertical_benchmark", "text": "Best workflow software for a small operations team"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Computing > Computer Software and Applications", "source": "iab_cross_vertical_benchmark", "text": "Need project management software for a distributed team"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Computing > Computer Software and Applications", "source": "iab_cross_vertical_benchmark", "text": "Looking for a business software platform to organize internal workflows"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Computing > Computer Software and Applications > Communication", "source": "iab_cross_vertical_benchmark", "text": "Best communication software for remote teams"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Computing > Computer Software and Applications > Communication", "source": "iab_cross_vertical_benchmark", "text": "Slack vs Teams for internal messaging"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Computing > Computer Software and Applications > Communication", "source": "iab_cross_vertical_benchmark", "text": "Need a workplace chat tool for cross-functional collaboration"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Computing > Internet > Web Hosting", "source": "iab_cross_vertical_benchmark", "text": "Vercel vs Netlify for website hosting"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Computing > Internet > Web Hosting", "source": "iab_cross_vertical_benchmark", "text": "Best hosting platform for a startup website"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Computing > Internet > Web Hosting", "source": "iab_cross_vertical_benchmark", "text": "Need a managed hosting provider to deploy and run our marketing site"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Computing > Laptops", "source": "iab_cross_vertical_benchmark", "text": "Which laptop should I buy for college?"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Computing > Laptops", "source": "iab_cross_vertical_benchmark", "text": "Best laptop for work and study under 1200"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Computing > Laptops", "source": "iab_cross_vertical_benchmark", "text": "Need a portable computer with good battery life for everyday work"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Computing > Desktops", "source": "iab_cross_vertical_benchmark", "text": "Best desktop for video editing"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Computing > Desktops", "source": "iab_cross_vertical_benchmark", "text": "Which desktop computer should I buy for a home office?"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Computing > Desktops", "source": "iab_cross_vertical_benchmark", "text": "Need a desktop PC with strong performance for creative work"}
+{"difficulty": "easy", "iab_path": "Technology & Computing > Consumer Electronics > Smartphones", "source": "iab_cross_vertical_benchmark", "text": "Best phone with a good camera under 700"}
+{"difficulty": "medium", "iab_path": "Technology & Computing > Consumer Electronics > Smartphones", "source": "iab_cross_vertical_benchmark", "text": "Should I buy an iPhone or Pixel this year?"}
+{"difficulty": "hard", "iab_path": "Technology & Computing > Consumer Electronics > Smartphones", "source": "iab_cross_vertical_benchmark", "text": "Need a new smartphone with strong battery life and a clean software experience"}
+{"difficulty": "easy", "iab_path": "Style & Fashion", "source": "iab_cross_vertical_benchmark", "text": "Best shoes under 100 dollars"}
+{"difficulty": "medium", "iab_path": "Style & Fashion", "source": "iab_cross_vertical_benchmark", "text": "Affordable fashion accessories for everyday wear"}
+{"difficulty": "hard", "iab_path": "Style & Fashion", "source": "iab_cross_vertical_benchmark", "text": "Need style recommendations for clothing and footwear without a specific brand in mind"}
+{"difficulty": "easy", "iab_path": "Style & Fashion > Women's Fashion > Women's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Best women's running shoes under 100 dollars"}
+{"difficulty": "medium", "iab_path": "Style & Fashion > Women's Fashion > Women's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Comfortable women's sneakers for walking all day"}
+{"difficulty": "hard", "iab_path": "Style & Fashion > Women's Fashion > Women's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Need women's footwear for commuting that looks polished but feels comfortable"}
+{"difficulty": "easy", "iab_path": "Style & Fashion > Men's Fashion > Men's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Best men's sneakers for daily wear"}
+{"difficulty": "medium", "iab_path": "Style & Fashion > Men's Fashion > Men's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Good men's dress shoes for office use"}
+{"difficulty": "hard", "iab_path": "Style & Fashion > Men's Fashion > Men's Shoes and Footwear", "source": "iab_cross_vertical_benchmark", "text": "Need men's footwear that works for workdays and weekend walking"}
+{"difficulty": "easy", "iab_path": "Travel > Travel Type > Hotels and Motels", "source": "iab_cross_vertical_benchmark", "text": "Need a hotel in Chicago for two nights"}
+{"difficulty": "medium", "iab_path": "Travel > Travel Type > Hotels and Motels", "source": "iab_cross_vertical_benchmark", "text": "Best hotels near Times Square for a weekend trip"}
+{"difficulty": "hard", "iab_path": "Travel > Travel Type > Hotels and Motels", "source": "iab_cross_vertical_benchmark", "text": "Looking for a place to stay during a work trip, not general travel advice"}
+{"difficulty": "easy", "iab_path": "Real Estate > Real Estate Renting and Leasing", "source": "iab_cross_vertical_benchmark", "text": "Apartments for rent near downtown Austin"}
+{"difficulty": "medium", "iab_path": "Real Estate > Real Estate Renting and Leasing", "source": "iab_cross_vertical_benchmark", "text": "Best neighborhoods to lease a two-bedroom apartment in Seattle"}
+{"difficulty": "hard", "iab_path": "Real Estate > Real Estate Renting and Leasing", "source": "iab_cross_vertical_benchmark", "text": "Need rental listings for a short move, not home-buying advice"}
+{"difficulty": "easy", "iab_path": "Healthy Living > Fitness and Exercise > Running and Jogging", "source": "iab_cross_vertical_benchmark", "text": "Best running plan for a first 10k"}
+{"difficulty": "medium", "iab_path": "Healthy Living > Fitness and Exercise > Running and Jogging", "source": "iab_cross_vertical_benchmark", "text": "How should I train for a half marathon as a beginner?"}
+{"difficulty": "hard", "iab_path": "Healthy Living > Fitness and Exercise > Running and Jogging", "source": "iab_cross_vertical_benchmark", "text": "Need guidance on building a weekly jogging routine without getting injured"}
+{"difficulty": "easy", "iab_path": "Sports > Soccer", "source": "iab_cross_vertical_benchmark", "text": "How do offside rules work in soccer?"}
+{"difficulty": "medium", "iab_path": "Sports > Soccer", "source": "iab_cross_vertical_benchmark", "text": "Best soccer drills for beginner players"}
+{"difficulty": "hard", "iab_path": "Sports > Soccer", "source": "iab_cross_vertical_benchmark", "text": "Need help understanding football tactics for the Premier League, not fantasy sports"}
+{"difficulty": "easy", "iab_path": "Books and Literature > Fiction", "source": "iab_cross_vertical_benchmark", "text": "Recommend a good fantasy novel to read"}
+{"difficulty": "medium", "iab_path": "Books and Literature > Fiction", "source": "iab_cross_vertical_benchmark", "text": "Best fiction books for a long flight"}
+{"difficulty": "hard", "iab_path": "Books and Literature > Fiction", "source": "iab_cross_vertical_benchmark", "text": "Looking for a character-driven novel, not comics or poetry"}
+{"difficulty": "easy", "iab_path": "Home & Garden > Home Improvement", "source": "iab_cross_vertical_benchmark", "text": "How much does a kitchen remodel usually cost?"}
+{"difficulty": "medium", "iab_path": "Home & Garden > Home Improvement", "source": "iab_cross_vertical_benchmark", "text": "Best tools for a DIY bathroom renovation"}
+{"difficulty": "hard", "iab_path": "Home & Garden > Home Improvement", "source": "iab_cross_vertical_benchmark", "text": "Need practical advice for upgrading an older house, not interior decor inspiration"}
+{"difficulty": "easy", "iab_path": "Education > Online Education", "source": "iab_cross_vertical_benchmark", "text": "Best online courses for learning Python"}
+{"difficulty": "medium", "iab_path": "Education > Online Education", "source": "iab_cross_vertical_benchmark", "text": "What are good platforms for remote professional classes?"}
+{"difficulty": "hard", "iab_path": "Education > Online Education", "source": "iab_cross_vertical_benchmark", "text": "Need internet-based training options I can finish after work hours"}
+{"difficulty": "easy", "iab_path": "Education > College Education > Postgraduate Education", "source": "iab_cross_vertical_benchmark", "text": "best universities to study masters"}
+{"difficulty": "medium", "iab_path": "Education > College Education > Postgraduate Education", "source": "iab_cross_vertical_benchmark", "text": "which graduate schools have strong data science programs"}
+{"difficulty": "hard", "iab_path": "Education > College Education > Postgraduate Education", "source": "iab_cross_vertical_benchmark", "text": "need postgraduate options for a master's degree, not short online courses"}
+{"difficulty": "easy", "iab_path": "Medical Health", "source": "iab_cross_vertical_benchmark", "text": "what do these allergy symptoms mean"}
+{"difficulty": "medium", "iab_path": "Medical Health", "source": "iab_cross_vertical_benchmark", "text": "when should i see a doctor for persistent knee pain"}
+{"difficulty": "hard", "iab_path": "Medical Health", "source": "iab_cross_vertical_benchmark", "text": "need medical advice about symptoms, not wellness or fitness tips"}
+{"difficulty": "easy", "iab_path": "Careers > Job Search", "source": "iab_cross_vertical_benchmark", "text": "best remote jobs for data analysts"}
+{"difficulty": "medium", "iab_path": "Careers > Job Search", "source": "iab_cross_vertical_benchmark", "text": "where should i look for product manager openings"}
+{"difficulty": "hard", "iab_path": "Careers > Job Search", "source": "iab_cross_vertical_benchmark", "text": "need help finding a new role and preparing for interviews"}
+{"difficulty": "easy", "iab_path": "Personal Finance > Financial Planning", "source": "iab_cross_vertical_benchmark", "text": "how much should i save each month"}
+{"difficulty": "medium", "iab_path": "Personal Finance > Financial Planning", "source": "iab_cross_vertical_benchmark", "text": "best budgeting approach for a growing family"}
+{"difficulty": "hard", "iab_path": "Personal Finance > Financial Planning", "source": "iab_cross_vertical_benchmark", "text": "need help planning savings and retirement, not business finance advice"}
+{"difficulty": "easy", "iab_path": "Family and Relationships > Parenting", "source": "iab_cross_vertical_benchmark", "text": "tips for parenting a toddler"}
+{"difficulty": "medium", "iab_path": "Family and Relationships > Parenting", "source": "iab_cross_vertical_benchmark", "text": "how do i help my teenager spend less time online"}
+{"difficulty": "hard", "iab_path": "Family and Relationships > Parenting", "source": "iab_cross_vertical_benchmark", "text": "need parenting advice for a child starting preschool"}
+{"difficulty": "easy", "iab_path": "Home & Garden > Gardening", "source": "iab_cross_vertical_benchmark", "text": "best plants for a small balcony garden"}
+{"difficulty": "medium", "iab_path": "Home & Garden > Gardening", "source": "iab_cross_vertical_benchmark", "text": "how often should i water tomato plants"}
+{"difficulty": "hard", "iab_path": "Home & Garden > Gardening", "source": "iab_cross_vertical_benchmark", "text": "need gardening advice for a shady backyard, not interior decor ideas"}
+{"difficulty": "easy", "iab_path": "Entertainment > Movies", "source": "iab_cross_vertical_benchmark", "text": "What movie should we watch tonight?"}
+{"difficulty": "medium", "iab_path": "Entertainment > Movies", "source": "iab_cross_vertical_benchmark", "text": "Best thriller movies from the last few years"}
+{"difficulty": "hard", "iab_path": "Entertainment > Movies", "source": "iab_cross_vertical_benchmark", "text": "Looking for film recommendations, not TV shows or music"}

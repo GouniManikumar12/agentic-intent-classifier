@@ -1,0 +1,178 @@
+{
+  "extended_cases_count": 8,
+  "graph_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/iab/taxonomy_graph.json",
+  "hard_cases_count": 8,
+  "head": "iab_content",
+  "label_count": 703,
+  "sample_label_counts": {
+    "Attractions": {
+      "depth": 1,
+      "hard_negative_count": 16,
+      "parent_safe_count": 0,
+      "test": 6,
+      "total": 40,
+      "train": 28,
+      "val": 6
+    },
+    "Attractions > Amusement and Theme Parks": {
+      "depth": 2,
+      "hard_negative_count": 8,
+      "parent_safe_count": 5,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Bars & Restaurants": {
+      "depth": 2,
+      "hard_negative_count": 4,
+      "parent_safe_count": 4,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Casinos & Gambling": {
+      "depth": 2,
+      "hard_negative_count": 8,
+      "parent_safe_count": 2,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Historic Site and Landmark Tours": {
+      "depth": 2,
+      "hard_negative_count": 9,
+      "parent_safe_count": 1,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Malls & Shopping Centers": {
+      "depth": 2,
+      "hard_negative_count": 7,
+      "parent_safe_count": 4,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Museums & Galleries": {
+      "depth": 2,
+      "hard_negative_count": 7,
+      "parent_safe_count": 4,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Nightclubs": {
+      "depth": 2,
+      "hard_negative_count": 7,
+      "parent_safe_count": 3,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Outdoor Activities": {
+      "depth": 2,
+      "hard_negative_count": 6,
+      "parent_safe_count": 5,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    },
+    "Attractions > Parks & Nature": {
+      "depth": 2,
+      "hard_negative_count": 6,
+      "parent_safe_count": 5,
+      "test": 6,
+      "total": 36,
+      "train": 24,
+      "val": 6
+    }
+  },
+  "target_rows_per_label_override": null,
+  "test": {
+    "count": 3183,
+    "hard_negative_count": 684,
+    "labels": 703,
+    "max_rows_per_label": 14,
+    "min_rows_per_label": 2,
+    "parent_safe_count": 190,
+    "rows_by_depth": {
+      "1": 286,
+      "2": 1932,
+      "3": 825,
+      "4": 140
+    },
+    "rows_by_evidence_strength": {
+      "moderate": 1893,
+      "strong": 1100,
+      "weak": 190
+    },
+    "rows_by_prompt_family": {
+      "action": 26,
+      "alias": 1124,
+      "contrastive": 684,
+      "discovery": 779,
+      "vague": 570
+    }
+  },
+  "train": {
+    "count": 12834,
+    "hard_negative_count": 2017,
+    "labels": 703,
+    "max_rows_per_label": 56,
+    "min_rows_per_label": 8,
+    "parent_safe_count": 675,
+    "rows_by_depth": {
+      "1": 1246,
+      "2": 7728,
+      "3": 3300,
+      "4": 560
+    },
+    "rows_by_evidence_strength": {
+      "moderate": 6979,
+      "strong": 5180,
+      "weak": 675
+    },
+    "rows_by_prompt_family": {
+      "action": 193,
+      "alias": 5345,
+      "contrastive": 2017,
+      "discovery": 3433,
+      "vague": 1846
+    }
+  },
+  "val": {
+    "count": 3183,
+    "hard_negative_count": 650,
+    "labels": 703,
+    "max_rows_per_label": 14,
+    "min_rows_per_label": 2,
+    "parent_safe_count": 199,
+    "rows_by_depth": {
+      "1": 286,
+      "2": 1932,
+      "3": 825,
+      "4": 140
+    },
+    "rows_by_evidence_strength": {
+      "moderate": 1858,
+      "strong": 1126,
+      "weak": 199
+    },
+    "rows_by_prompt_family": {
+      "action": 57,
+      "alias": 1136,
+      "contrastive": 650,
+      "discovery": 751,
+      "vague": 589
+    }
+  }
+}

@@ -50,6 +50,22 @@ def main() -> None:
         ]
     )
     run_step([python, "training/build_iab_difficulty_dataset.py"])
+    run_step([python, "training/build_iab_cross_vertical_benchmark.py"])
+    run_step([python, "training/build_iab_hierarchy_dataset.py"])
+    run_step(
+        [
+            python,
+            "training/train_iab_hierarchical.py",
+            "--epochs",
+            str(args.iab_epochs),
+            "--train-batch-size",
+            str(args.iab_train_batch_size),
+            "--eval-batch-size",
+            str(args.iab_eval_batch_size),
+            "--learning-rate",
+            str(args.iab_learning_rate),
+        ]
+    )
     run_step(
         [
             python,

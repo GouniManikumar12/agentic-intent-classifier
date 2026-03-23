@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from functools import lru_cache
 
 from iab_taxonomy import IabNode, get_iab_taxonomy
 
@@ -17,31 +18,118 @@ EXACT_PATH_HINTS = {
     ("zoho",): ("Business and Finance", "Business", "Sales"),
     ("salesforce",): ("Business and Finance", "Business", "Sales"),
     ("pipedrive",): ("Business and Finance", "Business", "Sales"),
-    ("password",): ("Business and Finance", "Business", "Business I.T."),
-    ("login",): ("Business and Finance", "Business", "Business I.T."),
-    ("log into",): ("Business and Finance", "Business", "Business I.T."),
-    ("account",): ("Business and Finance", "Business", "Business I.T."),
-    ("billing",): ("Business and Finance", "Business", "Business I.T."),
-    ("subscription",): ("Business and Finance", "Business", "Business I.T."),
-    ("restaurant",): ("Food & Drink", "Dining Out"),
+    ("password reset",): ("Business and Finance", "Business", "Business I.T."),
+    ("reset my password",): ("Business and Finance", "Business", "Business I.T."),
+    ("work password",): ("Business and Finance", "Business", "Business I.T."),
+    ("locked out of their accounts",): ("Business and Finance", "Business", "Business I.T."),
+    ("locked out of their account",): ("Business and Finance", "Business", "Business I.T."),
+    ("locked out of my account",): ("Business and Finance", "Business", "Business I.T."),
+    ("locked out of our accounts",): ("Business and Finance", "Business", "Business I.T."),
+    ("identity and access",): ("Business and Finance", "Business", "Business I.T."),
+    ("identity management",): ("Business and Finance", "Business", "Business I.T."),
+    ("access management",): ("Business and Finance", "Business", "Business I.T."),
+    ("account security",): ("Business and Finance", "Business", "Business I.T."),
+    ("single sign-on",): ("Business and Finance", "Business", "Business I.T."),
+    ("sso",): ("Business and Finance", "Business", "Business I.T."),
+    ("seo tools",): ("Business and Finance", "Business", "Marketing and Advertising"),
+    ("ad attribution",): ("Business and Finance", "Business", "Marketing and Advertising"),
+    ("campaign measurement",): ("Business and Finance", "Business", "Marketing and Advertising"),
+    ("channel performance",): ("Business and Finance", "Business", "Marketing and Advertising"),
+    ("paid and organic campaigns",): ("Business and Finance", "Business", "Marketing and Advertising"),
     ("book a table",): ("Food & Drink", "Dining Out"),
+    ("restaurant reservation",): ("Food & Drink", "Dining Out"),
+    ("client dinner",): ("Food & Drink", "Dining Out"),
+    ("place to eat",): ("Food & Drink", "Dining Out"),
+    ("reservation online",): ("Food & Drink", "Dining Out"),
     ("vodka",): ("Food & Drink", "Alcoholic Beverages"),
     ("whiskey",): ("Food & Drink", "Alcoholic Beverages"),
     ("whisky",): ("Food & Drink", "Alcoholic Beverages"),
     ("tequila",): ("Food & Drink", "Alcoholic Beverages"),
     ("cocktail",): ("Food & Drink", "Alcoholic Beverages"),
-    ("ai seo",): ("Business and Finance", "Business", "Marketing and Advertising"),
-    ("seo",): ("Business and Finance", "Business", "Marketing and Advertising"),
     ("intent classification",): ("Technology & Computing", "Artificial Intelligence"),
     ("nlp",): ("Technology & Computing", "Artificial Intelligence"),
     ("llm",): ("Technology & Computing", "Artificial Intelligence"),
+    ("machine learning",): ("Technology & Computing", "Artificial Intelligence"),
+    ("large language models",): ("Technology & Computing", "Artificial Intelligence"),
+    ("text classification",): ("Technology & Computing", "Artificial Intelligence"),
     ("laptop",): ("Technology & Computing", "Computing", "Laptops"),
+    ("portable computer",): ("Technology & Computing", "Computing", "Laptops"),
     ("desktop",): ("Technology & Computing", "Computing", "Desktops"),
     ("smartphone",): ("Technology & Computing", "Consumer Electronics", "Smartphones"),
     ("iphone",): ("Technology & Computing", "Consumer Electronics", "Smartphones"),
     ("android phone",): ("Technology & Computing", "Consumer Electronics", "Smartphones"),
+    ("project management software",): ("Technology & Computing", "Computing", "Computer Software and Applications"),
+    ("workflow software",): ("Technology & Computing", "Computing", "Computer Software and Applications"),
+    ("internal workflows",): ("Technology & Computing", "Computing", "Computer Software and Applications"),
+    ("internal messaging",): ("Technology & Computing", "Computing", "Computer Software and Applications", "Communication"),
+    ("workplace chat",): ("Technology & Computing", "Computing", "Computer Software and Applications", "Communication"),
+    ("cross-functional collaboration",): ("Technology & Computing", "Computing", "Computer Software and Applications", "Communication"),
     ("web hosting",): ("Technology & Computing", "Computing", "Internet", "Web Hosting"),
-    ("free trial",): ("Technology & Computing", "Computing", "Computer Software and Applications"),
+    ("website hosting",): ("Technology & Computing", "Computing", "Internet", "Web Hosting"),
+    ("managed hosting provider",): ("Technology & Computing", "Computing", "Internet", "Web Hosting"),
+    ("hotel",): ("Travel", "Travel Type", "Hotels and Motels"),
+    ("hotels",): ("Travel", "Travel Type", "Hotels and Motels"),
+    ("motel",): ("Travel", "Travel Type", "Hotels and Motels"),
+    ("place to stay",): ("Travel", "Travel Type", "Hotels and Motels"),
+    ("work trip",): ("Travel", "Travel Type", "Hotels and Motels"),
+    ("apartments for rent",): ("Real Estate", "Real Estate Renting and Leasing"),
+    ("for rent",): ("Real Estate", "Real Estate Renting and Leasing"),
+    ("rental listings",): ("Real Estate", "Real Estate Renting and Leasing"),
+    ("half marathon",): ("Healthy Living", "Fitness and Exercise", "Running and Jogging"),
+    ("10k",): ("Healthy Living", "Fitness and Exercise", "Running and Jogging"),
+    ("5k",): ("Healthy Living", "Fitness and Exercise", "Running and Jogging"),
+    ("jogging",): ("Healthy Living", "Fitness and Exercise", "Running and Jogging"),
+    ("soccer",): ("Sports", "Soccer"),
+    ("premier league",): ("Sports", "Soccer"),
+    ("offside",): ("Sports", "Soccer"),
+    ("fantasy novel",): ("Books and Literature", "Fiction"),
+    ("character-driven novel",): ("Books and Literature", "Fiction"),
+    ("kitchen remodel",): ("Home & Garden", "Home Improvement"),
+    ("bathroom renovation",): ("Home & Garden", "Home Improvement"),
+    ("home improvement",): ("Home & Garden", "Home Improvement"),
+    ("upgrading an older house",): ("Home & Garden", "Home Improvement"),
+    ("online courses",): ("Education", "Online Education"),
+    ("remote classes",): ("Education", "Online Education"),
+    ("internet-based training",): ("Education", "Online Education"),
+    ("professional classes",): ("Education", "Online Education"),
+    ("universities",): ("Education", "College Education"),
+    ("university",): ("Education", "College Education"),
+    ("masters",): ("Education", "College Education", "Postgraduate Education"),
+    ("master's degree",): ("Education", "College Education", "Postgraduate Education"),
+    ("universities to study masters",): ("Education", "College Education", "Postgraduate Education"),
+    ("graduate schools",): ("Education", "College Education", "Postgraduate Education"),
+    ("postgraduate",): ("Education", "College Education", "Postgraduate Education"),
+    ("medical advice",): ("Medical Health",),
+    ("see a doctor",): ("Medical Health",),
+    ("allergy symptoms",): ("Medical Health",),
+    ("job openings",): ("Careers", "Job Search"),
+    ("remote jobs",): ("Careers", "Job Search"),
+    ("new role",): ("Careers", "Job Search"),
+    ("product manager openings",): ("Careers", "Job Search"),
+    ("retirement",): ("Personal Finance", "Financial Planning"),
+    ("budgeting",): ("Personal Finance", "Financial Planning"),
+    ("save each month",): ("Personal Finance", "Financial Planning"),
+    ("parenting",): ("Family and Relationships", "Parenting"),
+    ("preschool",): ("Family and Relationships", "Parenting"),
+    ("toddler",): ("Family and Relationships", "Parenting"),
+    ("teenager",): ("Family and Relationships", "Parenting"),
+    ("garden",): ("Home & Garden", "Gardening"),
+    ("gardening",): ("Home & Garden", "Gardening"),
+    ("tomato plants",): ("Home & Garden", "Gardening"),
+    ("movie",): ("Entertainment", "Movies"),
+    ("movies",): ("Entertainment", "Movies"),
+    ("film recommendations",): ("Entertainment", "Movies"),
+    ("spirit-forward drink",): ("Food & Drink", "Alcoholic Beverages"),
+    ("women's shoes",): ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"),
+    ("women's sneakers",): ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"),
+    ("women's footwear",): ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"),
+    ("running shoes",): ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"),
+    ("women sneakers",): ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"),
+    ("men's shoes",): ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"),
+    ("men's sneakers",): ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"),
+    ("dress shoes",): ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"),
+    ("men's footwear",): ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"),
+    ("mens shoes",): ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"),
 }
 
 BUYING_TERMS = {
@@ -55,6 +143,11 @@ BUYING_TERMS = {
     "purchase",
     "shop",
     "shopping",
+    "under",
+    "cheap",
+    "affordable",
+    "budget",
+    "price",
 }
 
 COMMERCIAL_SUBTYPES = {
@@ -69,6 +162,603 @@ COMMERCIAL_SUBTYPES = {
     "contact_sales",
 }
 
+TIER1_HINTS = {
+    ("Automotive",): {
+        "car",
+        "cars",
+        "auto",
+        "automotive",
+        "vehicle",
+        "vehicles",
+        "suv",
+        "suvs",
+        "truck",
+        "trucks",
+        "sedan",
+        "ev",
+        "motorcycle",
+    },
+    ("Business and Finance",): {
+        "crm",
+        "sales",
+        "marketing",
+        "advertising",
+        "business",
+        "startup",
+        "founder",
+        "revenue",
+        "lead",
+        "pipeline",
+        "finance",
+        "accounting",
+    },
+    ("Food & Drink",): {
+        "restaurant",
+        "restaurants",
+        "dinner",
+        "lunch",
+        "brunch",
+        "eat",
+        "table",
+        "reservation",
+        "vodka",
+        "whiskey",
+        "cocktail",
+        "beer",
+        "wine",
+        "drink",
+        "drinks",
+    },
+    ("Style & Fashion",): {
+        "shoe",
+        "shoes",
+        "sneaker",
+        "sneakers",
+        "boot",
+        "boots",
+        "heel",
+        "heels",
+        "sandals",
+        "footwear",
+        "fashion",
+        "clothing",
+        "apparel",
+        "dress",
+        "outfit",
+        "bag",
+        "bags",
+        "jewelry",
+        "wristwatch",
+        "wristwatches",
+    },
+    ("Books and Literature",): {
+        "book",
+        "books",
+        "novel",
+        "novels",
+        "fiction",
+        "poetry",
+        "comics",
+        "graphic novel",
+        "read",
+        "reading",
+    },
+    ("Education",): {
+        "education",
+        "university",
+        "universities",
+        "college",
+        "campus",
+        "degree",
+        "degrees",
+        "masters",
+        "master's",
+        "postgraduate",
+        "graduate school",
+        "graduate schools",
+        "admissions",
+        "student",
+        "students",
+        "course",
+        "courses",
+        "class",
+        "classes",
+        "training",
+        "learn",
+        "learning",
+        "online course",
+        "certification",
+    },
+    ("Entertainment",): {
+        "movie",
+        "movies",
+        "film",
+        "films",
+        "cinema",
+        "soundtrack",
+        "music",
+        "tv",
+        "show",
+    },
+    ("Healthy Living",): {
+        "fitness",
+        "exercise",
+        "running",
+        "jogging",
+        "workout",
+        "marathon",
+        "10k",
+        "5k",
+        "nutrition",
+        "wellness",
+    },
+    ("Medical Health",): {
+        "medical",
+        "doctor",
+        "doctors",
+        "clinic",
+        "symptom",
+        "symptoms",
+        "diagnosis",
+        "treatment",
+        "allergy",
+        "allergies",
+        "pain",
+        "injury",
+        "mental health",
+    },
+    ("Home & Garden",): {
+        "home",
+        "house",
+        "garden",
+        "gardening",
+        "plants",
+        "plant",
+        "backyard",
+        "balcony garden",
+        "tomato",
+        "renovation",
+        "remodel",
+        "diy",
+        "kitchen",
+        "bathroom",
+        "home improvement",
+        "repair",
+    },
+    ("Real Estate",): {
+        "apartment",
+        "apartments",
+        "rent",
+        "rental",
+        "lease",
+        "leasing",
+        "home buying",
+        "house",
+        "houses",
+        "property",
+    },
+    ("Careers",): {
+        "career",
+        "careers",
+        "job",
+        "jobs",
+        "hiring",
+        "interview",
+        "resume",
+        "role",
+        "openings",
+        "salary",
+        "remote work",
+    },
+    ("Family and Relationships",): {
+        "parenting",
+        "parents",
+        "parent",
+        "toddler",
+        "teen",
+        "teenager",
+        "preschool",
+        "daycare",
+        "child",
+        "children",
+        "kids",
+    },
+    ("Personal Finance",): {
+        "budget",
+        "budgeting",
+        "retirement",
+        "saving",
+        "savings",
+        "debt",
+        "credit",
+        "loan",
+        "loans",
+        "investing",
+        "financial aid",
+        "taxes",
+    },
+    ("Sports",): {
+        "sports",
+        "soccer",
+        "football",
+        "premier league",
+        "goal",
+        "offside",
+        "training drills",
+        "athlete",
+        "match",
+    },
+    ("Technology & Computing",): {
+        "software",
+        "app",
+        "apps",
+        "computer",
+        "computers",
+        "tech",
+        "technology",
+        "laptop",
+        "laptops",
+        "desktop",
+        "desktops",
+        "smartphone",
+        "smartphones",
+        "phone",
+        "phones",
+        "mobile",
+        "hosting",
+        "website",
+        "deploy",
+        "deployment",
+        "ai",
+        "ml",
+        "nlp",
+        "communication",
+        "chat",
+        "messaging",
+    },
+    ("Travel",): {
+        "travel",
+        "trip",
+        "hotel",
+        "hotels",
+        "motel",
+        "stay",
+        "staying",
+        "accommodation",
+        "flight",
+        "vacation",
+    },
+}
+
+PATH_HINTS = {
+    ("Business and Finance", "Business"): {
+        "crm",
+        "sales",
+        "marketing",
+        "startup",
+        "business software",
+        "lead management",
+        "outbound",
+    },
+    ("Business and Finance", "Business", "Sales"): {
+        "crm",
+        "customer relationship management",
+        "lead management",
+        "pipeline",
+        "sales software",
+        "sales platform",
+        "hubspot",
+        "zoho",
+        "salesforce",
+        "pipedrive",
+        "outreach",
+        "apollo",
+    },
+    ("Business and Finance", "Business", "Marketing and Advertising"): {
+        "seo",
+        "ads",
+        "advertising",
+        "marketing software",
+        "marketing tools",
+        "campaign measurement",
+        "attribution",
+        "content marketing",
+    },
+    ("Business and Finance", "Business", "Business I.T."): {
+        "password",
+        "login",
+        "account",
+        "access",
+        "identity",
+        "permissions",
+        "reset",
+        "sso",
+        "mfa",
+        "billing",
+        "subscription",
+    },
+    ("Food & Drink", "Dining Out"): {
+        "restaurant",
+        "restaurants",
+        "dinner",
+        "lunch",
+        "brunch",
+        "eat",
+        "table",
+        "reservation",
+        "book a table",
+        "book dinner",
+    },
+    ("Food & Drink", "Alcoholic Beverages"): {
+        "vodka",
+        "whiskey",
+        "whisky",
+        "tequila",
+        "bourbon",
+        "beer",
+        "wine",
+        "cocktail",
+        "cocktails",
+        "gin",
+    },
+    ("Style & Fashion",): {
+        "shoes",
+        "shoe",
+        "sneakers",
+        "boots",
+        "footwear",
+        "fashion",
+        "apparel",
+    },
+    ("Books and Literature", "Fiction"): {
+        "fiction",
+        "novel",
+        "novels",
+        "fantasy novel",
+        "thriller novel",
+        "character-driven",
+        "read",
+    },
+    ("Education", "Online Education"): {
+        "online course",
+        "online courses",
+        "remote classes",
+        "online learning",
+        "internet-based training",
+        "elearning",
+        "e-learning",
+        "learning python",
+    },
+    ("Education", "College Education"): {
+        "college",
+        "university",
+        "universities",
+        "campus",
+        "college program",
+        "college planning",
+        "degree program",
+    },
+    ("Education", "College Education", "Postgraduate Education"): {
+        "masters",
+        "master's degree",
+        "graduate school",
+        "graduate schools",
+        "postgraduate",
+        "mba",
+        "ms degree",
+        "phd",
+    },
+    ("Entertainment", "Movies"): {
+        "movie",
+        "movies",
+        "film",
+        "films",
+        "cinema",
+        "thriller movies",
+        "watch tonight",
+    },
+    ("Healthy Living", "Fitness and Exercise", "Running and Jogging"): {
+        "running",
+        "jogging",
+        "marathon",
+        "half marathon",
+        "10k",
+        "5k",
+        "running plan",
+        "pace",
+    },
+    ("Home & Garden", "Home Improvement"): {
+        "home improvement",
+        "remodel",
+        "renovation",
+        "kitchen remodel",
+        "bathroom renovation",
+        "diy",
+        "upgrade house",
+    },
+    ("Home & Garden", "Gardening"): {
+        "garden",
+        "gardening",
+        "plants",
+        "plant care",
+        "tomato plants",
+        "balcony garden",
+        "backyard garden",
+    },
+    ("Medical Health",): {
+        "medical advice",
+        "doctor",
+        "symptoms",
+        "diagnosis",
+        "clinic",
+        "allergy symptoms",
+        "knee pain",
+    },
+    ("Careers", "Job Search"): {
+        "jobs",
+        "job search",
+        "job openings",
+        "remote jobs",
+        "new role",
+        "interview",
+        "resume",
+    },
+    ("Personal Finance", "Financial Planning"): {
+        "retirement",
+        "budgeting",
+        "save each month",
+        "financial planning",
+        "savings plan",
+        "budgeting approach",
+    },
+    ("Family and Relationships", "Parenting"): {
+        "parenting",
+        "toddler",
+        "teenager",
+        "preschool",
+        "child",
+        "children",
+        "kids",
+    },
+    ("Real Estate", "Real Estate Renting and Leasing"): {
+        "apartment",
+        "apartments",
+        "rent",
+        "rental",
+        "lease",
+        "leasing",
+        "for rent",
+        "rental listings",
+    },
+    ("Sports", "Soccer"): {
+        "soccer",
+        "offside",
+        "premier league",
+        "football tactics",
+        "soccer drills",
+        "midfielder",
+        "striker",
+    },
+    ("Travel", "Travel Type", "Hotels and Motels"): {
+        "hotel",
+        "hotels",
+        "motel",
+        "motels",
+        "place to stay",
+        "accommodation",
+        "lodging",
+        "weekend trip",
+    },
+    ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear"): {
+        "men's shoes",
+        "mens shoes",
+        "men sneakers",
+        "men boots",
+    },
+    ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear"): {
+        "women's shoes",
+        "womens shoes",
+        "women sneakers",
+        "women boots",
+        "heels",
+    },
+    ("Technology & Computing", "Artificial Intelligence"): {
+        "artificial intelligence",
+        "machine learning",
+        "nlp",
+        "llm",
+        "language model",
+        "intent classification",
+    },
+    ("Technology & Computing", "Computing"): {
+        "software",
+        "computer",
+        "laptop",
+        "desktop",
+        "hosting",
+        "web hosting",
+        "communication software",
+        "workflow software",
+    },
+    ("Technology & Computing", "Computing", "Computer Software and Applications"): {
+        "software",
+        "software applications",
+        "business software",
+        "productivity software",
+        "workflow software",
+        "project management",
+    },
+    ("Technology & Computing", "Computing", "Computer Software and Applications", "Communication"): {
+        "communication software",
+        "team chat",
+        "messaging",
+        "workplace communication",
+        "slack",
+        "microsoft teams",
+        "discord",
+    },
+    ("Technology & Computing", "Computing", "Internet", "Web Hosting"): {
+        "hosting",
+        "web hosting",
+        "deploy",
+        "deployment",
+        "website hosting",
+        "managed hosting",
+        "vercel",
+        "netlify",
+        "render",
+    },
+    ("Technology & Computing", "Computing", "Laptops"): {
+        "laptop",
+        "laptops",
+        "notebook",
+        "notebooks",
+        "ultrabook",
+        "macbook",
+    },
+    ("Technology & Computing", "Computing", "Desktops"): {
+        "desktop",
+        "desktops",
+        "desktop pc",
+        "desktop computer",
+        "workstation",
+        "gaming desktop",
+        "imac",
+    },
+    ("Technology & Computing", "Consumer Electronics"): {
+        "smartphone",
+        "smartphones",
+        "phone",
+        "phones",
+        "mobile",
+        "iphone",
+        "android",
+    },
+    ("Technology & Computing", "Consumer Electronics", "Smartphones"): {
+        "smartphone",
+        "smartphones",
+        "phone",
+        "phones",
+        "iphone",
+        "android",
+        "mobile phone",
+        "cell phone",
+    },
+    ("Automotive", "Auto Buying and Selling"): {
+        "car",
+        "cars",
+        "auto buying",
+        "used car",
+        "vehicle shopping",
+        "suv",
+        "truck",
+        "which car to buy",
+    },
+}
+
+GENDER_MALE_HINTS = {"men", "mens", "man's", "male", "guy", "guys"}
+GENDER_FEMALE_HINTS = {"women", "womens", "woman", "female", "ladies", "heels"}
+
 
 def round_score(value: float) -> float:
     return round(float(value), 4)
@@ -82,6 +772,8 @@ def normalize(text: str) -> str:
 
 
 def singularize(term: str) -> str:
+    if term in {"sales", "news"}:
+        return term
     if term.endswith("ies") and len(term) > 4:
         return term[:-3] + "y"
     if term.endswith("s") and not term.endswith("ss") and len(term) > 3:
@@ -93,6 +785,17 @@ def tokenize(text: str) -> set[str]:
     return {token for token in re.split(r"[^a-z0-9]+", normalize(text)) if token}
 
 
+def phrase_in_text(lowered: str, phrase: str) -> bool:
+    normalized_text = re.sub(r"[^a-z0-9]+", " ", normalize(lowered)).strip()
+    normalized_phrase = re.sub(r"[^a-z0-9]+", " ", normalize(phrase)).strip()
+    if not normalized_phrase:
+        return False
+    if f" {normalized_phrase} " not in f" {normalized_text} ":
+        return False
+    negation_pattern = rf"\bnot(?:\s+\w+){{0,2}}\s+{re.escape(normalized_phrase)}\b"
+    return re.search(negation_pattern, normalized_text) is None
+
+
 def path_terms(node: IabNode) -> set[str]:
     terms = {normalize(part) for part in node.path}
     terms.add(normalize(" ".join(node.path)))
@@ -102,21 +805,47 @@ def path_terms(node: IabNode) -> set[str]:
     return {term for term in terms if term}
 
 
-def path_token_overlap(node: IabNode, text_tokens: set[str]) -> float:
+@lru_cache(maxsize=1)
+def taxonomy_children() -> dict[tuple[str, ...], list[IabNode]]:
+    taxonomy = get_iab_taxonomy()
+    grouped: dict[tuple[str, ...], list[IabNode]] = {}
+    for node in taxonomy.nodes:
+        prefix = node.path[:-1]
+        grouped.setdefault(prefix, []).append(node)
+    for children in grouped.values():
+        children.sort(key=lambda node: node.path)
+    return grouped
+
+
+def immediate_children(prefix: tuple[str, ...]) -> list[IabNode]:
+    return taxonomy_children().get(prefix, [])
+
+
+def phrase_score(lowered: str, phrases: set[str]) -> tuple[float, bool]:
     score = 0.0
-    for part in node.path:
-        tokens = tokenize(part)
-        overlap = len(tokens & text_tokens)
-        if overlap:
-            weight = 1.2 if part == node.label else 0.6
-            score += overlap * weight
-    return score
+    exact = False
+    for phrase in phrases:
+        normalized_phrase = normalize(phrase)
+        if not normalized_phrase:
+            continue
+        if phrase_in_text(lowered, normalized_phrase):
+            token_count = len(tokenize(normalized_phrase))
+            score += 1.8 + (0.55 * min(token_count, 4))
+            exact = True
+    return score, exact
 
 
-def buying_bias(node: IabNode, text_tokens: set[str]) -> float:
+def token_overlap_score(tokens: set[str], candidate_tokens: set[str]) -> float:
+    if not tokens or not candidate_tokens:
+        return 0.0
+    overlap = len(tokens & candidate_tokens)
+    return overlap * 0.75
+
+
+def buying_bias(path: tuple[str, ...], text_tokens: set[str]) -> float:
     if not (text_tokens & BUYING_TERMS):
         return 0.0
-    node_tokens = tokenize(" ".join(node.path))
+    path_tokens = tokenize(" ".join(path))
     buyable_tokens = {
         "buying",
         "selling",
@@ -126,54 +855,82 @@ def buying_bias(node: IabNode, text_tokens: set[str]) -> float:
         "laptops",
         "desktops",
         "smartphones",
-        "tablets",
-        "cameras",
-        "camcorders",
-        "wearable",
+        "phones",
         "hosting",
-        "rentals",
-        "loans",
-        "estate",
-        "travel",
-        "hotel",
-        "flight",
+        "dining",
+        "restaurants",
+        "alcoholic",
+        "beverages",
+        "fashion",
+        "footwear",
+        "shopping",
     }
-    return 1.5 if node_tokens & buyable_tokens else 0.0
+    return 1.25 if path_tokens & buyable_tokens else 0.0
 
 
-def score_node(
+def candidate_hint_set(path: tuple[str, ...]) -> set[str]:
+    hints = set(PATH_HINTS.get(path, set()))
+    if len(path) == 1:
+        hints.update(TIER1_HINTS.get(path, set()))
+    return hints
+
+
+def candidate_score(
     node: IabNode,
     lowered: str,
     text_tokens: set[str],
     intent_type: str,
     subtype: str,
     decision_phase: str,
-) -> tuple[float, str]:
+) -> tuple[float, bool]:
     score = 0.0
-    mapping_mode = "nearest_equivalent"
+    exact = False
 
-    for term in path_terms(node):
-        if not term:
-            continue
-        if term in lowered:
-            score += 4.0 if term == normalize(node.label) else 2.0
-            if term == normalize(node.label):
-                mapping_mode = "exact"
+    term_hits, term_exact = phrase_score(lowered, path_terms(node))
+    score += term_hits
+    exact = exact or term_exact
 
-    score += path_token_overlap(node, text_tokens)
-    score += buying_bias(node, text_tokens)
+    hint_hits, hint_exact = phrase_score(lowered, candidate_hint_set(node.path))
+    score += hint_hits
+    exact = exact or hint_exact
 
-    if subtype in COMMERCIAL_SUBTYPES and decision_phase in {"consideration", "decision", "action"}:
-        score += buying_bias(node, BUYING_TERMS) * 0.6
+    score += token_overlap_score(text_tokens, tokenize(" ".join(node.path)))
+    score += buying_bias(node.path, text_tokens)
 
-    if intent_type == "commercial" and "business" in tokenize(" ".join(node.path)):
-        score += 0.2
-    if decision_phase == "support" and normalize(node.label) in {"business i.t.", "it and internet support"}:
+    if decision_phase == "support" and node.path == ("Business and Finance", "Business", "Business I.T."):
         score += 2.0
-    if subtype in {"comparison", "evaluation", "provider_selection"} and normalize(node.label) == "sales":
-        score += 1.0
+    if subtype in {"comparison", "evaluation", "provider_selection"} and node.path == (
+        "Business and Finance",
+        "Business",
+        "Sales",
+    ):
+        score += 1.4
+    if subtype in COMMERCIAL_SUBTYPES and node.path == (
+        "Technology & Computing",
+        "Computing",
+        "Computer Software and Applications",
+        "Communication",
+    ):
+        score += 0.8
+    if intent_type == "commercial" and node.path[:1] in {
+        ("Automotive",),
+        ("Business and Finance",),
+        ("Technology & Computing",),
+        ("Style & Fashion",),
+        ("Food & Drink",),
+    }:
+        score += 0.3
 
-    return score, mapping_mode
+    if node.path == ("Style & Fashion", "Men's Fashion", "Men's Shoes and Footwear") and not (
+        text_tokens & GENDER_MALE_HINTS
+    ):
+        score -= 0.8
+    if node.path == ("Style & Fashion", "Women's Fashion", "Women's Shoes and Footwear") and not (
+        text_tokens & GENDER_FEMALE_HINTS
+    ):
+        score -= 0.8
+
+    return score, exact
 
 
 def fallback_path(intent_type: str, subtype: str, decision_phase: str) -> tuple[str, ...]:
@@ -186,43 +943,104 @@ def fallback_path(intent_type: str, subtype: str, decision_phase: str) -> tuple[
     return ("Business and Finance", "Business")
 
 
-def score_targets(text: str, intent_type: str, subtype: str, decision_phase: str) -> tuple[tuple[str, ...], str, float]:
-    taxonomy = get_iab_taxonomy()
-    lowered = normalize(text)
-    text_tokens = tokenize(lowered)
-    path_scores = {node.path: [0.0, "nearest_equivalent"] for node in taxonomy.nodes}
+def best_child(
+    prefix: tuple[str, ...],
+    lowered: str,
+    text_tokens: set[str],
+    intent_type: str,
+    subtype: str,
+    decision_phase: str,
+) -> tuple[IabNode | None, float, float, bool]:
+    candidates = immediate_children(prefix)
+    if not candidates:
+        return None, 0.0, 0.0, False
 
+    scored = []
+    for node in candidates:
+        score, exact = candidate_score(node, lowered, text_tokens, intent_type, subtype, decision_phase)
+        scored.append((node, score, exact))
+
+    scored.sort(key=lambda item: (item[1], len(item[0].path), item[0].path), reverse=True)
+    best_node, best_score, best_exact = scored[0]
+    second_score = scored[1][1] if len(scored) > 1 else 0.0
+    return best_node, best_score, second_score, best_exact
+
+
+def should_descend(
+    prefix: tuple[str, ...],
+    best_score: float,
+    second_score: float,
+    best_exact: bool,
+) -> bool:
+    depth = len(prefix) + 1
+    min_score = {1: 1.6, 2: 2.2, 3: 2.6, 4: 2.8}[depth]
+    min_margin = {1: 0.2, 2: 0.35, 3: 0.55, 4: 0.7}[depth]
+    if best_score < min_score:
+        return False
+    if best_exact:
+        return True
+    return (best_score - second_score) >= min_margin
+
+
+def exact_path_override(lowered: str) -> tuple[tuple[str, ...], str, float] | None:
+    best_match: tuple[int, int, tuple[str, ...]] | None = None
     for hints, path in EXACT_PATH_HINTS.items():
-        if any(hint in lowered for hint in hints):
-            path_scores[path][0] += 8.0
-            path_scores[path][1] = "exact"
+        matched_token_counts = [len(tokenize(hint)) for hint in hints if phrase_in_text(lowered, hint)]
+        if not matched_token_counts:
+            continue
+        match = (max(matched_token_counts), len(path), path)
+        if best_match is None or match > best_match:
+            best_match = match
+    if best_match is None:
+        return None
+    return best_match[2], "exact", 0.92
 
-    for node in taxonomy.nodes:
-        score, mapping_mode = score_node(node, lowered, text_tokens, intent_type, subtype, decision_phase)
-        path_scores[node.path][0] += score
-        if mapping_mode == "exact":
-            path_scores[node.path][1] = "exact"
 
-    best_path, (best_score, best_mode) = max(
-        path_scores.items(),
-        key=lambda item: (item[1][0], len(item[0]), item[0]),
-    )
-    sorted_scores = sorted((value[0] for value in path_scores.values()), reverse=True)
-    second_score = sorted_scores[1] if len(sorted_scores) > 1 else 0.0
+def score_targets(text: str, intent_type: str, subtype: str, decision_phase: str) -> tuple[tuple[str, ...], str, float]:
+    lowered = normalize(text)
+    override = exact_path_override(lowered)
+    if override is not None:
+        return override
 
-    if best_score <= 0:
-        best_path = fallback_path(intent_type, subtype, decision_phase)
-        best_mode = "nearest_equivalent"
-        best_score = 1.0
-        second_score = 0.0
+    text_tokens = tokenize(lowered)
+    selected_path: tuple[str, ...] | None = None
+    mapping_mode = "nearest_equivalent"
+    total_score = 0.0
+    total_margin = 0.0
+    prefix: tuple[str, ...] = ()
 
-    margin = best_score - second_score
-    confidence = 0.46 + min(best_score, 8.0) * 0.05 + min(margin, 4.0) * 0.04
-    confidence = max(0.48, min(confidence, 0.97))
-    if best_score < 3.0:
-        best_mode = "nearest_equivalent"
+    for _depth in range(4):
+        best_node, best_score, second_score, best_exact = best_child(
+            prefix,
+            lowered,
+            text_tokens,
+            intent_type,
+            subtype,
+            decision_phase,
+        )
+        if best_node is None or not should_descend(prefix, best_score, second_score, best_exact):
+            break
+        prefix = best_node.path
+        selected_path = prefix
+        total_score += best_score
+        total_margin += max(best_score - second_score, 0.0)
+        if best_exact and len(prefix) >= 3:
+            mapping_mode = "exact"
 
-    return best_path, best_mode, round_score(confidence)
+    if selected_path is None:
+        selected_path = fallback_path(intent_type, subtype, decision_phase)
+        mapping_mode = "nearest_equivalent"
+        total_score = 1.0
+        total_margin = 0.0
+
+    depth = len(selected_path)
+    confidence = 0.47 + (depth * 0.07) + min(total_score, 10.0) * 0.025 + min(total_margin, 4.0) * 0.03
+    confidence = max(0.5, min(confidence, 0.97))
+
+    if depth <= 2:
+        mapping_mode = "nearest_equivalent"
+
+    return selected_path, mapping_mode, round_score(confidence)
 
 
 def map_iab_content(text: str, intent_type: str, subtype: str, decision_phase: str) -> dict:

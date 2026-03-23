@@ -17,11 +17,17 @@ from config import (
     DEFAULT_BENCHMARK_PATH,
     EVALUATION_ARTIFACTS_DIR,
     HEAD_CONFIGS,
+    IAB_CROSS_VERTICAL_MAPPING_CASES_PATH,
     IAB_MAPPING_CASES_PATH,
     KNOWN_FAILURE_CASES_PATH,
     ensure_artifact_dirs,
 )
-from evaluation.regression_suite import evaluate_iab_mapping_cases, evaluate_known_failure_cases
+from evaluation.regression_suite import (
+    evaluate_iab_cross_vertical_cases,
+    evaluate_iab_mapping_cases,
+    evaluate_known_failure_cases,
+)
+from evaluation.iab_quality import compute_path_metrics, evaluate_iab_views, path_from_label
 from model_runtime import get_head
 from schemas import validate_classify_response
 
@@ -106,6 +112,11 @@ def evaluate_head_dataset(head_name: str, dataset_path: Path, suite_name: str, o
         "per_class_metrics": report,
         "confusion_matrix_path": str(confusion_path),
     }
+    if head_name == "iab_content":
+        true_paths = [path_from_label(row[config.label_field]) for row in rows]
+        pred_paths = [path_from_label(label) for label in y_pred]
+        summary["tier_metrics"] = compute_path_metrics(true_paths, pred_paths)
+        summary["view_metrics"] = evaluate_iab_views(rows)
     if difficulty_breakdown is not None:
         summary["difficulty_breakdown"] = difficulty_breakdown
     write_json(output_dir / f"{head_name}_{suite_name}_report.json", summary)
@@ -161,6 +172,10 @@ def main() -> None:
     summary["combined"]["demo_benchmark"] = evaluate_combined_benchmark(DEFAULT_BENCHMARK_PATH, output_dir)
     summary["combined"]["known_failure_regression"] = evaluate_known_failure_cases(KNOWN_FAILURE_CASES_PATH, output_dir)
     summary["combined"]["iab_mapping_regression"] = evaluate_iab_mapping_cases(IAB_MAPPING_CASES_PATH, output_dir)
+    summary["combined"]["iab_cross_vertical_regression"] = evaluate_iab_cross_vertical_cases(
+        IAB_CROSS_VERTICAL_MAPPING_CASES_PATH,
+        output_dir,
+    )
     write_json(output_dir / "summary.json", summary)
     compact_summary = {
         "heads": {
@@ -176,6 +191,11 @@ def main() -> None:
                         "fallback_rate",
                     )
                 }
+                | (
+                    {"tier_metrics": head_summary["test"]["tier_metrics"]}
+                    if "tier_metrics" in head_summary["test"]
+                    else {}
+                )
             }
             for head_name, head_summary in summary["heads"].items()
         },
@@ -192,6 +212,12 @@ def main() -> None:
                 "passed": summary["combined"]["iab_mapping_regression"]["passed"],
                 "failed": summary["combined"]["iab_mapping_regression"]["failed"],
                 "by_status": summary["combined"]["iab_mapping_regression"]["by_status"],
+            },
+            "iab_cross_vertical_regression": {
+                "count": summary["combined"]["iab_cross_vertical_regression"]["count"],
+                "passed": summary["combined"]["iab_cross_vertical_regression"]["passed"],
+                "failed": summary["combined"]["iab_cross_vertical_regression"]["failed"],
+                "by_status": summary["combined"]["iab_cross_vertical_regression"]["by_status"],
             },
         },
         "summary_path": str(output_dir / "summary.json"),

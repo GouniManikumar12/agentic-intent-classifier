@@ -92,3 +92,7 @@ def evaluate_known_failure_cases(cases_path: Path, output_dir: Path) -> dict:
 
 def evaluate_iab_mapping_cases(cases_path: Path, output_dir: Path) -> dict:
     return evaluate_case_file(cases_path, output_dir, "iab_mapping_regression.json")
+
+
+def evaluate_iab_cross_vertical_cases(cases_path: Path, output_dir: Path) -> dict:
+    return evaluate_case_file(cases_path, output_dir, "iab_cross_vertical_regression.json")

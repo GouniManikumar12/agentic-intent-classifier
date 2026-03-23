@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import csv
+import json
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from config import IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION
+from config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION
 
 
 @dataclass(frozen=True)
@@ -28,6 +29,15 @@ class IabTaxonomy:
     def __init__(self, nodes: list[IabNode]):
         self.nodes = nodes
         self._path_index = {node.path: node for node in nodes}
+        self._children_index: dict[tuple[str, ...], list[IabNode]] = {}
+        self._level_index: dict[int, list[IabNode]] = {}
+        for node in nodes:
+            self._children_index.setdefault(node.path[:-1], []).append(node)
+            self._level_index.setdefault(node.level, []).append(node)
+        for children in self._children_index.values():
+            children.sort(key=lambda item: item.path)
+        for level_nodes in self._level_index.values():
+            level_nodes.sort(key=lambda item: item.path)
 
     def get_node(self, path: tuple[str, ...]) -> IabNode:
         if path not in self._path_index:
@@ -37,6 +47,50 @@ class IabTaxonomy:
     def build_level(self, path: tuple[str, ...]) -> dict:
         node = self.get_node(path)
         return {"id": node.unique_id, "label": node.label}
+
+    def has_path(self, path: tuple[str, ...]) -> bool:
+        return path in self._path_index
+
+    def immediate_children(self, prefix: tuple[str, ...]) -> list[IabNode]:
+        return list(self._children_index.get(prefix, []))
+
+    def siblings(self, path: tuple[str, ...]) -> list[IabNode]:
+        node = self.get_node(path)
+        return [candidate for candidate in self._children_index.get(path[:-1], []) if candidate.path != node.path]
+
+    def level_nodes(self, level: int) -> list[IabNode]:
+        return list(self._level_index.get(level, []))
+
+    def to_training_graph(self) -> dict:
+        nodes = []
+        for node in self.nodes:
+            child_nodes = self.immediate_children(node.path)
+            sibling_nodes = self.siblings(node.path)
+            nodes.append(
+                {
+                    "node_id": node.unique_id,
+                    "parent_id": node.parent_id,
+                    "level": node.level,
+                    "label": node.label,
+                    "path": list(node.path),
+                    "path_label": node.path_label,
+                    "child_ids": [child.unique_id for child in child_nodes],
+                    "child_paths": [child.path_label for child in child_nodes],
+                    "sibling_ids": [sibling.unique_id for sibling in sibling_nodes],
+                    "sibling_paths": [sibling.path_label for sibling in sibling_nodes],
+                    "canonical_surface_name": node.label,
+                }
+            )
+        return {
+            "taxonomy": "IAB Content Taxonomy",
+            "taxonomy_version": IAB_TAXONOMY_VERSION,
+            "node_count": len(nodes),
+            "level_counts": {
+                f"tier{level}": len(self.level_nodes(level))
+                for level in range(1, 5)
+            },
+            "nodes": nodes,
+        }
 
     def build_content_object(self, path: tuple[str, ...], mapping_mode: str, mapping_confidence: float) -> dict:
         if not path:
@@ -117,3 +171,10 @@ def get_iab_taxonomy() -> IabTaxonomy:
             )
         )
     return IabTaxonomy(nodes)
+
+
+def write_training_graph(path: Path = IAB_TAXONOMY_GRAPH_PATH) -> Path:
+    taxonomy = get_iab_taxonomy()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(taxonomy.to_training_graph(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return path
