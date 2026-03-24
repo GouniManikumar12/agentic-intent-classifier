@@ -84,7 +84,7 @@ Generated model weights are intentionally not committed.
   - `intent_type`
   - `intent_subtype`
   - `decision_phase`
-- resolves `iab_content` through a local embedding index over taxonomy nodes
+- resolves `iab_content` through a local embedding index over taxonomy nodes plus generic label/path reranking
 - applies calibration artifacts when present
 - computes `commercial_score`
 - applies fallback when confidence is too weak or policy-safe blocking is required
@@ -107,7 +107,7 @@ Generated model weights are intentionally not committed.
 - [schemas.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/schemas.py): request/response validation
 - [demo_api.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/demo_api.py): local validated API
 - [iab_taxonomy.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_taxonomy.py): full taxonomy parser/index
-- [iab_retrieval.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_retrieval.py): local taxonomy embedding index builder and cosine retrieval runtime
+- [iab_retrieval.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_retrieval.py): local taxonomy embedding index builder and generic retrieval/reranking runtime
 - [training/build_full_intent_taxonomy_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_full_intent_taxonomy_dataset.py): separate synthetic intent augmentation dataset
 - [training/build_intent_type_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_intent_type_difficulty_dataset.py): extra `intent_type` augmentation plus held-out difficulty benchmark
 - [training/build_decision_phase_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_decision_phase_difficulty_dataset.py): extra `decision_phase` augmentation plus held-out difficulty benchmark
@@ -175,7 +175,22 @@ cd agentic-intent-classifier
 python3 training/build_iab_taxonomy_embeddings.py
 ```
 
-By default this uses `sentence-transformers/all-MiniLM-L6-v2`. If you want to point retrieval at a different embedding model, set `IAB_RETRIEVAL_MODEL_NAME_OVERRIDE` before building the index.
+By default this uses `Alibaba-NLP/gte-Qwen2-1.5B-instruct`. The retrieval runtime applies the model's query-side instruction format and last-token pooling, matching the Hugging Face usage guidance. If you want to point retrieval at a different embedding model, set `IAB_RETRIEVAL_MODEL_NAME_OVERRIDE` before building the index.
+
+Open-source users can swap in their own embedding model, but the contract is:
+
+- query embeddings and taxonomy-node embeddings must be produced by the same model and model revision
+- after changing models, you must rebuild `artifacts/iab/taxonomy_embeddings.pt`
+- the repository only tests and supports the default model path out of the box
+- not every Hugging Face embedding model is drop-in compatible with this runtime; some require custom pooling, query instructions, or `trust_remote_code`
+
+Example override:
+
+```bash
+cd agentic-intent-classifier
+export IAB_RETRIEVAL_MODEL_NAME_OVERRIDE=mixedbread-ai/mxbai-embed-large-v1
+python3 training/build_iab_taxonomy_embeddings.py
+```
 
 This writes:
 

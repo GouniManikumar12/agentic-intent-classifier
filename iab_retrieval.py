@@ -21,6 +21,38 @@ from config import (
 )
 from iab_taxonomy import IabNode, get_iab_taxonomy, path_to_label
 
+RETRIEVAL_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "best",
+    "buy",
+    "for",
+    "from",
+    "how",
+    "i",
+    "in",
+    "is",
+    "it",
+    "me",
+    "my",
+    "need",
+    "of",
+    "on",
+    "or",
+    "should",
+    "the",
+    "to",
+    "tonight",
+    "what",
+    "which",
+    "with",
+}
+GTE_QWEN_QUERY_INSTRUCTION = "Given a user query, retrieve the most relevant IAB content taxonomy category."
+
 
 def round_score(value: float) -> float:
     return round(float(value), 4)
@@ -30,6 +62,29 @@ def _normalize_keyword(value: str) -> str:
     value = value.lower().replace("&", " and ")
     value = re.sub(r"[^a-z0-9]+", " ", value)
     return " ".join(value.split())
+
+
+def _keyword_tokens(value: str) -> set[str]:
+    return {
+        token
+        for token in _normalize_keyword(value).split()
+        if token and token not in RETRIEVAL_STOPWORDS and len(token) > 1
+    }
+
+
+def _is_gte_qwen_model(model_name: str) -> bool:
+    normalized = model_name.lower()
+    return "gte-qwen" in normalized
+
+
+def _last_token_pool(last_hidden_state: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+    left_padding = bool(torch.all(attention_mask[:, -1] == 1))
+    if left_padding:
+        return last_hidden_state[:, -1]
+
+    sequence_lengths = attention_mask.sum(dim=1) - 1
+    batch_indices = torch.arange(last_hidden_state.shape[0], device=last_hidden_state.device)
+    return last_hidden_state[batch_indices, sequence_lengths]
 
 
 def _node_keywords(node: IabNode) -> list[str]:
@@ -74,22 +129,40 @@ class LocalTextEmbedder:
         self._model = None
         self._batch_size = 32
         self._device = "cuda" if torch.cuda.is_available() else "cpu"
+        self._is_gte_qwen = _is_gte_qwen_model(model_name)
 
     @property
     def tokenizer(self):
         if self._tokenizer is None:
-            self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+            self._tokenizer = AutoTokenizer.from_pretrained(
+                self.model_name,
+                trust_remote_code=self._is_gte_qwen,
+            )
         return self._tokenizer
 
     @property
     def model(self):
         if self._model is None:
-            self._model = AutoModel.from_pretrained(self.model_name)
+            model_kwargs = {"trust_remote_code": self._is_gte_qwen}
+            if self._device == "cuda":
+                model_kwargs["torch_dtype"] = torch.float16
+            self._model = AutoModel.from_pretrained(self.model_name, **model_kwargs)
             self._model.to(self._device)
             self._model.eval()
         return self._model
 
-    def encode_texts(self, texts: list[str], batch_size: int | None = None) -> torch.Tensor:
+    def encode_documents(self, texts: list[str], batch_size: int | None = None) -> torch.Tensor:
+        return self._encode_texts(texts, batch_size=batch_size, treat_as_query=False)
+
+    def encode_queries(self, texts: list[str], batch_size: int | None = None) -> torch.Tensor:
+        return self._encode_texts(texts, batch_size=batch_size, treat_as_query=True)
+
+    def _encode_texts(
+        self,
+        texts: list[str],
+        batch_size: int | None = None,
+        treat_as_query: bool = False,
+    ) -> torch.Tensor:
         if not texts:
             return torch.empty(0, 0)
 
@@ -97,6 +170,11 @@ class LocalTextEmbedder:
         rows: list[torch.Tensor] = []
         for start in range(0, len(texts), effective_batch_size):
             batch_texts = texts[start : start + effective_batch_size]
+            if treat_as_query and self._is_gte_qwen:
+                batch_texts = [
+                    f"Instruct: {GTE_QWEN_QUERY_INSTRUCTION}\nQuery: {text}"
+                    for text in batch_texts
+                ]
             inputs = self.tokenizer(
                 batch_texts,
                 return_tensors="pt",
@@ -108,8 +186,11 @@ class LocalTextEmbedder:
             with torch.no_grad():
                 outputs = self.model(**inputs)
             hidden = outputs.last_hidden_state
-            mask = inputs["attention_mask"].unsqueeze(-1)
-            pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1)
+            if self._is_gte_qwen:
+                pooled = _last_token_pool(hidden, inputs["attention_mask"])
+            else:
+                mask = inputs["attention_mask"].unsqueeze(-1)
+                pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1)
             rows.append(F.normalize(pooled, p=2, dim=1).cpu())
         return torch.cat(rows, dim=0)
 
@@ -124,7 +205,7 @@ def build_iab_taxonomy_embedding_index(batch_size: int = 32) -> dict:
     taxonomy = get_iab_taxonomy()
     nodes = [_serialize_node(node) for node in taxonomy.nodes]
     embedder = get_iab_text_embedder()
-    embeddings = embedder.encode_texts([node["retrieval_text"] for node in nodes], batch_size=batch_size)
+    embeddings = embedder.encode_documents([node["retrieval_text"] for node in nodes], batch_size=batch_size)
 
     IAB_TAXONOMY_NODES_PATH.write_text(json.dumps(nodes, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     torch.save(
@@ -197,9 +278,47 @@ class IabEmbeddingRetriever:
             "level": int(node["level"]),
             "confidence": round_score(confidence),
             "adjusted_confidence": round_score(adjusted_confidence),
+            "keywords": list(node.get("keywords", [])),
         }
 
-    def _top_candidates_from_embedding(self, query_embedding: torch.Tensor) -> list[dict]:
+    def _rerank_candidates(self, query_text: str, candidates: list[dict]) -> list[dict]:
+        if not candidates:
+            return []
+
+        query_normalized = _normalize_keyword(query_text)
+        query_tokens = _keyword_tokens(query_text)
+
+        reranked = []
+        for candidate in candidates:
+            keyword_tokens = set()
+            for keyword in candidate.get("keywords", []):
+                keyword_tokens.update(_keyword_tokens(keyword))
+
+            token_overlap = len(query_tokens & keyword_tokens)
+            path_overlap = len(query_tokens & _keyword_tokens(candidate["path_label"]))
+            lexical_bonus = min(0.04, (0.008 * token_overlap) + (0.004 * path_overlap))
+
+            reranked.append(
+                {
+                    **candidate,
+                    "token_overlap": token_overlap,
+                    "path_overlap": path_overlap,
+                    "lexical_bonus": round_score(lexical_bonus),
+                    "rerank_score": round_score(candidate["adjusted_confidence"] + lexical_bonus),
+                }
+            )
+
+        reranked.sort(
+            key=lambda item: (
+                item["rerank_score"],
+                item["adjusted_confidence"],
+                item["confidence"],
+            ),
+            reverse=True,
+        )
+        return reranked
+
+    def _top_candidates_from_embedding(self, query_text: str, query_embedding: torch.Tensor) -> list[dict]:
         if not self._load_index():
             return []
 
@@ -210,14 +329,13 @@ class IabEmbeddingRetriever:
         top_scores, top_indices = torch.topk(scores, k=top_k)
 
         candidates = [self._candidate_from_index(score, index) for score, index in zip(top_scores.tolist(), top_indices.tolist())]
-        candidates.sort(key=lambda item: (item["adjusted_confidence"], item["confidence"]), reverse=True)
-        return candidates
+        return self._rerank_candidates(query_text, candidates)
 
     def _top_candidates(self, text: str) -> list[dict]:
         if not self._load_index():
             return []
-        query_embedding = self.embedder.encode_texts([text])[0]
-        return self._top_candidates_from_embedding(query_embedding)
+        query_embedding = self.embedder.encode_queries([text])[0]
+        return self._top_candidates_from_embedding(text, query_embedding)
 
     def _select_path(self, candidates: list[dict]) -> dict | None:
         if not candidates:
@@ -308,6 +426,7 @@ class IabEmbeddingRetriever:
                 {
                     **candidate,
                     "path": list(candidate["path"]),
+                    "keywords": candidate["keywords"][:12],
                 }
                 for candidate in candidates
             ],
@@ -319,10 +438,10 @@ class IabEmbeddingRetriever:
         if not self._load_index():
             return [None for _ in texts]
 
-        query_embeddings = self.embedder.encode_texts(texts, batch_size=batch_size)
+        query_embeddings = self.embedder.encode_queries(texts, batch_size=batch_size)
         return [
-            self._prediction_from_candidates(self._top_candidates_from_embedding(query_embedding))
-            for query_embedding in query_embeddings
+            self._prediction_from_candidates(self._top_candidates_from_embedding(text, query_embedding))
+            for text, query_embedding in zip(texts, query_embeddings)
         ]
 
 

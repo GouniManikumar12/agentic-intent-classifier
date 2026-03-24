@@ -15,7 +15,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Automotive",
-        "model_output.classification.iab_content.tier2.label": "Auto Type"
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -25,7 +25,7 @@
       "id": "car-buying-maps-to-automotive-buying",
       "mismatches": [
         {
-          "actual": "Auto Type",
+          "actual": null,
           "expected": "Auto Buying and Selling",
           "path": "model_output.classification.iab_content.tier2.label"
         },
@@ -71,7 +71,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Laptops"
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -81,6 +81,11 @@
       },
       "id": "labtop-buying-maps-to-laptops",
       "mismatches": [
+        {
+          "actual": null,
+          "expected": "Laptops",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
         {
           "actual": "nearest_equivalent",
           "expected": "exact",
@@ -133,7 +138,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -154,7 +159,7 @@
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Internet",
+          "actual": "Software and Applications",
           "expected": "Sales",
           "path": "model_output.classification.iab_content.tier3.label"
         },
@@ -172,9 +177,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier1.label": "Hobbies & Interests",
+        "model_output.classification.iab_content.tier2.label": "Content Production",
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -185,17 +190,17 @@
       "id": "marketing-tools-map-to-marketing",
       "mismatches": [
         {
-          "actual": "Technology & Computing",
+          "actual": "Hobbies & Interests",
           "expected": "Business and Finance",
           "path": "model_output.classification.iab_content.tier1.label"
         },
         {
-          "actual": "Computing",
+          "actual": "Content Production",
           "expected": "Business",
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Internet",
+          "actual": null,
           "expected": "Marketing and Advertising",
           "path": "model_output.classification.iab_content.tier3.label"
         },
@@ -214,7 +219,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": null
+        "model_output.classification.iab_content.tier2.label": "Computing"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -224,7 +229,7 @@
       "id": "ml-explanation-maps-to-ai",
       "mismatches": [
         {
-          "actual": null,
+          "actual": "Computing",
           "expected": "Artificial Intelligence",
           "path": "model_output.classification.iab_content.tier2.label"
         },
@@ -302,9 +307,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Hobbies & Interests",
-        "model_output.classification.iab_content.tier2.label": "Content Production",
-        "model_output.classification.iab_content.tier3.label": "Freelance Writing"
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
@@ -315,17 +320,17 @@
       "id": "trial-signup-maps-to-software",
       "mismatches": [
         {
-          "actual": "Hobbies & Interests",
+          "actual": "Business and Finance",
           "expected": "Technology & Computing",
           "path": "model_output.classification.iab_content.tier1.label"
         },
         {
-          "actual": "Content Production",
+          "actual": "Business",
           "expected": "Computing",
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Freelance Writing",
+          "actual": null,
           "expected": "Software and Applications",
           "path": "model_output.classification.iab_content.tier3.label"
         }
@@ -341,7 +346,7 @@
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
         "model_output.classification.iab_content.tier3.label": "Software and Applications",
-        "model_output.classification.iab_content.tier4.label": "Communication"
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -356,6 +361,11 @@
           "actual": "Software and Applications",
           "expected": "Computer Software and Applications",
           "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": null,
+          "expected": "Communication",
+          "path": "model_output.classification.iab_content.tier4.label"
         },
         {
           "actual": "nearest_equivalent",

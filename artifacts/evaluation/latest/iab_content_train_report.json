@@ -27,16 +27,25 @@
   },
   "view_metrics": {
     "combined_path": {
-      "count": 13211,
-      "max_combined_rows": 500,
-      "reason": "dataset_too_large_for_combined_view",
-      "skipped": true
+      "average_prediction_depth": 2.2368,
+      "error_buckets": {
+        "exact_match": 10569,
+        "parent_safe_stop": 338,
+        "right_tier1_wrong_tier2": 834,
+        "wrong_deep_leaf": 947,
+        "wrong_tier1": 523
+      },
+      "exact_path_accuracy": 0.8,
+      "fallback_overuse_count": 1123,
+      "fallback_rate": 0.085,
+      "parent_safe_accuracy": 0.8631,
+      "tier1_accuracy": 0.9604,
+      "tier2_accuracy": 0.9189,
+      "tier3_accuracy": 0.843,
+      "tier4_accuracy": 0.6589
     },
     "disagreements": {
-      "count": 13211,
-      "max_combined_rows": 500,
-      "reason": "dataset_too_large_for_combined_view",
-      "skipped": true
+      "retrieval_vs_combined": 0
     },
     "embedding_retrieval": {
       "average_prediction_depth": 2.2368,

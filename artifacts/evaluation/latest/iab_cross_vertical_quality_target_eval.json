@@ -14,8 +14,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Travel",
-        "model_output.classification.iab_content.tier2.label": "Travel Type"
+        "model_output.classification.iab_content.tier1.label": "Automotive",
+        "model_output.classification.iab_content.tier2.label": "Auto Type"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
@@ -25,12 +25,7 @@
       "id": "auto-buying-easy",
       "mismatches": [
         {
-          "actual": "Travel",
-          "expected": "Automotive",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
-          "actual": "Travel Type",
+          "actual": "Auto Type",
           "expected": "Auto Buying and Selling",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -175,7 +170,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Business and Finance",
         "model_output.classification.iab_content.tier2.label": "Business",
-        "model_output.classification.iab_content.tier3.label": "Sales"
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -189,6 +184,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Sales",
+          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Business and Finance > Business > Sales.",
@@ -199,9 +199,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier1.label": "Hobbies & Interests",
+        "model_output.classification.iab_content.tier2.label": "Content Production",
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -212,7 +212,7 @@
       "id": "marketing-tools-easy",
       "mismatches": [
         {
-          "actual": "Technology & Computing",
+          "actual": "Hobbies & Interests",
           "expected": "Business and Finance",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -222,12 +222,12 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Computing",
+          "actual": "Content Production",
           "expected": "Business",
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Internet",
+          "actual": null,
           "expected": "Marketing and Advertising",
           "path": "model_output.classification.iab_content.tier3.label"
         }
@@ -240,8 +240,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier1.label": "Sensitive Topics",
+        "model_output.classification.iab_content.tier2.label": "Online Piracy",
         "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
@@ -253,9 +253,19 @@
       "id": "marketing-tools-medium",
       "mismatches": [
         {
+          "actual": "Sensitive Topics",
+          "expected": "Business and Finance",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Online Piracy",
+          "expected": "Business",
+          "path": "model_output.classification.iab_content.tier2.label"
         },
         {
           "actual": null,
@@ -271,9 +281,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications"
+        "model_output.classification.iab_content.tier1.label": "Genres",
+        "model_output.classification.iab_content.tier2.label": "Talk Radio",
+        "model_output.classification.iab_content.tier3.label": "Public Radio"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -284,7 +294,7 @@
       "id": "marketing-tools-hard",
       "mismatches": [
         {
-          "actual": "Technology & Computing",
+          "actual": "Genres",
           "expected": "Business and Finance",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -294,12 +304,12 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Computing",
+          "actual": "Talk Radio",
           "expected": "Business",
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Software and Applications",
+          "actual": "Public Radio",
           "expected": "Marketing and Advertising",
           "path": "model_output.classification.iab_content.tier3.label"
         }
@@ -308,47 +318,6 @@
       "pass": false,
       "status": "must_fix",
       "text": "Need software to measure channel performance across paid and organic campaigns"
-    },
-    {
-      "actual": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
-      },
-      "expected": {
-        "model_output.classification.iab_content.mapping_mode": "exact",
-        "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Business",
-        "model_output.classification.iab_content.tier3.label": "Business I.T."
-      },
-      "id": "business-it-easy",
-      "mismatches": [
-        {
-          "actual": "Technology & Computing",
-          "expected": "Business and Finance",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
-          "actual": "nearest_equivalent",
-          "expected": "exact",
-          "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Computing",
-          "expected": "Business",
-          "path": "model_output.classification.iab_content.tier2.label"
-        },
-        {
-          "actual": "Internet",
-          "expected": "Business I.T.",
-          "path": "model_output.classification.iab_content.tier3.label"
-        }
-      ],
-      "notes": "Cross-vertical easy IAB mapping case for Business and Finance > Business > Business I.T..",
-      "pass": false,
-      "status": "must_fix",
-      "text": "How do I reset my work password?"
     },
     {
       "actual": {
@@ -363,7 +332,7 @@
         "model_output.classification.iab_content.tier2.label": "Business",
         "model_output.classification.iab_content.tier3.label": "Business I.T."
       },
-      "id": "business-it-medium",
+      "id": "business-it-easy",
       "mismatches": [
         {
           "actual": "Careers",
@@ -386,6 +355,37 @@
           "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
+      "notes": "Cross-vertical easy IAB mapping case for Business and Finance > Business > Business I.T..",
+      "pass": false,
+      "status": "must_fix",
+      "text": "How do I reset my work password?"
+    },
+    {
+      "actual": {
+        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": null
+      },
+      "expected": {
+        "model_output.classification.iab_content.mapping_mode": "exact",
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": "Business I.T."
+      },
+      "id": "business-it-medium",
+      "mismatches": [
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Business I.T.",
+          "path": "model_output.classification.iab_content.tier3.label"
+        }
+      ],
       "notes": "Cross-vertical medium IAB mapping case for Business and Finance > Business > Business I.T..",
       "pass": false,
       "status": "must_fix",
@@ -396,7 +396,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -422,7 +422,7 @@
           "path": "model_output.classification.iab_content.tier2.label"
         },
         {
-          "actual": "Internet",
+          "actual": "Software and Applications",
           "expected": "Business I.T.",
           "path": "model_output.classification.iab_content.tier3.label"
         }
@@ -435,8 +435,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink",
-        "model_output.classification.iab_content.tier2.label": "Dining Out"
+        "model_output.classification.iab_content.tier1.label": "Sports",
+        "model_output.classification.iab_content.tier2.label": "Table Tennis"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -446,9 +446,19 @@
       "id": "dining-out-easy",
       "mismatches": [
         {
+          "actual": "Sports",
+          "expected": "Food & Drink",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Table Tennis",
+          "expected": "Dining Out",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Food & Drink > Dining Out.",
@@ -459,8 +469,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink",
-        "model_output.classification.iab_content.tier2.label": "Dining Out"
+        "model_output.classification.iab_content.tier1.label": "Attractions",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -470,9 +480,19 @@
       "id": "dining-out-medium",
       "mismatches": [
         {
+          "actual": "Attractions",
+          "expected": "Food & Drink",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Dining Out",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Food & Drink > Dining Out.",
@@ -484,7 +504,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Food & Drink",
-        "model_output.classification.iab_content.tier2.label": "Dining Out"
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -497,6 +517,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Dining Out",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Food & Drink > Dining Out.",
@@ -507,7 +532,7 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink",
+        "model_output.classification.iab_content.tier1.label": "Style & Fashion",
         "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
@@ -517,6 +542,11 @@
       },
       "id": "alcoholic-beverages-easy",
       "mismatches": [
+        {
+          "actual": "Style & Fashion",
+          "expected": "Food & Drink",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
         {
           "actual": "nearest_equivalent",
           "expected": "exact",
@@ -594,7 +624,7 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier1.label": "Sensitive Topics",
         "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
@@ -604,6 +634,11 @@
       },
       "id": "artificial-intelligence-easy",
       "mismatches": [
+        {
+          "actual": "Sensitive Topics",
+          "expected": "Technology & Computing",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
         {
           "actual": "nearest_equivalent",
           "expected": "exact",
@@ -623,8 +658,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Education",
-        "model_output.classification.iab_content.tier2.label": "Language Learning"
+        "model_output.classification.iab_content.tier1.label": "Sensitive Topics",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -634,7 +669,7 @@
       "id": "artificial-intelligence-medium",
       "mismatches": [
         {
-          "actual": "Education",
+          "actual": "Sensitive Topics",
           "expected": "Technology & Computing",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -644,7 +679,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Language Learning",
+          "actual": null,
           "expected": "Artificial Intelligence",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -691,9 +726,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Business",
-        "model_output.classification.iab_content.tier3.label": null
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Computing",
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -704,24 +739,9 @@
       "id": "software-apps-easy",
       "mismatches": [
         {
-          "actual": "Business and Finance",
-          "expected": "Technology & Computing",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Business",
-          "expected": "Computing",
-          "path": "model_output.classification.iab_content.tier2.label"
-        },
-        {
-          "actual": null,
-          "expected": "Software and Applications",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Computer Software and Applications.",
@@ -734,7 +754,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -748,11 +768,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Internet",
-          "expected": "Software and Applications",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Computer Software and Applications.",
@@ -789,10 +804,10 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications",
-        "model_output.classification.iab_content.tier4.label": "Communication"
+        "model_output.classification.iab_content.tier1.label": "Careers",
+        "model_output.classification.iab_content.tier2.label": "Remote Working",
+        "model_output.classification.iab_content.tier3.label": null,
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -804,9 +819,29 @@
       "id": "communication-software-easy",
       "mismatches": [
         {
+          "actual": "Careers",
+          "expected": "Technology & Computing",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Remote Working",
+          "expected": "Computing",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": null,
+          "expected": "Software and Applications",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": null,
+          "expected": "Communication",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
@@ -819,8 +854,8 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications",
-        "model_output.classification.iab_content.tier4.label": "Communication"
+        "model_output.classification.iab_content.tier3.label": "Internet",
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -835,6 +870,16 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Internet",
+          "expected": "Software and Applications",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": null,
+          "expected": "Communication",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
@@ -845,10 +890,10 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications",
-        "model_output.classification.iab_content.tier4.label": "Communication"
+        "model_output.classification.iab_content.tier1.label": "Careers",
+        "model_output.classification.iab_content.tier2.label": "Remote Working",
+        "model_output.classification.iab_content.tier3.label": null,
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -860,9 +905,29 @@
       "id": "communication-software-hard",
       "mismatches": [
         {
+          "actual": "Careers",
+          "expected": "Technology & Computing",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Remote Working",
+          "expected": "Computing",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": null,
+          "expected": "Software and Applications",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": null,
+          "expected": "Communication",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
@@ -875,8 +940,8 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet",
-        "model_output.classification.iab_content.tier4.label": "Web Hosting"
+        "model_output.classification.iab_content.tier3.label": null,
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -891,6 +956,16 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Internet",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": null,
+          "expected": "Web Hosting",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
@@ -904,7 +979,7 @@
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
         "model_output.classification.iab_content.tier3.label": "Internet",
-        "model_output.classification.iab_content.tier4.label": "Web Hosting"
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -919,6 +994,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Web Hosting",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
@@ -932,7 +1012,7 @@
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
         "model_output.classification.iab_content.tier3.label": "Internet",
-        "model_output.classification.iab_content.tier4.label": "Web Hosting"
+        "model_output.classification.iab_content.tier4.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -947,6 +1027,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Web Hosting",
+          "path": "model_output.classification.iab_content.tier4.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
@@ -1010,8 +1095,8 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Consumer Electronics",
-        "model_output.classification.iab_content.tier3.label": "Smartphones"
+        "model_output.classification.iab_content.tier2.label": "Computing",
+        "model_output.classification.iab_content.tier3.label": "Laptops"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1025,16 +1110,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Consumer Electronics",
-          "expected": "Computing",
-          "path": "model_output.classification.iab_content.tier2.label"
-        },
-        {
-          "actual": "Smartphones",
-          "expected": "Laptops",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Laptops.",
@@ -1078,7 +1153,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Desktops"
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1092,6 +1167,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Software and Applications",
+          "expected": "Desktops",
+          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Desktops.",
@@ -1104,7 +1184,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Desktops"
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1118,6 +1198,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Desktops",
+          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Desktops.",
@@ -1161,7 +1246,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Consumer Electronics",
-        "model_output.classification.iab_content.tier3.label": "Smartphones"
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1175,6 +1260,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Smartphones",
+          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Consumer Electronics > Smartphones.",
@@ -1261,7 +1351,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Style & Fashion",
         "model_output.classification.iab_content.tier2.label": "Women's Fashion",
-        "model_output.classification.iab_content.tier3.label": "Women's Clothing"
+        "model_output.classification.iab_content.tier3.label": "Women's Shoes and Footwear"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1275,11 +1365,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Women's Clothing",
-          "expected": "Women's Shoes and Footwear",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Style & Fashion > Women's Fashion > Women's Shoes and Footwear.",
@@ -1292,7 +1377,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Style & Fashion",
         "model_output.classification.iab_content.tier2.label": "Women's Fashion",
-        "model_output.classification.iab_content.tier3.label": "Women's Clothing"
+        "model_output.classification.iab_content.tier3.label": "Women's Shoes and Footwear"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1306,11 +1391,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Women's Clothing",
-          "expected": "Women's Shoes and Footwear",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Style & Fashion > Women's Fashion > Women's Shoes and Footwear.",
@@ -1349,7 +1429,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Style & Fashion",
         "model_output.classification.iab_content.tier2.label": "Men's Fashion",
-        "model_output.classification.iab_content.tier3.label": "Men's Clothing"
+        "model_output.classification.iab_content.tier3.label": "Men's Shoes and Footwear"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1363,11 +1443,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Men's Clothing",
-          "expected": "Men's Shoes and Footwear",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Style & Fashion > Men's Fashion > Men's Shoes and Footwear.",
@@ -1380,7 +1455,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Style & Fashion",
         "model_output.classification.iab_content.tier2.label": "Men's Fashion",
-        "model_output.classification.iab_content.tier3.label": "Men's Clothing"
+        "model_output.classification.iab_content.tier3.label": "Men's Shoes and Footwear"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1394,11 +1469,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Men's Clothing",
-          "expected": "Men's Shoes and Footwear",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Style & Fashion > Men's Fashion > Men's Shoes and Footwear.",
@@ -1435,8 +1505,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Real Estate",
-        "model_output.classification.iab_content.tier2.label": "Hotel Properties",
+        "model_output.classification.iab_content.tier1.label": "Attractions",
+        "model_output.classification.iab_content.tier2.label": "Nightclubs",
         "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
@@ -1448,7 +1518,7 @@
       "id": "hotels-easy",
       "mismatches": [
         {
-          "actual": "Real Estate",
+          "actual": "Attractions",
           "expected": "Travel",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -1458,7 +1528,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Hotel Properties",
+          "actual": "Nightclubs",
           "expected": "Travel Type",
           "path": "model_output.classification.iab_content.tier2.label"
         },
@@ -1478,7 +1548,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Travel",
         "model_output.classification.iab_content.tier2.label": "Travel Type",
-        "model_output.classification.iab_content.tier3.label": "Hotels and Motels"
+        "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1492,6 +1562,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Hotels and Motels",
+          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Travel > Travel Type > Hotels and Motels.",
@@ -1503,7 +1578,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Travel",
-        "model_output.classification.iab_content.tier2.label": "Travel Type",
+        "model_output.classification.iab_content.tier2.label": null,
         "model_output.classification.iab_content.tier3.label": null
       },
       "expected": {
@@ -1518,6 +1593,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Travel Type",
+          "path": "model_output.classification.iab_content.tier2.label"
         },
         {
           "actual": null,
@@ -1586,8 +1666,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Personal Finance",
-        "model_output.classification.iab_content.tier2.label": "Personal Debt"
+        "model_output.classification.iab_content.tier1.label": "Real Estate",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1597,17 +1677,12 @@
       "id": "real-estate-rentals-hard",
       "mismatches": [
         {
-          "actual": "Personal Finance",
-          "expected": "Real Estate",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Personal Debt",
+          "actual": null,
           "expected": "Real Estate Renting and Leasing",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -1620,9 +1695,9 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Business",
-        "model_output.classification.iab_content.tier3.label": "Green Solutions"
+        "model_output.classification.iab_content.tier1.label": "Healthy Living",
+        "model_output.classification.iab_content.tier2.label": "Fitness and Exercise",
+        "model_output.classification.iab_content.tier3.label": "Running and Jogging"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1633,24 +1708,9 @@
       "id": "running-and-jogging-easy",
       "mismatches": [
         {
-          "actual": "Business and Finance",
-          "expected": "Healthy Living",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Business",
-          "expected": "Fitness and Exercise",
-          "path": "model_output.classification.iab_content.tier2.label"
-        },
-        {
-          "actual": "Green Solutions",
-          "expected": "Running and Jogging",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Healthy Living > Fitness and Exercise > Running and Jogging.",
@@ -1714,7 +1774,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Sports",
-        "model_output.classification.iab_content.tier2.label": "Soccer"
+        "model_output.classification.iab_content.tier2.label": "Australian Rules Football"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1727,6 +1787,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Australian Rules Football",
+          "expected": "Soccer",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Sports > Soccer.",
@@ -1738,7 +1803,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Sports",
-        "model_output.classification.iab_content.tier2.label": "Soccer"
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1751,6 +1816,11 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Soccer",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Sports > Soccer.",
@@ -1762,7 +1832,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Sports",
-        "model_output.classification.iab_content.tier2.label": null
+        "model_output.classification.iab_content.tier2.label": "Fantasy Sports"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1777,7 +1847,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": null,
+          "actual": "Fantasy Sports",
           "expected": "Soccer",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -1790,8 +1860,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Books and Literature",
-        "model_output.classification.iab_content.tier2.label": "Fiction"
+        "model_output.classification.iab_content.tier1.label": "Genres",
+        "model_output.classification.iab_content.tier2.label": "Fantasy"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1801,9 +1871,19 @@
       "id": "fiction-easy",
       "mismatches": [
         {
+          "actual": "Genres",
+          "expected": "Books and Literature",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Fantasy",
+          "expected": "Fiction",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Books and Literature > Fiction.",
@@ -1833,7 +1913,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Books and Literature",
-        "model_output.classification.iab_content.tier2.label": null
+        "model_output.classification.iab_content.tier2.label": "Comics and Graphic Novels"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1848,7 +1928,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": null,
+          "actual": "Comics and Graphic Novels",
           "expected": "Fiction",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -1954,7 +2034,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Education",
-        "model_output.classification.iab_content.tier2.label": "Language Learning"
+        "model_output.classification.iab_content.tier2.label": "Online Education"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -1967,11 +2047,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": "Language Learning",
-          "expected": "Online Education",
-          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Education > Online Education.",
@@ -2016,8 +2091,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Careers",
-        "model_output.classification.iab_content.tier2.label": null
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Computing"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2027,7 +2102,7 @@
       "id": "online-education-hard",
       "mismatches": [
         {
-          "actual": "Careers",
+          "actual": "Technology & Computing",
           "expected": "Education",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -2037,7 +2112,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": null,
+          "actual": "Computing",
           "expected": "Online Education",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -2052,7 +2127,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Education",
         "model_output.classification.iab_content.tier2.label": "College Education",
-        "model_output.classification.iab_content.tier3.label": null
+        "model_output.classification.iab_content.tier3.label": "Postgraduate Education"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2066,11 +2141,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": null,
-          "expected": "Postgraduate Education",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Education > College Education > Postgraduate Education.",
@@ -2109,7 +2179,7 @@
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Education",
         "model_output.classification.iab_content.tier2.label": "College Education",
-        "model_output.classification.iab_content.tier3.label": null
+        "model_output.classification.iab_content.tier3.label": "Postgraduate Education"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2123,11 +2193,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": null,
-          "expected": "Postgraduate Education",
-          "path": "model_output.classification.iab_content.tier3.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Education > College Education > Postgraduate Education.",
@@ -2182,7 +2247,7 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Healthy Living"
+        "model_output.classification.iab_content.tier1.label": "Medical Health"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2190,11 +2255,6 @@
       },
       "id": "medical-health-hard",
       "mismatches": [
-        {
-          "actual": "Healthy Living",
-          "expected": "Medical Health",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
         {
           "actual": "nearest_equivalent",
           "expected": "exact",
@@ -2239,7 +2299,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Business"
+        "model_output.classification.iab_content.tier2.label": "Industries"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2259,7 +2319,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Business",
+          "actual": "Industries",
           "expected": "Job Search",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -2272,8 +2332,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Careers",
-        "model_output.classification.iab_content.tier2.label": "Job Search"
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Industries"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2283,9 +2343,19 @@
       "id": "careers-job-search-hard",
       "mismatches": [
         {
+          "actual": "Business and Finance",
+          "expected": "Careers",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Industries",
+          "expected": "Job Search",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical hard IAB mapping case for Careers > Job Search.",
@@ -2296,8 +2366,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink",
-        "model_output.classification.iab_content.tier2.label": "Food Movements"
+        "model_output.classification.iab_content.tier1.label": "Personal Finance",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2307,17 +2377,12 @@
       "id": "personal-finance-easy",
       "mismatches": [
         {
-          "actual": "Food & Drink",
-          "expected": "Personal Finance",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Food Movements",
+          "actual": null,
           "expected": "Financial Planning",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -2330,8 +2395,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Business and Finance",
-        "model_output.classification.iab_content.tier2.label": "Economy"
+        "model_output.classification.iab_content.tier1.label": "Personal Finance",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2341,17 +2406,12 @@
       "id": "personal-finance-medium",
       "mismatches": [
         {
-          "actual": "Business and Finance",
-          "expected": "Personal Finance",
-          "path": "model_output.classification.iab_content.tier1.label"
-        },
-        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Economy",
+          "actual": null,
           "expected": "Financial Planning",
           "path": "model_output.classification.iab_content.tier2.label"
         }
@@ -2417,8 +2477,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Family and Relationships",
-        "model_output.classification.iab_content.tier2.label": "Parenting"
+        "model_output.classification.iab_content.tier1.label": "Education",
+        "model_output.classification.iab_content.tier2.label": "Online Education"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2428,9 +2488,19 @@
       "id": "parenting-medium",
       "mismatches": [
         {
+          "actual": "Education",
+          "expected": "Family and Relationships",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": "Online Education",
+          "expected": "Parenting",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Family and Relationships > Parenting.",
@@ -2466,7 +2536,7 @@
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
         "model_output.classification.iab_content.tier1.label": "Home & Garden",
-        "model_output.classification.iab_content.tier2.label": null
+        "model_output.classification.iab_content.tier2.label": "Gardening"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2479,11 +2549,6 @@
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
-        },
-        {
-          "actual": null,
-          "expected": "Gardening",
-          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Home & Garden > Gardening.",
@@ -2494,8 +2559,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Home & Garden",
-        "model_output.classification.iab_content.tier2.label": "Gardening"
+        "model_output.classification.iab_content.tier1.label": "Personal Finance",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2505,9 +2570,19 @@
       "id": "gardening-medium",
       "mismatches": [
         {
+          "actual": "Personal Finance",
+          "expected": "Home & Garden",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Gardening",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical medium IAB mapping case for Home & Garden > Gardening.",
@@ -2547,8 +2622,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Entertainment",
-        "model_output.classification.iab_content.tier2.label": "Movies"
+        "model_output.classification.iab_content.tier1.label": "Genres",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2558,9 +2633,19 @@
       "id": "movies-easy",
       "mismatches": [
         {
+          "actual": "Genres",
+          "expected": "Entertainment",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
           "actual": "nearest_equivalent",
           "expected": "exact",
           "path": "model_output.classification.iab_content.mapping_mode"
+        },
+        {
+          "actual": null,
+          "expected": "Movies",
+          "path": "model_output.classification.iab_content.tier2.label"
         }
       ],
       "notes": "Cross-vertical easy IAB mapping case for Entertainment > Movies.",
@@ -2571,8 +2656,8 @@
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Video Gaming",
-        "model_output.classification.iab_content.tier2.label": "Video Game Genres"
+        "model_output.classification.iab_content.tier1.label": "Genres",
+        "model_output.classification.iab_content.tier2.label": "Horror"
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "exact",
@@ -2582,7 +2667,7 @@
       "id": "movies-medium",
       "mismatches": [
         {
-          "actual": "Video Gaming",
+          "actual": "Genres",
           "expected": "Entertainment",
           "path": "model_output.classification.iab_content.tier1.label"
         },
@@ -2592,7 +2677,7 @@
           "path": "model_output.classification.iab_content.mapping_mode"
         },
         {
-          "actual": "Video Game Genres",
+          "actual": "Horror",
           "expected": "Movies",
           "path": "model_output.classification.iab_content.tier2.label"
         }

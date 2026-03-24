@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import inspect
 from dataclasses import dataclass
 from functools import lru_cache
 
@@ -31,6 +32,7 @@ class SequenceClassifierHead:
         self._model = None
         self._calibration = None
         self._predict_batch_size = 32
+        self._forward_arg_names = None
 
     @property
     def tokenizer(self):
@@ -44,6 +46,12 @@ class SequenceClassifierHead:
             self._model = AutoModelForSequenceClassification.from_pretrained(self.config.model_dir)
             self._model.eval()
         return self._model
+
+    @property
+    def forward_arg_names(self) -> set[str]:
+        if self._forward_arg_names is None:
+            self._forward_arg_names = set(inspect.signature(self.model.forward).parameters)
+        return self._forward_arg_names
 
     @property
     def calibration(self) -> CalibrationState:
@@ -75,13 +83,18 @@ class SequenceClassifierHead:
         }
 
     def _encode(self, texts: list[str]):
-        return self.tokenizer(
+        encoded = self.tokenizer(
             texts,
             return_tensors="pt",
             truncation=True,
             padding=True,
             max_length=self.config.max_length,
         )
+        return {
+            key: value
+            for key, value in encoded.items()
+            if key in self.forward_arg_names
+        }
 
     def _predict_probs(self, texts: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
         inputs = self._encode(texts)
