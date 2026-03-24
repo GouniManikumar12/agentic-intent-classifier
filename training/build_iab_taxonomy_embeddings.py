@@ -10,6 +10,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from iab_retrieval import build_iab_taxonomy_embedding_index
+from config import IAB_RETRIEVAL_MODEL_NAME
 
 
 def main() -> None:
@@ -18,6 +19,7 @@ def main() -> None:
     args = parser.parse_args()
 
     summary = build_iab_taxonomy_embedding_index(batch_size=args.batch_size)
+    summary["active_model_name"] = IAB_RETRIEVAL_MODEL_NAME
     print(json.dumps(summary, indent=2, sort_keys=True))
 
 

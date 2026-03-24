@@ -175,6 +175,8 @@ cd agentic-intent-classifier
 python3 training/build_iab_taxonomy_embeddings.py
 ```
 
+By default this uses `sentence-transformers/all-MiniLM-L6-v2`. If you want to point retrieval at a different embedding model, set `IAB_RETRIEVAL_MODEL_NAME_OVERRIDE` before building the index.
+
 This writes:
 
 - `artifacts/iab/taxonomy_nodes.json`
@@ -344,6 +346,7 @@ Then run eval separately after training:
 ```bash
 !python evaluation/run_regression_suite.py
 !python evaluation/run_iab_mapping_suite.py
+!python evaluation/run_iab_quality_suite.py
 !python evaluation/run_evaluation.py
 ```
 

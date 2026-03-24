@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -31,6 +32,7 @@ IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
 IAB_TAXONOMY_NODES_PATH = IAB_ARTIFACTS_DIR / "taxonomy_nodes.json"
 IAB_TAXONOMY_EMBEDDINGS_PATH = IAB_ARTIFACTS_DIR / "taxonomy_embeddings.pt"
 IAB_DATASET_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "dataset_summary.json"
+IAB_RETRIEVAL_LOCAL_MODEL_DIR = BASE_DIR / "iab_embedding_model_output"
 IAB_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_mapping_cases.json"
 IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_mapping_cases.json"
 IAB_BEHAVIOR_LOCK_CASES_PATH = BASE_DIR / "examples" / "iab_behavior_lock_cases.json"
@@ -46,8 +48,8 @@ IAB_RETRIEVAL_STRESS_SUITE_PATHS = {
     "difficulty_benchmark": IAB_BENCHMARK_PATH,
     "cross_vertical_benchmark": IAB_CROSS_VERTICAL_BENCHMARK_PATH,
 }
-IAB_RETRIEVAL_FALLBACK_MODEL_NAME = "distilbert-base-uncased"
-IAB_RETRIEVAL_MODEL_MAX_LENGTH = 96
+IAB_RETRIEVAL_FALLBACK_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+IAB_RETRIEVAL_MODEL_MAX_LENGTH = 256
 IAB_RETRIEVAL_TOP_K = 8
 IAB_RETRIEVAL_DEPTH_BONUS = 0.01
 IAB_RETRIEVAL_PREFIX_CONFIDENCE_THRESHOLDS = {
@@ -105,6 +107,14 @@ def build_label_maps(labels: tuple[str, ...]) -> tuple[dict[str, int], dict[int,
     label2id = {label: idx for idx, label in enumerate(labels)}
     id2label = {idx: label for label, idx in label2id.items()}
     return label2id, id2label
+
+
+def _looks_like_local_hf_model_dir(path: Path) -> bool:
+    return (
+        path.is_dir()
+        and (path / "config.json").exists()
+        and ((path / "model.safetensors").exists() or (path / "pytorch_model.bin").exists())
+    )
 
 
 @dataclass(frozen=True)
@@ -199,10 +209,11 @@ SUBTYPE_HEAD_CONFIG = HeadConfig(
         "difficulty_benchmark": SUBTYPE_BENCHMARK_PATH,
     },
 )
-IAB_RETRIEVAL_MODEL_NAME = (
-    str(BASE_DIR / "iab_model_output")
-    if (BASE_DIR / "iab_model_output").exists()
-    else IAB_RETRIEVAL_FALLBACK_MODEL_NAME
+IAB_RETRIEVAL_MODEL_NAME = os.environ.get(
+    "IAB_RETRIEVAL_MODEL_NAME_OVERRIDE",
+    str(IAB_RETRIEVAL_LOCAL_MODEL_DIR)
+    if _looks_like_local_hf_model_dir(IAB_RETRIEVAL_LOCAL_MODEL_DIR)
+    else IAB_RETRIEVAL_FALLBACK_MODEL_NAME,
 )
 
 HEAD_CONFIGS = {

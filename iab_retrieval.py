@@ -73,6 +73,7 @@ class LocalTextEmbedder:
         self._tokenizer = None
         self._model = None
         self._batch_size = 32
+        self._device = "cuda" if torch.cuda.is_available() else "cpu"
 
     @property
     def tokenizer(self):
@@ -84,6 +85,7 @@ class LocalTextEmbedder:
     def model(self):
         if self._model is None:
             self._model = AutoModel.from_pretrained(self.model_name)
+            self._model.to(self._device)
             self._model.eval()
         return self._model
 
@@ -102,6 +104,7 @@ class LocalTextEmbedder:
                 padding=True,
                 max_length=self.max_length,
             )
+            inputs = {key: value.to(self._device) for key, value in inputs.items()}
             with torch.no_grad():
                 outputs = self.model(**inputs)
             hidden = outputs.last_hidden_state
