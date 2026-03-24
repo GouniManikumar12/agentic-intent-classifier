@@ -1,6 +1,6 @@
 {
-  "accepted_accuracy": 1.0,
-  "accepted_coverage": 0.3333,
+  "accepted_accuracy": 0.9867,
+  "accepted_coverage": 1.0,
   "accuracy": 0.9867,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/intent_type_difficulty_benchmark_confusion_matrix.csv",
   "count": 150,
@@ -31,7 +31,7 @@
       "macro_f1": 1.0
     }
   },
-  "fallback_rate": 0.6667,
+  "fallback_rate": 0.0,
   "head": "intent_type",
   "macro_f1": 0.9867,
   "per_class_metrics": {

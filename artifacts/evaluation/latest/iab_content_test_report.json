@@ -1,123 +1,58 @@
 {
-  "accepted_accuracy": 1.0,
-  "accepted_coverage": 0.8646,
-  "accuracy": 0.9583,
-  "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/iab_content_test_confusion_matrix.csv",
-  "count": 96,
+  "accepted_accuracy": 0.6527,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.6527,
+  "count": 3282,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab/test.jsonl",
-  "fallback_rate": 0.1354,
+  "fallback_rate": 0.0,
   "head": "iab_content",
-  "macro_f1": 0.9588,
-  "per_class_metrics": {
-    "Automotive > Auto Buying and Selling": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
+  "macro_f1": 0.6922,
+  "primary_source": "embedding_retrieval",
+  "suite": "test",
+  "tier_metrics": {
+    "average_prediction_depth": 2.1889,
+    "error_buckets": {
+      "exact_match": 2142,
+      "parent_safe_stop": 115,
+      "right_tier1_wrong_tier2": 674,
+      "wrong_deep_leaf": 236,
+      "wrong_tier1": 115
     },
-    "Business and Finance > Business": {
-      "f1-score": 0.9230769230769231,
-      "precision": 0.8571428571428571,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Business and Finance > Business > Business I.T.": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Business and Finance > Business > Marketing and Advertising": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Business and Finance > Business > Sales": {
-      "f1-score": 0.9090909090909091,
-      "precision": 1.0,
-      "recall": 0.8333333333333334,
-      "support": 6.0
-    },
-    "Business and Finance > Business > Small and Medium-sized Business": {
-      "f1-score": 0.9090909090909091,
-      "precision": 1.0,
-      "recall": 0.8333333333333334,
-      "support": 6.0
-    },
-    "Business and Finance > Business > Startups": {
-      "f1-score": 0.9090909090909091,
-      "precision": 1.0,
-      "recall": 0.8333333333333334,
-      "support": 6.0
-    },
-    "Careers": {
-      "f1-score": 0.8333333333333334,
-      "precision": 0.8333333333333334,
-      "recall": 0.8333333333333334,
-      "support": 6.0
-    },
-    "Education": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Food & Drink > Alcoholic Beverages": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Food & Drink > Dining Out": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Real Estate": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Technology & Computing > Artificial Intelligence": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Technology & Computing > Computing > Computer Software and Applications": {
-      "f1-score": 0.8571428571428571,
-      "precision": 0.75,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Technology & Computing > Computing > Internet": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "Travel": {
-      "f1-score": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "support": 6.0
-    },
-    "accuracy": 0.9583333333333334,
-    "macro avg": {
-      "f1-score": 0.9588016150516151,
-      "precision": 0.965029761904762,
-      "recall": 0.9583333333333334,
-      "support": 96.0
-    },
-    "weighted avg": {
-      "f1-score": 0.9588016150516149,
-      "precision": 0.9650297619047619,
-      "recall": 0.9583333333333334,
-      "support": 96.0
-    }
+    "exact_path_accuracy": 0.6527,
+    "parent_safe_accuracy": 0.7721,
+    "tier1_accuracy": 0.965,
+    "tier2_accuracy": 0.7587,
+    "tier3_accuracy": 0.8041,
+    "tier4_accuracy": 0.7929
   },
-  "suite": "test"
+  "view_metrics": {
+    "combined_path": {
+      "count": 3282,
+      "max_combined_rows": 500,
+      "reason": "dataset_too_large_for_combined_view",
+      "skipped": true
+    },
+    "disagreements": {
+      "count": 3282,
+      "max_combined_rows": 500,
+      "reason": "dataset_too_large_for_combined_view",
+      "skipped": true
+    },
+    "embedding_retrieval": {
+      "average_prediction_depth": 2.1889,
+      "error_buckets": {
+        "exact_match": 2107,
+        "parent_safe_stop": 109,
+        "right_tier1_wrong_tier2": 680,
+        "wrong_deep_leaf": 271,
+        "wrong_tier1": 115
+      },
+      "exact_path_accuracy": 0.642,
+      "parent_safe_accuracy": 0.7596,
+      "tier1_accuracy": 0.965,
+      "tier2_accuracy": 0.7566,
+      "tier3_accuracy": 0.7679,
+      "tier4_accuracy": 0.6071
+    }
+  }
 }

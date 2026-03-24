@@ -1,25 +1,25 @@
 {
   "by_status": {
     "acceptable_weakness": {
-      "failed": 1,
-      "passed": 2,
-      "total": 3
+      "failed": 2,
+      "passed": 0,
+      "total": 2
     },
     "must_fix": {
-      "failed": 0,
-      "passed": 6,
-      "total": 6
+      "failed": 4,
+      "passed": 11,
+      "total": 15
     }
   },
   "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/known_failure_cases.json",
-  "count": 9,
-  "failed": 1,
-  "passed": 8,
+  "count": 17,
+  "failed": 6,
+  "passed": 11,
   "results": [
     {
       "actual": {
         "model_output.classification.iab_content.tier1.label": "Automotive",
-        "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling",
+        "model_output.classification.iab_content.tier2.label": "Auto Type",
         "model_output.classification.intent.type": "commercial",
         "system_decision.policy.monetization_eligibility": "allowed"
       },
@@ -30,11 +30,39 @@
         "system_decision.policy.monetization_eligibility": "allowed"
       },
       "id": "auto-buying-query-allowed",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Auto Type",
+          "expected": "Auto Buying and Selling",
+          "path": "model_output.classification.iab_content.tier2.label"
+        }
+      ],
       "notes": "High-intent automotive shopping should clear as monetizable instead of failing safe.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Which car to buy in 2026"
+    },
+    {
+      "actual": {
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Computing",
+        "model_output.classification.iab_content.tier3.label": "Laptops",
+        "model_output.classification.intent.type": "commercial",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "expected": {
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Computing",
+        "model_output.classification.iab_content.tier3.label": "Laptops",
+        "model_output.classification.intent.type": "commercial",
+        "system_decision.policy.monetization_eligibility": "allowed"
+      },
+      "id": "laptop-buying-query-allowed",
+      "mismatches": [],
+      "notes": "High-intent laptop shopping should clear as monetizable instead of failing safe.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Which laptop to buy in 2026"
     },
     {
       "actual": {
@@ -135,12 +163,14 @@
     {
       "actual": {
         "model_output.classification.intent.decision_phase": "support",
+        "model_output.classification.intent.type": "support",
         "model_output.fallback.reason": "policy_default",
         "system_decision.opportunity.type": "none",
         "system_decision.policy.monetization_eligibility": "not_allowed"
       },
       "expected": {
         "model_output.classification.intent.decision_phase": "support",
+        "model_output.classification.intent.type": "support",
         "model_output.fallback.reason": "policy_default",
         "system_decision.opportunity.type": "none",
         "system_decision.policy.monetization_eligibility": "not_allowed"
@@ -154,9 +184,29 @@
     },
     {
       "actual": {
-        "model_output.classification.intent.subtype": "signup",
-        "model_output.fallback.reason": "confidence_below_threshold",
+        "model_output.classification.intent.type": "prohibited",
+        "model_output.fallback.reason": "policy_default",
+        "system_decision.opportunity.type": "none",
         "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "expected": {
+        "model_output.classification.intent.type": "prohibited",
+        "model_output.fallback.reason": "policy_default",
+        "system_decision.opportunity.type": "none",
+        "system_decision.policy.monetization_eligibility": "not_allowed"
+      },
+      "id": "prohibited-query-policy-block",
+      "mismatches": [],
+      "notes": "Unsafe queries should route into the prohibited intent type and stay blocked.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "How do I hack into someone else's account"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.subtype": "signup",
+        "model_output.fallback.reason": null,
+        "system_decision.policy.monetization_eligibility": "allowed"
       },
       "expected": {
         "model_output.classification.intent.subtype": "signup",
@@ -164,17 +214,28 @@
         "system_decision.policy.monetization_eligibility": "not_allowed"
       },
       "id": "signup-action-still-over-fallbacks",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": null,
+          "expected": "confidence_below_threshold",
+          "path": "model_output.fallback.reason"
+        },
+        {
+          "actual": "allowed",
+          "expected": "not_allowed",
+          "path": "system_decision.policy.monetization_eligibility"
+        }
+      ],
       "notes": "The subtype head recognizes signup, but the combined action path still falls back on low confidence.",
-      "pass": true,
+      "pass": false,
       "status": "acceptable_weakness",
       "text": "Start my free trial"
     },
     {
       "actual": {
-        "model_output.classification.intent.decision_phase": "decision",
-        "model_output.classification.intent.subtype": "education",
-        "system_decision.opportunity.type": "none",
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "deal_seeking",
+        "system_decision.opportunity.type": "soft_recommendation",
         "system_decision.policy.monetization_eligibility": "restricted"
       },
       "expected": {
@@ -186,9 +247,19 @@
       "id": "price-seeking-underclassified",
       "mismatches": [
         {
-          "actual": "decision",
+          "actual": "deal_seeking",
+          "expected": "education",
+          "path": "model_output.classification.intent.subtype"
+        },
+        {
+          "actual": "consideration",
           "expected": "awareness",
           "path": "model_output.classification.intent.decision_phase"
+        },
+        {
+          "actual": "soft_recommendation",
+          "expected": "none",
+          "path": "system_decision.opportunity.type"
         }
       ],
       "notes": "Price-seeking prompts still underclassify and should remain visible until the next data pass.",
@@ -198,19 +269,135 @@
     },
     {
       "actual": {
-        "model_output.classification.intent.subtype": "emotional_reflection",
+        "model_output.classification.intent.subtype": "account_help",
         "system_decision.policy.monetization_eligibility": "not_allowed"
       },
       "expected": {
-        "model_output.classification.intent.subtype": "emotional_reflection",
+        "model_output.classification.intent.subtype": "account_help",
         "system_decision.policy.monetization_eligibility": "not_allowed"
       },
-      "id": "support-subtype-still-bleeds-into-reflection",
+      "id": "support-subtype-account-help",
       "mismatches": [],
-      "notes": "The system layer blocks this correctly, but the subtype head still confuses some support phrasing with reflection.",
+      "notes": "Login-help prompts should land in the account-help subtype instead of reflection-style labels.",
       "pass": true,
-      "status": "acceptable_weakness",
+      "status": "must_fix",
       "text": "I cannot log into my account"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "research",
+        "model_output.classification.intent.subtype": "product_discovery"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "product_discovery"
+      },
+      "id": "discovery-subtype-shortlist",
+      "mismatches": [
+        {
+          "actual": "research",
+          "expected": "consideration",
+          "path": "model_output.classification.intent.decision_phase"
+        }
+      ],
+      "notes": "Shortlist-building queries should stay in product discovery instead of drifting into fit-evaluation labels.",
+      "pass": false,
+      "status": "must_fix",
+      "text": "What project management tools should a remote ops team shortlist?"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "decision",
+        "model_output.classification.intent.subtype": "evaluation"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "evaluation"
+      },
+      "id": "evaluation-subtype-fit-check",
+      "mismatches": [
+        {
+          "actual": "decision",
+          "expected": "consideration",
+          "path": "model_output.classification.intent.decision_phase"
+        }
+      ],
+      "notes": "Single-vendor fit checks should map to evaluation rather than broad discovery.",
+      "pass": false,
+      "status": "must_fix",
+      "text": "Would ClickUp be a good fit for a remote ops team?"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "comparison",
+        "system_decision.opportunity.type": "comparison_slot"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "consideration",
+        "model_output.classification.intent.subtype": "comparison",
+        "system_decision.opportunity.type": "comparison_slot"
+      },
+      "id": "comparison-vs-provider-selection-boundary",
+      "mismatches": [],
+      "notes": "Side-by-side comparison language should not be upgraded into provider selection.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Compare HubSpot and Pipedrive for a 5-person sales team"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "signup"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "signup"
+      },
+      "id": "signup-vs-account-help-boundary",
+      "mismatches": [],
+      "notes": "New-account requests should stay in signup instead of leaking into account-help support labels.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Create a new trial account for our sales team"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "contact_sales"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "contact_sales"
+      },
+      "id": "booking-vs-contact-sales-boundary",
+      "mismatches": [],
+      "notes": "Rep outreach requests should stay in contact-sales rather than the booking/demo bucket.",
+      "pass": true,
+      "status": "must_fix",
+      "text": "Have a sales rep contact me about enterprise pricing"
+    },
+    {
+      "actual": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "download"
+      },
+      "expected": {
+        "model_output.classification.intent.decision_phase": "action",
+        "model_output.classification.intent.subtype": "task_execution"
+      },
+      "id": "task-vs-onboarding-boundary",
+      "mismatches": [
+        {
+          "actual": "download",
+          "expected": "task_execution",
+          "path": "model_output.classification.intent.subtype"
+        }
+      ],
+      "notes": "Single in-product workflow requests should stay in task execution rather than onboarding setup.",
+      "pass": false,
+      "status": "must_fix",
+      "text": "Export the weekly pipeline report for me"
     }
   ]
 }

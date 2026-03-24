@@ -7,17 +7,17 @@
   "sample_label_counts": {
     "Attractions": {
       "depth": 1,
-      "hard_negative_count": 16,
-      "parent_safe_count": 0,
-      "test": 6,
-      "total": 40,
-      "train": 28,
-      "val": 6
+      "hard_negative_count": 24,
+      "parent_safe_count": 10,
+      "test": 9,
+      "total": 58,
+      "train": 40,
+      "val": 9
     },
     "Attractions > Amusement and Theme Parks": {
       "depth": 2,
-      "hard_negative_count": 8,
-      "parent_safe_count": 5,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -26,7 +26,7 @@
     "Attractions > Bars & Restaurants": {
       "depth": 2,
       "hard_negative_count": 4,
-      "parent_safe_count": 4,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -34,8 +34,8 @@
     },
     "Attractions > Casinos & Gambling": {
       "depth": 2,
-      "hard_negative_count": 8,
-      "parent_safe_count": 2,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -44,7 +44,7 @@
     "Attractions > Historic Site and Landmark Tours": {
       "depth": 2,
       "hard_negative_count": 9,
-      "parent_safe_count": 1,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -52,8 +52,8 @@
     },
     "Attractions > Malls & Shopping Centers": {
       "depth": 2,
-      "hard_negative_count": 7,
-      "parent_safe_count": 4,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -61,8 +61,8 @@
     },
     "Attractions > Museums & Galleries": {
       "depth": 2,
-      "hard_negative_count": 7,
-      "parent_safe_count": 4,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -70,8 +70,8 @@
     },
     "Attractions > Nightclubs": {
       "depth": 2,
-      "hard_negative_count": 7,
-      "parent_safe_count": 3,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -79,8 +79,8 @@
     },
     "Attractions > Outdoor Activities": {
       "depth": 2,
-      "hard_negative_count": 6,
-      "parent_safe_count": 5,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -88,8 +88,8 @@
     },
     "Attractions > Parks & Nature": {
       "depth": 2,
-      "hard_negative_count": 6,
-      "parent_safe_count": 5,
+      "hard_negative_count": 9,
+      "parent_safe_count": 0,
       "test": 6,
       "total": 36,
       "train": 24,
@@ -98,81 +98,81 @@
   },
   "target_rows_per_label_override": null,
   "test": {
-    "count": 3183,
-    "hard_negative_count": 684,
+    "count": 3282,
+    "hard_negative_count": 1449,
     "labels": 703,
-    "max_rows_per_label": 14,
+    "max_rows_per_label": 17,
     "min_rows_per_label": 2,
-    "parent_safe_count": 190,
+    "parent_safe_count": 60,
     "rows_by_depth": {
-      "1": 286,
+      "1": 385,
       "2": 1932,
       "3": 825,
       "4": 140
     },
     "rows_by_evidence_strength": {
-      "moderate": 1893,
-      "strong": 1100,
-      "weak": 190
+      "moderate": 1098,
+      "strong": 2124,
+      "weak": 60
     },
     "rows_by_prompt_family": {
-      "action": 26,
-      "alias": 1124,
-      "contrastive": 684,
-      "discovery": 779,
-      "vague": 570
+      "action": 37,
+      "alias": 866,
+      "contrastive": 1449,
+      "discovery": 628,
+      "vague": 302
     }
   },
   "train": {
-    "count": 12834,
-    "hard_negative_count": 2017,
+    "count": 13211,
+    "hard_negative_count": 1793,
     "labels": 703,
-    "max_rows_per_label": 56,
+    "max_rows_per_label": 68,
     "min_rows_per_label": 8,
-    "parent_safe_count": 675,
+    "parent_safe_count": 239,
     "rows_by_depth": {
-      "1": 1246,
+      "1": 1623,
       "2": 7728,
       "3": 3300,
       "4": 560
     },
     "rows_by_evidence_strength": {
-      "moderate": 6979,
-      "strong": 5180,
-      "weak": 675
+      "moderate": 5245,
+      "strong": 7727,
+      "weak": 239
     },
     "rows_by_prompt_family": {
-      "action": 193,
-      "alias": 5345,
-      "contrastive": 2017,
-      "discovery": 3433,
-      "vague": 1846
+      "action": 167,
+      "alias": 5790,
+      "contrastive": 1793,
+      "discovery": 3571,
+      "vague": 1890
     }
   },
   "val": {
-    "count": 3183,
-    "hard_negative_count": 650,
+    "count": 3282,
+    "hard_negative_count": 1385,
     "labels": 703,
-    "max_rows_per_label": 14,
+    "max_rows_per_label": 17,
     "min_rows_per_label": 2,
-    "parent_safe_count": 199,
+    "parent_safe_count": 56,
     "rows_by_depth": {
-      "1": 286,
+      "1": 385,
       "2": 1932,
       "3": 825,
       "4": 140
     },
     "rows_by_evidence_strength": {
-      "moderate": 1858,
-      "strong": 1126,
-      "weak": 199
+      "moderate": 1065,
+      "strong": 2161,
+      "weak": 56
     },
     "rows_by_prompt_family": {
-      "action": 57,
-      "alias": 1136,
-      "contrastive": 650,
-      "discovery": 751,
-      "vague": 589
+      "action": 72,
+      "alias": 898,
+      "contrastive": 1385,
+      "discovery": 610,
+      "vague": 317
     }
   }
 }

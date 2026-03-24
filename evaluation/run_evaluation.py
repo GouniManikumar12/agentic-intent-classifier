@@ -17,17 +17,24 @@ from config import (
     DEFAULT_BENCHMARK_PATH,
     EVALUATION_ARTIFACTS_DIR,
     HEAD_CONFIGS,
-    IAB_CROSS_VERTICAL_MAPPING_CASES_PATH,
-    IAB_MAPPING_CASES_PATH,
+    IAB_BEHAVIOR_LOCK_CASES_PATH,
+    IAB_CROSS_VERTICAL_BEHAVIOR_LOCK_CASES_PATH,
+    IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH,
+    IAB_QUALITY_TARGET_CASES_PATH,
+    IAB_RETRIEVAL_SPLIT_PATHS,
+    IAB_RETRIEVAL_STRESS_SUITE_PATHS,
     KNOWN_FAILURE_CASES_PATH,
     ensure_artifact_dirs,
 )
 from evaluation.regression_suite import (
-    evaluate_iab_cross_vertical_cases,
-    evaluate_iab_mapping_cases,
+    evaluate_iab_behavior_lock_cases,
+    evaluate_iab_cross_vertical_behavior_lock_cases,
+    evaluate_iab_cross_vertical_quality_target_cases,
+    evaluate_iab_quality_target_cases,
     evaluate_known_failure_cases,
 )
 from evaluation.iab_quality import compute_path_metrics, evaluate_iab_views, path_from_label
+from iab_retrieval import predict_iab_content_retrieval_batch
 from model_runtime import get_head
 from schemas import validate_classify_response
 
@@ -112,14 +119,86 @@ def evaluate_head_dataset(head_name: str, dataset_path: Path, suite_name: str, o
         "per_class_metrics": report,
         "confusion_matrix_path": str(confusion_path),
     }
-    if head_name == "iab_content":
-        true_paths = [path_from_label(row[config.label_field]) for row in rows]
-        pred_paths = [path_from_label(label) for label in y_pred]
-        summary["tier_metrics"] = compute_path_metrics(true_paths, pred_paths)
-        summary["view_metrics"] = evaluate_iab_views(rows)
     if difficulty_breakdown is not None:
         summary["difficulty_breakdown"] = difficulty_breakdown
     write_json(output_dir / f"{head_name}_{suite_name}_report.json", summary)
+    return summary
+
+
+def evaluate_iab_dataset(dataset_path: Path, suite_name: str, output_dir: Path) -> dict:
+    rows = load_jsonl(dataset_path)
+    true_paths = [path_from_label(row["iab_path"]) for row in rows]
+    true_labels = [row["iab_path"] for row in rows]
+    retrieval_outputs = predict_iab_content_retrieval_batch([row["text"] for row in rows])
+    if not any(output is not None for output in retrieval_outputs):
+        raise RuntimeError(
+            "IAB retrieval artifacts are unavailable. Run `python3 training/build_iab_taxonomy_embeddings.py` "
+            "from the `agentic-intent-classifier` directory first."
+        )
+
+    pred_paths = [
+        tuple(output["path"]) if output is not None else tuple()
+        for output in retrieval_outputs
+    ]
+    accepted = [output is not None for output in retrieval_outputs]
+    source = "embedding_retrieval"
+    pred_labels = [" > ".join(path) if path else "__no_prediction__" for path in pred_paths]
+
+    accepted_total_count = sum(accepted)
+    accepted_accuracy = (
+        sum(1 for truth, pred, keep in zip(true_paths, pred_paths, accepted) if keep and truth == pred) / accepted_total_count
+        if accepted_total_count
+        else 0.0
+    )
+    difficulty_breakdown = None
+    if rows and all("difficulty" in row for row in rows):
+        difficulty_breakdown = {}
+        for difficulty in sorted({row["difficulty"] for row in rows}):
+            indices = [idx for idx, row in enumerate(rows) if row["difficulty"] == difficulty]
+            difficulty_true_paths = [true_paths[idx] for idx in indices]
+            difficulty_pred_paths = [pred_paths[idx] for idx in indices]
+            difficulty_true_labels = [true_labels[idx] for idx in indices]
+            difficulty_pred_labels = [pred_labels[idx] for idx in indices]
+            difficulty_accepted = [accepted[idx] for idx in indices]
+            difficulty_accepted_count = sum(difficulty_accepted)
+            difficulty_accepted_accuracy = (
+                sum(
+                    1
+                    for truth, pred, keep in zip(difficulty_true_paths, difficulty_pred_paths, difficulty_accepted)
+                    if keep and truth == pred
+                )
+                / difficulty_accepted_count
+                if difficulty_accepted_count
+                else 0.0
+            )
+            difficulty_breakdown[difficulty] = {
+                "count": len(indices),
+                "accuracy": round(
+                    float(sum(1 for truth, pred in zip(difficulty_true_paths, difficulty_pred_paths) if truth == pred) / max(len(indices), 1)),
+                    4,
+                ),
+                "macro_f1": round(float(f1_score(difficulty_true_labels, difficulty_pred_labels, average="macro")), 4),
+                "accepted_coverage": round(float(difficulty_accepted_count / max(len(indices), 1)), 4),
+                "accepted_accuracy": round(float(difficulty_accepted_accuracy), 4),
+                "fallback_rate": round(float(1 - (difficulty_accepted_count / max(len(indices), 1))), 4),
+            }
+    summary = {
+        "head": "iab_content",
+        "suite": suite_name,
+        "dataset_path": str(dataset_path),
+        "count": len(rows),
+        "accuracy": round(float(sum(1 for truth, pred in zip(true_paths, pred_paths) if truth == pred) / max(len(rows), 1)), 4),
+        "macro_f1": round(float(f1_score(true_labels, pred_labels, average="macro")), 4),
+        "accepted_coverage": round(float(accepted_total_count / max(len(rows), 1)), 4),
+        "accepted_accuracy": round(float(accepted_accuracy), 4),
+        "fallback_rate": round(float(1 - (accepted_total_count / max(len(rows), 1))), 4),
+        "primary_source": source,
+        "tier_metrics": compute_path_metrics(true_paths, pred_paths),
+        "view_metrics": evaluate_iab_views(rows),
+    }
+    if difficulty_breakdown is not None:
+        summary["difficulty_breakdown"] = difficulty_breakdown
+    write_json(output_dir / f"iab_content_{suite_name}_report.json", summary)
     return summary
 
 
@@ -169,11 +248,29 @@ def main() -> None:
             head_summary[suite_name] = evaluate_head_dataset(head_name, suite_path, suite_name, output_dir)
         summary["heads"][head_name] = head_summary
 
+    iab_summary = {}
+    for split_name, split_path in IAB_RETRIEVAL_SPLIT_PATHS.items():
+        iab_summary[split_name] = evaluate_iab_dataset(split_path, split_name, output_dir)
+    for suite_name, suite_path in IAB_RETRIEVAL_STRESS_SUITE_PATHS.items():
+        iab_summary[suite_name] = evaluate_iab_dataset(suite_path, suite_name, output_dir)
+    summary["heads"]["iab_content"] = iab_summary
+
     summary["combined"]["demo_benchmark"] = evaluate_combined_benchmark(DEFAULT_BENCHMARK_PATH, output_dir)
     summary["combined"]["known_failure_regression"] = evaluate_known_failure_cases(KNOWN_FAILURE_CASES_PATH, output_dir)
-    summary["combined"]["iab_mapping_regression"] = evaluate_iab_mapping_cases(IAB_MAPPING_CASES_PATH, output_dir)
-    summary["combined"]["iab_cross_vertical_regression"] = evaluate_iab_cross_vertical_cases(
-        IAB_CROSS_VERTICAL_MAPPING_CASES_PATH,
+    summary["combined"]["iab_behavior_lock_regression"] = evaluate_iab_behavior_lock_cases(
+        IAB_BEHAVIOR_LOCK_CASES_PATH,
+        output_dir,
+    )
+    summary["combined"]["iab_cross_vertical_behavior_lock_regression"] = evaluate_iab_cross_vertical_behavior_lock_cases(
+        IAB_CROSS_VERTICAL_BEHAVIOR_LOCK_CASES_PATH,
+        output_dir,
+    )
+    summary["combined"]["iab_quality_target_eval"] = evaluate_iab_quality_target_cases(
+        IAB_QUALITY_TARGET_CASES_PATH,
+        output_dir,
+    )
+    summary["combined"]["iab_cross_vertical_quality_target_eval"] = evaluate_iab_cross_vertical_quality_target_cases(
+        IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH,
         output_dir,
     )
     write_json(output_dir / "summary.json", summary)
@@ -207,17 +304,29 @@ def main() -> None:
                 "failed": summary["combined"]["known_failure_regression"]["failed"],
                 "by_status": summary["combined"]["known_failure_regression"]["by_status"],
             },
-            "iab_mapping_regression": {
-                "count": summary["combined"]["iab_mapping_regression"]["count"],
-                "passed": summary["combined"]["iab_mapping_regression"]["passed"],
-                "failed": summary["combined"]["iab_mapping_regression"]["failed"],
-                "by_status": summary["combined"]["iab_mapping_regression"]["by_status"],
+            "iab_behavior_lock_regression": {
+                "count": summary["combined"]["iab_behavior_lock_regression"]["count"],
+                "passed": summary["combined"]["iab_behavior_lock_regression"]["passed"],
+                "failed": summary["combined"]["iab_behavior_lock_regression"]["failed"],
+                "by_status": summary["combined"]["iab_behavior_lock_regression"]["by_status"],
             },
-            "iab_cross_vertical_regression": {
-                "count": summary["combined"]["iab_cross_vertical_regression"]["count"],
-                "passed": summary["combined"]["iab_cross_vertical_regression"]["passed"],
-                "failed": summary["combined"]["iab_cross_vertical_regression"]["failed"],
-                "by_status": summary["combined"]["iab_cross_vertical_regression"]["by_status"],
+            "iab_cross_vertical_behavior_lock_regression": {
+                "count": summary["combined"]["iab_cross_vertical_behavior_lock_regression"]["count"],
+                "passed": summary["combined"]["iab_cross_vertical_behavior_lock_regression"]["passed"],
+                "failed": summary["combined"]["iab_cross_vertical_behavior_lock_regression"]["failed"],
+                "by_status": summary["combined"]["iab_cross_vertical_behavior_lock_regression"]["by_status"],
+            },
+            "iab_quality_target_eval": {
+                "count": summary["combined"]["iab_quality_target_eval"]["count"],
+                "passed": summary["combined"]["iab_quality_target_eval"]["passed"],
+                "failed": summary["combined"]["iab_quality_target_eval"]["failed"],
+                "by_status": summary["combined"]["iab_quality_target_eval"]["by_status"],
+            },
+            "iab_cross_vertical_quality_target_eval": {
+                "count": summary["combined"]["iab_cross_vertical_quality_target_eval"]["count"],
+                "passed": summary["combined"]["iab_cross_vertical_quality_target_eval"]["passed"],
+                "failed": summary["combined"]["iab_cross_vertical_quality_target_eval"]["failed"],
+                "by_status": summary["combined"]["iab_cross_vertical_quality_target_eval"]["by_status"],
             },
         },
         "summary_path": str(output_dir / "summary.json"),

@@ -1,15 +1,15 @@
 {
-  "accepted_accuracy": 0.9,
-  "accepted_coverage": 0.7692,
-  "accuracy": 0.8462,
+  "accepted_accuracy": 0.9231,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.9231,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_hard_cases_confusion_matrix.csv",
   "count": 39,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/hard_cases.jsonl",
-  "fallback_rate": 0.2308,
+  "fallback_rate": 0.0,
   "head": "decision_phase",
-  "macro_f1": 0.8461,
+  "macro_f1": 0.9249,
   "per_class_metrics": {
-    "accuracy": 0.8461538461538461,
+    "accuracy": 0.9230769230769231,
     "action": {
       "f1-score": 0.0,
       "precision": 0.0,
@@ -17,33 +17,33 @@
       "support": 0.0
     },
     "awareness": {
-      "f1-score": 0.9230769230769231,
-      "precision": 0.8571428571428571,
+      "f1-score": 0.8571428571428571,
+      "precision": 0.75,
       "recall": 1.0,
       "support": 6.0
     },
     "consideration": {
-      "f1-score": 0.8,
-      "precision": 0.75,
+      "f1-score": 0.9230769230769231,
+      "precision": 1.0,
       "recall": 0.8571428571428571,
       "support": 7.0
     },
     "decision": {
-      "f1-score": 0.875,
-      "precision": 0.7777777777777778,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 7.0
     },
     "macro avg": {
-      "f1-score": 0.7251998001998002,
-      "precision": 0.7454648526077098,
-      "recall": 0.7244897959183673,
+      "f1-score": 0.792778649921507,
+      "precision": 0.7976190476190477,
+      "recall": 0.7959183673469388,
       "support": 39.0
     },
     "post_purchase": {
-      "f1-score": 0.8,
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.6666666666666666,
+      "recall": 1.0,
       "support": 6.0
     },
     "research": {
@@ -53,15 +53,15 @@
       "support": 7.0
     },
     "support": {
-      "f1-score": 0.9090909090909091,
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.8333333333333334,
+      "recall": 1.0,
       "support": 6.0
     },
     "weighted avg": {
-      "f1-score": 0.8436569840415995,
-      "precision": 0.8633496133496132,
-      "recall": 0.8461538461538461,
+      "f1-score": 0.9227951535643845,
+      "precision": 0.9316239316239316,
+      "recall": 0.9230769230769231,
       "support": 39.0
     }
   },

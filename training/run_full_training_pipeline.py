@@ -15,15 +15,11 @@ def run_step(args: list[str]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the full multi-head training pipeline.")
-    parser.add_argument("--iab-epochs", type=float, default=2.0, help="Training epochs for the IAB head.")
-    parser.add_argument("--iab-train-batch-size", type=int, default=16, help="Per-device training batch size for IAB.")
-    parser.add_argument("--iab-eval-batch-size", type=int, default=16, help="Per-device eval batch size for IAB.")
-    parser.add_argument("--iab-learning-rate", type=float, default=2e-5, help="Learning rate for IAB training.")
     parser.add_argument(
-        "--iab-target-rows-per-label",
+        "--iab-embedding-batch-size",
         type=int,
-        default=0,
-        help="Optional cap per IAB label. Use 0 for the uncapped full dataset.",
+        default=32,
+        help="Batch size for building local IAB taxonomy embeddings.",
     )
     parser.add_argument(
         "--skip-full-eval",
@@ -41,46 +37,19 @@ def main() -> None:
     run_step([python, "training/train_subtype.py"])
     run_step([python, "training/build_decision_phase_difficulty_dataset.py"])
     run_step([python, "training/train_decision_phase.py"])
-    run_step(
-        [
-            python,
-            "training/build_iab_dataset.py",
-            "--target-rows-per-label",
-            str(args.iab_target_rows_per_label),
-        ]
-    )
     run_step([python, "training/build_iab_difficulty_dataset.py"])
     run_step([python, "training/build_iab_cross_vertical_benchmark.py"])
-    run_step([python, "training/build_iab_hierarchy_dataset.py"])
     run_step(
         [
             python,
-            "training/train_iab_hierarchical.py",
-            "--epochs",
-            str(args.iab_epochs),
-            "--train-batch-size",
-            str(args.iab_train_batch_size),
-            "--eval-batch-size",
-            str(args.iab_eval_batch_size),
-            "--learning-rate",
-            str(args.iab_learning_rate),
+            "training/build_iab_taxonomy_embeddings.py",
+            "--batch-size",
+            str(args.iab_embedding_batch_size),
         ]
     )
-    run_step(
-        [
-            python,
-            "training/train_iab_content.py",
-            "--epochs",
-            str(args.iab_epochs),
-            "--train-batch-size",
-            str(args.iab_train_batch_size),
-            "--eval-batch-size",
-            str(args.iab_eval_batch_size),
-            "--learning-rate",
-            str(args.iab_learning_rate),
-        ]
-    )
-    run_step([python, "training/calibrate_confidence.py", "--head", "all"])
+    run_step([python, "training/calibrate_confidence.py", "--head", "intent_type"])
+    run_step([python, "training/calibrate_confidence.py", "--head", "intent_subtype"])
+    run_step([python, "training/calibrate_confidence.py", "--head", "decision_phase"])
     if not args.skip_full_eval:
         run_step([python, "evaluation/run_regression_suite.py"])
         run_step([python, "evaluation/run_iab_mapping_suite.py"])

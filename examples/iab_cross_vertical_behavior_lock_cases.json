@@ -1,0 +1,1040 @@
+[
+  {
+    "id": "auto-buying-easy",
+    "status": "must_fix",
+    "text": "Which car should I buy for commuting?",
+    "notes": "Cross-vertical easy IAB mapping case for Automotive > Auto Buying and Selling.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Travel",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Travel Type"
+    }
+  },
+  {
+    "id": "auto-buying-medium",
+    "status": "must_fix",
+    "text": "Best used SUV for a family of four",
+    "notes": "Cross-vertical medium IAB mapping case for Automotive > Auto Buying and Selling.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Automotive",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Auto Body Styles"
+    }
+  },
+  {
+    "id": "auto-buying-hard",
+    "status": "must_fix",
+    "text": "I need a shortlist of practical cars before making a purchase this month",
+    "notes": "Cross-vertical hard IAB mapping case for Automotive > Auto Buying and Selling.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Automotive",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Auto Type"
+    }
+  },
+  {
+    "id": "sales-crm-easy",
+    "status": "must_fix",
+    "text": "What is CRM software?",
+    "notes": "Cross-vertical easy IAB mapping case for Business and Finance > Business > Sales.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications"
+    }
+  },
+  {
+    "id": "sales-crm-medium",
+    "status": "must_fix",
+    "text": "HubSpot vs Zoho for a small team",
+    "notes": "Cross-vertical medium IAB mapping case for Business and Finance > Business > Sales.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet"
+    }
+  },
+  {
+    "id": "sales-crm-hard",
+    "status": "must_fix",
+    "text": "Need software to manage leads and pipeline for a startup sales team",
+    "notes": "Cross-vertical hard IAB mapping case for Business and Finance > Business > Sales.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Business",
+      "model_output.classification.iab_content.tier3.label": "Sales"
+    }
+  },
+  {
+    "id": "marketing-tools-easy",
+    "status": "must_fix",
+    "text": "Best SEO tools for content teams",
+    "notes": "Cross-vertical easy IAB mapping case for Business and Finance > Business > Marketing and Advertising.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet"
+    }
+  },
+  {
+    "id": "marketing-tools-medium",
+    "status": "must_fix",
+    "text": "How should I compare ad attribution platforms?",
+    "notes": "Cross-vertical medium IAB mapping case for Business and Finance > Business > Marketing and Advertising.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Business"
+    }
+  },
+  {
+    "id": "marketing-tools-hard",
+    "status": "must_fix",
+    "text": "Need software to measure channel performance across paid and organic campaigns",
+    "notes": "Cross-vertical hard IAB mapping case for Business and Finance > Business > Marketing and Advertising.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications"
+    }
+  },
+  {
+    "id": "business-it-easy",
+    "status": "must_fix",
+    "text": "How do I reset my work password?",
+    "notes": "Cross-vertical easy IAB mapping case for Business and Finance > Business > Business I.T..",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet"
+    }
+  },
+  {
+    "id": "business-it-medium",
+    "status": "must_fix",
+    "text": "My employees keep getting locked out of their accounts",
+    "notes": "Cross-vertical medium IAB mapping case for Business and Finance > Business > Business I.T..",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Careers",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Job Search"
+    }
+  },
+  {
+    "id": "business-it-hard",
+    "status": "must_fix",
+    "text": "Need identity and access software for login, permissions, and account security",
+    "notes": "Cross-vertical hard IAB mapping case for Business and Finance > Business > Business I.T..",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet"
+    }
+  },
+  {
+    "id": "dining-out-easy",
+    "status": "must_fix",
+    "text": "Book a table for six tonight",
+    "notes": "Cross-vertical easy IAB mapping case for Food & Drink > Dining Out.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Dining Out"
+    }
+  },
+  {
+    "id": "dining-out-medium",
+    "status": "must_fix",
+    "text": "Good restaurants for a client dinner downtown",
+    "notes": "Cross-vertical medium IAB mapping case for Food & Drink > Dining Out.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Dining Out"
+    }
+  },
+  {
+    "id": "dining-out-hard",
+    "status": "must_fix",
+    "text": "Need a place to eat tonight where I can make a reservation online",
+    "notes": "Cross-vertical hard IAB mapping case for Food & Drink > Dining Out.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Dining Out"
+    }
+  },
+  {
+    "id": "alcoholic-beverages-easy",
+    "status": "must_fix",
+    "text": "Which whiskey cocktail should I order?",
+    "notes": "Cross-vertical easy IAB mapping case for Food & Drink > Alcoholic Beverages.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "alcoholic-beverages-medium",
+    "status": "must_fix",
+    "text": "Best vodka drinks for beginners",
+    "notes": "Cross-vertical medium IAB mapping case for Food & Drink > Alcoholic Beverages.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "alcoholic-beverages-hard",
+    "status": "must_fix",
+    "text": "Want a spirit-forward drink recommendation, not a restaurant suggestion",
+    "notes": "Cross-vertical hard IAB mapping case for Food & Drink > Alcoholic Beverages.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "artificial-intelligence-easy",
+    "status": "must_fix",
+    "text": "What is intent classification in NLP?",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Artificial Intelligence.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "artificial-intelligence-medium",
+    "status": "must_fix",
+    "text": "How do large language models handle text classification?",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Artificial Intelligence.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Language Learning"
+    }
+  },
+  {
+    "id": "artificial-intelligence-hard",
+    "status": "must_fix",
+    "text": "Need the machine learning concept behind language understanding, not software to buy",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Artificial Intelligence.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Language Learning"
+    }
+  },
+  {
+    "id": "software-apps-easy",
+    "status": "must_fix",
+    "text": "Best workflow software for a small operations team",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Computer Software and Applications.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Business"
+    }
+  },
+  {
+    "id": "software-apps-medium",
+    "status": "must_fix",
+    "text": "Need project management software for a distributed team",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Computer Software and Applications.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet",
+      "model_output.classification.iab_content.tier4.label": "Cloud Computing"
+    }
+  },
+  {
+    "id": "software-apps-hard",
+    "status": "must_fix",
+    "text": "Looking for a business software platform to organize internal workflows",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Computer Software and Applications.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications"
+    }
+  },
+  {
+    "id": "communication-software-easy",
+    "status": "must_fix",
+    "text": "Best communication software for remote teams",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications",
+      "model_output.classification.iab_content.tier4.label": "Communication"
+    }
+  },
+  {
+    "id": "communication-software-medium",
+    "status": "must_fix",
+    "text": "Slack vs Teams for internal messaging",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications",
+      "model_output.classification.iab_content.tier4.label": "Communication"
+    }
+  },
+  {
+    "id": "communication-software-hard",
+    "status": "must_fix",
+    "text": "Need a workplace chat tool for cross-functional collaboration",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Computer Software and Applications > Communication.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications",
+      "model_output.classification.iab_content.tier4.label": "Communication"
+    }
+  },
+  {
+    "id": "web-hosting-easy",
+    "status": "must_fix",
+    "text": "Vercel vs Netlify for website hosting",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet",
+      "model_output.classification.iab_content.tier4.label": "Web Hosting"
+    }
+  },
+  {
+    "id": "web-hosting-medium",
+    "status": "must_fix",
+    "text": "Best hosting platform for a startup website",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet",
+      "model_output.classification.iab_content.tier4.label": "Web Hosting"
+    }
+  },
+  {
+    "id": "web-hosting-hard",
+    "status": "must_fix",
+    "text": "Need a managed hosting provider to deploy and run our marketing site",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Internet > Web Hosting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Internet",
+      "model_output.classification.iab_content.tier4.label": "Web Hosting"
+    }
+  },
+  {
+    "id": "laptops-easy",
+    "status": "must_fix",
+    "text": "Which laptop should I buy for college?",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Laptops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Laptops"
+    }
+  },
+  {
+    "id": "laptops-medium",
+    "status": "must_fix",
+    "text": "Best laptop for work and study under 1200",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Laptops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Laptops"
+    }
+  },
+  {
+    "id": "laptops-hard",
+    "status": "must_fix",
+    "text": "Need a portable computer with good battery life for everyday work",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Laptops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Consumer Electronics",
+      "model_output.classification.iab_content.tier3.label": "Smartphones"
+    }
+  },
+  {
+    "id": "desktops-easy",
+    "status": "must_fix",
+    "text": "Best desktop for video editing",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Computing > Desktops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Software and Applications",
+      "model_output.classification.iab_content.tier4.label": "Photo Editing Software"
+    }
+  },
+  {
+    "id": "desktops-medium",
+    "status": "must_fix",
+    "text": "Which desktop computer should I buy for a home office?",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Computing > Desktops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Desktops"
+    }
+  },
+  {
+    "id": "desktops-hard",
+    "status": "must_fix",
+    "text": "Need a desktop PC with strong performance for creative work",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Computing > Desktops.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Computing",
+      "model_output.classification.iab_content.tier3.label": "Desktops"
+    }
+  },
+  {
+    "id": "smartphones-easy",
+    "status": "must_fix",
+    "text": "Best phone with a good camera under 700",
+    "notes": "Cross-vertical easy IAB mapping case for Technology & Computing > Consumer Electronics > Smartphones.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Consumer Electronics"
+    }
+  },
+  {
+    "id": "smartphones-medium",
+    "status": "must_fix",
+    "text": "Should I buy an iPhone or Pixel this year?",
+    "notes": "Cross-vertical medium IAB mapping case for Technology & Computing > Consumer Electronics > Smartphones.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Consumer Electronics",
+      "model_output.classification.iab_content.tier3.label": "Smartphones"
+    }
+  },
+  {
+    "id": "smartphones-hard",
+    "status": "must_fix",
+    "text": "Need a new smartphone with strong battery life and a clean software experience",
+    "notes": "Cross-vertical hard IAB mapping case for Technology & Computing > Consumer Electronics > Smartphones.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Consumer Electronics",
+      "model_output.classification.iab_content.tier3.label": "Smartphones"
+    }
+  },
+  {
+    "id": "style-fashion-parent-easy",
+    "status": "must_fix",
+    "text": "Best shoes under 100 dollars",
+    "notes": "Cross-vertical easy IAB mapping case for Style & Fashion.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Shoes and Footwear"
+    }
+  },
+  {
+    "id": "style-fashion-parent-medium",
+    "status": "must_fix",
+    "text": "Affordable fashion accessories for everyday wear",
+    "notes": "Cross-vertical medium IAB mapping case for Style & Fashion.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Clothing"
+    }
+  },
+  {
+    "id": "style-fashion-parent-hard",
+    "status": "must_fix",
+    "text": "Need style recommendations for clothing and footwear without a specific brand in mind",
+    "notes": "Cross-vertical hard IAB mapping case for Style & Fashion.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Shoes and Footwear"
+    }
+  },
+  {
+    "id": "womens-shoes-easy",
+    "status": "must_fix",
+    "text": "Best women's running shoes under 100 dollars",
+    "notes": "Cross-vertical easy IAB mapping case for Style & Fashion > Women's Fashion > Women's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Clothing"
+    }
+  },
+  {
+    "id": "womens-shoes-medium",
+    "status": "must_fix",
+    "text": "Comfortable women's sneakers for walking all day",
+    "notes": "Cross-vertical medium IAB mapping case for Style & Fashion > Women's Fashion > Women's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Clothing"
+    }
+  },
+  {
+    "id": "womens-shoes-hard",
+    "status": "must_fix",
+    "text": "Need women's footwear for commuting that looks polished but feels comfortable",
+    "notes": "Cross-vertical hard IAB mapping case for Style & Fashion > Women's Fashion > Women's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Women's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Women's Shoes and Footwear"
+    }
+  },
+  {
+    "id": "mens-shoes-easy",
+    "status": "must_fix",
+    "text": "Best men's sneakers for daily wear",
+    "notes": "Cross-vertical easy IAB mapping case for Style & Fashion > Men's Fashion > Men's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Men's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Men's Clothing"
+    }
+  },
+  {
+    "id": "mens-shoes-medium",
+    "status": "must_fix",
+    "text": "Good men's dress shoes for office use",
+    "notes": "Cross-vertical medium IAB mapping case for Style & Fashion > Men's Fashion > Men's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Men's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Men's Clothing"
+    }
+  },
+  {
+    "id": "mens-shoes-hard",
+    "status": "must_fix",
+    "text": "Need men's footwear that works for workdays and weekend walking",
+    "notes": "Cross-vertical hard IAB mapping case for Style & Fashion > Men's Fashion > Men's Shoes and Footwear.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Men's Fashion",
+      "model_output.classification.iab_content.tier3.label": "Men's Shoes and Footwear"
+    }
+  },
+  {
+    "id": "hotels-easy",
+    "status": "must_fix",
+    "text": "Need a hotel in Chicago for two nights",
+    "notes": "Cross-vertical easy IAB mapping case for Travel > Travel Type > Hotels and Motels.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Real Estate",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Hotel Properties"
+    }
+  },
+  {
+    "id": "hotels-medium",
+    "status": "must_fix",
+    "text": "Best hotels near Times Square for a weekend trip",
+    "notes": "Cross-vertical medium IAB mapping case for Travel > Travel Type > Hotels and Motels.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Travel",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Travel Type",
+      "model_output.classification.iab_content.tier3.label": "Hotels and Motels"
+    }
+  },
+  {
+    "id": "hotels-hard",
+    "status": "must_fix",
+    "text": "Looking for a place to stay during a work trip, not general travel advice",
+    "notes": "Cross-vertical hard IAB mapping case for Travel > Travel Type > Hotels and Motels.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Travel",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Travel Type"
+    }
+  },
+  {
+    "id": "real-estate-rentals-easy",
+    "status": "must_fix",
+    "text": "Apartments for rent near downtown Austin",
+    "notes": "Cross-vertical easy IAB mapping case for Real Estate > Real Estate Renting and Leasing.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Real Estate",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Apartments"
+    }
+  },
+  {
+    "id": "real-estate-rentals-medium",
+    "status": "must_fix",
+    "text": "Best neighborhoods to lease a two-bedroom apartment in Seattle",
+    "notes": "Cross-vertical medium IAB mapping case for Real Estate > Real Estate Renting and Leasing.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Real Estate",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Apartments"
+    }
+  },
+  {
+    "id": "real-estate-rentals-hard",
+    "status": "must_fix",
+    "text": "Need rental listings for a short move, not home-buying advice",
+    "notes": "Cross-vertical hard IAB mapping case for Real Estate > Real Estate Renting and Leasing.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Personal Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Personal Debt",
+      "model_output.classification.iab_content.tier3.label": "Home Financing"
+    }
+  },
+  {
+    "id": "running-and-jogging-easy",
+    "status": "must_fix",
+    "text": "Best running plan for a first 10k",
+    "notes": "Cross-vertical easy IAB mapping case for Healthy Living > Fitness and Exercise > Running and Jogging.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Business",
+      "model_output.classification.iab_content.tier3.label": "Green Solutions"
+    }
+  },
+  {
+    "id": "running-and-jogging-medium",
+    "status": "must_fix",
+    "text": "How should I train for a half marathon as a beginner?",
+    "notes": "Cross-vertical medium IAB mapping case for Healthy Living > Fitness and Exercise > Running and Jogging.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Healthy Living",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Fitness and Exercise",
+      "model_output.classification.iab_content.tier3.label": "Running and Jogging"
+    }
+  },
+  {
+    "id": "running-and-jogging-hard",
+    "status": "must_fix",
+    "text": "Need guidance on building a weekly jogging routine without getting injured",
+    "notes": "Cross-vertical hard IAB mapping case for Healthy Living > Fitness and Exercise > Running and Jogging.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Healthy Living",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Fitness and Exercise",
+      "model_output.classification.iab_content.tier3.label": "Running and Jogging"
+    }
+  },
+  {
+    "id": "soccer-easy",
+    "status": "must_fix",
+    "text": "How do offside rules work in soccer?",
+    "notes": "Cross-vertical easy IAB mapping case for Sports > Soccer.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Sports",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Soccer"
+    }
+  },
+  {
+    "id": "soccer-medium",
+    "status": "must_fix",
+    "text": "Best soccer drills for beginner players",
+    "notes": "Cross-vertical medium IAB mapping case for Sports > Soccer.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Sports",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Soccer"
+    }
+  },
+  {
+    "id": "soccer-hard",
+    "status": "must_fix",
+    "text": "Need help understanding football tactics for the Premier League, not fantasy sports",
+    "notes": "Cross-vertical hard IAB mapping case for Sports > Soccer.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Sports",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "fiction-easy",
+    "status": "must_fix",
+    "text": "Recommend a good fantasy novel to read",
+    "notes": "Cross-vertical easy IAB mapping case for Books and Literature > Fiction.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Books and Literature",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Fiction"
+    }
+  },
+  {
+    "id": "fiction-medium",
+    "status": "must_fix",
+    "text": "Best fiction books for a long flight",
+    "notes": "Cross-vertical medium IAB mapping case for Books and Literature > Fiction.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Books and Literature",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Fiction"
+    }
+  },
+  {
+    "id": "fiction-hard",
+    "status": "must_fix",
+    "text": "Looking for a character-driven novel, not comics or poetry",
+    "notes": "Cross-vertical hard IAB mapping case for Books and Literature > Fiction.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Books and Literature",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "home-improvement-easy",
+    "status": "must_fix",
+    "text": "How much does a kitchen remodel usually cost?",
+    "notes": "Cross-vertical easy IAB mapping case for Home & Garden > Home Improvement.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Home & Garden",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Remodeling & Construction"
+    }
+  },
+  {
+    "id": "home-improvement-medium",
+    "status": "must_fix",
+    "text": "Best tools for a DIY bathroom renovation",
+    "notes": "Cross-vertical medium IAB mapping case for Home & Garden > Home Improvement.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Style & Fashion",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Personal Care",
+      "model_output.classification.iab_content.tier3.label": "Bath and Shower"
+    }
+  },
+  {
+    "id": "home-improvement-hard",
+    "status": "must_fix",
+    "text": "Need practical advice for upgrading an older house, not interior decor inspiration",
+    "notes": "Cross-vertical hard IAB mapping case for Home & Garden > Home Improvement.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Home & Garden",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Interior Decorating"
+    }
+  },
+  {
+    "id": "online-education-easy",
+    "status": "must_fix",
+    "text": "Best online courses for learning Python",
+    "notes": "Cross-vertical easy IAB mapping case for Education > Online Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Language Learning"
+    }
+  },
+  {
+    "id": "online-education-medium",
+    "status": "must_fix",
+    "text": "What are good platforms for remote professional classes?",
+    "notes": "Cross-vertical medium IAB mapping case for Education > Online Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Careers",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Remote Working"
+    }
+  },
+  {
+    "id": "online-education-hard",
+    "status": "must_fix",
+    "text": "Need internet-based training options I can finish after work hours",
+    "notes": "Cross-vertical hard IAB mapping case for Education > Online Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Careers",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "postgraduate-education-easy",
+    "status": "must_fix",
+    "text": "best universities to study masters",
+    "notes": "Cross-vertical easy IAB mapping case for Education > College Education > Postgraduate Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "College Education"
+    }
+  },
+  {
+    "id": "postgraduate-education-medium",
+    "status": "must_fix",
+    "text": "which graduate schools have strong data science programs",
+    "notes": "Cross-vertical medium IAB mapping case for Education > College Education > Postgraduate Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "College Education",
+      "model_output.classification.iab_content.tier3.label": "Postgraduate Education",
+      "model_output.classification.iab_content.tier4.label": "Professional School"
+    }
+  },
+  {
+    "id": "postgraduate-education-hard",
+    "status": "must_fix",
+    "text": "need postgraduate options for a master's degree, not short online courses",
+    "notes": "Cross-vertical hard IAB mapping case for Education > College Education > Postgraduate Education.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Education",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "College Education"
+    }
+  },
+  {
+    "id": "medical-health-easy",
+    "status": "must_fix",
+    "text": "what do these allergy symptoms mean",
+    "notes": "Cross-vertical easy IAB mapping case for Medical Health.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Medical Health",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Diseases and Conditions",
+      "model_output.classification.iab_content.tier3.label": "Allergies"
+    }
+  },
+  {
+    "id": "medical-health-medium",
+    "status": "must_fix",
+    "text": "when should i see a doctor for persistent knee pain",
+    "notes": "Cross-vertical medium IAB mapping case for Medical Health.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Medical Health",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Diseases and Conditions",
+      "model_output.classification.iab_content.tier3.label": "Injuries",
+      "model_output.classification.iab_content.tier4.label": "First Aid"
+    }
+  },
+  {
+    "id": "medical-health-hard",
+    "status": "must_fix",
+    "text": "need medical advice about symptoms, not wellness or fitness tips",
+    "notes": "Cross-vertical hard IAB mapping case for Medical Health.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Healthy Living",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Wellness",
+      "model_output.classification.iab_content.tier3.label": "Physical Therapy"
+    }
+  },
+  {
+    "id": "careers-job-search-easy",
+    "status": "must_fix",
+    "text": "best remote jobs for data analysts",
+    "notes": "Cross-vertical easy IAB mapping case for Careers > Job Search.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Careers",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Remote Working"
+    }
+  },
+  {
+    "id": "careers-job-search-medium",
+    "status": "must_fix",
+    "text": "where should i look for product manager openings",
+    "notes": "Cross-vertical medium IAB mapping case for Careers > Job Search.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Business",
+      "model_output.classification.iab_content.tier3.label": "Sales"
+    }
+  },
+  {
+    "id": "careers-job-search-hard",
+    "status": "must_fix",
+    "text": "need help finding a new role and preparing for interviews",
+    "notes": "Cross-vertical hard IAB mapping case for Careers > Job Search.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Careers",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Job Search"
+    }
+  },
+  {
+    "id": "personal-finance-easy",
+    "status": "must_fix",
+    "text": "how much should i save each month",
+    "notes": "Cross-vertical easy IAB mapping case for Personal Finance > Financial Planning.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Food & Drink",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Food Movements"
+    }
+  },
+  {
+    "id": "personal-finance-medium",
+    "status": "must_fix",
+    "text": "best budgeting approach for a growing family",
+    "notes": "Cross-vertical medium IAB mapping case for Personal Finance > Financial Planning.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Business and Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Economy",
+      "model_output.classification.iab_content.tier3.label": "Financial Reform"
+    }
+  },
+  {
+    "id": "personal-finance-hard",
+    "status": "must_fix",
+    "text": "need help planning savings and retirement, not business finance advice",
+    "notes": "Cross-vertical hard IAB mapping case for Personal Finance > Financial Planning.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Personal Finance",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Retirement Planning"
+    }
+  },
+  {
+    "id": "parenting-easy",
+    "status": "must_fix",
+    "text": "tips for parenting a toddler",
+    "notes": "Cross-vertical easy IAB mapping case for Family and Relationships > Parenting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Family and Relationships",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Parenting"
+    }
+  },
+  {
+    "id": "parenting-medium",
+    "status": "must_fix",
+    "text": "how do i help my teenager spend less time online",
+    "notes": "Cross-vertical medium IAB mapping case for Family and Relationships > Parenting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Family and Relationships",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Parenting"
+    }
+  },
+  {
+    "id": "parenting-hard",
+    "status": "must_fix",
+    "text": "need parenting advice for a child starting preschool",
+    "notes": "Cross-vertical hard IAB mapping case for Family and Relationships > Parenting.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Family and Relationships",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Parenting",
+      "model_output.classification.iab_content.tier3.label": "Special Needs Kids"
+    }
+  },
+  {
+    "id": "gardening-easy",
+    "status": "must_fix",
+    "text": "best plants for a small balcony garden",
+    "notes": "Cross-vertical easy IAB mapping case for Home & Garden > Gardening.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Home & Garden",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "gardening-medium",
+    "status": "must_fix",
+    "text": "how often should i water tomato plants",
+    "notes": "Cross-vertical medium IAB mapping case for Home & Garden > Gardening.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Home & Garden",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Gardening"
+    }
+  },
+  {
+    "id": "gardening-hard",
+    "status": "must_fix",
+    "text": "need gardening advice for a shady backyard, not interior decor ideas",
+    "notes": "Cross-vertical hard IAB mapping case for Home & Garden > Gardening.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Home & Garden",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent"
+    }
+  },
+  {
+    "id": "movies-easy",
+    "status": "must_fix",
+    "text": "What movie should we watch tonight?",
+    "notes": "Cross-vertical easy IAB mapping case for Entertainment > Movies.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Entertainment",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Movies"
+    }
+  },
+  {
+    "id": "movies-medium",
+    "status": "must_fix",
+    "text": "Best thriller movies from the last few years",
+    "notes": "Cross-vertical medium IAB mapping case for Entertainment > Movies.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Video Gaming",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Video Game Genres",
+      "model_output.classification.iab_content.tier3.label": "Horror Video Games"
+    }
+  },
+  {
+    "id": "movies-hard",
+    "status": "must_fix",
+    "text": "Looking for film recommendations, not TV shows or music",
+    "notes": "Cross-vertical hard IAB mapping case for Entertainment > Movies.",
+    "expected": {
+      "model_output.classification.iab_content.tier1.label": "Entertainment",
+      "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+      "model_output.classification.iab_content.tier2.label": "Music",
+      "model_output.classification.iab_content.tier3.label": "Soundtracks, TV and Showtunes"
+    }
+  }
+]

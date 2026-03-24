@@ -6,7 +6,7 @@
       "total": 12
     }
   },
-  "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json",
+  "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_behavior_lock_cases.json",
   "count": 12,
   "failed": 0,
   "passed": 12,

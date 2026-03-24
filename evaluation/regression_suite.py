@@ -90,9 +90,17 @@ def evaluate_known_failure_cases(cases_path: Path, output_dir: Path) -> dict:
     return evaluate_case_file(cases_path, output_dir, "known_failure_regression.json")
 
 
-def evaluate_iab_mapping_cases(cases_path: Path, output_dir: Path) -> dict:
-    return evaluate_case_file(cases_path, output_dir, "iab_mapping_regression.json")
+def evaluate_iab_behavior_lock_cases(cases_path: Path, output_dir: Path) -> dict:
+    return evaluate_case_file(cases_path, output_dir, "iab_behavior_lock_regression.json")
 
 
-def evaluate_iab_cross_vertical_cases(cases_path: Path, output_dir: Path) -> dict:
-    return evaluate_case_file(cases_path, output_dir, "iab_cross_vertical_regression.json")
+def evaluate_iab_cross_vertical_behavior_lock_cases(cases_path: Path, output_dir: Path) -> dict:
+    return evaluate_case_file(cases_path, output_dir, "iab_cross_vertical_behavior_lock_regression.json")
+
+
+def evaluate_iab_quality_target_cases(cases_path: Path, output_dir: Path) -> dict:
+    return evaluate_case_file(cases_path, output_dir, "iab_quality_target_eval.json")
+
+
+def evaluate_iab_cross_vertical_quality_target_cases(cases_path: Path, output_dir: Path) -> dict:
+    return evaluate_case_file(cases_path, output_dir, "iab_cross_vertical_quality_target_eval.json")

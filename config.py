@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -21,8 +20,6 @@ SUBTYPE_BENCHMARK_PATH = BASE_DIR / "data" / "subtype_benchmark.jsonl"
 IAB_DIFFICULTY_DATA_DIR = BASE_DIR / "data" / "iab_difficulty"
 IAB_BENCHMARK_PATH = BASE_DIR / "data" / "iab_benchmark.jsonl"
 IAB_CROSS_VERTICAL_BENCHMARK_PATH = BASE_DIR / "data" / "iab_cross_vertical_benchmark.jsonl"
-IAB_HIERARCHY_DATA_DIR = BASE_DIR / "data" / "iab_hierarchy"
-IAB_HIERARCHY_MODEL_DIR = BASE_DIR / "iab_hierarchy_model_output"
 
 DEFAULT_API_HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8008
@@ -31,10 +28,34 @@ KNOWN_FAILURE_CASES_PATH = BASE_DIR / "examples" / "known_failure_cases.json"
 IAB_TAXONOMY_VERSION = "3.0"
 IAB_TAXONOMY_PATH = BASE_DIR / "data" / "iab-content" / "Content Taxonomy 3.0.tsv"
 IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
+IAB_TAXONOMY_NODES_PATH = IAB_ARTIFACTS_DIR / "taxonomy_nodes.json"
+IAB_TAXONOMY_EMBEDDINGS_PATH = IAB_ARTIFACTS_DIR / "taxonomy_embeddings.pt"
 IAB_DATASET_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "dataset_summary.json"
-IAB_HIERARCHY_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "hierarchy_dataset_summary.json"
-IAB_MAPPING_CASES_PATH = BASE_DIR / "examples" / "iab_mapping_cases.json"
-IAB_CROSS_VERTICAL_MAPPING_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_mapping_cases.json"
+IAB_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_mapping_cases.json"
+IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_mapping_cases.json"
+IAB_BEHAVIOR_LOCK_CASES_PATH = BASE_DIR / "examples" / "iab_behavior_lock_cases.json"
+IAB_CROSS_VERTICAL_BEHAVIOR_LOCK_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_behavior_lock_cases.json"
+IAB_RETRIEVAL_SPLIT_PATHS = {
+    "train": BASE_DIR / "data" / "iab" / "train.jsonl",
+    "val": BASE_DIR / "data" / "iab" / "val.jsonl",
+    "test": BASE_DIR / "data" / "iab" / "test.jsonl",
+}
+IAB_RETRIEVAL_STRESS_SUITE_PATHS = {
+    "hard_cases": BASE_DIR / "data" / "iab" / "hard_cases.jsonl",
+    "extended_cases": BASE_DIR / "data" / "iab" / "extended_cases.jsonl",
+    "difficulty_benchmark": IAB_BENCHMARK_PATH,
+    "cross_vertical_benchmark": IAB_CROSS_VERTICAL_BENCHMARK_PATH,
+}
+IAB_RETRIEVAL_FALLBACK_MODEL_NAME = "distilbert-base-uncased"
+IAB_RETRIEVAL_MODEL_MAX_LENGTH = 96
+IAB_RETRIEVAL_TOP_K = 8
+IAB_RETRIEVAL_DEPTH_BONUS = 0.01
+IAB_RETRIEVAL_PREFIX_CONFIDENCE_THRESHOLDS = {
+    1: 0.5,
+    2: 0.54,
+    3: 0.58,
+    4: 0.62,
+}
 
 INTENT_TYPE_LABELS = (
     "informational",
@@ -79,64 +100,6 @@ SUBTYPE_LABELS = (
     "follow_up",
     "emotional_reflection",
 )
-
-def _load_iab_taxonomy_rows(path: Path) -> list[dict[str, str]]:
-    with path.open("r", encoding="utf-8") as handle:
-        rows = list(csv.reader(handle, delimiter="\t"))
-
-    header = rows[1]
-    data_rows = rows[2:]
-    parsed_rows = []
-    for row in data_rows:
-        padded = row + [""] * (len(header) - len(row))
-        parsed_rows.append(dict(zip(header, padded)))
-    return parsed_rows
-
-
-def _build_iab_labels(path: Path) -> tuple[str, ...]:
-    labels: list[str] = []
-    seen: set[str] = set()
-    for row in _load_iab_taxonomy_rows(path):
-        parts = [
-            row.get(key, "").strip()
-            for key in ("Tier 1", "Tier 2", "Tier 3", "Tier 4")
-            if row.get(key, "").strip()
-        ]
-        if not parts:
-            continue
-        label = " > ".join(parts)
-        if label not in seen:
-            labels.append(label)
-            seen.add(label)
-    return tuple(labels)
-
-
-IAB_LABELS = _build_iab_labels(IAB_TAXONOMY_PATH)
-
-
-def _build_iab_level_labels(path: Path, level: int) -> tuple[str, ...]:
-    labels: list[str] = []
-    seen: set[str] = set()
-    for row in _load_iab_taxonomy_rows(path):
-        parts = [
-            row.get(key, "").strip()
-            for key in ("Tier 1", "Tier 2", "Tier 3", "Tier 4")
-            if row.get(key, "").strip()
-        ]
-        if len(parts) < level:
-            continue
-        label = " > ".join(parts[:level])
-        if label not in seen:
-            labels.append(label)
-            seen.add(label)
-    return tuple(labels)
-
-
-IAB_TIER1_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 1)
-IAB_TIER2_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 2)
-IAB_TIER3_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 3)
-IAB_TIER4_LABELS = _build_iab_level_labels(IAB_TAXONOMY_PATH, 4)
-
 
 def build_label_maps(labels: tuple[str, ...]) -> tuple[dict[str, int], dict[int, str]]:
     label2id = {label: idx for idx, label in enumerate(labels)}
@@ -236,99 +199,16 @@ SUBTYPE_HEAD_CONFIG = HeadConfig(
         "difficulty_benchmark": SUBTYPE_BENCHMARK_PATH,
     },
 )
-
-IAB_HEAD_CONFIG = HeadConfig(
-    slug="iab_content",
-    task_name="content.iab",
-    model_name="distilbert-base-uncased",
-    model_dir=BASE_DIR / "iab_model_output",
-    data_dir=BASE_DIR / "data" / "iab",
-    label_field="iab_path",
-    labels=IAB_LABELS,
-    max_length=96,
-    default_confidence_threshold=0.55,
-    target_accept_precision=0.8,
-    min_calibrated_confidence_threshold=0.7,
-    stress_suite_paths={
-        "hard_cases": BASE_DIR / "data" / "iab" / "hard_cases.jsonl",
-        "extended_cases": BASE_DIR / "data" / "iab" / "extended_cases.jsonl",
-        "difficulty_benchmark": IAB_BENCHMARK_PATH,
-        "cross_vertical_benchmark": IAB_CROSS_VERTICAL_BENCHMARK_PATH,
-    },
+IAB_RETRIEVAL_MODEL_NAME = (
+    str(BASE_DIR / "iab_model_output")
+    if (BASE_DIR / "iab_model_output").exists()
+    else IAB_RETRIEVAL_FALLBACK_MODEL_NAME
 )
-
-IAB_TIER1_HEAD_CONFIG = HeadConfig(
-    slug="iab_tier1",
-    task_name="content.iab.tier1",
-    model_name="distilbert-base-uncased",
-    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier1",
-    data_dir=IAB_HIERARCHY_DATA_DIR / "tier1",
-    label_field="iab_tier1_path",
-    labels=IAB_TIER1_LABELS,
-    max_length=96,
-    default_confidence_threshold=0.5,
-    target_accept_precision=0.8,
-    min_calibrated_confidence_threshold=0.45,
-    stress_suite_paths={},
-)
-
-IAB_TIER2_HEAD_CONFIG = HeadConfig(
-    slug="iab_tier2",
-    task_name="content.iab.tier2",
-    model_name="distilbert-base-uncased",
-    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier2",
-    data_dir=IAB_HIERARCHY_DATA_DIR / "tier2",
-    label_field="iab_tier2_path",
-    labels=IAB_TIER2_LABELS,
-    max_length=112,
-    default_confidence_threshold=0.46,
-    target_accept_precision=0.78,
-    min_calibrated_confidence_threshold=0.4,
-    stress_suite_paths={},
-)
-
-IAB_TIER3_HEAD_CONFIG = HeadConfig(
-    slug="iab_tier3",
-    task_name="content.iab.tier3",
-    model_name="distilbert-base-uncased",
-    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier3",
-    data_dir=IAB_HIERARCHY_DATA_DIR / "tier3",
-    label_field="iab_tier3_path",
-    labels=IAB_TIER3_LABELS,
-    max_length=128,
-    default_confidence_threshold=0.42,
-    target_accept_precision=0.76,
-    min_calibrated_confidence_threshold=0.38,
-    stress_suite_paths={},
-)
-
-IAB_TIER4_HEAD_CONFIG = HeadConfig(
-    slug="iab_tier4",
-    task_name="content.iab.tier4",
-    model_name="distilbert-base-uncased",
-    model_dir=IAB_HIERARCHY_MODEL_DIR / "tier4",
-    data_dir=IAB_HIERARCHY_DATA_DIR / "tier4",
-    label_field="iab_tier4_path",
-    labels=IAB_TIER4_LABELS,
-    max_length=144,
-    default_confidence_threshold=0.4,
-    target_accept_precision=0.74,
-    min_calibrated_confidence_threshold=0.36,
-    stress_suite_paths={},
-)
-
-IAB_HIERARCHY_HEAD_CONFIGS = {
-    1: IAB_TIER1_HEAD_CONFIG,
-    2: IAB_TIER2_HEAD_CONFIG,
-    3: IAB_TIER3_HEAD_CONFIG,
-    4: IAB_TIER4_HEAD_CONFIG,
-}
 
 HEAD_CONFIGS = {
     INTENT_HEAD_CONFIG.slug: INTENT_HEAD_CONFIG,
     SUBTYPE_HEAD_CONFIG.slug: SUBTYPE_HEAD_CONFIG,
     DECISION_PHASE_HEAD_CONFIG.slug: DECISION_PHASE_HEAD_CONFIG,
-    IAB_HEAD_CONFIG.slug: IAB_HEAD_CONFIG,
 }
 
 COMMERCIAL_SCORE_MIN = 0.6
@@ -452,3 +332,4 @@ LOW_SIGNAL_SUBTYPES = {"education", "follow_up", "onboarding_setup", "task_execu
 def ensure_artifact_dirs() -> None:
     CALIBRATION_ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     EVALUATION_ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+    IAB_ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)

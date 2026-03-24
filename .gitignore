@@ -6,3 +6,4 @@ decision_phase_model_output/
 subtype_model_output/
 iab_model_output/
 */model.safetensors
+iab_hierarchy_model_output/

@@ -1,49 +1,49 @@
 {
-  "accepted_accuracy": 0.9615,
-  "accepted_coverage": 0.7647,
-  "accuracy": 0.8922,
+  "accepted_accuracy": 0.9902,
+  "accepted_coverage": 1.0,
+  "accuracy": 0.9902,
   "confusion_matrix_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/artifacts/evaluation/latest/decision_phase_train_confusion_matrix.csv",
   "count": 102,
   "dataset_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/decision_phase/train.jsonl",
-  "fallback_rate": 0.2353,
+  "fallback_rate": 0.0,
   "head": "decision_phase",
-  "macro_f1": 0.8875,
+  "macro_f1": 0.9907,
   "per_class_metrics": {
-    "accuracy": 0.8921568627450981,
+    "accuracy": 0.9901960784313726,
     "action": {
-      "f1-score": 0.8888888888888888,
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.8,
+      "recall": 1.0,
       "support": 10.0
     },
     "awareness": {
-      "f1-score": 0.9411764705882353,
-      "precision": 0.8888888888888888,
+      "f1-score": 0.9696969696969697,
+      "precision": 0.9411764705882353,
       "recall": 1.0,
       "support": 16.0
     },
     "consideration": {
-      "f1-score": 0.8947368421052632,
-      "precision": 0.8095238095238095,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 17.0
     },
     "decision": {
-      "f1-score": 0.8888888888888888,
-      "precision": 0.8,
+      "f1-score": 1.0,
+      "precision": 1.0,
       "recall": 1.0,
       "support": 16.0
     },
     "macro avg": {
-      "f1-score": 0.8875059521691313,
-      "precision": 0.9153576582148011,
-      "recall": 0.8802721088435375,
+      "f1-score": 0.9907448872966115,
+      "precision": 0.9915966386554622,
+      "recall": 0.9904761904761905,
       "support": 102.0
     },
     "post_purchase": {
-      "f1-score": 0.8,
-      "precision": 0.9090909090909091,
-      "recall": 0.7142857142857143,
+      "f1-score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
       "support": 14.0
     },
     "research": {
@@ -53,15 +53,15 @@
       "support": 15.0
     },
     "support": {
-      "f1-score": 0.8333333333333334,
+      "f1-score": 1.0,
       "precision": 1.0,
-      "recall": 0.7142857142857143,
+      "recall": 1.0,
       "support": 14.0
     },
     "weighted avg": {
-      "f1-score": 0.8895086886634184,
-      "precision": 0.9069745069745071,
-      "recall": 0.8921568627450981,
+      "f1-score": 0.9901755895670704,
+      "precision": 0.9907727797001153,
+      "recall": 0.9901960784313726,
       "support": 102.0
     }
   },

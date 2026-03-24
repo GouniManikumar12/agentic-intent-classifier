@@ -6,7 +6,7 @@
       "total": 90
     }
   },
-  "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_cross_vertical_mapping_cases.json",
+  "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_cross_vertical_behavior_lock_cases.json",
   "count": 90,
   "failed": 0,
   "passed": 90,

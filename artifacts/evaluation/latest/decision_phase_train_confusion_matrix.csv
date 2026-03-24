@@ -1,8 +1,8 @@
 ,awareness,research,consideration,decision,action,post_purchase,support
 awareness,16,0,0,0,0,0,0
-research,0,14,0,1,0,0,0
+research,1,14,0,0,0,0,0
 consideration,0,0,17,0,0,0,0
 decision,0,0,0,16,0,0,0
-action,0,0,2,0,8,0,0
-post_purchase,1,0,2,1,0,10,0
-support,1,0,0,2,0,1,10
+action,0,0,0,0,10,0,0
+post_purchase,0,0,0,0,0,14,0
+support,0,0,0,0,0,0,14

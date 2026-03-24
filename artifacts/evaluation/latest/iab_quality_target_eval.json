@@ -1,15 +1,15 @@
 {
   "by_status": {
     "must_fix": {
-      "failed": 0,
-      "passed": 12,
+      "failed": 12,
+      "passed": 0,
       "total": 12
     }
   },
   "cases_path": "/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json",
   "count": 12,
-  "failed": 0,
-  "passed": 12,
+  "failed": 12,
+  "passed": 0,
   "results": [
     {
       "actual": {
@@ -18,14 +18,25 @@
         "model_output.classification.iab_content.tier2.label": "Auto Type"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.mapping_mode": "exact",
         "model_output.classification.iab_content.tier1.label": "Automotive",
-        "model_output.classification.iab_content.tier2.label": "Auto Type"
+        "model_output.classification.iab_content.tier2.label": "Auto Buying and Selling"
       },
       "id": "car-buying-maps-to-automotive-buying",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Auto Type",
+          "expected": "Auto Buying and Selling",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Vehicle shopping queries should map into the automotive buying branch, not business sales.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Which car to buy in 2026"
     },
@@ -37,15 +48,21 @@
         "model_output.classification.iab_content.tier3.label": "Laptops"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.mapping_mode": "exact",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
         "model_output.classification.iab_content.tier3.label": "Laptops"
       },
       "id": "laptop-buying-maps-to-laptops",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Laptop shopping should resolve into the laptops branch, not business sales.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Which laptop to buy in 2026"
     },
@@ -57,15 +74,21 @@
         "model_output.classification.iab_content.tier3.label": "Laptops"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.mapping_mode": "exact",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
         "model_output.classification.iab_content.tier3.label": "Laptops"
       },
       "id": "labtop-buying-maps-to-laptops",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Common typo handling should still land in the laptops branch.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Which labtop to buy in 2026"
     },
@@ -78,14 +101,30 @@
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications"
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": "Sales"
       },
       "id": "crm-awareness-maps-to-sales",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Technology & Computing",
+          "expected": "Business and Finance",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
+          "actual": "Computing",
+          "expected": "Business",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "Software and Applications",
+          "expected": "Sales",
+          "path": "model_output.classification.iab_content.tier3.label"
+        }
+      ],
       "notes": "CRM education should resolve to the closest business/sales path, not generic software.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "What is CRM software?"
     },
@@ -97,15 +136,36 @@
         "model_output.classification.iab_content.tier3.label": "Internet"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.mapping_mode": "exact",
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": "Sales"
       },
       "id": "crm-comparison-maps-to-sales",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Technology & Computing",
+          "expected": "Business and Finance",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
+          "actual": "Computing",
+          "expected": "Business",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "Internet",
+          "expected": "Sales",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Direct CRM vendor comparison should map cleanly into the sales domain.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "HubSpot vs Zoho for a small team"
     },
@@ -117,31 +177,65 @@
         "model_output.classification.iab_content.tier3.label": "Internet"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.mapping_mode": "exact",
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": "Marketing and Advertising"
       },
       "id": "marketing-tools-map-to-marketing",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Technology & Computing",
+          "expected": "Business and Finance",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
+          "actual": "Computing",
+          "expected": "Business",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "Internet",
+          "expected": "Marketing and Advertising",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Marketing tool discovery should map to the marketing and advertising branch.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Best AI SEO tools for content teams"
     },
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing"
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing"
+        "model_output.classification.iab_content.mapping_mode": "exact",
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Artificial Intelligence"
       },
       "id": "ml-explanation-maps-to-ai",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": null,
+          "expected": "Artificial Intelligence",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "ML and NLP educational prompts should land in the AI branch.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "What is intent classification in NLP?"
     },
@@ -154,14 +248,30 @@
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
-        "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Internet"
+        "model_output.classification.iab_content.tier1.label": "Business and Finance",
+        "model_output.classification.iab_content.tier2.label": "Business",
+        "model_output.classification.iab_content.tier3.label": "Business I.T."
       },
       "id": "support-credential-help-maps-to-business-it",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Technology & Computing",
+          "expected": "Business and Finance",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
+          "actual": "Computing",
+          "expected": "Business",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "Internet",
+          "expected": "Business I.T.",
+          "path": "model_output.classification.iab_content.tier3.label"
+        }
+      ],
       "notes": "Credential and account help should map to business IT rather than generic business.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "How do I reset my password?"
     },
@@ -172,14 +282,20 @@
         "model_output.classification.iab_content.tier2.label": "Dining Out"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.mapping_mode": "exact",
         "model_output.classification.iab_content.tier1.label": "Food & Drink",
         "model_output.classification.iab_content.tier2.label": "Dining Out"
       },
       "id": "restaurant-booking-maps-to-dining-out",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Generic dining requests should not inherit the repo's business default.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Book a table for 2 tonight"
     },
@@ -192,14 +308,30 @@
       },
       "expected": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Hobbies & Interests",
-        "model_output.classification.iab_content.tier2.label": "Content Production",
-        "model_output.classification.iab_content.tier3.label": "Freelance Writing"
+        "model_output.classification.iab_content.tier1.label": "Technology & Computing",
+        "model_output.classification.iab_content.tier2.label": "Computing",
+        "model_output.classification.iab_content.tier3.label": "Software and Applications"
       },
       "id": "trial-signup-maps-to-software",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Hobbies & Interests",
+          "expected": "Technology & Computing",
+          "path": "model_output.classification.iab_content.tier1.label"
+        },
+        {
+          "actual": "Content Production",
+          "expected": "Computing",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "Freelance Writing",
+          "expected": "Software and Applications",
+          "path": "model_output.classification.iab_content.tier3.label"
+        }
+      ],
       "notes": "Software action queries should map to the software/application branch.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "Start my free trial"
     },
@@ -212,32 +344,56 @@
         "model_output.classification.iab_content.tier4.label": "Communication"
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
+        "model_output.classification.iab_content.mapping_mode": "exact",
         "model_output.classification.iab_content.tier1.label": "Technology & Computing",
         "model_output.classification.iab_content.tier2.label": "Computing",
-        "model_output.classification.iab_content.tier3.label": "Software and Applications",
+        "model_output.classification.iab_content.tier3.label": "Computer Software and Applications",
         "model_output.classification.iab_content.tier4.label": "Communication"
       },
       "id": "communication-software-maps-to-tier4",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": "Software and Applications",
+          "expected": "Computer Software and Applications",
+          "path": "model_output.classification.iab_content.tier3.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Full taxonomy support should preserve the tier4 communication branch.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "best communication software for remote teams"
     },
     {
       "actual": {
         "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink"
+        "model_output.classification.iab_content.tier1.label": "Food & Drink",
+        "model_output.classification.iab_content.tier2.label": null
       },
       "expected": {
-        "model_output.classification.iab_content.mapping_mode": "nearest_equivalent",
-        "model_output.classification.iab_content.tier1.label": "Food & Drink"
+        "model_output.classification.iab_content.mapping_mode": "exact",
+        "model_output.classification.iab_content.tier1.label": "Food & Drink",
+        "model_output.classification.iab_content.tier2.label": "Alcoholic Beverages"
       },
       "id": "vodka-query-maps-to-alcoholic-beverages",
-      "mismatches": [],
+      "mismatches": [
+        {
+          "actual": null,
+          "expected": "Alcoholic Beverages",
+          "path": "model_output.classification.iab_content.tier2.label"
+        },
+        {
+          "actual": "nearest_equivalent",
+          "expected": "exact",
+          "path": "model_output.classification.iab_content.mapping_mode"
+        }
+      ],
       "notes": "Food and beverage prompts should not fall through to the business default.",
-      "pass": true,
+      "pass": false,
       "status": "must_fix",
       "text": "what is best vodka drink should i try"
     }

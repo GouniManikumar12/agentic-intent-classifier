@@ -5,7 +5,7 @@
 - `intent_type v0.1` now uses a manually tuned fallback threshold, but some ambiguous prompts still clear as non-safe intent labels.
 - `intent_subtype v0.1` is useful for commercial patterns, but still weak on sparse support and price-seeking cases.
 - `decision_phase v0.1` is behaviorally useful but still weak in aggregate metrics.
-- `iab_content v0.1` is now a hybrid classifier-plus-fallback stack, but the supervised head is trained on synthetic taxonomy-backed prompts rather than real labeled traffic.
+- `iab_content` now uses local embedding retrieval over taxonomy nodes, but exact-path quality still depends on how well the embedding model separates close sibling categories.
 - the composed output is still gated by the weaker calibrated components, so action-style queries can over-fallback.
 
 ## Boundary Confusion
@@ -15,7 +15,7 @@
 - `awareness` and `research` remain close for “help me understand” style prompts.
 - `deal_seeking` and `education` still blur on price questions phrased as general explanations.
 - some broad software topics still need nearest-equivalent IAB mappings because the taxonomy does not have exact SaaS product nodes.
-- CRM-style prompts are still one of the cleanest examples where the classifier alone can drift toward generic software and the rules layer has to rescue the final path.
+- CRM-style prompts are still a weak spot because retrieval can drift toward adjacent business software categories without a reranker.
 
 ## Intent-Type Gaps
 
@@ -30,15 +30,15 @@
 - the current `intent_type` threshold is manually sweep-tuned rather than learned jointly with the system layer.
 - fallback is still intentionally conservative, which is useful for demos but suppresses some strong action signals.
 - subtype is now part of the system decision, but the system still trusts `decision_phase` more than subtype on support safety.
-- IAB routing uses the local 3.0 taxonomy TSV, a supervised `iab_content` head, and nearest-equivalent fallback rules; exact path quality still depends on synthetic training coverage plus keyword coverage.
+- IAB routing uses the local 3.0 taxonomy TSV plus a local embedding index; exact path quality still depends on the retrieval model and the candidate text stored for each taxonomy node.
 
 ## Regression Tracking
 
 - structured known-failure tracking now lives in [known_failure_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/known_failure_cases.json).
 - acceptable weaknesses are now separated from `must_fix` behaviors and can be rerun via [run_regression_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_regression_suite.py).
 - current acceptable weaknesses include signup over-fallback, price-seeking underclassification, and support subtype bleed into `emotional_reflection`.
-- IAB mapping checks now live in [iab_mapping_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json) and can be rerun via [run_iab_mapping_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_mapping_suite.py).
-- IAB classifier threshold tuning now lives in [sweep_iab_threshold.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/sweep_iab_threshold.py).
+- IAB behavior-lock checks now live in [iab_behavior_lock_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_behavior_lock_cases.json) and can be rerun via [run_iab_mapping_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_mapping_suite.py).
+- curated IAB quality targets live in [iab_mapping_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_mapping_cases.json), with broader target coverage in [iab_cross_vertical_mapping_cases.json](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/examples/iab_cross_vertical_mapping_cases.json) and [run_iab_quality_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_quality_suite.py).
 
 ## Product Limits
 
