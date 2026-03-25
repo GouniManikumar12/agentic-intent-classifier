@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import os
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 
 PROJECT_VERSION = "0.6.0-phase4"
@@ -95,6 +96,63 @@ IAB_RETRIEVAL_PREFIX_CONFIDENCE_THRESHOLDS = {
     4: 0.62,
 }
 IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR = 0.3
+
+
+_DEFAULT_MODEL_REPO_ID = "admesh/agentic-intent-classifier"
+
+
+def _hf_repo_id() -> str:
+    return os.environ.get("ADMESH_MODEL_REPO_ID", _DEFAULT_MODEL_REPO_ID).strip() or _DEFAULT_MODEL_REPO_ID
+
+
+def _hf_revision() -> str | None:
+    rev = os.environ.get("ADMESH_MODEL_REVISION", "").strip()
+    return rev or None
+
+
+@lru_cache(maxsize=8)
+def _resolve_repo_subdir(local_dir: Path, repo_subdir: str) -> Path:
+    """Resolve artifact/model subdirs for local dev and HF trust_remote_code.
+
+    Local runs: return on-disk folder inside repo.
+    HF dynamic module runs: if missing locally, pull only this subdir from Hub.
+    """
+    if local_dir.exists():
+        return local_dir
+
+    try:
+        from huggingface_hub import snapshot_download
+    except Exception:
+        return local_dir
+
+    kwargs: dict = {
+        "repo_id": _hf_repo_id(),
+        "repo_type": "model",
+        "allow_patterns": [f"{repo_subdir}/**"],
+    }
+    revision = _hf_revision()
+    if revision:
+        kwargs["revision"] = revision
+
+    try:
+        root = Path(snapshot_download(**kwargs))
+        candidate = root / repo_subdir
+        if candidate.exists():
+            return candidate
+    except Exception:
+        pass
+    return local_dir
+
+
+# Re-resolve critical artifact/model dirs after helper definitions.
+CALIBRATION_ARTIFACTS_DIR = _resolve_repo_subdir(ARTIFACTS_DIR / "calibration", "artifacts/calibration")
+IAB_ARTIFACTS_DIR = _resolve_repo_subdir(ARTIFACTS_DIR / "iab", "artifacts/iab")
+IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
+IAB_TAXONOMY_NODES_PATH = IAB_ARTIFACTS_DIR / "taxonomy_nodes.json"
+IAB_TAXONOMY_EMBEDDINGS_PATH = IAB_ARTIFACTS_DIR / "taxonomy_embeddings.pt"
+IAB_DATASET_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "dataset_summary.json"
+MULTITASK_INTENT_MODEL_DIR = _resolve_repo_subdir(BASE_DIR / "multitask_intent_model_output", "multitask_intent_model_output")
+IAB_CLASSIFIER_MODEL_DIR = _resolve_repo_subdir(BASE_DIR / "iab_classifier_model_output", "iab_classifier_model_output")
 
 INTENT_TYPE_LABELS = (
     "informational",
