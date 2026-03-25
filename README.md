@@ -103,16 +103,18 @@ Generated model weights are intentionally not committed.
 - [model_runtime.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/model_runtime.py): shared calibrated inference runtime
 - [combined_inference.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/combined_inference.py): composed system response
 - [inference_intent_type.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_intent_type.py): direct `intent_type` inference entrypoint
-- [inference_iab_retrieval.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_iab_retrieval.py): local embedding-based IAB retrieval entrypoint
+- [inference_iab_classifier.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/inference_iab_classifier.py): direct supervised `iab_content` inference entrypoint
 - [schemas.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/schemas.py): request/response validation
 - [demo_api.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/demo_api.py): local validated API
 - [iab_taxonomy.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_taxonomy.py): full taxonomy parser/index
-- [iab_retrieval.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_retrieval.py): local taxonomy embedding index builder and generic retrieval/reranking runtime
+- [iab_classifier.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_classifier.py): supervised IAB runtime with taxonomy-aware parent fallback
+- [iab_retrieval.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/iab_retrieval.py): optional shadow retrieval baseline
 - [training/build_full_intent_taxonomy_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_full_intent_taxonomy_dataset.py): separate synthetic intent augmentation dataset
 - [training/build_intent_type_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_intent_type_difficulty_dataset.py): extra `intent_type` augmentation plus held-out difficulty benchmark
 - [training/build_decision_phase_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_decision_phase_difficulty_dataset.py): extra `decision_phase` augmentation plus held-out difficulty benchmark
 - [training/build_subtype_difficulty_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_difficulty_dataset.py): extra `intent_subtype` augmentation plus held-out difficulty benchmark
 - [training/build_subtype_dataset.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_subtype_dataset.py): subtype dataset generation from existing corpora
+- [training/train_iab.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/train_iab.py): train the supervised IAB classifier head
 - [training/build_iab_taxonomy_embeddings.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/build_iab_taxonomy_embeddings.py): build local IAB node embedding artifacts
 - [training/run_full_training_pipeline.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/training/run_full_training_pipeline.py): full multi-head training/calibration/eval pipeline
 - [evaluation/run_evaluation.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_evaluation.py): repeatable benchmark runner
@@ -135,7 +137,8 @@ Run one query locally:
 
 ```bash
 cd agentic-intent-classifier
-python3 training/build_iab_taxonomy_embeddings.py
+python3 training/train_iab.py
+python3 training/calibrate_confidence.py --head iab_content
 python3 combined_inference.py "Which CRM should I buy for a 3-person startup?"
 ```
 
@@ -168,14 +171,24 @@ curl -sS http://127.0.0.1:8008/health
 curl -sS http://127.0.0.1:8008/version
 ```
 
-Build the local IAB taxonomy embedding index:
+Train only the IAB classifier head:
+
+```bash
+cd agentic-intent-classifier
+python3 training/train_iab.py
+python3 training/calibrate_confidence.py --head iab_content
+```
+
+The online `iab_content` path now uses the compact supervised classifier. Retrieval is still available as an optional shadow baseline.
+
+Build the optional retrieval shadow index:
 
 ```bash
 cd agentic-intent-classifier
 python3 training/build_iab_taxonomy_embeddings.py
 ```
 
-By default this uses `Alibaba-NLP/gte-Qwen2-1.5B-instruct`. The retrieval runtime applies the model's query-side instruction format and last-token pooling, matching the Hugging Face usage guidance. If you want to point retrieval at a different embedding model, set `IAB_RETRIEVAL_MODEL_NAME_OVERRIDE` before building the index.
+By default the shadow retrieval path uses `Alibaba-NLP/gte-Qwen2-1.5B-instruct`. The retrieval runtime applies the model's query-side instruction format and last-token pooling, matching the Hugging Face usage guidance. If you want to point retrieval at a different embedding model, set `IAB_RETRIEVAL_MODEL_NAME_OVERRIDE` before building the index.
 
 Open-source users can swap in their own embedding model, but the contract is:
 
@@ -216,8 +229,8 @@ This pipeline now does:
 6. train `intent_subtype`
 7. build separate `decision_phase` difficulty augmentation + benchmark
 8. train `decision_phase`
-9. build the local IAB taxonomy embedding index
-10. calibrate the non-IAB classifier heads
+9. train `iab_content`
+10. calibrate all classifier heads, including `iab_content`
 11. run regression/evaluation unless `--skip-full-eval` is used
 
 ### Build datasets individually

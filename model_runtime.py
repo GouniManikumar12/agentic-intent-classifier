@@ -104,6 +104,13 @@ class SequenceClassifierHead:
             calibrated_probs = torch.softmax(outputs.logits / self.calibration.temperature, dim=-1)
         return raw_probs, calibrated_probs
 
+    def predict_probs_batch(self, texts: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
+        if not texts:
+            empty = torch.empty((0, len(self.config.labels)), dtype=torch.float32)
+            return empty, empty
+        raw_probs, calibrated_probs = self._predict_probs(texts)
+        return raw_probs.detach().cpu(), calibrated_probs.detach().cpu()
+
     def predict_batch(self, texts: list[str], confidence_threshold: float | None = None) -> list[dict]:
         if not texts:
             return []

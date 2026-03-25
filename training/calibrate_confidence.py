@@ -110,6 +110,11 @@ def collect_logits(head_name: str, split: str) -> tuple[np.ndarray, np.ndarray]:
         padding=True,
         max_length=config.max_length,
     )
+    inputs = {
+        key: value
+        for key, value in inputs.items()
+        if key in head.forward_arg_names
+    }
     with torch.no_grad():
         logits = head.model(**inputs).logits.detach().cpu().numpy()
     return logits, labels

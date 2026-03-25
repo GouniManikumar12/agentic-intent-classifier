@@ -16,7 +16,7 @@ from config import (
 )
 from inference_intent_type import predict as predict_intent_type
 from inference_decision_phase import predict as predict_decision_phase
-from inference_iab_retrieval import predict as predict_iab_content_retrieval
+from inference_iab_classifier import predict as predict_iab_content_classifier
 from inference_subtype import predict as predict_intent_subtype
 from schemas import validate_classify_response
 
@@ -332,13 +332,14 @@ def build_iab_content(
     decision_phase: str,
     confidence_threshold: float | None = None,
 ) -> tuple[dict, dict | None]:
-    retrieval_pred = predict_iab_content_retrieval(text)
-    if retrieval_pred is None:
+    classifier_pred = predict_iab_content_classifier(text, confidence_threshold=confidence_threshold)
+    if classifier_pred is None:
         raise RuntimeError(
-            "IAB retrieval artifacts are unavailable. Run `python3 training/build_iab_taxonomy_embeddings.py` "
+            "IAB classifier artifacts are unavailable. Run `python3 training/train_iab.py` "
+            "and `python3 training/calibrate_confidence.py --head iab_content` "
             "from the `agentic-intent-classifier` directory first."
         )
-    return retrieval_pred["content"], retrieval_pred
+    return classifier_pred["content"], classifier_pred
 
 
 def classify_query(text: str, threshold_overrides: dict[str, float] | None = None) -> dict:

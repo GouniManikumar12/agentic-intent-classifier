@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections import Counter
 
 from combined_inference import classify_query
+from iab_classifier import predict_iab_content_classifier_batch
 from iab_retrieval import predict_iab_content_retrieval_batch
 from iab_taxonomy import parse_path_label
 
@@ -88,15 +89,21 @@ def compute_path_metrics(true_paths: list[tuple[str, ...]], pred_paths: list[tup
 def evaluate_iab_views(rows: list[dict], max_combined_rows: int = 500) -> dict:
     texts = [row["text"] for row in rows]
     true_paths = [path_from_label(row["iab_path"]) for row in rows]
-    retrieval_outputs = predict_iab_content_retrieval_batch(texts)
-    if not any(output is not None for output in retrieval_outputs):
+    classifier_outputs = predict_iab_content_classifier_batch(texts)
+    if not any(output is not None for output in classifier_outputs):
         raise RuntimeError(
-            "IAB retrieval artifacts are unavailable. Run `python3 training/build_iab_taxonomy_embeddings.py` "
+            "IAB classifier artifacts are unavailable. Run `python3 training/train_iab.py` "
+            "and `python3 training/calibrate_confidence.py --head iab_content` "
             "from the `agentic-intent-classifier` directory first."
         )
 
-    retrieval_paths = [path_from_content(output["content"]) if output is not None else tuple() for output in retrieval_outputs]
-    views = {"embedding_retrieval": compute_path_metrics(true_paths, retrieval_paths)}
+    classifier_paths = [path_from_content(output["content"]) if output is not None else tuple() for output in classifier_outputs]
+    views = {"classifier": compute_path_metrics(true_paths, classifier_paths)}
+
+    retrieval_outputs = predict_iab_content_retrieval_batch(texts)
+    if any(output is not None for output in retrieval_outputs):
+        retrieval_paths = [path_from_content(output["content"]) if output is not None else tuple() for output in retrieval_outputs]
+        views["shadow_embedding_retrieval"] = compute_path_metrics(true_paths, retrieval_paths)
 
     if len(rows) > max_combined_rows:
         views["combined_path"] = {
@@ -122,7 +129,15 @@ def evaluate_iab_views(rows: list[dict], max_combined_rows: int = 500) -> dict:
         "fallback_rate": round(sum(combined_fallbacks) / max(len(combined_fallbacks), 1), 4),
         "fallback_overuse_count": sum(combined_fallbacks),
     }
-    views["disagreements"] = {
-        "retrieval_vs_combined": sum(1 for left, right in zip(retrieval_paths, combined_paths) if left != right),
+    disagreements = {
+        "classifier_vs_combined": sum(1 for left, right in zip(classifier_paths, combined_paths) if left != right),
     }
+    if any(output is not None for output in retrieval_outputs):
+        disagreements["retrieval_vs_classifier"] = sum(
+            1 for left, right in zip(retrieval_paths, classifier_paths) if left != right
+        )
+        disagreements["retrieval_vs_combined"] = sum(
+            1 for left, right in zip(retrieval_paths, combined_paths) if left != right
+        )
+    views["disagreements"] = disagreements
     return views

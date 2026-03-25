@@ -17,12 +17,11 @@ from config import (
     DEFAULT_BENCHMARK_PATH,
     EVALUATION_ARTIFACTS_DIR,
     HEAD_CONFIGS,
+    IAB_HEAD_CONFIG,
     IAB_BEHAVIOR_LOCK_CASES_PATH,
     IAB_CROSS_VERTICAL_BEHAVIOR_LOCK_CASES_PATH,
     IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH,
     IAB_QUALITY_TARGET_CASES_PATH,
-    IAB_RETRIEVAL_SPLIT_PATHS,
-    IAB_RETRIEVAL_STRESS_SUITE_PATHS,
     KNOWN_FAILURE_CASES_PATH,
     ensure_artifact_dirs,
 )
@@ -34,7 +33,7 @@ from evaluation.regression_suite import (
     evaluate_known_failure_cases,
 )
 from evaluation.iab_quality import compute_path_metrics, evaluate_iab_views, path_from_label
-from iab_retrieval import predict_iab_content_retrieval_batch
+from iab_classifier import predict_iab_content_classifier_batch
 from model_runtime import get_head
 from schemas import validate_classify_response
 
@@ -129,19 +128,20 @@ def evaluate_iab_dataset(dataset_path: Path, suite_name: str, output_dir: Path) 
     rows = load_jsonl(dataset_path)
     true_paths = [path_from_label(row["iab_path"]) for row in rows]
     true_labels = [row["iab_path"] for row in rows]
-    retrieval_outputs = predict_iab_content_retrieval_batch([row["text"] for row in rows])
-    if not any(output is not None for output in retrieval_outputs):
+    predictions = predict_iab_content_classifier_batch([row["text"] for row in rows])
+    if not any(output is not None for output in predictions):
         raise RuntimeError(
-            "IAB retrieval artifacts are unavailable. Run `python3 training/build_iab_taxonomy_embeddings.py` "
+            "IAB classifier artifacts are unavailable. Run `python3 training/train_iab.py` "
+            "and `python3 training/calibrate_confidence.py --head iab_content` "
             "from the `agentic-intent-classifier` directory first."
         )
 
     pred_paths = [
         tuple(output["path"]) if output is not None else tuple()
-        for output in retrieval_outputs
+        for output in predictions
     ]
-    accepted = [output is not None for output in retrieval_outputs]
-    source = "embedding_retrieval"
+    accepted = [bool(output and output["meets_confidence_threshold"]) for output in predictions]
+    source = next((output["source"] for output in predictions if output is not None), "supervised_classifier")
     pred_labels = [" > ".join(path) if path else "__no_prediction__" for path in pred_paths]
 
     accepted_total_count = sum(accepted)
@@ -241,6 +241,8 @@ def main() -> None:
 
     summary = {"heads": {}, "combined": {}}
     for head_name, config in HEAD_CONFIGS.items():
+        if head_name == "iab_content":
+            continue
         head_summary = {}
         for split_name, split_path in config.split_paths.items():
             head_summary[split_name] = evaluate_head_dataset(head_name, split_path, split_name, output_dir)
@@ -249,9 +251,9 @@ def main() -> None:
         summary["heads"][head_name] = head_summary
 
     iab_summary = {}
-    for split_name, split_path in IAB_RETRIEVAL_SPLIT_PATHS.items():
+    for split_name, split_path in IAB_HEAD_CONFIG.split_paths.items():
         iab_summary[split_name] = evaluate_iab_dataset(split_path, split_name, output_dir)
-    for suite_name, suite_path in IAB_RETRIEVAL_STRESS_SUITE_PATHS.items():
+    for suite_name, suite_path in IAB_HEAD_CONFIG.stress_suite_paths.items():
         iab_summary[suite_name] = evaluate_iab_dataset(suite_path, suite_name, output_dir)
     summary["heads"]["iab_content"] = iab_summary
 

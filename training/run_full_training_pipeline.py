@@ -19,7 +19,12 @@ def main() -> None:
         "--iab-embedding-batch-size",
         type=int,
         default=32,
-        help="Batch size for building local IAB taxonomy embeddings.",
+        help="Batch size for building the optional IAB shadow retrieval index.",
+    )
+    parser.add_argument(
+        "--build-iab-shadow-index",
+        action="store_true",
+        help="Also rebuild the optional IAB retrieval shadow index.",
     )
     parser.add_argument(
         "--skip-full-eval",
@@ -39,20 +44,24 @@ def main() -> None:
     run_step([python, "training/train_decision_phase.py"])
     run_step([python, "training/build_iab_difficulty_dataset.py"])
     run_step([python, "training/build_iab_cross_vertical_benchmark.py"])
-    run_step(
-        [
-            python,
-            "training/build_iab_taxonomy_embeddings.py",
-            "--batch-size",
-            str(args.iab_embedding_batch_size),
-        ]
-    )
+    run_step([python, "training/train_iab.py"])
     run_step([python, "training/calibrate_confidence.py", "--head", "intent_type"])
     run_step([python, "training/calibrate_confidence.py", "--head", "intent_subtype"])
     run_step([python, "training/calibrate_confidence.py", "--head", "decision_phase"])
+    run_step([python, "training/calibrate_confidence.py", "--head", "iab_content"])
+    if args.build_iab_shadow_index:
+        run_step(
+            [
+                python,
+                "training/build_iab_taxonomy_embeddings.py",
+                "--batch-size",
+                str(args.iab_embedding_batch_size),
+            ]
+        )
     if not args.skip_full_eval:
         run_step([python, "evaluation/run_regression_suite.py"])
         run_step([python, "evaluation/run_iab_mapping_suite.py"])
+        run_step([python, "evaluation/run_iab_quality_suite.py"])
         run_step([python, "evaluation/run_evaluation.py"])
 
 

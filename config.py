@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,12 +27,18 @@ DEFAULT_API_HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8008
 DEFAULT_BENCHMARK_PATH = BASE_DIR / "examples" / "demo_prompt_suite.json"
 KNOWN_FAILURE_CASES_PATH = BASE_DIR / "examples" / "known_failure_cases.json"
-IAB_TAXONOMY_VERSION = "3.0"
-IAB_TAXONOMY_PATH = BASE_DIR / "data" / "iab-content" / "Content Taxonomy 3.0.tsv"
+IAB_TAXONOMY_VERSION = os.environ.get("IAB_TAXONOMY_VERSION_OVERRIDE", "3.0")
+IAB_TAXONOMY_PATH = Path(
+    os.environ.get(
+        "IAB_TAXONOMY_PATH_OVERRIDE",
+        str(BASE_DIR / "data" / "iab-content" / f"Content Taxonomy {IAB_TAXONOMY_VERSION}.tsv"),
+    )
+)
 IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
 IAB_TAXONOMY_NODES_PATH = IAB_ARTIFACTS_DIR / "taxonomy_nodes.json"
 IAB_TAXONOMY_EMBEDDINGS_PATH = IAB_ARTIFACTS_DIR / "taxonomy_embeddings.pt"
 IAB_DATASET_SUMMARY_PATH = IAB_ARTIFACTS_DIR / "dataset_summary.json"
+IAB_CLASSIFIER_MODEL_DIR = BASE_DIR / "iab_classifier_model_output"
 IAB_RETRIEVAL_LOCAL_MODEL_DIR = BASE_DIR / "iab_embedding_model_output"
 IAB_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_mapping_cases.json"
 IAB_CROSS_VERTICAL_QUALITY_TARGET_CASES_PATH = BASE_DIR / "examples" / "iab_cross_vertical_mapping_cases.json"
@@ -58,6 +65,7 @@ IAB_RETRIEVAL_PREFIX_CONFIDENCE_THRESHOLDS = {
     3: 0.58,
     4: 0.62,
 }
+IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR = 0.3
 
 INTENT_TYPE_LABELS = (
     "informational",
@@ -115,6 +123,29 @@ def _looks_like_local_hf_model_dir(path: Path) -> bool:
         and (path / "config.json").exists()
         and ((path / "model.safetensors").exists() or (path / "pytorch_model.bin").exists())
     )
+
+
+def _load_iab_path_labels(path: Path) -> tuple[str, ...]:
+    with path.open("r", encoding="utf-8") as handle:
+        reader = csv.reader(handle, delimiter="\t")
+        rows = list(reader)
+
+    header = rows[1]
+    labels: list[str] = []
+    for row in rows[2:]:
+        padded = row + [""] * (len(header) - len(row))
+        item = dict(zip(header, padded))
+        path_parts = [
+            item.get(key, "").strip()
+            for key in ("Tier 1", "Tier 2", "Tier 3", "Tier 4")
+            if item.get(key, "").strip()
+        ]
+        if path_parts:
+            labels.append(" > ".join(path_parts))
+    return tuple(labels)
+
+
+IAB_PATH_LABELS = _load_iab_path_labels(IAB_TAXONOMY_PATH)
 
 
 @dataclass(frozen=True)
@@ -209,6 +240,22 @@ SUBTYPE_HEAD_CONFIG = HeadConfig(
         "difficulty_benchmark": SUBTYPE_BENCHMARK_PATH,
     },
 )
+
+IAB_HEAD_CONFIG = HeadConfig(
+    slug="iab_content",
+    task_name="iab.content",
+    model_name="distilbert-base-uncased",
+    model_dir=IAB_CLASSIFIER_MODEL_DIR,
+    data_dir=BASE_DIR / "data" / "iab",
+    label_field="iab_path",
+    labels=IAB_PATH_LABELS,
+    max_length=96,
+    default_confidence_threshold=0.2,
+    target_accept_precision=0.7,
+    min_calibrated_confidence_threshold=0.12,
+    stress_suite_paths=IAB_RETRIEVAL_STRESS_SUITE_PATHS,
+)
+
 IAB_RETRIEVAL_MODEL_NAME = os.environ.get(
     "IAB_RETRIEVAL_MODEL_NAME_OVERRIDE",
     str(IAB_RETRIEVAL_LOCAL_MODEL_DIR)
@@ -220,6 +267,7 @@ HEAD_CONFIGS = {
     INTENT_HEAD_CONFIG.slug: INTENT_HEAD_CONFIG,
     SUBTYPE_HEAD_CONFIG.slug: SUBTYPE_HEAD_CONFIG,
     DECISION_PHASE_HEAD_CONFIG.slug: DECISION_PHASE_HEAD_CONFIG,
+    IAB_HEAD_CONFIG.slug: IAB_HEAD_CONFIG,
 }
 
 COMMERCIAL_SCORE_MIN = 0.6
