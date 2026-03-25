@@ -19,6 +19,8 @@ from inference_intent_type import predict as predict_intent_type
 from inference_decision_phase import predict as predict_decision_phase
 from inference_iab_classifier import predict as predict_iab_content_classifier
 from inference_subtype import predict as predict_intent_subtype
+from model_runtime import get_head
+from multitask_runtime import get_multitask_runtime
 from schemas import validate_classify_response
 
 # Degraded fallback only: production requires `training/train_iab.py` and
@@ -362,6 +364,39 @@ def build_iab_content(
     return classifier_pred["content"], classifier_pred
 
 
+def _classify_multitask_fused(
+    text: str,
+    threshold_overrides: dict[str, float],
+) -> tuple[dict, dict, dict]:
+    """Run the shared DistilBERT encoder exactly once and decode all three heads.
+
+    This is the hot-path replacement for the three separate predict_intent_type /
+    predict_intent_subtype / predict_decision_phase calls.  On CPU with
+    DistilBERT it cuts encoder invocations from 3 → 1, roughly halving the
+    per-query latency for the multitask heads.
+    """
+    runtime = get_multitask_runtime()
+    all_logits = runtime.predict_all_heads_batch([text])
+
+    intent_proxy = get_head("intent_type")
+    subtype_proxy = get_head("intent_subtype")
+    phase_proxy = get_head("decision_phase")
+
+    intent_pred = intent_proxy.predict_from_logits(
+        all_logits["intent_type_logits"][0],
+        confidence_threshold=threshold_overrides.get("intent_type"),
+    )
+    subtype_pred = subtype_proxy.predict_from_logits(
+        all_logits["intent_subtype_logits"][0],
+        confidence_threshold=threshold_overrides.get("intent_subtype"),
+    )
+    phase_pred = phase_proxy.predict_from_logits(
+        all_logits["decision_phase_logits"][0],
+        confidence_threshold=threshold_overrides.get("decision_phase"),
+    )
+    return intent_pred, subtype_pred, phase_pred
+
+
 def classify_query(
     text: str,
     threshold_overrides: dict[str, float] | None = None,
@@ -370,9 +405,9 @@ def classify_query(
 ) -> dict:
     threshold_overrides = threshold_overrides or {}
     force_iab_placeholder = _force_iab_placeholder(force_iab_placeholder)
-    intent_pred = predict_intent_type(text, confidence_threshold=threshold_overrides.get("intent_type"))
-    subtype_pred = predict_intent_subtype(text, confidence_threshold=threshold_overrides.get("intent_subtype"))
-    phase_pred = predict_decision_phase(text, confidence_threshold=threshold_overrides.get("decision_phase"))
+
+    # Single encoder pass for all three multitask heads (hot path).
+    intent_pred, subtype_pred, phase_pred = _classify_multitask_fused(text, threshold_overrides)
 
     intent_type = intent_pred["label"]
     subtype = subtype_pred["label"]

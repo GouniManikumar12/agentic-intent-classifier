@@ -139,7 +139,7 @@ class SequenceClassifierHead:
 
     def _predict_probs(self, texts: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
         inputs = self._encode(texts)
-        with torch.no_grad():
+        with torch.inference_mode():
             outputs = self.model(**inputs)
             raw_probs = torch.softmax(outputs.logits, dim=-1)
             calibrated_probs = torch.softmax(outputs.logits / self.calibration.temperature, dim=-1)

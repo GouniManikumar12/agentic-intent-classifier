@@ -109,6 +109,64 @@ class AdmeshIntentPipeline:
         return cls(model_dir=local_dir)
 
     # ------------------------------------------------------------------
+    # Warm-up / compile
+    # ------------------------------------------------------------------
+
+    def warm_up(self, compile: bool = False) -> "AdmeshIntentPipeline":
+        """Pre-load all models into memory and optionally compile them.
+
+        Call this once after instantiation so the first real query does not
+        pay the model-load and JIT-compile cost.
+
+        Parameters
+        ----------
+        compile:
+            If ``True``, call ``torch.compile()`` on the multitask encoder and
+            the IAB classifier (requires PyTorch >= 2.0).  The first compiled
+            call is slower (tracing overhead), but subsequent calls are
+            meaningfully faster on CPU — typically 15-30 % depending on the
+            hardware and batch size.
+
+        Example
+        -------
+        ::
+
+            clf = AdmeshIntentPipeline.from_pretrained("admesh/agentic-intent-classifier")
+            clf.warm_up(compile=True)   # blocks until models are loaded + traced
+            # all subsequent calls hit the compiled fast path
+            result = clf("Which laptop should I buy for college?")
+        """
+        self._ensure_loaded()
+
+        if compile:
+            import torch  # noqa: PLC0415
+            if not hasattr(torch, "compile"):
+                import warnings
+                warnings.warn(
+                    "torch.compile() is not available (requires PyTorch >= 2.0). "
+                    "Skipping compilation.",
+                    stacklevel=2,
+                )
+            else:
+                from multitask_runtime import get_multitask_runtime  # noqa: PLC0415
+                from model_runtime import get_head  # noqa: PLC0415
+
+                rt = get_multitask_runtime()
+                if rt._model is not None:
+                    rt._model = torch.compile(rt._model)
+
+                iab_head = get_head("iab_content")
+                if iab_head._model is not None:
+                    iab_head._model = torch.compile(iab_head._model)
+
+        # Dry run — forces any remaining lazy init (calibration loading, etc.)
+        self(
+            "warm up query for intent classification",
+            force_iab_placeholder=True,
+        )
+        return self
+
+    # ------------------------------------------------------------------
     # Inference
     # ------------------------------------------------------------------
 

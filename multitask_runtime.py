@@ -100,9 +100,37 @@ class MultiTaskRuntime:
     def _predict_logits(self, task: str, texts: list[str]) -> torch.Tensor:
         config = TASK_TO_CONFIG[task]
         inputs = self._encode(texts, config.max_length)
-        with torch.no_grad():
+        with torch.inference_mode():
             outputs = self.model(**inputs)
         return outputs[TASK_TO_LOGIT_KEY[task]]
+
+    def predict_all_heads_batch(
+        self, texts: list[str]
+    ) -> dict[str, torch.Tensor]:
+        """Single encoder pass returning logits for all three heads at once.
+
+        This is the hot-path entry point.  Compared with calling
+        ``_predict_logits`` once per head it cuts the number of DistilBERT
+        forward passes from 3 → 1, roughly halving CPU latency for a single
+        query.
+
+        Returns
+        -------
+        dict with keys ``intent_type_logits``, ``intent_subtype_logits``,
+        ``decision_phase_logits`` — raw (pre-softmax) float tensors of shape
+        ``(len(texts), n_classes_for_head)``.
+        """
+        # Use the maximum of the three head max_lengths so all heads see the
+        # same truncation boundary.
+        max_len = max(cfg.max_length for cfg in TASK_TO_CONFIG.values())
+        inputs = self._encode(texts, max_len)
+        with torch.inference_mode():
+            outputs = self.model(**inputs)
+        return {
+            "intent_type_logits": outputs["intent_type_logits"],
+            "intent_subtype_logits": outputs["intent_subtype_logits"],
+            "decision_phase_logits": outputs["decision_phase_logits"],
+        }
 
 
 class MultiTaskHeadProxy:
@@ -126,7 +154,7 @@ class MultiTaskHeadProxy:
             config = type("ConfigView", (), {"id2label": proxy.config.id2label})()
 
             def forward(self, input_ids=None, attention_mask=None, **kwargs):
-                with torch.no_grad():
+                with torch.inference_mode():
                     outputs = proxy.runtime.model(input_ids=input_ids, attention_mask=attention_mask)
                 logits = outputs[TASK_TO_LOGIT_KEY[proxy.task]]
                 return type("OutputView", (), {"logits": logits})()
@@ -160,9 +188,47 @@ class MultiTaskHeadProxy:
 
     def _predict_probs(self, texts: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
         logits = self.runtime._predict_logits(self.task, texts)
-        raw_probs = torch.softmax(logits, dim=-1)
-        calibrated_probs = torch.softmax(logits / self.calibration.temperature, dim=-1)
+        with torch.inference_mode():
+            raw_probs = torch.softmax(logits, dim=-1)
+            calibrated_probs = torch.softmax(logits / self.calibration.temperature, dim=-1)
         return raw_probs, calibrated_probs
+
+    def predict_probs_from_logits(
+        self, logits: torch.Tensor
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        """Compute calibrated probs from pre-computed logits (hot-path helper).
+
+        Called by ``classify_query_fused`` after a single shared encoder pass
+        so that each ``MultiTaskHeadProxy`` does not re-run the encoder.
+        """
+        with torch.inference_mode():
+            raw_probs = torch.softmax(logits, dim=-1)
+            calibrated_probs = torch.softmax(logits / self.calibration.temperature, dim=-1)
+        return raw_probs, calibrated_probs
+
+    def predict_from_logits(
+        self, logits: torch.Tensor, confidence_threshold: float | None = None
+    ) -> dict:
+        """Return a single prediction dict from pre-computed logits."""
+        effective_threshold = (
+            self.calibration.confidence_threshold
+            if confidence_threshold is None
+            else min(max(float(confidence_threshold), 0.0), 1.0)
+        )
+        raw_probs, calibrated_probs = self.predict_probs_from_logits(logits.unsqueeze(0))
+        raw_row = raw_probs[0]
+        calibrated_row = calibrated_probs[0]
+        pred_id = int(torch.argmax(calibrated_row).item())
+        confidence = float(calibrated_row[pred_id].item())
+        raw_confidence = float(raw_row[pred_id].item())
+        return {
+            "label": self.config.id2label[pred_id],
+            "confidence": round_score(confidence),
+            "raw_confidence": round_score(raw_confidence),
+            "confidence_threshold": round_score(effective_threshold),
+            "calibrated": self.calibration.calibrated,
+            "meets_confidence_threshold": confidence >= effective_threshold,
+        }
 
     def predict_probs_batch(self, texts: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
         if not texts:
