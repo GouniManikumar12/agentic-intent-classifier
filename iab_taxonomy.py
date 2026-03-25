@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -10,6 +11,8 @@ try:
     from .config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION  # type: ignore
 except ImportError:
     from config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION
+
+_DEFAULT_MODEL_REPO_ID = "admesh/agentic-intent-classifier"
 
 
 @dataclass(frozen=True)
@@ -154,10 +157,36 @@ def _load_rows(path: Path) -> list[dict]:
     return parsed
 
 
+def _resolve_taxonomy_path() -> Path:
+    """Resolve taxonomy TSV path for local and HF trust_remote_code environments."""
+    if IAB_TAXONOMY_PATH.exists():
+        return IAB_TAXONOMY_PATH
+
+    # HF dynamic modules often do not contain non-Python data files.
+    # Fetch the taxonomy TSV directly from the model repo as a fallback.
+    repo_id = os.environ.get("ADMESH_MODEL_REPO_ID", _DEFAULT_MODEL_REPO_ID).strip() or _DEFAULT_MODEL_REPO_ID
+    revision = os.environ.get("ADMESH_MODEL_REVISION", "").strip() or None
+    filename = f"data/iab-content/Content Taxonomy {IAB_TAXONOMY_VERSION}.tsv"
+    try:
+        from huggingface_hub import hf_hub_download
+    except ModuleNotFoundError as exc:
+        raise FileNotFoundError(
+            f"Taxonomy TSV missing at {IAB_TAXONOMY_PATH}; install huggingface_hub or provide local taxonomy file."
+        ) from exc
+
+    downloaded = hf_hub_download(
+        repo_id=repo_id,
+        repo_type="model",
+        filename=filename,
+        revision=revision,
+    )
+    return Path(downloaded)
+
+
 @lru_cache(maxsize=1)
 def get_iab_taxonomy() -> IabTaxonomy:
     nodes = []
-    for row in _load_rows(IAB_TAXONOMY_PATH):
+    for row in _load_rows(_resolve_taxonomy_path()):
         path = tuple(
             value.strip()
             for key in ("Tier 1", "Tier 2", "Tier 3", "Tier 4")
