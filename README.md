@@ -123,7 +123,78 @@ Generated model weights are intentionally not committed.
 - [evaluation/run_iab_quality_suite.py](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/evaluation/run_iab_quality_suite.py): curated IAB quality-target runner
 - [known_limitations.md](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/known_limitations.md): current gaps and caveats
 
-## Setup
+## Quickstart: Run From Hugging Face
+
+Download the trained bundle and run inference in three lines — no local training required.
+
+```python
+import sys
+from huggingface_hub import snapshot_download
+
+# Download the full bundle (models + calibration + code)
+local_dir = snapshot_download(
+    repo_id="admesh/agentic-intent-classifier",
+    repo_type="model",
+)
+sys.path.insert(0, local_dir)
+
+# Import and instantiate
+from pipeline import AdmeshIntentPipeline
+clf = AdmeshIntentPipeline()
+
+# Classify
+import json
+result = clf("Which laptop should I buy for college?")
+print(json.dumps(result, indent=2))
+```
+
+Or use the one-liner factory method:
+
+```python
+from pipeline import AdmeshIntentPipeline   # after sys.path.insert above
+
+clf = AdmeshIntentPipeline.from_pretrained("admesh/agentic-intent-classifier")
+result = clf("I need a CRM for a 5-person startup")
+```
+
+Batch mode and custom thresholds are also supported:
+
+```python
+# Batch
+results = clf([
+    "Best running shoes under $100",
+    "How does gradient descent work?",
+    "Buy noise-cancelling headphones",
+])
+
+# Custom confidence thresholds
+result = clf(
+    "Buy noise-cancelling headphones",
+    threshold_overrides={"intent_type": 0.6, "intent_subtype": 0.35},
+)
+```
+
+Verify artifacts and run a smoke test from the CLI:
+
+```bash
+cd "<local_dir>"
+python3 training/pipeline_verify.py
+python3 combined_inference.py "Which CRM should I buy for a 3-person startup?"
+```
+
+Pin a specific revision for reproducibility:
+
+```python
+local_dir = snapshot_download(
+    repo_id="admesh/agentic-intent-classifier",
+    repo_type="model",
+    revision="0584798f8efee6beccd778b0afa06782ab5add60",
+)
+```
+
+---
+
+## Setup (for local training)
 
 ```bash
 python3 -m venv .venv
@@ -131,7 +202,7 @@ source .venv/bin/activate
 pip install -r agentic-intent-classifier/requirements.txt
 ```
 
-## Inference
+## Inference (local training path)
 
 Run one query locally:
 

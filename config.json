@@ -1,0 +1,11 @@
+{
+  "model_type": "admesh-intent-classifier",
+  "pipeline_tag": "text-classification",
+  "custom_pipelines": {
+    "admesh-intent": {
+      "impl": "pipeline.AdmeshIntentPipeline",
+      "pt": [],
+      "tf": []
+    }
+  }
+}
