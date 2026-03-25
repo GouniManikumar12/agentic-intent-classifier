@@ -5,11 +5,11 @@ from functools import lru_cache
 import torch
 
 try:
-    from .config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR  # type: ignore
+    from .config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR, _looks_like_local_hf_model_dir  # type: ignore
     from .iab_taxonomy import get_iab_taxonomy, parse_path_label, path_to_label  # type: ignore
     from .model_runtime import get_head  # type: ignore
 except ImportError:
-    from config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR
+    from config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR, _looks_like_local_hf_model_dir
     from iab_taxonomy import get_iab_taxonomy, parse_path_label, path_to_label
     from model_runtime import get_head
 
@@ -82,7 +82,9 @@ def predict_iab_content_classifier_batch(
         return []
 
     head = get_head("iab_content")
-    if not head.config.model_dir.exists():
+    # `SequenceClassifierHead` will raise if the folder exists but is incomplete
+    # (missing `model.safetensors` / `pytorch_model.bin`). Treat that as "no model".
+    if not _looks_like_local_hf_model_dir(head.config.model_dir):
         return [None for _ in texts]
 
     raw_probs, calibrated_probs = head.predict_probs_batch(texts)
