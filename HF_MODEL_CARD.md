@@ -43,7 +43,30 @@ Combines multitask intent modeling, supervised IAB content classification, and p
 
 ## Deployment Options
 
-### 1. `transformers.pipeline()` — one line anywhere
+### 0. Colab / Kaggle Quickstart (copy/paste)
+
+```python
+!pip -q install -U pip
+!pip -q install -U "torch>=2.0.0" "transformers>=4.36.0" "huggingface_hub>=0.20.0" "safetensors>=0.4.0"
+```
+
+```python
+from transformers import pipeline
+
+clf = pipeline(
+    "admesh-intent",
+    model="admesh/agentic-intent-classifier",
+    trust_remote_code=True,  # required (custom pipeline + multi-model bundle)
+)
+
+out = clf("Which laptop should I buy for college?")
+print(out["meta"])
+print(out["model_output"]["classification"]["intent"])
+```
+
+---
+
+### 1. `transformers.pipeline()` — anywhere (Python)
 
 ```python
 from transformers import pipeline
@@ -139,6 +162,28 @@ Or the one-liner factory:
 from pipeline import AdmeshIntentPipeline
 clf = AdmeshIntentPipeline.from_pretrained("admesh/agentic-intent-classifier")
 ```
+
+---
+
+## Troubleshooting (avoid environment errors)
+
+### `No module named 'combined_inference'` (or similar)
+
+This means the Hub repo root is missing required Python files. Ensure these exist at the **root of the model repo** (same level as `pipeline.py`):
+
+- `pipeline.py`, `config.json`, `config.py`
+- `combined_inference.py`, `schemas.py`
+- `model_runtime.py`, `multitask_runtime.py`, `multitask_model.py`
+- `inference_intent_type.py`, `inference_subtype.py`, `inference_decision_phase.py`, `inference_iab_classifier.py`
+- `iab_classifier.py`, `iab_taxonomy.py`
+
+### `does not appear to have a file named model.safetensors`
+
+Transformers requires a standard checkpoint at the repo root for `pipeline()` to initialize. This repo includes a **small dummy** `model.safetensors` + tokenizer files at the root for compatibility; the *real* production weights live in:
+
+- `multitask_intent_model_output/`
+- `iab_classifier_model_output/`
+- `artifacts/calibration/`
 
 ---
 
