@@ -32,69 +32,115 @@ Combines multitask intent modeling, supervised IAB content classification, and p
 
 | Field | Description |
 |---|---|
-| `intent.type` | `commercial`, `informational`, `navigational`, `transactional` |
-| `intent.subtype` | e.g. `product_discovery`, `comparison`, `how_to`, … |
-| `intent.decision_phase` | `awareness`, `consideration`, `decision` |
+| `intent.type` | `commercial`, `informational`, `navigational`, `transactional`, … |
+| `intent.subtype` | `product_discovery`, `comparison`, `how_to`, … |
+| `intent.decision_phase` | `awareness`, `consideration`, `decision`, … |
 | `iab_content` | IAB Content Taxonomy 3.0 tier1 / tier2 / tier3 labels |
 | `component_confidence` | Per-head calibrated confidence with threshold flags |
 | `system_decision` | Monetization eligibility, opportunity type, policy |
 
-## Quick Start — `AdmeshIntentPipeline`
+---
+
+## Deployment Options
+
+### 1. `transformers.pipeline()` — one line anywhere
+
+```python
+from transformers import pipeline
+
+clf = pipeline(
+    "admesh-intent",
+    model="admesh/agentic-intent-classifier",
+    trust_remote_code=True,
+)
+
+result = clf("Which laptop should I buy for college?")
+```
+
+Batch and custom thresholds:
+
+```python
+# batch
+results = clf([
+    "Best running shoes under $100",
+    "How does TCP work?",
+    "Buy noise-cancelling headphones",
+])
+
+# custom confidence thresholds
+result = clf(
+    "Buy headphones",
+    threshold_overrides={"intent_type": 0.6, "intent_subtype": 0.35},
+)
+```
+
+---
+
+### 2. HF Inference Endpoints (managed, deploy to AWS / Azure / GCP)
+
+1. Go to https://ui.endpoints.huggingface.co
+2. **New Endpoint** → select `admesh/agentic-intent-classifier`
+3. Framework: **PyTorch** — Task: **Text Classification**
+4. Enable **"Load with trust_remote_code"**
+5. Deploy
+
+The endpoint serves the same `pipeline()` interface above via REST:
+
+```bash
+curl https://<your-endpoint>.endpoints.huggingface.cloud \
+  -H "Authorization: Bearer $HF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"inputs": "Which laptop should I buy for college?"}'
+```
+
+---
+
+### 3. HF Spaces (Gradio / Streamlit demo)
+
+```python
+# app.py for a Gradio Space
+import gradio as gr
+from transformers import pipeline
+
+clf = pipeline(
+    "admesh-intent",
+    model="admesh/agentic-intent-classifier",
+    trust_remote_code=True,
+)
+
+def classify(text):
+    return clf(text)
+
+gr.Interface(fn=classify, inputs="text", outputs="json").launch()
+```
+
+---
+
+### 4. Local / notebook via `snapshot_download`
 
 ```python
 import sys
 from huggingface_hub import snapshot_download
 
-# 1. Download the full bundle (models + calibration + code)
 local_dir = snapshot_download(
     repo_id="admesh/agentic-intent-classifier",
     repo_type="model",
 )
 sys.path.insert(0, local_dir)
 
-# 2. Import and instantiate
 from pipeline import AdmeshIntentPipeline
 clf = AdmeshIntentPipeline()
-
-# 3. Classify
-result = clf("Which laptop should I buy for college?")
-import json
-print(json.dumps(result, indent=2))
-```
-
-### One-liner using `from_pretrained`
-
-```python
-from pipeline import AdmeshIntentPipeline   # after sys.path is set, or in the bundle dir
-
-clf = AdmeshIntentPipeline.from_pretrained("admesh/agentic-intent-classifier")
 result = clf("I need a CRM for a 5-person startup")
 ```
 
-### Batch inference
+Or the one-liner factory:
 
 ```python
-results = clf([
-    "Best running shoes under $100",
-    "How to set up a CI/CD pipeline",
-    "Buy noise-cancelling headphones",
-])
-for r in results:
-    print(r["model_output"]["classification"]["intent"]["type"])
+from pipeline import AdmeshIntentPipeline
+clf = AdmeshIntentPipeline.from_pretrained("admesh/agentic-intent-classifier")
 ```
 
-### Custom confidence thresholds
-
-```python
-result = clf(
-    "Buy noise-cancelling headphones",
-    threshold_overrides={"intent_type": 0.6, "intent_subtype": 0.35},
-)
-```
-
-## Why Not `transformers.pipeline()` Directly?
-
-This model uses three separate model files (multitask intent, IAB classifier, calibration JSONs) that HF's standard auto-loading expects as a single checkpoint. Using `AdmeshIntentPipeline` is the supported pattern — it wraps the full stack and handles model loading, calibration, and fallback logic automatically.
+---
 
 ## Example Output
 
@@ -134,23 +180,10 @@ This model uses three separate model files (multitask intent, IAB classifier, ca
 }
 ```
 
-## API Server Mode
-
-```bash
-cd "<local_dir>"
-pip install -r requirements.txt
-python3 demo_api.py
-```
-
-```bash
-curl -sS -X POST http://127.0.0.1:8008/classify \
-  -H 'Content-Type: application/json' \
-  -d '{"text":"I need a CRM for a 5-person startup"}'
-```
-
 ## Reproducible Revision
 
 ```python
+from huggingface_hub import snapshot_download
 local_dir = snapshot_download(
     repo_id="admesh/agentic-intent-classifier",
     repo_type="model",
@@ -165,11 +198,11 @@ local_dir = snapshot_download(
 | `multitask_intent_model_output/` | DistilBERT multitask weights + tokenizer |
 | `iab_classifier_model_output/` | IAB content classifier weights + tokenizer |
 | `artifacts/calibration/` | Per-head temperature + threshold JSONs |
-| `pipeline.py` | `AdmeshIntentPipeline` class |
+| `pipeline.py` | `AdmeshIntentPipeline` (transformers.Pipeline subclass) |
 | `combined_inference.py` | Core inference logic |
 
 ## Notes
 
-- Use all three artifact folders together for full accuracy.
-- For long-running production servers, instantiate the pipeline once and reuse it — models are cached in memory after the first call.
+- `trust_remote_code=True` is required because this model uses a custom multi-head architecture that does not map to a single standard `AutoModel` checkpoint.
 - `meta.iab_mapping_is_placeholder: true` means IAB artifacts were missing or skipped; train and calibrate IAB for full production accuracy.
+- For long-running servers, instantiate once and reuse — models are cached in memory after the first call.
