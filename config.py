@@ -110,6 +110,11 @@ def _hf_revision() -> str | None:
     return rev or None
 
 
+def _is_hf_dynamic_module_runtime() -> bool:
+    """True when executing from HF `trust_remote_code` dynamic module cache."""
+    return "transformers_modules" in str(BASE_DIR)
+
+
 @lru_cache(maxsize=8)
 def _resolve_repo_subdir(local_dir: Path, repo_subdir: str) -> Path:
     """Resolve artifact/model subdirs for local dev and HF trust_remote_code.
@@ -118,6 +123,12 @@ def _resolve_repo_subdir(local_dir: Path, repo_subdir: str) -> Path:
     HF dynamic module runs: if missing locally, pull only this subdir from Hub.
     """
     if local_dir.exists():
+        return local_dir
+
+    # Critical guard: during local/Colab training we should never silently point
+    # outputs to a Hub snapshot cache path. Only use Hub fallback when running
+    # inside HF dynamic modules (`trust_remote_code` path).
+    if not _is_hf_dynamic_module_runtime():
         return local_dir
 
     try:
