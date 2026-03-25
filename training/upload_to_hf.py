@@ -10,10 +10,14 @@ from __future__ import annotations
 
 import argparse
 import os
+import shutil
 import sys
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+LARGE_FILE_UPLOAD_THRESHOLD_BYTES = 100 * 1024 * 1024
 
 
 def _parse_args() -> argparse.Namespace:
@@ -97,6 +101,57 @@ def _parse_args() -> argparse.Namespace:
         help="Print what would be uploaded without actually uploading.",
     )
     return parser.parse_args()
+
+
+def _iter_local_files(path: Path) -> list[Path]:
+    if path.is_file():
+        return [path]
+    return sorted(p for p in path.rglob("*") if p.is_file())
+
+
+def _remote_file_paths(path_in_repo: str, local_path: Path) -> list[str]:
+    if local_path.is_file():
+        return [path_in_repo]
+    return [
+        f"{path_in_repo}/{file_path.relative_to(local_path).as_posix()}"
+        for file_path in _iter_local_files(local_path)
+    ]
+
+
+def _requires_large_upload(local_path: Path) -> bool:
+    return any(file_path.stat().st_size >= LARGE_FILE_UPLOAD_THRESHOLD_BYTES for file_path in _iter_local_files(local_path))
+
+
+def _upload_via_large_folder(api, repo_id: str, repo_path: str, local_path: Path) -> None:
+    with tempfile.TemporaryDirectory(prefix="hf_large_upload_") as tmp_dir:
+        staging_root = Path(tmp_dir)
+        staged_target = staging_root / repo_path
+        staged_target.parent.mkdir(parents=True, exist_ok=True)
+        if local_path.is_file():
+            shutil.copy2(local_path, staged_target)
+        else:
+            shutil.copytree(local_path, staged_target)
+        api.upload_large_folder(
+            repo_id=repo_id,
+            repo_type="model",
+            folder_path=str(staging_root),
+            print_report=False,
+        )
+
+
+def _verify_remote_upload(api, repo_id: str, repo_path: str, local_path: Path) -> None:
+    expected = set(_remote_file_paths(repo_path, local_path))
+    for attempt in range(4):
+        files = set(api.list_repo_files(repo_id=repo_id, repo_type="model"))
+        missing = sorted(expected - files)
+        if not missing:
+            return
+        if attempt == 3:
+            raise RuntimeError(
+                "Upload completed but the following remote files are still missing: "
+                + ", ".join(missing[:20])
+            )
+        time.sleep(2 * (attempt + 1))
 
 
 def main() -> int:
@@ -188,27 +243,26 @@ def main() -> int:
         if args.dry_run:
             print(f"[DRY] Would upload {local_dir} -> {args.repo_id}:{repo_path}")
             continue
-        # Upload single file entries (README or code/checkpoint files)
-        if local_dir.is_file():
-            step_start = time.perf_counter()
-            print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
+        step_start = time.perf_counter()
+        mode = "large-folder" if _requires_large_upload(local_dir) else "standard"
+        print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path} ({mode})")
+        if mode == "large-folder":
+            _upload_via_large_folder(api, args.repo_id, repo_path, local_dir)
+        elif local_dir.is_file():
             api.upload_file(
                 repo_id=args.repo_id,
                 repo_type="model",
                 path_or_fileobj=str(local_dir),
                 path_in_repo=repo_path,
             )
-            print(f"[DONE ] {repo_path} took {(time.perf_counter() - step_start):.2f}s")
-            continue
-
-        step_start = time.perf_counter()
-        print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
-        api.upload_folder(
-            repo_id=args.repo_id,
-            repo_type="model",
-            folder_path=str(local_dir),
-            path_in_repo=repo_path,
-        )
+        else:
+            api.upload_folder(
+                repo_id=args.repo_id,
+                repo_type="model",
+                folder_path=str(local_dir),
+                path_in_repo=repo_path,
+            )
+        _verify_remote_upload(api, args.repo_id, repo_path, local_dir)
         print(f"[DONE ] {repo_path} took {(time.perf_counter() - step_start):.2f}s")
 
     ended_wall = datetime.now(timezone.utc).isoformat()
