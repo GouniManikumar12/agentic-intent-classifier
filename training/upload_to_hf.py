@@ -54,6 +54,24 @@ def _parse_args() -> argparse.Namespace:
         help="Upload a Hugging Face model card file as README.md in the Hub repo root.",
     )
     parser.add_argument(
+        "--include-serving-code",
+        action="store_true",
+        help="Upload core runtime Python/code files required for Hub trust_remote_code inference.",
+    )
+    parser.add_argument(
+        "--include-root-checkpoint",
+        action="store_true",
+        help="Upload root-level compatibility checkpoint/tokenizer files used by transformers.pipeline loader.",
+    )
+    parser.add_argument(
+        "--include-all",
+        action="store_true",
+        help=(
+            "Upload everything needed for end-to-end Hub usage: multitask + iab + calibration + "
+            "HF README + serving code + root checkpoint/tokenizer files."
+        ),
+    )
+    parser.add_argument(
         "--hf-readme-path",
         default="HF_MODEL_CARD.md",
         help="Local path to the HF model card markdown to upload as README.md (relative to repo root).",
@@ -96,6 +114,14 @@ def main() -> int:
     calibration_dir = (repo_root / args.calibration_dir).resolve()
     hf_readme_path = (repo_root / args.hf_readme_path).resolve()
 
+    if args.include_all:
+        args.include_multitask = True
+        args.include_iab = True
+        args.include_calibration = True
+        args.include_hf_readme = True
+        args.include_serving_code = True
+        args.include_root_checkpoint = True
+
     to_upload: list[tuple[str, Path]] = []
     if args.include_multitask:
         to_upload.append(("multitask_intent_model_output", multitask_dir))
@@ -106,8 +132,43 @@ def main() -> int:
     if args.include_hf_readme:
         to_upload.append(("README.md", hf_readme_path))
 
+    if args.include_serving_code:
+        # Files needed by trust_remote_code execution path.
+        for rel in [
+            "pipeline.py",
+            "config.py",
+            "config.json",
+            "combined_inference.py",
+            "model_runtime.py",
+            "multitask_runtime.py",
+            "multitask_model.py",
+            "schemas.py",
+            "inference_intent_type.py",
+            "inference_subtype.py",
+            "inference_decision_phase.py",
+            "inference_iab_classifier.py",
+            "iab_classifier.py",
+            "iab_taxonomy.py",
+        ]:
+            to_upload.append((rel, (repo_root / rel).resolve()))
+
+    if args.include_root_checkpoint:
+        for rel in [
+            "model.safetensors",
+            "tokenizer.json",
+            "tokenizer_config.json",
+            "special_tokens_map.json",
+            "vocab.txt",
+        ]:
+            to_upload.append((rel, (repo_root / rel).resolve()))
+
     if not to_upload:
-        print("Nothing to upload. Pass --include-multitask, --include-iab, and/or --include-calibration.", file=sys.stderr)
+        print(
+            "Nothing to upload. Pass include flags (e.g. --include-all), or one/more of: "
+            "--include-multitask --include-iab --include-calibration --include-hf-readme "
+            "--include-serving-code --include-root-checkpoint.",
+            file=sys.stderr,
+        )
         return 2
 
     # Import lazily so `--dry-run` works without extra deps.
@@ -127,17 +188,17 @@ def main() -> int:
         if args.dry_run:
             print(f"[DRY] Would upload {local_dir} -> {args.repo_id}:{repo_path}")
             continue
-        # Upload single README.md file (Hub model card) vs directories
-        if repo_path == "README.md":
+        # Upload single file entries (README or code/checkpoint files)
+        if local_dir.is_file():
             step_start = time.perf_counter()
-            print(f"[UPLOAD] {local_dir} -> {args.repo_id}:README.md")
+            print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
             api.upload_file(
                 repo_id=args.repo_id,
                 repo_type="model",
                 path_or_fileobj=str(local_dir),
-                path_in_repo="README.md",
+                path_in_repo=repo_path,
             )
-            print(f"[DONE ] README.md took {(time.perf_counter() - step_start):.2f}s")
+            print(f"[DONE ] {repo_path} took {(time.perf_counter() - step_start):.2f}s")
             continue
 
         step_start = time.perf_counter()
