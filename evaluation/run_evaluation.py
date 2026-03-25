@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import sys
 from pathlib import Path
@@ -36,6 +37,16 @@ from evaluation.iab_quality import compute_path_metrics, evaluate_iab_views, pat
 from iab_classifier import predict_iab_content_classifier_batch
 from model_runtime import get_head
 from schemas import validate_classify_response
+
+
+def _maybe_free_cuda_memory() -> None:
+    try:
+        import torch
+
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+    except Exception:
+        pass
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -233,6 +244,11 @@ def main() -> None:
         default=str(EVALUATION_ARTIFACTS_DIR / "latest"),
         help="Directory to write evaluation artifacts into.",
     )
+    parser.add_argument(
+        "--skip-iab-train-eval",
+        action="store_true",
+        help="Skip the IAB train split (largest JSONL). Use on low-RAM hosts (e.g. Colab free tier).",
+    )
     args = parser.parse_args()
 
     ensure_artifact_dirs()
@@ -249,12 +265,20 @@ def main() -> None:
         for suite_name, suite_path in config.stress_suite_paths.items():
             head_summary[suite_name] = evaluate_head_dataset(head_name, suite_path, suite_name, output_dir)
         summary["heads"][head_name] = head_summary
+        gc.collect()
+        _maybe_free_cuda_memory()
 
     iab_summary = {}
     for split_name, split_path in IAB_HEAD_CONFIG.split_paths.items():
+        if args.skip_iab_train_eval and split_name == "train":
+            continue
         iab_summary[split_name] = evaluate_iab_dataset(split_path, split_name, output_dir)
+        gc.collect()
+        _maybe_free_cuda_memory()
     for suite_name, suite_path in IAB_HEAD_CONFIG.stress_suite_paths.items():
         iab_summary[suite_name] = evaluate_iab_dataset(suite_path, suite_name, output_dir)
+        gc.collect()
+        _maybe_free_cuda_memory()
     summary["heads"]["iab_content"] = iab_summary
 
     summary["combined"]["demo_benchmark"] = evaluate_combined_benchmark(DEFAULT_BENCHMARK_PATH, output_dir)

@@ -148,8 +148,14 @@ class SequenceClassifierHead:
         if not texts:
             empty = torch.empty((0, len(self.config.labels)), dtype=torch.float32)
             return empty, empty
-        raw_probs, calibrated_probs = self._predict_probs(texts)
-        return raw_probs.detach().cpu(), calibrated_probs.detach().cpu()
+        raw_chunks: list[torch.Tensor] = []
+        calibrated_chunks: list[torch.Tensor] = []
+        for start in range(0, len(texts), self._predict_batch_size):
+            batch_texts = texts[start : start + self._predict_batch_size]
+            raw_probs, calibrated_probs = self._predict_probs(batch_texts)
+            raw_chunks.append(raw_probs.detach().cpu())
+            calibrated_chunks.append(calibrated_probs.detach().cpu())
+        return torch.cat(raw_chunks, dim=0), torch.cat(calibrated_chunks, dim=0)
 
     def predict_batch(self, texts: list[str], confidence_threshold: float | None = None) -> list[dict]:
         if not texts:
