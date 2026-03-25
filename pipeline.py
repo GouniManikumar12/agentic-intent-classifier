@@ -102,7 +102,6 @@ class AdmeshIntentPipeline(_HFPipeline):
             self.modelcard = None
             self.framework = "pt"
             self.device = torch.device(kwargs.pop("device", "cpu"))
-            self.torch_dtype = kwargs.pop("torch_dtype", None)
             self.binary_output = kwargs.pop("binary_output", False)
             self.call_count = 0
             self._batch_size = kwargs.pop("batch_size", 1)

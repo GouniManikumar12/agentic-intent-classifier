@@ -1,10 +1,13 @@
 {
-  "model_type": "admesh-intent-classifier",
+  "model_type": "distilbert",
+  "num_labels": 2,
   "pipeline_tag": "text-classification",
   "custom_pipelines": {
     "admesh-intent": {
       "impl": "pipeline.AdmeshIntentPipeline",
-      "pt": [],
+      "pt": [
+        "AutoModelForSequenceClassification"
+      ],
       "tf": []
     }
   }
