@@ -42,7 +42,6 @@ Supported HF deployment surfaces
 
 from __future__ import annotations
 
-import importlib
 import sys
 from pathlib import Path
 from typing import Union
@@ -231,14 +230,12 @@ class AdmeshIntentPipeline(_HFPipeline):
                     stacklevel=2,
                 )
             else:
-                if __package__:
-                    get_multitask_runtime = importlib.import_module(
-                        f"{__package__}.multitask_runtime"
-                    ).get_multitask_runtime
-                    get_head = importlib.import_module(f"{__package__}.model_runtime").get_head
-                else:
-                    get_multitask_runtime = importlib.import_module("multitask_runtime").get_multitask_runtime
-                    get_head = importlib.import_module("model_runtime").get_head
+                try:
+                    from .multitask_runtime import get_multitask_runtime  # type: ignore
+                    from .model_runtime import get_head  # type: ignore
+                except ImportError:
+                    from multitask_runtime import get_multitask_runtime
+                    from model_runtime import get_head
 
                 rt = get_multitask_runtime()
                 if rt._model is not None:
@@ -303,12 +300,11 @@ class AdmeshIntentPipeline(_HFPipeline):
 
     def _ensure_loaded(self) -> None:
         if self._classify_fn is None:
-            if __package__:
-                self._classify_fn = importlib.import_module(
-                    f"{__package__}.combined_inference"
-                ).classify_query
-            else:
-                self._classify_fn = importlib.import_module("combined_inference").classify_query
+            try:
+                from .combined_inference import classify_query  # type: ignore
+            except ImportError:
+                from combined_inference import classify_query
+            self._classify_fn = classify_query
 
     def __repr__(self) -> str:
         state = "loaded" if self._classify_fn is not None else "not yet loaded"
