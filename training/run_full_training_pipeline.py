@@ -21,6 +21,51 @@ def run_step(args: list[str]) -> None:
     print(f"    end:   {ended_wall}\n    took:  {elapsed_s:.2f}s")
 
 
+def verify_local_artifacts() -> None:
+    """Ensure complete local training artifacts were generated.
+
+    This check intentionally validates *local repo paths* so a complete run
+    cannot silently rely on hub cache/snapshot paths.
+    """
+    required_dirs = {
+        "multitask model dir": BASE_DIR / "multitask_intent_model_output",
+        "iab classifier dir": BASE_DIR / "iab_classifier_model_output",
+        "calibration dir": BASE_DIR / "artifacts" / "calibration",
+    }
+    required_files = {
+        "multitask weights": BASE_DIR / "multitask_intent_model_output" / "multitask_model.pt",
+        "multitask metadata": BASE_DIR / "multitask_intent_model_output" / "metadata.json",
+        "iab model config": BASE_DIR / "iab_classifier_model_output" / "config.json",
+        "iab model weights": BASE_DIR / "iab_classifier_model_output" / "model.safetensors",
+        "calibration intent_type": BASE_DIR / "artifacts" / "calibration" / "intent_type.json",
+        "calibration intent_subtype": BASE_DIR / "artifacts" / "calibration" / "intent_subtype.json",
+        "calibration decision_phase": BASE_DIR / "artifacts" / "calibration" / "decision_phase.json",
+        "calibration iab_content": BASE_DIR / "artifacts" / "calibration" / "iab_content.json",
+    }
+
+    missing: list[str] = []
+    for name, path in required_dirs.items():
+        if not path.is_dir():
+            missing.append(f"[MISS] {name}: {path}")
+        else:
+            print(f"[OK ] {name}: {path}")
+    for name, path in required_files.items():
+        if not path.is_file():
+            missing.append(f"[MISS] {name}: {path}")
+        else:
+            print(f"[OK ] {name}: {path}")
+
+    if missing:
+        print("\nLocal artifact verification failed:")
+        for line in missing:
+            print(line)
+        raise RuntimeError(
+            "Expected local training artifacts are missing. "
+            "Training finished, but outputs were not generated in the repo paths."
+        )
+    print("\nLocal artifact verification passed.")
+
+
 def main() -> None:
     pipeline_start = time.perf_counter()
     pipeline_start_wall = datetime.now(timezone.utc).isoformat()
@@ -115,6 +160,9 @@ def main() -> None:
         run_step([python, "training/pipeline_verify.py"])
     if args.smoke_test:
         run_step([python, "combined_inference.py", args.smoke_test_query])
+
+    # Always enforce local artifact presence for complete training reliability.
+    verify_local_artifacts()
 
     pipeline_elapsed_s = time.perf_counter() - pipeline_start
     pipeline_end_wall = datetime.now(timezone.utc).isoformat()
