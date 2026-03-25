@@ -191,7 +191,7 @@ class LocalTextEmbedder:
             else:
                 mask = inputs["attention_mask"].unsqueeze(-1)
                 pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1)
-            rows.append(F.normalize(pooled, p=2, dim=1).cpu())
+            rows.append(F.normalize(pooled.float(), p=2, dim=1).cpu())
         return torch.cat(rows, dim=0)
 
 
