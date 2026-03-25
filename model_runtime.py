@@ -4,6 +4,7 @@ import json
 import os
 import inspect
 from dataclasses import dataclass
+from pathlib import Path
 from functools import lru_cache
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
@@ -11,7 +12,34 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from config import HEAD_CONFIGS, HeadConfig
+from config import HEAD_CONFIGS, HeadConfig, _looks_like_local_hf_model_dir
+
+_TRAIN_SCRIPT_HINTS: dict[str, str] = {
+    "intent_type": "python3 training/train.py",
+    "decision_phase": "python3 training/train_decision_phase.py",
+    "intent_subtype": "python3 training/train_subtype.py",
+    "iab_content": "python3 training/train_iab.py",
+}
+
+
+def _resolved_model_dir(config: HeadConfig) -> Path:
+    return Path(config.model_dir).expanduser().resolve()
+
+
+def _missing_head_weights_message(config: HeadConfig) -> str:
+    path = _resolved_model_dir(config)
+    train_hint = _TRAIN_SCRIPT_HINTS.get(
+        config.slug,
+        "See the `training/` directory for the matching `train_*.py` script.",
+    )
+    return (
+        f"Classifier weights for head '{config.slug}' are missing or incomplete at {path}. "
+        f"Expected a Hugging Face model directory with config.json and "
+        f"model.safetensors (or pytorch_model.bin), plus tokenizer files. "
+        f"From the `agentic-intent-classifier` directory, run: {train_hint}. "
+        f"Note: training only `train_iab.py` does not populate `model_output`; "
+        f"full `classify_query` / evaluation also needs the intent, subtype, and decision-phase heads."
+    )
 
 
 def round_score(value: float) -> float:
@@ -34,16 +62,27 @@ class SequenceClassifierHead:
         self._predict_batch_size = 32
         self._forward_arg_names = None
 
+    def _weights_dir(self) -> Path:
+        return _resolved_model_dir(self.config)
+
+    def _require_local_weights(self) -> Path:
+        weights_dir = self._weights_dir()
+        if not _looks_like_local_hf_model_dir(weights_dir):
+            raise FileNotFoundError(_missing_head_weights_message(self.config))
+        return weights_dir
+
     @property
     def tokenizer(self):
         if self._tokenizer is None:
-            self._tokenizer = AutoTokenizer.from_pretrained(self.config.model_dir)
+            weights_dir = self._require_local_weights()
+            self._tokenizer = AutoTokenizer.from_pretrained(str(weights_dir))
         return self._tokenizer
 
     @property
     def model(self):
         if self._model is None:
-            self._model = AutoModelForSequenceClassification.from_pretrained(self.config.model_dir)
+            weights_dir = self._require_local_weights()
+            self._model = AutoModelForSequenceClassification.from_pretrained(str(weights_dir))
             self._model.eval()
         return self._model
 
@@ -74,11 +113,12 @@ class SequenceClassifierHead:
         return self._calibration
 
     def status(self) -> dict:
+        weights_dir = self._weights_dir()
         return {
             "head": self.config.slug,
-            "model_path": str(self.config.model_dir),
+            "model_path": str(weights_dir),
             "calibration_path": str(self.config.calibration_path),
-            "ready": self.config.model_dir.exists(),
+            "ready": _looks_like_local_hf_model_dir(weights_dir),
             "calibrated": self.calibration.calibrated,
         }
 
