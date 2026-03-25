@@ -24,11 +24,30 @@ def verify_production_artifacts() -> tuple[bool, list[tuple[str, bool, str]]]:
     for label, path in (
         ("multitask weights", MULTITASK_INTENT_MODEL_DIR / "multitask_model.pt"),
         ("multitask metadata", MULTITASK_INTENT_MODEL_DIR / "metadata.json"),
-        ("multitask tokenizer config", MULTITASK_INTENT_MODEL_DIR / "config.json"),
     ):
         exists = path.exists()
         rows.append((label, exists, str(path)))
         ok = ok and exists
+
+    # AutoTokenizer(...) typically saves tokenizer.json/vocab.txt/tokenizer_config.json,
+    # but not necessarily a top-level `config.json` (that would be model config).
+    multitask_tokenizer_files = [
+        "tokenizer.json",
+        "vocab.txt",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+    ]
+    tokenizer_exists = any(
+        (MULTITASK_INTENT_MODEL_DIR / fname).exists() for fname in multitask_tokenizer_files
+    )
+    rows.append(
+        (
+            "multitask tokenizer files",
+            tokenizer_exists,
+            str(MULTITASK_INTENT_MODEL_DIR),
+        )
+    )
+    ok = ok and tokenizer_exists
 
     iab_dir = IAB_CLASSIFIER_MODEL_DIR
     iab_ok = _looks_like_local_hf_model_dir(iab_dir)
