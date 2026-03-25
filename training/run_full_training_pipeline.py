@@ -119,7 +119,11 @@ def main() -> None:
     pipeline_elapsed_s = time.perf_counter() - pipeline_start
     pipeline_end_wall = datetime.now(timezone.utc).isoformat()
     print(
-        f\"\\n==> Pipeline complete\\n    start: {pipeline_start_wall}\\n    end:   {pipeline_end_wall}\\n    total: {pipeline_elapsed_s:.2f}s\"\n+    )
+        f"\n==> Pipeline complete\n"
+        f"    start: {pipeline_start_wall}\n"
+        f"    end:   {pipeline_end_wall}\n"
+        f"    total: {pipeline_elapsed_s:.2f}s"
+    )
 
 
 if __name__ == "__main__":
