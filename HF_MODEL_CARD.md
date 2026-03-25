@@ -47,8 +47,11 @@ Combines multitask intent modeling, supervised IAB content classification, and p
 
 ```python
 !pip -q install -U pip
-!pip -q install -U "torch>=2.0.0" "transformers>=4.36.0" "huggingface_hub>=0.20.0" "safetensors>=0.4.0"
+!pip -q install -U "torch==2.10.0" "torchvision==0.25.0" "torchaudio==2.10.0"
+!pip -q install -U "transformers>=4.36.0" "huggingface_hub>=0.20.0" "safetensors>=0.4.0"
 ```
+
+Restart the runtime after installs (**Runtime → Restart runtime**) so the new Torch version is actually used.
 
 ```python
 from transformers import pipeline

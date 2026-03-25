@@ -30,6 +30,16 @@ print(torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_
 %pip install -q -r requirements.txt
 ```
 
+If you see Torch version conflicts like:
+
+- `torchvision ... requires torch==2.10.0, but you have torch 2.11.0`
+
+Pin matching versions (then restart the runtime):
+
+```python
+%pip install -q -U torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
+```
+
 If `requirements.txt` is missing, install manually:
 
 ```python
