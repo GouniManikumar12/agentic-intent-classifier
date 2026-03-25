@@ -47,6 +47,16 @@ def _parse_args() -> argparse.Namespace:
         help="Upload artifacts/calibration directory.",
     )
     parser.add_argument(
+        "--include-hf-readme",
+        action="store_true",
+        help="Upload a Hugging Face model card file as README.md in the Hub repo root.",
+    )
+    parser.add_argument(
+        "--hf-readme-path",
+        default="HF_MODEL_CARD.md",
+        help="Local path to the HF model card markdown to upload as README.md (relative to repo root).",
+    )
+    parser.add_argument(
         "--multitask-dir",
         default="multitask_intent_model_output",
         help="Path to multitask intent output directory (relative to this script's base).",
@@ -80,6 +90,7 @@ def main() -> int:
     multitask_dir = (repo_root / args.multitask_dir).resolve()
     iab_dir = (repo_root / args.iab_dir).resolve()
     calibration_dir = (repo_root / args.calibration_dir).resolve()
+    hf_readme_path = (repo_root / args.hf_readme_path).resolve()
 
     to_upload: list[tuple[str, Path]] = []
     if args.include_multitask:
@@ -88,6 +99,8 @@ def main() -> int:
         to_upload.append(("iab_classifier_model_output", iab_dir))
     if args.include_calibration:
         to_upload.append(("artifacts/calibration", calibration_dir))
+    if args.include_hf_readme:
+        to_upload.append(("README.md", hf_readme_path))
 
     if not to_upload:
         print("Nothing to upload. Pass --include-multitask, --include-iab, and/or --include-calibration.", file=sys.stderr)
@@ -110,6 +123,17 @@ def main() -> int:
         if args.dry_run:
             print(f"[DRY] Would upload {local_dir} -> {args.repo_id}:{repo_path}")
             continue
+        # Upload single README.md file (Hub model card) vs directories
+        if repo_path == "README.md":
+            print(f"[UPLOAD] {local_dir} -> {args.repo_id}:README.md")
+            api.upload_file(
+                repo_id=args.repo_id,
+                repo_type="model",
+                path_or_fileobj=str(local_dir),
+                path_in_repo="README.md",
+            )
+            continue
+
         print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
         api.upload_folder(
             repo_id=args.repo_id,
