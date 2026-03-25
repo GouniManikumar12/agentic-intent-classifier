@@ -52,21 +52,36 @@ def main() -> None:
     )
     output_path = Path(args.output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    torch.onnx.export(
-        wrapper,
-        (sample["input_ids"], sample["attention_mask"]),
-        str(output_path),
-        input_names=["input_ids", "attention_mask"],
-        output_names=["intent_type_logits", "intent_subtype_logits", "decision_phase_logits"],
-        dynamic_axes={
-            "input_ids": {0: "batch_size", 1: "seq_len"},
-            "attention_mask": {0: "batch_size", 1: "seq_len"},
-            "intent_type_logits": {0: "batch_size"},
-            "intent_subtype_logits": {0: "batch_size"},
-            "decision_phase_logits": {0: "batch_size"},
-        },
-        opset_version=args.opset,
-    )
+    try:
+        torch.onnx.export(
+            wrapper,
+            (sample["input_ids"], sample["attention_mask"]),
+            str(output_path),
+            input_names=["input_ids", "attention_mask"],
+            output_names=[
+                "intent_type_logits",
+                "intent_subtype_logits",
+                "decision_phase_logits",
+            ],
+            dynamic_axes={
+                "input_ids": {0: "batch_size", 1: "seq_len"},
+                "attention_mask": {0: "batch_size", 1: "seq_len"},
+                "intent_type_logits": {0: "batch_size"},
+                "intent_subtype_logits": {0: "batch_size"},
+                "decision_phase_logits": {0: "batch_size"},
+            },
+            opset_version=args.opset,
+        )
+    except ModuleNotFoundError as e:
+        # Newer torch ONNX exporter requires `onnxscript` (and `onnx`).
+        if e.name == "onnxscript" or "onnxscript" in str(e).lower():
+            print(
+                "Skipping ONNX export: missing dependency `onnxscript`.\n"
+                "Install with: `pip install onnx onnxscript`",
+                file=sys.stderr,
+            )
+            return
+        raise
     print(f"Exported ONNX model: {output_path}")
 
 
