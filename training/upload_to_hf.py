@@ -130,7 +130,14 @@ def _upload_via_large_folder(api, repo_id: str, repo_path: str, local_path: Path
         if local_path.is_file():
             shutil.copy2(local_path, staged_target)
         else:
-            shutil.copytree(local_path, staged_target)
+            shutil.copytree(
+                local_path,
+                staged_target,
+                ignore=shutil.ignore_patterns(".cache", "__pycache__"),
+            )
+        # Ensure resumable-upload metadata from previous local attempts does not
+        # get carried into the fresh staging directory.
+        shutil.rmtree(staged_target / ".cache", ignore_errors=True)
         api.upload_large_folder(
             repo_id=repo_id,
             repo_type="model",
