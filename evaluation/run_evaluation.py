@@ -1,5 +1,11 @@
 from __future__ import annotations
 
+import os
+
+# Quieter logs when TensorFlow/XLA are pulled in indirectly (common on Colab).
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+os.environ.setdefault("ABSL_MIN_LOG_LEVEL", "2")
+
 import argparse
 import gc
 import json

@@ -1,11 +1,18 @@
 from __future__ import annotations
 
+import os
 from collections import Counter
 
 from combined_inference import classify_query
 from iab_classifier import predict_iab_content_classifier_batch
 from iab_retrieval import predict_iab_content_retrieval_batch
 from iab_taxonomy import parse_path_label
+
+
+def _include_shadow_retrieval_in_iab_views() -> bool:
+    """Shadow retrieval loads Alibaba-NLP/gte-Qwen2-1.5B (~7GB) when the taxonomy index exists."""
+    value = os.environ.get("IAB_EVAL_INCLUDE_SHADOW_RETRIEVAL", "0").strip().lower()
+    return value in ("1", "true", "yes")
 
 
 def path_from_content(content: dict) -> tuple[str, ...]:
@@ -100,7 +107,16 @@ def evaluate_iab_views(rows: list[dict], max_combined_rows: int = 500) -> dict:
     classifier_paths = [path_from_content(output["content"]) if output is not None else tuple() for output in classifier_outputs]
     views = {"classifier": compute_path_metrics(true_paths, classifier_paths)}
 
-    retrieval_outputs = predict_iab_content_retrieval_batch(texts)
+    if _include_shadow_retrieval_in_iab_views():
+        retrieval_outputs = predict_iab_content_retrieval_batch(texts)
+    else:
+        retrieval_outputs = [None for _ in texts]
+        views["shadow_embedding_retrieval"] = {
+            "skipped": True,
+            "reason": "disabled_by_default",
+            "hint": "Set IAB_EVAL_INCLUDE_SHADOW_RETRIEVAL=1 to run shadow embedding retrieval (downloads/loads gte-Qwen2 when index is present).",
+        }
+
     if any(output is not None for output in retrieval_outputs):
         retrieval_paths = [path_from_content(output["content"]) if output is not None else tuple() for output in retrieval_outputs]
         views["shadow_embedding_retrieval"] = compute_path_metrics(true_paths, retrieval_paths)
