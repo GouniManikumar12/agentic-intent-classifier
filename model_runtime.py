@@ -13,6 +13,7 @@ import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from config import HEAD_CONFIGS, HeadConfig, _looks_like_local_hf_model_dir
+from multitask_runtime import MultiTaskHeadProxy
 
 _TRAIN_SCRIPT_HINTS: dict[str, str] = {
     "intent_type": "python3 training/train.py",
@@ -278,4 +279,6 @@ class SequenceClassifierHead:
 def get_head(head_name: str) -> SequenceClassifierHead:
     if head_name not in HEAD_CONFIGS:
         raise ValueError(f"Unknown head: {head_name}")
+    if head_name in {"intent_type", "intent_subtype", "decision_phase"}:
+        return MultiTaskHeadProxy(head_name)  # type: ignore[return-value]
     return SequenceClassifierHead(HEAD_CONFIGS[head_name])

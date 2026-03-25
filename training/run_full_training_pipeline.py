@@ -36,12 +36,12 @@ def main() -> None:
     python = sys.executable
     run_step([python, "training/build_full_intent_taxonomy_dataset.py"])
     run_step([python, "training/build_intent_type_difficulty_dataset.py"])
-    run_step([python, "training/train.py"])
+    run_step([python, "training/train_multitask_intent.py"])
     run_step([python, "training/build_subtype_dataset.py"])
     run_step([python, "training/build_subtype_difficulty_dataset.py"])
-    run_step([python, "training/train_subtype.py"])
+    # Subtype labels are trained as part of multitask intent training.
     run_step([python, "training/build_decision_phase_difficulty_dataset.py"])
-    run_step([python, "training/train_decision_phase.py"])
+    # Decision phase labels are trained as part of multitask intent training.
     run_step([python, "training/build_iab_difficulty_dataset.py"])
     run_step([python, "training/build_iab_cross_vertical_benchmark.py"])
     run_step([python, "training/train_iab.py"])
