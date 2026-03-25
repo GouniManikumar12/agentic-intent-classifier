@@ -28,12 +28,40 @@ DEFAULT_API_PORT = 8008
 DEFAULT_BENCHMARK_PATH = BASE_DIR / "examples" / "demo_prompt_suite.json"
 KNOWN_FAILURE_CASES_PATH = BASE_DIR / "examples" / "known_failure_cases.json"
 IAB_TAXONOMY_VERSION = os.environ.get("IAB_TAXONOMY_VERSION_OVERRIDE", "3.0")
-IAB_TAXONOMY_PATH = Path(
-    os.environ.get(
-        "IAB_TAXONOMY_PATH_OVERRIDE",
-        str(BASE_DIR / "data" / "iab-content" / f"Content Taxonomy {IAB_TAXONOMY_VERSION}.tsv"),
-    )
-)
+_DEFAULT_IAB_TAXONOMY_PATH = Path(BASE_DIR / "data" / "iab-content" / f"Content Taxonomy {IAB_TAXONOMY_VERSION}.tsv")
+
+
+def _resolve_iab_taxonomy_path() -> Path:
+    # 1) Explicit override always wins.
+    override = os.environ.get("IAB_TAXONOMY_PATH_OVERRIDE", "").strip()
+    if override:
+        return Path(override)
+
+    # 2) Local repo file (normal local dev/training path).
+    if _DEFAULT_IAB_TAXONOMY_PATH.exists():
+        return _DEFAULT_IAB_TAXONOMY_PATH
+
+    # 3) HF trust_remote_code fallback: dynamic module cache may not include data files.
+    repo_id = os.environ.get("ADMESH_MODEL_REPO_ID", "admesh/agentic-intent-classifier").strip() or "admesh/agentic-intent-classifier"
+    revision = os.environ.get("ADMESH_MODEL_REVISION", "").strip() or None
+    filename = f"data/iab-content/Content Taxonomy {IAB_TAXONOMY_VERSION}.tsv"
+    try:
+        from huggingface_hub import hf_hub_download
+
+        downloaded = hf_hub_download(
+            repo_id=repo_id,
+            repo_type="model",
+            filename=filename,
+            revision=revision,
+        )
+        return Path(downloaded)
+    except Exception:
+        # Keep previous behavior: downstream code will raise clear file-not-found
+        # if neither local nor hub fallback is available.
+        return _DEFAULT_IAB_TAXONOMY_PATH
+
+
+IAB_TAXONOMY_PATH = _resolve_iab_taxonomy_path()
 IAB_TAXONOMY_GRAPH_PATH = IAB_ARTIFACTS_DIR / "taxonomy_graph.json"
 IAB_TAXONOMY_NODES_PATH = IAB_ARTIFACTS_DIR / "taxonomy_nodes.json"
 IAB_TAXONOMY_EMBEDDINGS_PATH = IAB_ARTIFACTS_DIR / "taxonomy_embeddings.pt"
