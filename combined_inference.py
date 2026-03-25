@@ -2,7 +2,31 @@ import argparse
 import json
 import os
 
-from config import (
+try:
+    # HF `trust_remote_code` path (relative imports inside dynamic module package)
+    from .config import (  # type: ignore
+        CAUTIONARY_SUBTYPES,
+        COMMERCIAL_SCORE_MIN,
+        HIGH_INTENT_SUBTYPES,
+        INTENT_SCORE_WEIGHTS,
+        LOW_SIGNAL_SUBTYPES,
+        PHASE_SCORE_WEIGHTS,
+        PROJECT_VERSION,
+        SAFE_FALLBACK_INTENTS,
+        SAFE_FALLBACK_SUBTYPE_FAMILIES,
+        SUBTYPE_FAMILY_MAP,
+        SUBTYPE_SCORE_WEIGHTS,
+    )
+    from .inference_intent_type import predict as predict_intent_type  # type: ignore
+    from .inference_decision_phase import predict as predict_decision_phase  # type: ignore
+    from .inference_iab_classifier import predict as predict_iab_content_classifier  # type: ignore
+    from .inference_subtype import predict as predict_intent_subtype  # type: ignore
+    from .model_runtime import get_head  # type: ignore
+    from .multitask_runtime import get_multitask_runtime  # type: ignore
+    from .schemas import validate_classify_response  # type: ignore
+except ImportError:
+    # Local repo execution path
+    from config import (
     CAUTIONARY_SUBTYPES,
     COMMERCIAL_SCORE_MIN,
     HIGH_INTENT_SUBTYPES,
@@ -14,14 +38,14 @@ from config import (
     SAFE_FALLBACK_SUBTYPE_FAMILIES,
     SUBTYPE_FAMILY_MAP,
     SUBTYPE_SCORE_WEIGHTS,
-)
-from inference_intent_type import predict as predict_intent_type
-from inference_decision_phase import predict as predict_decision_phase
-from inference_iab_classifier import predict as predict_iab_content_classifier
-from inference_subtype import predict as predict_intent_subtype
-from model_runtime import get_head
-from multitask_runtime import get_multitask_runtime
-from schemas import validate_classify_response
+    )
+    from inference_intent_type import predict as predict_intent_type
+    from inference_decision_phase import predict as predict_decision_phase
+    from inference_iab_classifier import predict as predict_iab_content_classifier
+    from inference_subtype import predict as predict_intent_subtype
+    from model_runtime import get_head
+    from multitask_runtime import get_multitask_runtime
+    from schemas import validate_classify_response
 
 # Degraded fallback only: production requires `training/train_iab.py` and
 # `calibrate_confidence.py --head iab_content`. Used when weights are missing or forced via --skip-iab.

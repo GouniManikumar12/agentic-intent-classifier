@@ -11,6 +11,8 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -80,6 +82,8 @@ def _parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    started_at = time.perf_counter()
+    started_wall = datetime.now(timezone.utc).isoformat()
     args = _parse_args()
     if not args.token:
         print("Missing HF token. Provide --token or set env HF_TOKEN.", file=sys.stderr)
@@ -125,6 +129,7 @@ def main() -> int:
             continue
         # Upload single README.md file (Hub model card) vs directories
         if repo_path == "README.md":
+            step_start = time.perf_counter()
             print(f"[UPLOAD] {local_dir} -> {args.repo_id}:README.md")
             api.upload_file(
                 repo_id=args.repo_id,
@@ -132,8 +137,10 @@ def main() -> int:
                 path_or_fileobj=str(local_dir),
                 path_in_repo="README.md",
             )
+            print(f"[DONE ] README.md took {(time.perf_counter() - step_start):.2f}s")
             continue
 
+        step_start = time.perf_counter()
         print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
         api.upload_folder(
             repo_id=args.repo_id,
@@ -141,8 +148,11 @@ def main() -> int:
             folder_path=str(local_dir),
             path_in_repo=repo_path,
         )
+        print(f"[DONE ] {repo_path} took {(time.perf_counter() - step_start):.2f}s")
 
-    print("Upload complete.")
+    ended_wall = datetime.now(timezone.utc).isoformat()
+    elapsed_s = time.perf_counter() - started_at
+    print(f"Upload complete.\nstart: {started_wall}\nend:   {ended_wall}\ntotal: {elapsed_s:.2f}s")
     return 0
 
 

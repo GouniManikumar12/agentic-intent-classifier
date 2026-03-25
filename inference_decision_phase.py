@@ -1,6 +1,9 @@
 import json
 
-from model_runtime import get_head
+try:
+    from .model_runtime import get_head  # type: ignore
+except ImportError:
+    from model_runtime import get_head
 
 
 def predict(text: str, confidence_threshold: float | None = None):

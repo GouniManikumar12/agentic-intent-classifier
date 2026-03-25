@@ -2,6 +2,64 @@
 
 `agentic-intent-classifier` is a multi-head query classification stack for conversational traffic.
 
+## Quickstart (recommended): run from Hugging Face Hub
+
+This is the easiest way for developers to test the full production stack (multitask intent + IAB + calibration) without training locally.
+
+```python
+from transformers import pipeline
+
+clf = pipeline(
+    "admesh-intent",
+    model="admesh/agentic-intent-classifier",
+    trust_remote_code=True,
+)
+
+out = clf("Which laptop should I buy for college?")
+print(out["model_output"]["classification"]["intent"])
+print(out["model_output"]["classification"]["iab_content"])
+print(out["meta"])
+```
+
+If you’re running in Colab/Kaggle and see Torch version conflicts, follow `COLAB_SETUP.md`.
+
+## Latency / inference timing (developer quick check)
+
+The first call includes model/code loading; measure latency after a warm-up call.
+
+Single query:
+
+```python
+import time
+from transformers import pipeline
+
+clf = pipeline("admesh-intent", model="admesh/agentic-intent-classifier", trust_remote_code=True)
+q = "Which laptop should I buy for college?"
+
+_ = clf("warm up")
+t0 = time.perf_counter()
+out = clf(q)
+dt_ms = (time.perf_counter() - t0) * 1000
+
+print(f"latency_ms={dt_ms:.1f}")
+print(out["model_output"]["classification"]["intent"])
+```
+
+Warm p50 / p95 over 20 runs:
+
+```python
+import time, statistics
+
+times = []
+for _ in range(20):
+    t0 = time.perf_counter()
+    _ = clf(q)
+    times.append((time.perf_counter() - t0) * 1000)
+
+times_sorted = sorted(times)
+print(f"p50={statistics.median(times):.1f}ms p95={times_sorted[int(0.95*len(times))-1]:.1f}ms mean={statistics.mean(times):.1f}ms")
+```
+
 It currently produces:
 
 - `intent.type`
@@ -75,7 +133,7 @@ Generated model weights are intentionally not committed.
 
 ### `iab_content`
 
-- candidates are derived from every row in [data/iab-content/Content Taxonomy 3.0.tsv](/Users/manikumargouni/Desktop/AdMesh/protocol/agentic-intent-classifier/data/iab-content/Content%20Taxonomy%203.0.tsv)
+- candidates are derived from every row in [data/iab-content/Content Taxonomy 3.0.tsv](data/iab-content/Content%20Taxonomy%203.0.tsv)
 - retrieval output supports `tier1`, `tier2`, `tier3`, and optional `tier4`
 
 ## What The System Does

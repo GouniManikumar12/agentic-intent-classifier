@@ -8,14 +8,24 @@ from pathlib import Path
 import torch
 from transformers import AutoTokenizer
 
-from config import (
-    CALIBRATION_ARTIFACTS_DIR,
-    DECISION_PHASE_HEAD_CONFIG,
-    INTENT_HEAD_CONFIG,
-    MULTITASK_INTENT_MODEL_DIR,
-    SUBTYPE_HEAD_CONFIG,
-)
-from multitask_model import MultiTaskIntentModel, MultiTaskLabelSizes
+try:
+    from .config import (  # type: ignore
+        CALIBRATION_ARTIFACTS_DIR,
+        DECISION_PHASE_HEAD_CONFIG,
+        INTENT_HEAD_CONFIG,
+        MULTITASK_INTENT_MODEL_DIR,
+        SUBTYPE_HEAD_CONFIG,
+    )
+    from .multitask_model import MultiTaskIntentModel, MultiTaskLabelSizes  # type: ignore
+except ImportError:
+    from config import (
+        CALIBRATION_ARTIFACTS_DIR,
+        DECISION_PHASE_HEAD_CONFIG,
+        INTENT_HEAD_CONFIG,
+        MULTITASK_INTENT_MODEL_DIR,
+        SUBTYPE_HEAD_CONFIG,
+    )
+    from multitask_model import MultiTaskIntentModel, MultiTaskLabelSizes
 
 
 def round_score(value: float) -> float:

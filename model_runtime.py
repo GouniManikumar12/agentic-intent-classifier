@@ -12,8 +12,12 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from config import HEAD_CONFIGS, HeadConfig, _looks_like_local_hf_model_dir
-from multitask_runtime import MultiTaskHeadProxy
+try:
+    from .config import HEAD_CONFIGS, HeadConfig, _looks_like_local_hf_model_dir  # type: ignore
+    from .multitask_runtime import MultiTaskHeadProxy  # type: ignore
+except ImportError:
+    from config import HEAD_CONFIGS, HeadConfig, _looks_like_local_hf_model_dir
+    from multitask_runtime import MultiTaskHeadProxy
 
 _TRAIN_SCRIPT_HINTS: dict[str, str] = {
     "intent_type": "python3 training/train.py",

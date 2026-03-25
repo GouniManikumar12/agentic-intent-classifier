@@ -1,6 +1,9 @@
 import json
 
-from iab_classifier import predict_iab_content_classifier
+try:
+    from .iab_classifier import predict_iab_content_classifier  # type: ignore
+except ImportError:
+    from iab_classifier import predict_iab_content_classifier
 
 
 def predict(text: str, confidence_threshold: float | None = None):

@@ -4,9 +4,14 @@ from functools import lru_cache
 
 import torch
 
-from config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR
-from iab_taxonomy import get_iab_taxonomy, parse_path_label, path_to_label
-from model_runtime import get_head
+try:
+    from .config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR  # type: ignore
+    from .iab_taxonomy import get_iab_taxonomy, parse_path_label, path_to_label  # type: ignore
+    from .model_runtime import get_head  # type: ignore
+except ImportError:
+    from config import IAB_PARENT_FALLBACK_CONFIDENCE_FLOOR
+    from iab_taxonomy import get_iab_taxonomy, parse_path_label, path_to_label
+    from model_runtime import get_head
 
 
 def round_score(value: float) -> float:

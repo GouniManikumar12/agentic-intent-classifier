@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from config import DECISION_PHASE_LABELS, INTENT_TYPE_LABELS, PROJECT_VERSION, SUBTYPE_LABELS
+try:
+    from .config import DECISION_PHASE_LABELS, INTENT_TYPE_LABELS, PROJECT_VERSION, SUBTYPE_LABELS  # type: ignore
+except ImportError:
+    from config import DECISION_PHASE_LABELS, INTENT_TYPE_LABELS, PROJECT_VERSION, SUBTYPE_LABELS
 
 API_SCHEMA_VERSION = "2026-03-22"
 ALLOWED_MONETIZATION_ELIGIBILITY = {

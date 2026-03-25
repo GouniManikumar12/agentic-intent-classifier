@@ -69,6 +69,20 @@ print(out["model_output"]["classification"]["intent"])
 
 ---
 
+## Latency / inference timing (quick check)
+
+The first call includes model/code loading. Warm up once, then measure:
+
+```python
+import time
+q = "Which laptop should I buy for college?"
+
+_ = clf("warm up")
+t0 = time.perf_counter()
+out = clf(q)
+print(f"latency_ms={(time.perf_counter() - t0) * 1000:.1f}")
+```
+
 ### 1. `transformers.pipeline()` — anywhere (Python)
 
 ```python

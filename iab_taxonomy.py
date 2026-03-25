@@ -6,7 +6,10 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION
+try:
+    from .config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION  # type: ignore
+except ImportError:
+    from config import IAB_TAXONOMY_GRAPH_PATH, IAB_TAXONOMY_PATH, IAB_TAXONOMY_VERSION
 
 
 @dataclass(frozen=True)

@@ -3,17 +3,27 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def run_step(args: list[str]) -> None:
-    print(f"\n==> Running: {' '.join(args)}")
+    cmd = " ".join(args)
+    started_at = time.perf_counter()
+    started_wall = datetime.now(timezone.utc).isoformat()
+    print(f"\n==> Running: {cmd}\n    start: {started_wall}")
     subprocess.run(args, cwd=BASE_DIR, check=True)
+    elapsed_s = time.perf_counter() - started_at
+    ended_wall = datetime.now(timezone.utc).isoformat()
+    print(f"    end:   {ended_wall}\n    took:  {elapsed_s:.2f}s")
 
 
 def main() -> None:
+    pipeline_start = time.perf_counter()
+    pipeline_start_wall = datetime.now(timezone.utc).isoformat()
     parser = argparse.ArgumentParser(
         description=(
             "Run the full multi-head training pipeline: multitask intent, IAB classifier, calibration for all heads, "
@@ -105,6 +115,11 @@ def main() -> None:
         run_step([python, "training/pipeline_verify.py"])
     if args.smoke_test:
         run_step([python, "combined_inference.py", args.smoke_test_query])
+
+    pipeline_elapsed_s = time.perf_counter() - pipeline_start
+    pipeline_end_wall = datetime.now(timezone.utc).isoformat()
+    print(
+        f\"\\n==> Pipeline complete\\n    start: {pipeline_start_wall}\\n    end:   {pipeline_end_wall}\\n    total: {pipeline_elapsed_s:.2f}s\"\n+    )
 
 
 if __name__ == "__main__":
