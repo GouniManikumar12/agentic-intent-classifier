@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 
 from config import (
     CAUTIONARY_SUBTYPES,
@@ -19,6 +20,24 @@ from inference_decision_phase import predict as predict_decision_phase
 from inference_iab_classifier import predict as predict_iab_content_classifier
 from inference_subtype import predict as predict_intent_subtype
 from schemas import validate_classify_response
+
+# Degraded fallback only: production requires `training/train_iab.py` and
+# `calibrate_confidence.py --head iab_content`. Used when weights are missing or forced via --skip-iab.
+_SKIPPED_IAB_CONTENT: dict = {
+    "taxonomy": "IAB Content Taxonomy",
+    "taxonomy_version": "3.0",
+    "tier1": {"id": "skip_placeholder", "label": "Technology & computing"},
+    "mapping_mode": "internal_extension",
+    "mapping_confidence": 0.0,
+}
+_SKIPPED_IAB_PRED: dict = {"calibrated": False, "placeholder": True}
+
+
+def _force_iab_placeholder(explicit: bool) -> bool:
+    """Force placeholder IAB even when a trained classifier exists (tests / debugging)."""
+    if explicit:
+        return True
+    return os.environ.get("SKIP_IAB_CLASSIFIER", "").strip().lower() in ("1", "true", "yes")
 
 
 def round_score(value: float) -> float:
@@ -331,19 +350,26 @@ def build_iab_content(
     subtype: str,
     decision_phase: str,
     confidence_threshold: float | None = None,
-) -> tuple[dict, dict | None]:
+    *,
+    force_placeholder: bool = False,
+) -> tuple[dict, dict]:
+    if force_placeholder:
+        return _SKIPPED_IAB_CONTENT, _SKIPPED_IAB_PRED
     classifier_pred = predict_iab_content_classifier(text, confidence_threshold=confidence_threshold)
     if classifier_pred is None:
-        raise RuntimeError(
-            "IAB classifier artifacts are unavailable. Run `python3 training/train_iab.py` "
-            "and `python3 training/calibrate_confidence.py --head iab_content` "
-            "from the `agentic-intent-classifier` directory first."
-        )
+        # Missing IAB artifacts: valid JSON only; check meta.iab_mapping_is_placeholder. Train + calibrate IAB for production.
+        return _SKIPPED_IAB_CONTENT, _SKIPPED_IAB_PRED
     return classifier_pred["content"], classifier_pred
 
 
-def classify_query(text: str, threshold_overrides: dict[str, float] | None = None) -> dict:
+def classify_query(
+    text: str,
+    threshold_overrides: dict[str, float] | None = None,
+    *,
+    force_iab_placeholder: bool = False,
+) -> dict:
     threshold_overrides = threshold_overrides or {}
+    force_iab_placeholder = _force_iab_placeholder(force_iab_placeholder)
     intent_pred = predict_intent_type(text, confidence_threshold=threshold_overrides.get("intent_type"))
     subtype_pred = predict_intent_subtype(text, confidence_threshold=threshold_overrides.get("intent_subtype"))
     phase_pred = predict_decision_phase(text, confidence_threshold=threshold_overrides.get("decision_phase"))
@@ -359,6 +385,7 @@ def classify_query(text: str, threshold_overrides: dict[str, float] | None = Non
         subtype,
         decision_phase,
         confidence_threshold=threshold_overrides.get("iab_content"),
+        force_placeholder=force_iab_placeholder,
     )
     fallback = build_fallback(intent_pred, subtype_pred, phase_pred)
     if should_override_low_confidence_fallback(
@@ -436,16 +463,28 @@ def classify_query(text: str, threshold_overrides: dict[str, float] | None = Non
                 or phase_pred["calibrated"]
                 or (iab_pred is not None and iab_pred["calibrated"])
             ),
+            "iab_mapping_is_placeholder": bool(iab_pred is not None and iab_pred.get("placeholder")),
         },
-    }
+   }
     return validate_classify_response(payload)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run combined intent + decision_phase classification.")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run combined IAB + intent classification. Production requires trained+calibrated IAB "
+            "under iab_classifier_model_output/; use meta.iab_mapping_is_placeholder to detect degraded mode."
+        )
+    )
     parser.add_argument("text", help="Raw query to classify")
+    parser.add_argument(
+        "--skip-iab",
+        action="store_true",
+        dest="force_iab_placeholder",
+        help="Ignore the IAB classifier and return placeholder mapping (testing only).",
+    )
     args = parser.parse_args()
-    print(json.dumps(classify_query(args.text), indent=2))
+    print(json.dumps(classify_query(args.text, force_iab_placeholder=args.force_iab_placeholder), indent=2))
 
 
 if __name__ == "__main__":

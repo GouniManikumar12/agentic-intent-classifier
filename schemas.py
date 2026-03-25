@@ -278,6 +278,7 @@ def validate_classify_response(payload) -> dict:
     if meta is not None:
         _expect_str(meta.get("system_version"), "meta.system_version", errors, min_length=1)
         _expect_bool(meta.get("calibration_enabled"), "meta.calibration_enabled", errors)
+        _expect_bool(meta.get("iab_mapping_is_placeholder"), "meta.iab_mapping_is_placeholder", errors)
 
     if errors:
         raise SchemaValidationError("response_validation_failed", errors)

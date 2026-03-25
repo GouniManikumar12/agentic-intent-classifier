@@ -14,24 +14,59 @@ def run_step(args: list[str]) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the full multi-head training pipeline.")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the full multi-head training pipeline: multitask intent, IAB classifier, calibration for all heads, "
+            "then eval suites. IAB train+calibrate are part of the default sequence; only the taxonomy shadow index is an extra step."
+        )
+    )
     parser.add_argument(
         "--iab-embedding-batch-size",
         type=int,
         default=32,
-        help="Batch size for building the optional IAB shadow retrieval index.",
+        help="Batch size when building the IAB taxonomy embedding shadow index (extra; for retrieval/eval tooling).",
     )
     parser.add_argument(
         "--build-iab-shadow-index",
         action="store_true",
-        help="Also rebuild the optional IAB retrieval shadow index.",
+        help="Also run build_iab_taxonomy_embeddings.py (shadow index for retrieval metrics; IAB classifier already trained above).",
     )
     parser.add_argument(
         "--skip-full-eval",
         action="store_true",
         help="Skip the final full evaluation pass and only run calibration.",
     )
+    parser.add_argument(
+        "--export-multitask-onnx",
+        action="store_true",
+        help="After training, export training/export_multitask_onnx.py to multitask_intent_model_output/.",
+    )
+    parser.add_argument(
+        "--verify-artifacts",
+        action="store_true",
+        help="Run training/pipeline_verify.py after the pipeline (checks weights + calibration files).",
+    )
+    parser.add_argument(
+        "--smoke-test",
+        action="store_true",
+        help="Run combined_inference.py on a sample query after the pipeline.",
+    )
+    parser.add_argument(
+        "--smoke-test-query",
+        default="Which laptop should I buy for college?",
+        help="Query string for --smoke-test.",
+    )
+    parser.add_argument(
+        "--complete",
+        action="store_true",
+        help="Shorthand for --export-multitask-onnx --verify-artifacts --smoke-test.",
+    )
     args = parser.parse_args()
+
+    if args.complete:
+        args.export_multitask_onnx = True
+        args.verify_artifacts = True
+        args.smoke_test = True
 
     python = sys.executable
     run_step([python, "training/build_full_intent_taxonomy_dataset.py"])
@@ -63,6 +98,13 @@ def main() -> None:
         run_step([python, "evaluation/run_iab_mapping_suite.py"])
         run_step([python, "evaluation/run_iab_quality_suite.py"])
         run_step([python, "evaluation/run_evaluation.py"])
+
+    if args.export_multitask_onnx:
+        run_step([python, "training/export_multitask_onnx.py"])
+    if args.verify_artifacts:
+        run_step([python, "training/pipeline_verify.py"])
+    if args.smoke_test:
+        run_step([python, "combined_inference.py", args.smoke_test_query])
 
 
 if __name__ == "__main__":
