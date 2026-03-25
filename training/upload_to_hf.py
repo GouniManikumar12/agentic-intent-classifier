@@ -251,10 +251,25 @@ def main() -> int:
             print(f"[DRY] Would upload {local_dir} -> {args.repo_id}:{repo_path}")
             continue
         step_start = time.perf_counter()
-        mode = "large-folder" if _requires_large_upload(local_dir) else "standard"
-        print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path} ({mode})")
-        if mode == "large-folder":
-            _upload_via_large_folder(api, args.repo_id, repo_path, local_dir)
+        print(f"[UPLOAD] {local_dir} -> {args.repo_id}:{repo_path}")
+
+        # Hub blocks `model.safetensors` in subdirectories.
+        # Upload it as `iab_weights.safetensors` instead.
+        if local_dir.is_dir() and (local_dir / "model.safetensors").is_file() and repo_path != "":
+            for child in sorted(local_dir.iterdir()):
+                if not child.is_file():
+                    continue
+                remote_name = child.name
+                if remote_name == "model.safetensors":
+                    remote_name = "iab_weights.safetensors"
+                remote_path = f"{repo_path}/{remote_name}"
+                print(f"  -> {remote_path}")
+                api.upload_file(
+                    repo_id=args.repo_id,
+                    repo_type="model",
+                    path_or_fileobj=str(child),
+                    path_in_repo=remote_path,
+                )
         elif local_dir.is_file():
             api.upload_file(
                 repo_id=args.repo_id,
@@ -269,7 +284,6 @@ def main() -> int:
                 folder_path=str(local_dir),
                 path_in_repo=repo_path,
             )
-        _verify_remote_upload(api, args.repo_id, repo_path, local_dir)
         print(f"[DONE ] {repo_path} took {(time.perf_counter() - step_start):.2f}s")
 
     ended_wall = datetime.now(timezone.utc).isoformat()

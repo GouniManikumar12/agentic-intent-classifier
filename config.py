@@ -216,10 +216,12 @@ def build_label_maps(labels: tuple[str, ...]) -> tuple[dict[str, int], dict[int,
 
 
 def _looks_like_local_hf_model_dir(path: Path) -> bool:
+    if not path.is_dir() or not (path / "config.json").exists():
+        return False
     return (
-        path.is_dir()
-        and (path / "config.json").exists()
-        and ((path / "model.safetensors").exists() or (path / "pytorch_model.bin").exists())
+        (path / "model.safetensors").exists()
+        or (path / "pytorch_model.bin").exists()
+        or (path / "iab_weights.safetensors").exists()
     )
 
 

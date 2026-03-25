@@ -87,6 +87,10 @@ class SequenceClassifierHead:
     def model(self):
         if self._model is None:
             weights_dir = self._require_local_weights()
+            alt = weights_dir / "iab_weights.safetensors"
+            canonical = weights_dir / "model.safetensors"
+            if alt.exists() and not canonical.exists():
+                os.symlink(str(alt), str(canonical))
             self._model = AutoModelForSequenceClassification.from_pretrained(str(weights_dir))
             self._model.eval()
         return self._model
