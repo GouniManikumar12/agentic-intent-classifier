@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from datasets import Dataset
 from sklearn.metrics import accuracy_score, f1_score
 from transformers import AutoTokenizer, Trainer, TrainingArguments
@@ -141,16 +142,30 @@ class MultiTaskTrainer(Trainer):
     def __init__(self, *args, loss_weights: dict[str, float], **kwargs):
         super().__init__(*args, **kwargs)
         self.loss_weights = loss_weights
-        self.ce = torch.nn.CrossEntropyLoss(ignore_index=IGNORE_INDEX)
+
+    def _task_ce(self, logits: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
+        """Mean CE over non-ignored labels only.
+
+        ``CrossEntropyLoss(..., reduction='mean')`` returns NaN when every label in the
+        batch is ``IGNORE_INDEX`` (0 valid targets). Per-row ``reduction='none'`` yields 0
+        for ignored rows; we then mean over valid rows only, matching standard CE otherwise.
+        """
+        loss_vec = F.cross_entropy(
+            logits, labels, ignore_index=IGNORE_INDEX, reduction="none"
+        )
+        valid = labels != IGNORE_INDEX
+        if not valid.any():
+            return logits.sum() * 0.0
+        return loss_vec[valid].mean()
 
     def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
         labels_type = inputs.pop("intent_type")
         labels_subtype = inputs.pop("intent_subtype")
         labels_phase = inputs.pop("decision_phase")
         outputs = model(**inputs)
-        loss_type = self.ce(outputs["intent_type_logits"], labels_type)
-        loss_subtype = self.ce(outputs["intent_subtype_logits"], labels_subtype)
-        loss_phase = self.ce(outputs["decision_phase_logits"], labels_phase)
+        loss_type = self._task_ce(outputs["intent_type_logits"], labels_type)
+        loss_subtype = self._task_ce(outputs["intent_subtype_logits"], labels_subtype)
+        loss_phase = self._task_ce(outputs["decision_phase_logits"], labels_phase)
         loss = (
             (self.loss_weights["intent_type"] * loss_type)
             + (self.loss_weights["intent_subtype"] * loss_subtype)
