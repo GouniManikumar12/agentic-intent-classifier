@@ -25,8 +25,11 @@ Combines multitask intent modeling, supervised IAB content classification, and p
 
 ## Links
 
+- **Try it live**: [Interactive Demo](https://huggingface.co/spaces/manikumargouni/admesh_intent_classifier_demo)
 - Hugging Face: https://huggingface.co/admesh/agentic-intent-classifier
 - GitHub: https://github.com/GouniManikumar12/agentic-intent-classifier
+- AdMesh: https://useadmesh.com
+- Agentic Intent Protocol: https://agenticintentprotocol.com
 
 ## What It Predicts
 
